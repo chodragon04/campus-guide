@@ -20,7 +20,7 @@ async function grid(params) {
   try {
     const j = JSON.parse(r.body);
     const rows = j.rows || [];
-    return { status: r.status, keys: Object.keys(j), records: j.records, rowCount: rows.length, sample: rows.slice(0, 3) };
+    return { status: r.status, keys: Object.keys(j), err: [j.ErrorCode, j.ErrorMsg], records: j.records, rowCount: rows.length, sample: rows.slice(0, 3) };
   } catch {
     return { status: r.status, type: r.type, text: r.body.slice(0, 1500) };
   }
@@ -29,11 +29,13 @@ async function grid(params) {
 try {
   await req("/html/pub/schedule.jsp");
   out.cookie = cookie ? "있음" : "없음";
-  for (const p of ["/js/common.js", "/js/fsp/sz_common.js", "/js/stech/grid.js"]) {
-    const r = await req(p);
-    const i = r.body.indexOf("setLessCommboToDb");
-    if (i >= 0) out["less@" + p] = r.body.slice(i, i + 1500);
-  }
+  const g = (await req("/js/stech/grid.js")).body;
+  out.reloadGrid = g.slice(g.indexOf("reloadGrid = function"), g.indexOf("reloadGrid = function") + 1500);
+  out.gridDefaults = g.slice(0, 2500);
+  const f = (await req("/js/fsp/sz_fsp_json.js.jsp")).body;
+  const i = f.indexOf("callService");
+  out.callService = f.slice(i, i + 3000);
+  out.fspHead = f.slice(0, 2500);
   out.byName = await grid({ SUBJ_NM: "웹프로그래밍" });
   out.all = await grid({});
 } catch (e) { out.error = err(e); }

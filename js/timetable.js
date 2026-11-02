@@ -95,7 +95,7 @@ function search(keyword) {
     const info = make("div");
     info.appendChild(make("strong", "", course.name));
     info.appendChild(make("span", "meta", ` ${course.dept} · ${course.type} · ${course.credit}학점`));
-    info.appendChild(make("p", "meta", `${course.prof || "교수 미정"} · ${course.time || "시간 미정"} · ${course.room || "강의실 미정"}`));
+    info.appendChild(make("p", "meta", `${course.prof || "교수 미정"} · ${courseTime(course)} · ${course.room || "강의실 미정"}`));
     const button = make("button", "", "담기");
     button.addEventListener("click", () => addCourse(course));
     li.appendChild(info);
@@ -114,19 +114,19 @@ searchInput.addEventListener("input", () => search(searchInput.value));
 function drawTimetable() {
   timetable.innerHTML = "";
 
-  // 토·일 수업이 있을 때만 주말 칸 표시, 교시는 최소 9교시까지
+  // 토·일 수업이 있을 때만 주말 칸 표시, 시간은 최소 9교시(17시)까지
   const usedDays = myCourses.flatMap((c) => c.slots.map((s) => s.day));
   const dayCount = usedDays.includes("일") ? 7 : usedDays.includes("토") ? 6 : 5;
   const lastPeriod = Math.max(9, ...myCourses.flatMap((c) => c.slots.map((s) => s.end)));
-  timetable.style.gridTemplateColumns = `48px repeat(${dayCount}, 1fr)`;
+  timetable.style.gridTemplateColumns = `52px repeat(${dayCount}, 1fr)`;
 
-  // 머리줄(요일)과 교시 칸
+  // 머리줄(요일)과 시간 칸 (한 줄 = 한 교시)
   timetable.appendChild(make("div", "corner"));
   for (let d = 0; d < dayCount; d++) {
     timetable.appendChild(make("div", "day-head", DAYS[d]));
   }
   for (let p = 1; p <= lastPeriod; p++) {
-    const label = make("div", "period", `${p}`);
+    const label = make("div", "period", periodStart(p));
     label.style.gridRow = p + 1;
     timetable.appendChild(label);
     for (let d = 0; d < dayCount; d++) {
@@ -157,7 +157,7 @@ function drawList() {
   for (let course of myCourses) {
     credits += course.credit;
     const li = make("li");
-    li.appendChild(make("span", "", `${course.name} (${course.prof || "교수 미정"}) · ${course.time || "시간 미정"} · ${course.room || "강의실 미정"}`));
+    li.appendChild(make("span", "", `${course.name} (${course.prof || "교수 미정"}) · ${courseTime(course)} · ${course.room || "강의실 미정"}`));
     const button = make("button", "", "삭제");
     button.addEventListener("click", () => removeCourse(course.id));
     li.appendChild(button);
@@ -184,7 +184,7 @@ fetch("data/courses.json")
     allCourses = data.courses;
     const [year, term] = data.semester.split("-");
     document.querySelector("#semester").innerText =
-      `${year}학년도 ${term}학기 개설 강좌 ${data.count}개 · 수강신청시스템 시간표 조회 기준 (숫자는 교시)`;
+      `${year}학년도 ${term}학기 개설 강좌 ${data.count}개 · 수강신청시스템 시간표 조회 기준`;
     search(searchInput.value);
   })
   .catch(() => {

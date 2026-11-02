@@ -5,7 +5,7 @@ const now = new Date();
 const days = ["일", "월", "화", "수", "목", "금", "토"];
 todayText.innerText = `${now.getFullYear()}년 ${now.getMonth() + 1}월 ${now.getDate()}일 (${days[now.getDay()]})`;
 
-// 오늘 수업: 내 시간표(localStorage)에서 오늘 요일 수업을 교시 순서로
+// 오늘 수업: 내 시간표(localStorage)에서 오늘 요일 수업을 시간 순서로
 const todayClass = document.querySelector("#today-class");
 let myCourses = [];
 try {
@@ -23,8 +23,7 @@ for (let course of myCourses) {
 todaySlots.sort((a, b) => a.slot.start - b.slot.start);
 for (let item of todaySlots) {
   const p = document.createElement("p");
-  const periods = item.slot.start === item.slot.end ? `${item.slot.start}교시` : `${item.slot.start}~${item.slot.end}교시`;
-  p.innerText = `${periods} ${item.course.name} · ${item.course.room}`;
+  p.innerText = `${slotTime(item.slot)} ${item.course.name} · ${item.course.room}`;
   todayClass.appendChild(p);
 }
 if (todaySlots.length === 0) {

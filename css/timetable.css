@@ -81,6 +81,14 @@ button:hover {
   font-size: 0.9em;
 }
 
+/* 시각은 칸의 위쪽에 붙여 그 시간에 시작한다는 것을 보이게 */
+.period {
+  align-items: flex-start;
+  padding-top: 2px;
+  color: #666;
+  font-size: 0.8em;
+}
+
 .class-block {
   z-index: 1;
   margin: 2px;

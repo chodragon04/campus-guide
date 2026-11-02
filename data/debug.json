@@ -1,29 +1,14 @@
 {
-  "summary": [
-    "1 11월 1주: 등록된 식단표가 없습니다.",
-    "1 11월 2주: 등록된 식단표가 없습니다.",
-    "1 10월 4주: 등록된 식단표가 없습니다.",
-    "1 10월 5주: 등록된 식단표가 없습니다.",
-    "1 10월 3주: 등록된 식단표가 없습니다.",
-    "1 9월 3주: 등록된 식단표가 없습니다.",
-    "2 11월 1주: 등록된 식단표가 없습니다.",
-    "2 11월 2주: 등록된 식단표가 없습니다.",
-    "2 10월 4주: 등록된 식단표가 없습니다.",
-    "2 10월 5주: 등록된 식단표가 없습니다.",
-    "2 10월 3주: 등록된 식단표가 없습니다.",
-    "2 9월 3주: 등록된 식단표가 없습니다.",
-    "3 11월 1주: 등록된 식단표가 없습니다.",
-    "3 11월 2주: 등록된 식단표가 없습니다.",
-    "3 10월 4주: 등록된 식단표가 없습니다.",
-    "3 10월 5주: 등록된 식단표가 없습니다.",
-    "3 10월 3주: 등록된 식단표가 없습니다.",
-    "3 9월 3주: 등록된 식단표가 없습니다.",
-    "4 11월 1주: 등록된 식단표가 없습니다.",
-    "4 11월 2주: 등록된 식단표가 없습니다.",
-    "4 10월 4주: 등록된 식단표가 없습니다.",
-    "4 10월 5주: 등록된 식단표가 없습니다.",
-    "4 10월 3주: 등록된 식단표가 없습니다.",
-    "4 9월 3주: 등록된 식단표가 없습니다."
-  ],
-  "samples": {}
+  "2025-2-11-1": "<div class=\"dts_design\"> <div style=\"text-align: right;\"> </div> <div class=\"info_msg_area\"> <div class=\"info_msg\"> 등록된 식단표가 없습니다. </div> </div> </div>",
+  "2025-2-10-3": "<div class=\"dts_design\"> <div style=\"text-align: right;\"> </div> <div class=\"info_msg_area\"> <div class=\"info_msg\"> 등록된 식단표가 없습니다. </div> </div> </div>",
+  "2025-1-11-1": "<div class=\"dts_design\"> <div style=\"text-align: right;\"> </div> <div class=\"info_msg_area\"> <div class=\"info_msg\"> 등록된 식단표가 없습니다. </div> </div> </div>",
+  "links": [
+    "대학원입학 | http://admission.seoultech.ac.kr/cms/FR_CON/index.do?MENU_ID=850",
+    "식단 | https://www.seoultech.ac.kr/life/student/welfare/menu/",
+    "식단 | https://www.seoultech.ac.kr/life/student/welfare/menu/",
+    "대학원입시 | https://admission.seoultech.ac.kr/cms/FR_CON/index.do?MENU_ID=550",
+    "대학원입학 | http://admission.seoultech.ac.kr/cms/FR_CON/index.do?MENU_ID=850",
+    "식단표 | /life/student/food",
+    "식단 | /life/student/welfare/menu"
+  ]
 }

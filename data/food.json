@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-02T02:29:53.019Z",
+  "updatedAt": "2026-11-02T02:30:44.083Z",
   "week": [
     "2026-11-02",
     "2026-11-03",
@@ -15,19 +15,19 @@
       "success": 0,
       "days": {
         "2026-11-02": {
-          "error": "fetch failed (UNABLE_TO_VERIFY_LEAF_SIGNATURE)"
+          "error": "식단 없음 (휴무이거나 페이지 구조가 바뀜)"
         },
         "2026-11-03": {
-          "error": "fetch failed (UNABLE_TO_VERIFY_LEAF_SIGNATURE)"
+          "error": "식단 없음 (휴무이거나 페이지 구조가 바뀜)"
         },
         "2026-11-04": {
-          "error": "fetch failed (UNABLE_TO_VERIFY_LEAF_SIGNATURE)"
+          "error": "식단 없음 (휴무이거나 페이지 구조가 바뀜)"
         },
         "2026-11-05": {
-          "error": "fetch failed (UNABLE_TO_VERIFY_LEAF_SIGNATURE)"
+          "error": "식단 없음 (휴무이거나 페이지 구조가 바뀜)"
         },
         "2026-11-06": {
-          "error": "fetch failed (UNABLE_TO_VERIFY_LEAF_SIGNATURE)"
+          "error": "식단 없음 (휴무이거나 페이지 구조가 바뀜)"
         }
       }
     },

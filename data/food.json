@@ -1,5 +1,45 @@
 {
-  "updatedAt": "2026-11-02T00:00:00.000Z",
-  "week": ["2026-11-02", "2026-11-03", "2026-11-04", "2026-11-05", "2026-11-06"],
-  "cafeterias": []
+  "updatedAt": "2026-11-02T02:29:03.367Z",
+  "week": [
+    "2026-11-02",
+    "2026-11-03",
+    "2026-11-04",
+    "2026-11-05",
+    "2026-11-06"
+  ],
+  "cafeterias": [
+    {
+      "id": "sc2",
+      "name": "제2학생회관",
+      "type": "daily",
+      "success": 0,
+      "days": {
+        "2026-11-02": {
+          "error": "fetch failed"
+        },
+        "2026-11-03": {
+          "error": "fetch failed"
+        },
+        "2026-11-04": {
+          "error": "fetch failed"
+        },
+        "2026-11-05": {
+          "error": "fetch failed"
+        },
+        "2026-11-06": {
+          "error": "fetch failed"
+        }
+      }
+    },
+    {
+      "id": "technopark",
+      "name": "서울테크노파크",
+      "type": "weekly-image",
+      "success": 1,
+      "title": "11월 1주 식단표",
+      "uploaded": "2026.10.29",
+      "imageUrl": "https://www.seoultp.or.kr/common/attachfile/attachfileView.do?attachNo=00007425",
+      "link": "https://www.seoultp.or.kr/user/nd70791.do?View&boardNo=00004109"
+    }
+  ]
 }

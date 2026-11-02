@@ -2,27 +2,33 @@
 import fs from "node:fs";
 import * as cheerio from "cheerio";
 
-const PAGES = [
-  "https://www.seoultech.ac.kr/life/student/food?place=2&year=2026&month=11&week=1",
-  "https://www.seoultech.ac.kr/life/student/food?place=1&year=2026&month=11&week=1",
-  "https://housing.seoultech.ac.kr/livng/dining/?foodtype=kb",
-];
+const UA = { "User-Agent": "Mozilla/5.0 (campus-guide student project)" };
+const BASE = "https://www.seoultech.ac.kr/life/student/food";
 
-async function dump(url) {
-  try {
-    const res = await fetch(url, { headers: { "User-Agent": "Mozilla/5.0 (campus-guide student project)" }, signal: AbortSignal.timeout(15000) });
-    const html = await res.text();
-    const $ = cheerio.load(html);
-    const content = $("#contents, .contents, #sub, .sub_content").first();
-    const tables = $("table").map((i, t) => $.html(t).replace(/\s+/g, " ").slice(0, 3000)).get();
-    const selects = $("select").map((i, s) => $.html(s).replace(/\s+/g, " ").slice(0, 800)).get();
-    const text = (content.length ? content.text() : $("body").text()).replace(/\s+/g, " ").slice(0, 3000);
-    return { url, status: res.status, selects, tables, text };
-  } catch (err) {
-    return { url, error: `${err.message} ${err.cause ? err.cause.code || err.cause.message : ""}` };
-  }
+async function load(url, opts = {}) {
+  const res = await fetch(url, { ...opts, headers: { ...UA, ...(opts.headers || {}) }, signal: AbortSignal.timeout(15000) });
+  return { status: res.status, html: await res.text() };
+}
+
+function around(html) {
+  const $ = cheerio.load(html);
+  const form = $("select[name=place]").closest("form");
+  const area = form.parent();
+  return {
+    form: $.html(form).replace(/\s+/g, " ").slice(0, 1500),
+    after: $.html(area).replace(/\s+/g, " ").slice(0, 6000),
+    imgs: $("#sub img, .sub img, img").map((i, e) => $(e).attr("src")).get().filter((s) => !/res\/img|logo|btn|icon/.test(s)).slice(0, 20),
+    scripts: $("script").map((i, e) => $(e).attr("src") || $(e).html().replace(/\s+/g, " ").slice(0, 400)).get().filter((s) => /food|place|week|ajax|submit/i.test(s)),
+  };
 }
 
 const out = [];
-for (const url of PAGES) out.push(await dump(url));
+try {
+  const a = await load(`${BASE}?place=2&year=2026&month=11&week=1`);
+  out.push({ kind: "GET", status: a.status, ...around(a.html) });
+  const b = await load(BASE, { method: "POST", headers: { "Content-Type": "application/x-www-form-urlencoded" }, body: "place=2&year=2026&month=11&week=1" });
+  out.push({ kind: "POST", status: b.status, ...around(b.html) });
+} catch (err) {
+  out.push({ error: `${err.message} ${err.cause ? err.cause.code || err.cause.message : ""}` });
+}
 fs.writeFileSync("data/debug.json", JSON.stringify(out, null, 2));

@@ -55,10 +55,17 @@ function weekDates() {
 // ---------- 공통 ----------
 
 async function getHtml(url) {
-  const res = await fetch(url, {
-    headers: { "User-Agent": "Mozilla/5.0 (campus-guide student project)" },
-    signal: AbortSignal.timeout(15000),
-  });
+  let res;
+  try {
+    res = await fetch(url, {
+      headers: { "User-Agent": "Mozilla/5.0 (campus-guide student project)" },
+      signal: AbortSignal.timeout(15000),
+    });
+  } catch (err) {
+    // 네트워크 오류는 원인(cause)까지 기록해야 차단·인증서 문제를 구분할 수 있다
+    const cause = err.cause ? ` (${err.cause.code || err.cause.message})` : "";
+    throw new Error(`${err.message}${cause}`);
+  }
   if (!res.ok) throw new Error(`HTTP ${res.status}`);
   return await res.text();
 }

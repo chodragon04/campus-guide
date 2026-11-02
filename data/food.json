@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-02T02:30:44.083Z",
+  "updatedAt": "2026-11-02T02:31:33.613Z",
   "week": [
     "2026-11-02",
     "2026-11-03",
@@ -41,5 +41,32 @@
       "imageUrl": "https://www.seoultp.or.kr/common/attachfile/attachfileView.do?attachNo=00007425",
       "link": "https://www.seoultp.or.kr/user/nd70791.do?View&boardNo=00004109"
     }
-  ]
+  ],
+  "debug": {
+    "url": "https://www.seoultech.ac.kr/life/student/food2/?location_code=20&food_date=2026-11-02",
+    "options": [],
+    "tables": [
+      {
+        "class": "",
+        "parents": [
+          "body.#",
+          "html.#"
+        ],
+        "rows": [
+          "HTTP Status : 404 - 404 Not Found"
+        ]
+      },
+      {
+        "class": "",
+        "parents": [
+          "body.#",
+          "html.#"
+        ],
+        "rows": [
+          "Description /life/student/food2/"
+        ]
+      }
+    ],
+    "headings": []
+  }
 }

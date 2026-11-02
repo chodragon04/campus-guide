@@ -1,198 +1,37 @@
 [
   {
-    "url": "https://www.seoultech.ac.kr/life/student/food",
+    "url": "https://www.seoultech.ac.kr/life/student/food?place=2&year=2026&month=11&week=1",
     "status": 200,
-    "finalUrl": "https://www.seoultech.ac.kr/life/student/food",
-    "title": "서울과학기술대학교 - 대학생활 - 학생지원 - 식단표",
-    "links": [
-      "홍보관 | /intro/infobox",
-      "식단 | https://www.seoultech.ac.kr/life/student/welfare/menu/",
-      "도서관 | https://library.seoultech.ac.kr/",
-      "생활관 | https://domi.seoultech.ac.kr/",
-      "식단 | https://www.seoultech.ac.kr/life/student/welfare/menu/",
-      "홍보관 | /intro/infobox",
-      "식단표 | /life/student/food",
-      "정보마당 | http://serve.seoultech.ac.kr/bbs/notice/",
-      "학생처 추천 생활관생 모집 | /life/student/support/task7",
-      "체육관 | /life/student/welfare/gym",
-      "식단 | /life/student/welfare/menu",
-      "도서관 | /life/support/library",
-      "생활관 | /life/support/housing",
-      "공동실험실습관 | /life/support/lab",
-      "미술관 | /life/facility/art",
-      "학생 제1식당 | 1",
-      "학생 제2식당 | 2",
-      "테크노파크 식당 | 3",
-      "1 주 | 1",
-      "2 주 | 2",
-      "3 주 | 3",
-      "4 주 | 4",
-      "5 주 | 5",
-      "6 주 | 6"
-    ],
-    "forms": [
-      {
-        "action": "",
-        "inputs": [
-          "select[name=place] value= type=",
-          "select[name=year] value= type=",
-          "select[name=month] value= type=",
-          "select[name=week] value= type=",
-          "input[name=undefined] value= 조회  type=submit"
-        ]
-      }
+    "selects": [
+      "<select name=\"place\" style=\"height:25px;\" title=\"식당 선택\"> <option value=\"1\">학생 제1식당</option> <option value=\"2\" selected=\"\">학생 제2식당</option> <option value=\"3\">테크노파크 식당</option> <option value=\"4\">큐브레스토랑</option> </select>",
+      "<select name=\"year\" style=\"height:25px;\" title=\"년도 선택\"> <option value=\"2026\" selected=\"\">2026 년</option> <option value=\"2025\">2025 년</option> </select>",
+      "<select name=\"month\" style=\"height:25px;\" title=\"월 선택\"> <option value=\"1\">1 월</option> <option value=\"2\">2 월</option> <option value=\"3\">3 월</option> <option value=\"4\">4 월</option> <option value=\"5\">5 월</option> <option value=\"6\">6 월</option> <option value=\"7\">7 월</option> <option value=\"8\">8 월</option> <option value=\"9\">9 월</option> <option value=\"10\">10 월</option> <option value=\"11\" selected=\"\">11 월</option> <option value=\"12\">12 월</option> </select>",
+      "<select name=\"week\" style=\"height:25px;\" title=\"주 선택\"> <option value=\"1\" selected=\"\">1 주</option> <option value=\"2\">2 주</option> <option value=\"3\">3 주</option> <option value=\"4\">4 주</option> <option value=\"5\">5 주</option> <option value=\"6\">6 주</option> </select>"
     ],
     "tables": [],
-    "iframes": [],
-    "scripts": [
-      "/site/www/js/simple_menu_module.js",
-      "https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/js/swiper.js",
-      "$(document).ready(function() { $(\".menu .link1\").each(function(index) { $(this).attr(\"target\" , \"_blank\"); $(this).attr(\"title\" , \"새창으로 이동\"); // $(this).append(\"<img class='bg1' alt='' src='/site/ko/r",
-      "$(\"#title\").attr(\"style\", \"background-image:url('\"+$(\"#lnb .bg\").attr(\"src\")+\"')\"); $(document).ready(function() { $(\"#lnb\").css(\"min-height\", $(\"#sub\").innerHeight()); $(\".lnb .link1\").each(function(",
-      "$(function() { $.post(\"/hcm/access/log_ajax.jsp?menu=7571\") .done(function(ret) { console.log(\"menu = 7571, accesslog ret = \"+ ret); }); })"
-    ],
-    "snippet": ""
+    "text": " 대학생활 학사일정 학부 학사일정 대학원 학사일정 학사안내 학부학사 교육과정 수강신청 휴학/복학 학사경고 제적/자퇴 계절학기 재입학 전과(부) 학년수료 및 졸업 재수강 시험과 성적 출석인정 국내 타 대학 등 학점교류 학적부기재사항정정 다전공(복수(부)전공, 연계융합전공, 학생설계전공, 마이크로디그리, 프락시스디그리) 대학원학사 휴학/복학 수강신청 제적/자퇴 전과 재입학 학위자격시험 수료 요건 수료 후 등록 영구수료생 등록 창업과정 교과목 이수 및 학점 인정 수업시간표 학·석사연계과정 특별교육과정 교직과정 건축학인증 공학인증 봉사활동교과목 교과목안내 교과목 운영일지 신청방법 및 이수절차 대학생활안내 증명서발급 ST나눔공헌단 ST나눔공헌단 소개 봉사활동과목소개 정보마당 병무·예비군 학생병무안내 예비군안내 학생군사교육단 육군학군단(ROTC) 공군학군단(AF ROTC) 장학제도 장학제도안내 맞춤형장학조회 학자금대출 등록제도 등록안내 등록금 납부 안내 등록금 분할납부 안내 등록금 반환 안내 학생지원 학생자치기구 학생회 동아리 학생지원제도 ST신입생 적응지원 멘토링 대학생멘토링 장학금 학생자치기구 활동 지원 학교생활지원 학생처 추천 생활관생 모집 학생증발급 학교경영자 배상책임보험 시설이용 편의/복지 편의시설정보 체육관 식단 도서관 생활관 공동실험실습관 보건진료소 학생상담센터 인권센터 장애학생지원센터 평생교육원 SeoulTech어린이집 미술관 학생활동 통합캘린더 $(\"#title\").attr(\"style\", \"background-image:url('\"+$(\"#lnb .bg\").attr(\"src\")+\"')\"); $(document).ready(function() { $(\"#lnb\").css(\"min-height\", $(\"#sub\").innerHeight()); $(\".lnb .link1\").each(function(index) { $(this).attr(\"target\" , \"_blank\"); $(this).attr(\"title\" , \"새창으로 이동\"); $(this).append(\"<img class='bg1' alt='' src='/site/ko/res/img/link_off.png'>\"); }); /* $(\".lnb .link1\").hover(function() { $(this).children(\".bg1\").attr(\"src\", \"/site/ko/res/img/link_on.png\"); }, function() { $(this).children(\".bg1\").attr(\"src\", \"/site/ko/res/img/link_off.png\"); }); */ $(\".lnb .link2\").each(function(index) { $(this).attr(\"target\" , \"_blank\"); $(this).attr(\"title\" , \"새창으로 이동\"); $(this).append(\"<img class='bg2' alt='' src='/site/ko/res/img/link_off.png'>\"); }); $(window).resize(); $(\"#lnb .lnb .a1\").focus(function () { $(\".navi .n1\").removeClass(\"on1\"); }); }); 식단표 식단표 홈 대학생활 학생지원 식단표 .dts_design table tR:FIRST-CHILD td{background:#f7f7f7; font-weight:bold; } .dts_design table td{padding: 5px 7px} .food_area table { width:100%; } 학생 제1식당 학생 제2식당 테크노파크 식당 큐브레스토랑 2026 년 2025 년 1 월 2 월 3 월 4 월 5 월 6 월 7 월 8 월 9 월 10 월 11 월 12 월 1 주 2 주 3 주 4 주 5 주 6 주 .info_msg_area {position: relative; margin: 30px auto; width: 605px; height: 300px; background-image: url('/common/images/info_msg_bg.png');} .info_msg_area .info_msg {position: absolute; left: 145px; top: 110px; border: 0px solid gray; width: 430px; height: 130px; /*line-height: 130px;*/ font-size: 12pt; text-align: center; vertical-align: middle; font-weight: bold;} @media only screen and (max-width:640px) { .info_msg_area {width:auto; height:227px; background:url('/common/images/info_msg_bg2.png') no-repeat 100% 0; border:10px solid #00387f; padding:0 10px; border-radius:5px;} .info_msg_area .info_msg {position:relative; left:0; top:130px; width:auto; height:auto;} } 등록된 식단표가 없습니다. #hcms_print_area { border:1px solid rgb(229,229,229); width:100%; height:30px; line-height:30px; background-color:rgb(238,238,238); margin-top:20px; margin-bottom:20px; } #hcms_print_area .text { margin-left:10px; margin-right:10px; } #hcms_print_area input { float:right; margin-right:10px; cursor: pointer; vertical-align:middle; margin-top:3px; } #hcms_print_area .clear { clear:both; } function print_content() { doPrint(document.getElem"
   },
   {
-    "url": "https://housing.seoultech.ac.kr/livng/dining",
+    "url": "https://www.seoultech.ac.kr/life/student/food?place=1&year=2026&month=11&week=1",
     "status": 200,
-    "finalUrl": "https://housing.seoultech.ac.kr/livng/dining",
-    "title": "서울과학기술대학교 생활관, SeoulTech Office of Housing < 생활관 생활 < 식당이용안내",
-    "links": [
-      "생활관 | /",
-      "생활관 소개 SeoulTech Housing | /about",
-      "생활관 소개 | /about/greetings",
-      "생활관 연혁 | /about/history",
-      "생활관 현황 | /about/overview",
-      "생활관 연락처 | /about/organization",
-      "생활관 위치 | /about/location",
-      "생활관 규정 | /about/regulation",
-      "성림(유학생거주) | /facilities/sunglim",
-      "생활관비 안내 | /procedures/fees",
-      "생활관 생활 Living in dorm | /livng",
-      "식당이용안내 | /livng/dining",
-      "정보 및 소식 News & Informatoin | /information",
-      "교외주거서비스 | /information/offcampus",
-      "생활관 소식 | /information/news",
-      "기숙사신청 및 거주정보 | https://suis.seoultech.ac.kr/",
-      "생활관 | /",
-      "생활관 소개 | /about/greetings",
-      "생활관 연혁 | /about/history",
-      "생활관 현황 | /about/overview",
-      "생활관 연락처 | /about/organization",
-      "생활관 위치 | /about/location",
-      "생활관 규정 | /about/regulation",
-      "성림(유학생거주) | /facilities/sunglim",
-      "생활관비 안내 | /procedures/fees",
-      "식당이용안내 | /livng/dining",
-      "교외주거서비스 | /information/offcampus",
-      "생활관 소식 | /information/news",
-      "기숙사신청 및 거주정보 | https://suis.seoultech.ac.kr/",
-      "식당이용안내 | /livng/dining",
-      "생활관 소개 | /about",
-      "생활관 생활 | /livng",
-      "정보 및 소식 | /information",
-      "식당이용안내 | /livng/dining",
-      "생활관 생활 | /livng",
-      "KB학사 | /livng/dining/?foodtype=kb",
-      "성림학사 | /livng/dining/?foodtype=sunglim",
-      "수림학사 | /livng/dining/?foodtype=surim",
-      "식품공학과 | https://food.seoultech.ac.kr",
-      "주택도시대학원 | https://gsh.seoultech.ac.kr",
-      "공동실험실습관 | http://www.seoultechlab.kr",
-      "도서관 | https://library.seoultech.ac.kr",
-      "미술관 | https://art.seoultech.ac.kr",
-      "생활관 | https://domi.seoultech.ac.kr",
-      "지식재산교육선도대학사업단 | https://ipe.seoultech.ac.kr"
+    "selects": [
+      "<select name=\"place\" style=\"height:25px;\" title=\"식당 선택\"> <option value=\"1\" selected=\"\">학생 제1식당</option> <option value=\"2\">학생 제2식당</option> <option value=\"3\">테크노파크 식당</option> <option value=\"4\">큐브레스토랑</option> </select>",
+      "<select name=\"year\" style=\"height:25px;\" title=\"년도 선택\"> <option value=\"2026\" selected=\"\">2026 년</option> <option value=\"2025\">2025 년</option> </select>",
+      "<select name=\"month\" style=\"height:25px;\" title=\"월 선택\"> <option value=\"1\">1 월</option> <option value=\"2\">2 월</option> <option value=\"3\">3 월</option> <option value=\"4\">4 월</option> <option value=\"5\">5 월</option> <option value=\"6\">6 월</option> <option value=\"7\">7 월</option> <option value=\"8\">8 월</option> <option value=\"9\">9 월</option> <option value=\"10\">10 월</option> <option value=\"11\" selected=\"\">11 월</option> <option value=\"12\">12 월</option> </select>",
+      "<select name=\"week\" style=\"height:25px;\" title=\"주 선택\"> <option value=\"1\" selected=\"\">1 주</option> <option value=\"2\">2 주</option> <option value=\"3\">3 주</option> <option value=\"4\">4 주</option> <option value=\"5\">5 주</option> <option value=\"6\">6 주</option> </select>"
     ],
-    "forms": [
-      {
-        "action": "/site/www/search/index.jsp",
-        "inputs": [
-          "input[name=nx_query] value= type=text"
-        ]
-      },
-      {
-        "action": "",
-        "inputs": [
-          "input[name=foodtype] value=kb type=hidden",
-          "input[name=year] value=2026 type=hidden",
-          "input[name=month] value=10 type=hidden",
-          "input[name=day] value=26 type=hidden",
-          "input[name=undefined] value= type=image"
-        ]
-      },
-      {
-        "action": "",
-        "inputs": [
-          "input[name=foodtype] value=kb type=hidden",
-          "input[name=year] value=2026 type=hidden",
-          "input[name=month] value=11 type=hidden",
-          "input[name=day] value=9 type=hidden",
-          "input[name=undefined] value= type=image"
-        ]
-      }
-    ],
+    "tables": [],
+    "text": " 대학생활 학사일정 학부 학사일정 대학원 학사일정 학사안내 학부학사 교육과정 수강신청 휴학/복학 학사경고 제적/자퇴 계절학기 재입학 전과(부) 학년수료 및 졸업 재수강 시험과 성적 출석인정 국내 타 대학 등 학점교류 학적부기재사항정정 다전공(복수(부)전공, 연계융합전공, 학생설계전공, 마이크로디그리, 프락시스디그리) 대학원학사 휴학/복학 수강신청 제적/자퇴 전과 재입학 학위자격시험 수료 요건 수료 후 등록 영구수료생 등록 창업과정 교과목 이수 및 학점 인정 수업시간표 학·석사연계과정 특별교육과정 교직과정 건축학인증 공학인증 봉사활동교과목 교과목안내 교과목 운영일지 신청방법 및 이수절차 대학생활안내 증명서발급 ST나눔공헌단 ST나눔공헌단 소개 봉사활동과목소개 정보마당 병무·예비군 학생병무안내 예비군안내 학생군사교육단 육군학군단(ROTC) 공군학군단(AF ROTC) 장학제도 장학제도안내 맞춤형장학조회 학자금대출 등록제도 등록안내 등록금 납부 안내 등록금 분할납부 안내 등록금 반환 안내 학생지원 학생자치기구 학생회 동아리 학생지원제도 ST신입생 적응지원 멘토링 대학생멘토링 장학금 학생자치기구 활동 지원 학교생활지원 학생처 추천 생활관생 모집 학생증발급 학교경영자 배상책임보험 시설이용 편의/복지 편의시설정보 체육관 식단 도서관 생활관 공동실험실습관 보건진료소 학생상담센터 인권센터 장애학생지원센터 평생교육원 SeoulTech어린이집 미술관 학생활동 통합캘린더 $(\"#title\").attr(\"style\", \"background-image:url('\"+$(\"#lnb .bg\").attr(\"src\")+\"')\"); $(document).ready(function() { $(\"#lnb\").css(\"min-height\", $(\"#sub\").innerHeight()); $(\".lnb .link1\").each(function(index) { $(this).attr(\"target\" , \"_blank\"); $(this).attr(\"title\" , \"새창으로 이동\"); $(this).append(\"<img class='bg1' alt='' src='/site/ko/res/img/link_off.png'>\"); }); /* $(\".lnb .link1\").hover(function() { $(this).children(\".bg1\").attr(\"src\", \"/site/ko/res/img/link_on.png\"); }, function() { $(this).children(\".bg1\").attr(\"src\", \"/site/ko/res/img/link_off.png\"); }); */ $(\".lnb .link2\").each(function(index) { $(this).attr(\"target\" , \"_blank\"); $(this).attr(\"title\" , \"새창으로 이동\"); $(this).append(\"<img class='bg2' alt='' src='/site/ko/res/img/link_off.png'>\"); }); $(window).resize(); $(\"#lnb .lnb .a1\").focus(function () { $(\".navi .n1\").removeClass(\"on1\"); }); }); 식단표 식단표 홈 대학생활 학생지원 식단표 .dts_design table tR:FIRST-CHILD td{background:#f7f7f7; font-weight:bold; } .dts_design table td{padding: 5px 7px} .food_area table { width:100%; } 학생 제1식당 학생 제2식당 테크노파크 식당 큐브레스토랑 2026 년 2025 년 1 월 2 월 3 월 4 월 5 월 6 월 7 월 8 월 9 월 10 월 11 월 12 월 1 주 2 주 3 주 4 주 5 주 6 주 .info_msg_area {position: relative; margin: 30px auto; width: 605px; height: 300px; background-image: url('/common/images/info_msg_bg.png');} .info_msg_area .info_msg {position: absolute; left: 145px; top: 110px; border: 0px solid gray; width: 430px; height: 130px; /*line-height: 130px;*/ font-size: 12pt; text-align: center; vertical-align: middle; font-weight: bold;} @media only screen and (max-width:640px) { .info_msg_area {width:auto; height:227px; background:url('/common/images/info_msg_bg2.png') no-repeat 100% 0; border:10px solid #00387f; padding:0 10px; border-radius:5px;} .info_msg_area .info_msg {position:relative; left:0; top:130px; width:auto; height:auto;} } 등록된 식단표가 없습니다. #hcms_print_area { border:1px solid rgb(229,229,229); width:100%; height:30px; line-height:30px; background-color:rgb(238,238,238); margin-top:20px; margin-bottom:20px; } #hcms_print_area .text { margin-left:10px; margin-right:10px; } #hcms_print_area input { float:right; margin-right:10px; cursor: pointer; vertical-align:middle; margin-top:3px; } #hcms_print_area .clear { clear:both; } function print_content() { doPrint(document.getElem"
+  },
+  {
+    "url": "https://housing.seoultech.ac.kr/livng/dining/?foodtype=kb",
+    "status": 200,
+    "selects": [],
     "tables": [
-      {
-        "class": "t-table",
-        "parents": [
-          "div.table-wrap#",
-          "div.t1#",
-          "div.food#",
-          "div.food_container#",
-          "div.#contents"
-        ],
-        "rows": [
-          "th:학기",
-          "th:입장 시간 || th:퇴장 시간",
-          "th:구분 || th:평일 || th:주말, 공휴일 || th:평일 || th:주말, 공휴일",
-          "td:조식 || td:07:30~08:50 || td:08:00~08:50 || td:09:00 || td:09:00",
-          "td:중식 || td:11:30~13:30 || td:12:30~13:20 || td:14:00 || td:13:30",
-          "td:석식 || td:17:30~18:40 || td:17:30~18:20 || td:18:50 || td:18:30"
-        ]
-      },
-      {
-        "class": "t-table",
-        "parents": [
-          "div.table-wrap#",
-          "div.t1#",
-          "div.food#",
-          "div.food_container#",
-          "div.#contents"
-        ],
-        "rows": [
-          "th:방학",
-          "th:입장 시간 || th:퇴장 시간",
-          "th:구분 || th:평일 || th:주말, 공휴일 || th:평일 || th:주말, 공휴일",
-          "td:조식 || td:08:00~08:50 || td:08:00~08:50 || td:09:00 || td:09:00",
-          "td:중식 || td:12:00~13:20 || td:12:30~13:20 || td:13:30 || td:13:30",
-          "td:석식 || td:17:30~18:20 || td:17:30~18:20 || td:18:30 || td:18:30"
-        ]
-      },
-      {
-        "class": "chang",
-        "parents": [
-          "div.t4#",
-          "div.food#",
-          "div.food_container#",
-          "div.#contents",
-          "div.sub#"
-        ],
-        "rows": [
-          "th:2일 || th:월 || td:아침 : 소고기두부탕국, 삼치데리야끼조림, 계란말이, 고추무침, 배추김치/로투스, 선택식 ",
-          "th:3일 || th:화 || td:아침 : 물떡어묵탕, 닭갈비, 도토리묵무침, 시금치나물, 배추김치/야쿠르트, 선택식 - 빵",
-          "th:4일 || th:수 || td:아침 : 연두부계란국, 쇠불고기, 알감자조림, 취나물무침, 깍두기/미니팝콘, 선택식 - 빵",
-          "th:5일 || th:목 || td:아침 : 얼큰수제비국, 돈육짜장볶음, 땅콩조림, 오이탕탕이, 깍두기/현미볼강정, 선택식 -",
-          "th:6일 || th:금 || td:아침 : 근대된장국, 훈제오리볶음, 모듬전, 부추무침, 배추김치/야쿠르트, 선택식 - 빵/",
-          "th:7일 || th:토 || td:아침 : 크림스프, 함박스테이크, 고구마범벅, 그린샐러드, 배추김치/야쿠르트, 점심 : 소"
-        ]
-      }
+      "<table class=\"t-table\"> <tbody><tr> <th class=\"title\" colspan=\"5\">학기</th> </tr> <tr> <th class=\"sub-title\" colspan=\"3\">입장 시간</th> <th class=\"sub-title\" colspan=\"2\">퇴장 시간</th> </tr> <tr> <th class=\"t-head\">구분</th> <th class=\"t-head\">평일</th> <th class=\"t-head holiday\">주말, 공휴일</th> <th class=\"t-head\">평일</th> <th class=\"t-head holiday\">주말, 공휴일</th> </tr> <tr> <td class=\"category\">조식</td> <td>07:30~08:50</td> <td>08:00~08:50</td> <td>09:00</td> <td>09:00</td> </tr> <tr> <td class=\"category\">중식</td> <td>11:30~13:30</td> <td>12:30~13:20</td> <td>14:00</td> <td>13:30</td> </tr> <tr> <td class=\"category\">석식</td> <td>17:30~18:40</td> <td>17:30~18:20</td> <td>18:50</td> <td>18:30</td> </tr> </tbody></table>",
+      "<table class=\"t-table\"> <tbody><tr> <th class=\"title2\" colspan=\"5\">방학</th> </tr> <tr> <th class=\"sub-title2\" colspan=\"3\">입장 시간</th> <th class=\"sub-title2\" colspan=\"2\">퇴장 시간</th> </tr> <tr> <th class=\"t-head2\">구분</th> <th class=\"t-head2\">평일</th> <th class=\"t-head2 holiday\">주말, 공휴일</th> <th class=\"t-head2\">평일</th> <th class=\"t-head2 holiday\">주말, 공휴일</th> </tr> <tr> <td class=\"category\">조식</td> <td>08:00~08:50</td> <td>08:00~08:50</td> <td>09:00</td> <td>09:00</td> </tr> <tr> <td class=\"category\">중식</td> <td>12:00~13:20</td> <td>12:30~13:20</td> <td>13:30</td> <td>13:30</td> </tr> <tr> <td class=\"category\">석식</td> <td>17:30~18:20</td> <td>17:30~18:20</td> <td>18:30</td> <td>18:30</td> </tr> </tbody></table>",
+      "<table class=\"chang\"> <tbody><tr> <th style=\"background:#fff; \">2일</th> <th style=\"\">월</th> <td> <font>아침 :</font> 소고기두부탕국, 삼치데리야끼조림, 계란말이, 고추무침, 배추김치/로투스, <br> &nbsp;&nbsp; 선택식 - 빵/요플레/씨리얼/우유 <br> <font>점심 :</font> 김밥볶음밥, 우동장국, 매운떡볶이, 순대찜, 양상추샐러드, 배추김치/쿨피스 <br> <font>저녁 :</font> 잡곡밥, 열무된장국, 안동찜닭, 꽃맛살메추리알샐러드, 무생채, 배추김치/참쌀설병 </td> </tr> <tr> <th style=\"background:#fff; \">3일</th> <th style=\"\">화</th> <td> <font>아침 :</font> 물떡어묵탕, 닭갈비, 도토리묵무침, 시금치나물, 배추김치/야쿠르트, <br> &nbsp;&nbsp; 선택식 - 빵/삶은계란/씨리얼/우유 <br> <font>점심 :</font> 해물짬뽕, 모듬튀김, 해초무침, 배추김치, 야쿠르트, 추가밥 <br> <font>저녁 :</font> 소고기볶음밥, 아욱국, 계란장조림, 쫄면야채무침, 단무지, 배추김치/야쿠르트 </td> </tr> <tr> <th style=\"background:#fff; \">4일</th> <th style=\"\">수</th> <td> <font>아침 :</font> 연두부계란국, 쇠불고기, 알감자조림, 취나물무침, 깍두기/미니팝콘, <br> &nbsp;&nbsp; 선택식 - 빵/바나나/씨리얼/우유 <br> <font>점심 :</font> 잡곡밥, 얼갈이된장국, 닭매운조림, 부추전, 숙주나물, 깍두기//미니꼬북칩초코 <br> <font>저녁 :</font> 잡곡밥, 콩나물국, 제육볶음, 옥수수전, 양배추쌈, 깍두기/랑그드샤쿠키 </td> </tr> <tr> <th style=\"background:#fff; \">5일</th> <th style=\"\">목</th> <td> <font>아침 :</font> 얼큰수제비국, 돈육짜장볶음, 땅콩조림, 오이탕탕이, 깍두기/현미볼강정, <br> &nbsp;&nbsp; 선택식 - 빵/요플레/씨리얼/우유 <br> <font>점심 :</font> 어묵우동, 찐만두, 케이준치킨샐러드, 단무지, 배추김치, 미니찐빵/추가밥 <br> <font>저녁 :</font> 참치생야채비빔밥, 유부장국, 두부조림, 고로케, 배추김치, 미니푸딩 </td> </tr> <tr> <th style=\"background:#fff; \">6일</th> <th style=\"\">금</th> <td> <font>아침 :</font> 근대된장국, 훈제오리볶음, 모듬전, 부추무침, 배추김치/야쿠르트, <br> &nbsp;&nbsp; 선택식 - 빵/삶은계란/씨리얼/우유 <br> <font>점심 :</font> 잡곡밥, 계란파국, 치즈불닭, 나쵸샐러드, 미역줄기볶음, 깍두기/야쿠르트 <br> <font>저녁 :</font> 잡곡밥, 부대찌개, 생선까스, 청포묵무침, 김자반, 깍두기/야쿠르트 </td> </tr> <tr> <th style=\"background:#fff; \">7일</th> <th style=\"\">토</th> <td> <font>아침 :</font> 크림스프, 함박스테이크, 고구마범벅, 그린샐러드, 배추김치/야쿠르트, <br> <font>점심 :</font> 소고기콩나물밥, 청국장찌개, 미트볼조림, 참나물무침, 도시락김, 깍두기/야쿠르트 <br> <font>저녁 :</font> 잡곡밥, 닭개장, 해물완자전, 감자채볶음, 야채스틱&amp;쌈장, 깍두기/야쿠르트 </td> </tr> <tr> <th style=\"background:#fff; color:#ea7664;\">8일</th> <th style=\"color:#ea7664;\">일</th> <td> <font>아침 :</font> 시금치된장국, 꽁치무조림, 버섯볶음, 콩자반, 배추김치/야쿠르트, <br> <font>점심 :</font> 잡곡밥, 미역국, 김치제육볶음, 온두부, 콩나물무침, 배추김치/야쿠르트 <br> <font>저녁 :</font> 잡곡밥, 우삼겹된장찌개, 너비아니구이, 깐풍소스볼어묵볶음, 얼갈이무침, 배추김치/야쿠르트 </td> </tr> </tbody></table>"
     ],
-    "iframes": [],
-    "scripts": [
-      "// hover 했을 때 나오는 이미지 숨기기 $(\".m_img_on\").show(); $(\".m_img\").hide(); $(\".m_open_sub\").show(); // 모바일 버튼 $(\".m_menu_btn\").toggle( function () { $(this).find(\".m_open\").hide(); $(this).find(\".m_close\")."
-    ],
-    "snippet": "nts\">\r\n\r\n\r\n\t\t\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n<div class=\"wrap_title\">\r\n\t<div style=\"float:left;\">\r\n\t\t<img alt=\"\" class=\"tit_icon\" style=\"margin-top:5px; margin-right:8px;\" src=\"/common/images/navi_icon.jpg\"  />\r\n\t\t<b style=\"font-size:18px;\">식당이용안내 </b>\r\n\t</div>\r\n\t<div class=\"location\">\r\n\t\t<a class='home' href='/'>홈</a><span>&nbsp;</span><a class='home' href='/livng'>생활관 생활</a><span>&nbsp;</span><strong>식당이용안내 </strong>\r\n\t</div>\r\n\t<div style=\"clear:both;\"></div>\r\n</div>\r\n\t\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n<link rel=\"stylesheet\" type=\"text/css\" href=\"/site/domi/res/css/food.css\" />\r\n<div class=\"food_container\">\r\n\t<div class=\"food\">\r\n\t\t<div class=\"doublec\">\r\n\t\t\t<div></div>\r\n\t\t\t<div></div>\r\n\t\t</div>\r\n\t\t<div class=\"ti15l t20\">식당이용안내</div>\r\n\t\t\r\n\t\t<div class=\"mt20\">\r\n\t\t\t<div class=\"co\">\r\n\t\t\t\t<div></div>\r\n\t\t\t</div>\r\n\t\t\t\r\n\t\t\t<div class=\"ti15l t18\">식당이용시간</div>\r\n\t\t</div>\r\n\t\t\r\n\t\t<div class=\"t1\">\r\n\t\t\t  <div class=\"table-wrap\">\r\n\t\t\t    <table class=\"t-table\">\r\n\t\t\t      <tr>\r\n\t\t\t        <th class=\"title\" colspan=\"5\">학기</th>\r\n\t\t\t      </tr>\r\n\t\t\t\r\n\t\t\t      <tr>\r\n\t\t\t        <th class=\"sub-title\" colspan=\"3\">입장 시간</th>\r\n\t\t\t        <th class=\"sub-title\" colspan=\"2\">퇴장 시간</th>\r\n\t\t\t      </tr>\r\n\t\t\t\r\n\t\t\t      <tr>\r\n\t\t\t        <th class=\"t-head\">구분</th>\r\n\t\t\t        <th class=\"t-head\">평일</th>\r\n\t\t\t        <th class=\"t-head holiday\">주말, 공휴일</th>\r\n\t\t\t        <th class=\"t-head\">평일</th>\r\n\t\t\t        <th class=\"t-head holiday\">주말, 공휴일</th>\r\n\t\t\t      </tr>\r\n\t\t\t\r\n\t\t\t      <tr>\r\n\t\t\t        <td class=\"category\">조식</td>\r\n\t\t\t        <td>07:30~08:50</td>\r\n\t\t\t        <td>08:00~08:50</td>\r\n\t\t\t        <td>09:00</td>\r\n\t\t\t        <td>09:00</td>\r\n\t\t\t      </tr>\r\n\t\t\t\r\n\t\t\t      <tr>\r\n\t\t\t        <td class=\"category\">중식</td>\r\n\t\t\t        <td>11:30~13:30</td>\r\n\t\t\t        <td>12:30~13:20</td>\r\n\t\t\t        <td>14:00</td>\r\n\t\t\t        <td>13:30</td>\r\n\t\t\t      </tr>\r\n\t\t\t\r\n\t\t\t      <tr>\r\n\t\t\t        <td class=\"category\">석식</td>\r\n\t\t\t        <td>17:30~18:40</td>\r\n\t\t\t        <td>17:30~18:20</td>\r\n\t\t\t        <td>18:50</td>\r\n\t\t\t        <td>18:30</td>\r\n\t\t\t      </tr>\r\n\t\t\t    </table>\r\n\t\t\t  </div>\r\n\t\t\t\r\n\t\t\t  <!-- 방학 -->\r\n\t\t\t  <div class=\"table-wrap\">\r\n\t\t\t    <table class=\"t-table\">\r\n\t\t\t      <tr>\r\n\t\t\t        <th class=\"title2\" colspan=\"5\">방학</th>\r\n\t\t\t      </tr>\r\n\t\t\t\r\n\t\t\t      <tr>\r\n\t\t\t        <th class=\"sub-title2\" colspan=\"3\">입장 시간</th>\r\n\t\t\t        <th class=\"sub-title2\" colspan=\"2\">퇴장 시간</th>\r\n\t\t\t      </tr>\r\n\t\t\t\r\n\t\t\t      <tr>\r\n\t\t\t        <th class=\"t-head2\">구분</th>\r\n\t\t\t        <th class=\"t-head2\">평일</th>\r\n\t\t\t        <th class=\"t-head2 holiday\">주말, 공휴일</th>\r\n\t\t\t        <th class=\"t-head2\">평일</th>\r\n\t\t\t        <th class=\"t-head2 holiday\">주말, 공휴일</th>\r\n\t\t\t      </tr>\r\n\t\t\t\r\n\t\t\t      <tr>\r\n\t\t\t        <td class=\"category\">조식</td>\r\n\t\t\t        <td>08:00~08:50</td>\r\n\t\t\t        <td>08:00~08:50</td>\r\n\t\t\t        <td>09:00</td>\r\n\t\t\t        <td>09:00</td>\r\n\t\t\t      </tr>\r\n\t\t\t\r\n\t\t\t      <tr>\r\n\t\t\t        <td class=\"category\">중식</td>\r\n\t\t\t        <td>12:00~13:20</td>\r\n\t\t\t        <td>12:30~13:20</td>\r\n\t\t\t        <td>13:30</td>"
+    "text": " 생활관 생활 Living in dorm 사생수칙 생활점검 전입신고 냉장고 반입 신청 시설고장신고 결핵 바로 알기 식당이용안내 우편/택배 냉난방/인터넷/기타 //lnb 클릭시 선택효과 $(\".lnb1 li\").on(\"click\", function() { $(\".lnb1 li\").eq(0).removeClass(\"on1\"); $(this).removeClass(\"on\").addClass(\"on1\"); $(\".lnb1 li\").not(this).removeClass(\"on1\"); }); 생활관 생활식당이용안내 생활관 소개시설안내입사/퇴사 안내생활관 생활정보 및 소식통합정보사생수칙생활점검전입신고냉장고 반입 신청시설고장신고결핵 바로 알기식당이용안내 우편/택배냉난방/인터넷/기타 $(\".navi .link\").each(function(index) { $(this).attr(\"target\" , \"_blank\"); $(this).attr(\"title\" , \"새창으로 이동\"); $(this).append(\"<img class='bg' alt='' src='/site/job2/res/img/link_on2.png'>\"); }); $(\".navi .n1\").click(function () { var text = $(this).attr(\"id\"); if ($(this).children(\".a1\").attr(\"class\") == \"a1\") { $(\".navi .a1\").removeClass(\"on1\"); $(this).children(\".a1\").addClass(\"on1\"); $(\".navi .n2\").removeClass(\"on1\"); $(\".navi .d\"+ text ).addClass(\"on1\"); } else { $(this).children(\".a1\").removeClass(\"on1\"); $(\".navi .n2\").removeClass(\"on1\"); } }); $('.navilist').slick({ slidesToShow : 5, swsraToSlide : true, infinite: false, arrows : false, variableWidth: true, responsive : [ { breakpoint : 768, settings : { slidesToShow : 2 } }, { breakpoint : 480, settings : { slidesToShow : 1 } } ] }); 식당이용안내 홈 생활관 생활 식당이용안내 식당이용안내 식당이용시간 학기 입장 시간 퇴장 시간 구분 평일 주말, 공휴일 평일 주말, 공휴일 조식 07:30~08:50 08:00~08:50 09:00 09:00 중식 11:30~13:30 12:30~13:20 14:00 13:30 석식 17:30~18:40 17:30~18:20 18:50 18:30 방학 입장 시간 퇴장 시간 구분 평일 주말, 공휴일 평일 주말, 공휴일 조식 08:00~08:50 08:00~08:50 09:00 09:00 중식 12:00~13:20 12:30~13:20 13:30 13:30 석식 17:30~18:20 17:30~18:20 18:30 18:30 학사별 이용식당 KB학사 식당 불암학사/KB학사/창명학사 사생 전화번호 02-970-9164 성림학사 식당 성림학사/누리학사 사생 전화번호 070-8290-2388 수림학사 식당 수림학사 사생 전화번호 070-4617-3348 식당 출입 수칙 - 식당입구에 배치된 '지문인식기'에 지문을 인식시켜 본인 확인 후 식사 - 식사 시간대에 외부인과 동반출입 할 수 없음 - 다른 기숙사 식당을 이용할 수 없음 - 신청한 끼니가 아닌 다른 끼니를 이용할수 없음 ※ 출입 수칙 등 위반 적발시 상벌회의 회부, 퇴사조치 될 수 있음 식단표 KB학사 성림학사 수림학사 2026년 11월 1주 2일 월 아침 : 소고기두부탕국, 삼치데리야끼조림, 계란말이, 고추무침, 배추김치/로투스, 선택식 - 빵/요플레/씨리얼/우유 점심 : 김밥볶음밥, 우동장국, 매운떡볶이, 순대찜, 양상추샐러드, 배추김치/쿨피스 저녁 : 잡곡밥, 열무된장국, 안동찜닭, 꽃맛살메추리알샐러드, 무생채, 배추김치/참쌀설병 3일 화 아침 : 물떡어묵탕, 닭갈비, 도토리묵무침, 시금치나물, 배추김치/야쿠르트, 선택식 - 빵/삶은계란/씨리얼/우유 점심 : 해물짬뽕, 모듬튀김, 해초무침, 배추김치, 야쿠르트, 추가밥 저녁 : 소고기볶음밥, 아욱국, 계란장조림, 쫄면야채무침, 단무지, 배추김치/야쿠르트 4일 수 아침 : 연두부계란국, 쇠불고기, 알감자조림, 취나물무침, 깍두기/미니팝콘, 선택식 - 빵/바나나/씨리얼/우유 점심 : 잡곡밥, 얼갈이된장국, 닭매운조림, 부추전, 숙주나물, 깍두기//미니꼬북칩초코 저녁 : 잡곡밥, 콩나물국, 제육볶음, 옥수수전, 양배추쌈, 깍두기/랑그드샤쿠키 5일 목 아침 : 얼큰수제비국, 돈육짜장볶음, 땅콩조림, 오이탕탕이, 깍두기/현미볼강정, 선택식 - 빵/요플레/씨리얼/우유 점심 : 어묵우동, 찐만두, 케이준치킨샐러드, 단무지, 배추김치, 미니찐빵/추가밥 저녁 : 참치생야채비빔밥, 유부장국, 두부조림, 고로케, 배추김치, 미니푸딩 6일 금 아침 : 근대된장국, 훈제오리볶음, 모듬전, 부추무침, 배추김치/야쿠르트, 선택식 - 빵/삶은계란/씨리얼/우유 점심 : 잡곡밥, 계란파국, 치즈불닭, 나쵸샐러드, 미역줄기볶음, 깍두기/야쿠르트 저녁 : 잡곡밥, 부대찌개, 생선까스, 청포묵무침, 김자반, 깍두기/야쿠르트 7일 토 아침 : 크림스프, 함박스테이크, 고구마범벅, 그린샐러드, 배추김치/야쿠르트, 점심 : 소고기콩나물밥, 청국장찌개, 미트볼조림, 참나물무침, 도시락김, 깍두기/야쿠르트 저녁 : 잡곡밥, 닭개장, 해물완자전, 감자채볶음, 야채스틱&쌈장, 깍두기/야쿠르트 8일 일 아침 : 시금치된장국, 꽁치무조림, 버섯볶음, 콩자반, 배추김치/야쿠르트, 점심 : 잡곡밥, 미역국, 김치제육볶음, 온두부, 콩나물무침, 배추김치/야쿠르트 저녁 : 잡곡밥, 우삼겹된장찌개, 너비아니구이, 깐풍소스볼어묵볶음, 얼갈이무침, 배추김치/야쿠르트 ※ 식자재 수급 사정에 의해 식단이 변경될 수 있습니다. $(document).ready(fun"
   }
 ]

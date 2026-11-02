@@ -1,0 +1,40 @@
+name: 학식 크롤링
+
+on:
+  schedule:
+    - cron: "0 21 * * 0-4"   # 월~금 06:00 (한국 시간)
+    - cron: "0 2 * * 1-5"    # 월~금 11:00 (한국 시간), 늦게 올라온 식단 반영
+  workflow_dispatch:          # Actions 탭에서 직접 실행
+  push:
+    paths:
+      - "scripts/**"
+      - ".github/workflows/crawl-food.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: crawl-food
+  cancel-in-progress: false
+
+jobs:
+  crawl:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - run: npm ci
+
+      - run: npm run crawl
+
+      - name: 변경된 식단 커밋
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/food.json
+          git diff --staged --quiet || (git commit -m "학식 데이터 업데이트" && git pull --rebase && git push)

@@ -1,1 +1,68 @@
 /* food.html 전용 스타일 */
+#day-tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+#day-tabs button {
+  padding: 8px 16px;
+  border: 1px solid #1a3d7c;
+  border-radius: 20px;
+  background-color: #fff;
+  color: #1a3d7c;
+  cursor: pointer;
+}
+
+#day-tabs button.active {
+  background-color: #1a3d7c;
+  color: #fff;
+}
+
+.food-card {
+  margin-bottom: 20px;
+  padding: 16px 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.food-card h2 {
+  margin-bottom: 8px;
+  font-size: 1.2em;
+}
+
+.meal h3 {
+  margin: 12px 0 4px;
+  font-size: 1em;
+  color: #1a3d7c;
+}
+
+.meal ul {
+  list-style: none;
+}
+
+.meal li {
+  padding: 6px 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.price {
+  color: #888;
+  font-size: 0.9em;
+}
+
+.side {
+  color: #555;
+  font-size: 0.9em;
+}
+
+.food-card img {
+  max-width: 100%;
+  margin-top: 8px;
+}
+
+.notice,
+#updated {
+  color: #888;
+  font-size: 0.9em;
+}

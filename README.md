@@ -18,12 +18,23 @@
 
 HTML, CSS, JavaScript(DOM, 이벤트), 카카오 지도 API, Geolocation API, localStorage, fetch(JSON), GitHub Pages
 
+## 학식 자동 수집
+
+`scripts/crawl-food.js`가 학교 홈페이지와 서울테크노파크 게시판에서 이번 주(월~금) 식단을 가져와 `data/food.json`에 저장합니다. GitHub Actions(`.github/workflows/crawl-food.yml`)가 평일 06:00, 11:00(한국 시간)에 실행하고, 바뀐 내용이 있으면 자동으로 커밋합니다. 브라우저에서 학교 사이트를 직접 불러오면 CORS로 막히기 때문에 이 방식을 사용합니다.
+
+- 식당 추가: `scripts/crawl-food.js`의 `CAFETERIAS` 배열에 학식 페이지의 `location_code`를 한 줄 추가
+- 수동 실행: GitHub 저장소의 Actions 탭 → "학식 크롤링" → Run workflow
+
+> 크롤링 방식은 과기대 디스코드 봇의 `menucrawler.py`(Python)를 참고해 JavaScript로 옮기고 수정했습니다.
+
 ## 폴더 구조
 
 ```
 css/     공통·페이지별 스타일
 js/      공통·페이지별 스크립트
 data/    건물, 학식 JSON 데이터
+scripts/ 학식 크롤러 (Node.js)
+.github/ GitHub Actions 설정
 images/  이미지
 ```
 
@@ -33,3 +44,4 @@ images/  이미지
 | --- | --- |
 | 2026-11-02 | 프로젝트 폴더 구조와 빈 페이지 템플릿 생성 |
 | 2026-11-02 | 카카오 지도 SDK 연결, 학교 중심 지도 표시 |
+| 2026-11-02 | 학식 크롤러를 Python에서 JavaScript로 변환, GitHub Actions 자동 수집, 학식 페이지·홈 요약 구현 |

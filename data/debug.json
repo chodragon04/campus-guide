@@ -1,34 +1,22 @@
 {
-  "/js/fsp/sz_fsp_json.js.jsp": {
+  "cookie": "있음",
+  "less@/js/common.js": "setLessCommboToDb = function(ymst, obj) {\r\n\t\t\ttry {\r\n\t\t\t\tvar data = {\r\n\t\t\t\t\tSP_YMST :ymst\r\n\t\t\t\t};\r\n\t\t\t\tfsp.clear();\r\n\t\t\t\tfsp.addSearch(\"admin:LESS_SEARCH\");\r\n\t\t\t\tfsp.callService(\r\n\t\t\t\t\t\"\"\r\n\t\t\t\t\t, \"\"\r\n\t\t\t\t\t, data\r\n\t\t\t\t\t, function(errorCode, rData){\r\n\t\t\t\t\t\ttry {\r\n\t\t\t\t\t\t\tvar ds =  rData.ds_less;\r\n\r\n\t\t\t\t\t\t\tif( ds.length > 0 ) {\r\n\t\t\t\t\t\t\t\tfor(var i = 0; i < ds.length; i++) {\r\n\t\t\t\t\t\t\t\t\t$('#' + obj).append($('<option>').val(ds[i].ORGN_CD).text(' ' + setLabel(ds[i].ORGN_NM, ds[i].ORGN_ENM)));\t\r\n\t\t\t\t\t\t\t\t}\r\n\t\t\t\t\t\t\t}\r\n\t\t\t\t\t\t} catch( ee ) {\r\n\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t}\r\n\t\t\t\t\t}// end success \r\n\t\t\t\t);\r\n\t\t\t} catch( eee ) {\r\n\t\t\t\tfsp.common.jsError(\"#fn_init\" , eee);\r\n\t\t\t}\r\n\t};\r\n\t\r\n\t$.setClasCommboToDb = function(ymst, lessCd, dnDiv, obj) {\r\n\t\ttry {\r\n\t\t\tvar data = {\r\n\t\t\t\tSP_YMST :ymst\r\n\t\t\t\t, LESS_CD : lessCd\r\n\t\t\t\t, DN_DIV : dnDiv\r\n\t\t\t};\r\n\t\t\tfsp.clear();\r\n\t\t\tfsp.addSearch(\"admin:CLAS_SEARCH\");\r\n\t\t\tfsp.callService(\r\n\t\t\t\t\"\"\r\n\t\t\t\t, \"\"\r\n\t\t\t\t, data\r\n\t\t\t\t, function(errorCode, rData){\r\n\t\t\t\t\ttry {\r\n\t\t\t\t\t\tvar ds =  rData.ds_subjCls;\r\n\r\n\t\t\t\t\t\tif( ds.length > 0 ) {\r\n\t\t\t\t\t\t\tfor(var i = 0; i < ds.length; i++) {\r\n\t\t\t\t\t\t\t\t$('#' + obj).append($('<option>').val(ds[i].CLAS).text(ds[i].CLAS));\t\r\n\t\t\t\t\t\t\t}\r\n\t\t\t\t\t\t}\r\n\t\t\t\t\t} catch( ee ) {\r\n\t\t\t\t\t\t\r\n\t\t\t\t\t}\r\n\t\t\t\t}// end success \r\n\t\t\t);\r\n\t\t} catch( eee ) {\r\n\t\t\tfsp.common.jsError(\"#fn_init\" , eee);\r\n\t\t}\r\n\t};\r\n\t\r\n\t$.viewFutureDotwTm = function(ymst, subjCd, lectNumb) {\r\n\t\t\r\n\t\twindow.open(\"/view/futureTimeTable.jsp?YMST=\" + ymst + \"&SUBJ_CD=\" + subjCd + \"&LECT_NUMB=\" + lectNumb , \"Tim",
+  "byName": {
     "status": 200,
-    "lines": [
-      "fsp.serverUrl = '/JSONMain';\r",
-      "\t\t, url : fsp.serverUrl\r",
-      "\t\t\t\topener.parent.window.location = \"/view/login.jsp\";\r",
-      "\t\t\twindow.location = \"/view/login.jsp\";\r",
-      "\t\tvar bd = document.documentElement ? document.documentElement : document.body;\r"
-    ]
+    "keys": [
+      "ErrorMsg",
+      "ErrorCode"
+    ],
+    "rowCount": 0,
+    "sample": []
   },
-  "/js/stech/const.js": {
+  "all": {
     "status": 200,
-    "lines": [
-      "\t\t\tCONTEXT_PATH : '/'\r"
-    ]
-  },
-  "/js/stech/grid.js": {
-    "status": 200,
-    "lines": [
-      "\t\t\turl:fsp.serverUrl\r",
-      "\t$.fn.reloadGrid = function(reqData) {\r",
-      "\t\t\t\t,url:fsp.serverUrl,\r",
-      "\t\t\t\t).trigger(\"reloadGrid\");\r",
-      "$.gridheader = {\r",
-      "\t\t\tscheduleList : [\r"
-    ]
-  },
-  "less": {
-    "status": 404,
-    "type": "text/html;charset=UTF-8",
-    "sample": "<!DOCTYPE HTML PUBLIC \"-//IETF//DTD HTML 2.0//EN\">\r\n<HTML>\r\n\t<HEAD>\r\n\t\t<TITLE>404 Not Found</TITLE>\r\n<!--style> <H1 {font-family:Courier,Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:22px;} H2 {font-family:Courier,Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:16px;} H3 {font-family:Courier,Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:14px;} BODY {font-family:Courier,Tahoma,Arial,sans-serif;color:black;background-color:white;} B {font-family:Courier,Tahoma,Arial,sans-serif;color:white;background-color:#525D76;} P {font-family:Courier,Tahoma,Arial,sans-serif;background:white;color:black;font-size:12px;}A {color : black;}A.name {color : black;}HR {color : #525D76;}></style-->\r\n\t</HEAD>\r\n\t<BODY>\r\n\t\t<hr align=\"center\" noShade>\r\n\t\t<br>\r\n\t\t<TABLE cellSpacing=\"5\" cellPadding=\"5\" width=\"100%\" bgColor=\"#ffffff\" border=\"0\">\r\n\t\t\t<TR>\r\n\t\t\t\t<TD bgColor=\"#b2b2b2\">\r\n\t\t\t\t\t<STRONG><FONT size=\"5\"><FONT face=\"Courier\">&nbsp; </FONT><FONT face=\"Arial\">HTTP Status&nbsp;<FONT color=\"#6600cc\">:&nbsp;404 - 404 Not Found</FONT></FONT></FONT></STRONG>\r\n\t\t\t\t</TD>\r\n\t\t\t</TR>\r\n\t\t</TABLE>\r\n\t\t<br>\r\n\t\t<hr align=\"center\" noShade>\r\n\t\t<br>\r\n\t\t<TABLE cellSpacing=\"5\" cellPadding=\"5\" width=\"100%\" bgColor=\"#ffffff\" border=\"0\">\r\n\t\t\t<TR>\r\n\t\t\t\t<TD vAlign=\"top\" align=\"right\" width=\"140\" bgColor=\"#e0e0e0\">\r\n\t\t\t\t\t<P align=\"center\"><FONT face=\"Courier\" color=\"#0a246a\" size=\"4\"><STRONG>Description</STRONG></FONT></P>\r\n\t\t\t\t</TD>\r\n\t\t\t\t<TD bgColor=\"#f0e0e0\">\r\n\t\t\t\t\t<DIV align=\"left\"><PRE><FONT face=Courier size=4>/json/combo/20262/less/less.json</FONT></PRE></DIV>\r\n\t\t\t\t</TD>\r\n\t\t\t</TR>\r\n\t\t</TABLE>\r\n\t</BODY>\r\n</HTML>"
+    "keys": [
+      "ErrorMsg",
+      "ErrorCode"
+    ],
+    "rowCount": 0,
+    "sample": []
   }
 }

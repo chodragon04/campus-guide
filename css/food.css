@@ -1,12 +1,28 @@
 /* food.html 전용 스타일 */
+.food-group {
+  margin-bottom: 36px;
+}
+
+.food-group > h2 {
+  margin-bottom: 4px;
+  font-size: 1.3em;
+}
+
+.hint {
+  margin-bottom: 12px;
+  color: #666;
+  font-size: 0.9em;
+}
+
 #day-tabs {
   display: flex;
+  flex-wrap: wrap;
   gap: 8px;
-  margin-bottom: 20px;
+  margin-bottom: 16px;
 }
 
 #day-tabs button {
-  padding: 8px 16px;
+  padding: 8px 14px;
   border: 1px solid #1a3d7c;
   border-radius: 20px;
   background-color: #fff;
@@ -19,41 +35,68 @@
   color: #fff;
 }
 
+/* 카드를 화면 너비에 맞춰 여러 줄로 배치 */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+}
+
 .food-card {
-  margin-bottom: 20px;
   padding: 16px 20px;
   border: 1px solid #ddd;
   border-radius: 8px;
+  background-color: #fff;
 }
 
-.food-card h2 {
+.food-card h3 {
   margin-bottom: 8px;
-  font-size: 1.2em;
+  font-size: 1.15em;
 }
 
-.meal h3 {
-  margin: 12px 0 4px;
-  font-size: 1em;
+.meal {
+  padding: 8px 0;
+  border-top: 1px solid #f0f0f0;
+}
+
+.meal h4 {
+  margin-bottom: 2px;
   color: #1a3d7c;
+  font-size: 0.95em;
 }
 
-.meal ul {
+.meal p {
+  color: #333;
+  font-size: 0.95em;
+  line-height: 1.5;
+}
+
+.brand {
+  border-top: 1px solid #f0f0f0;
+}
+
+.brand summary {
+  padding: 8px 0;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.brand ul {
   list-style: none;
+  padding-bottom: 8px;
 }
 
-.meal li {
-  padding: 6px 0;
-  border-bottom: 1px solid #f0f0f0;
+.brand li {
+  display: flex;
+  justify-content: space-between;
+  padding: 4px 0 4px 12px;
+  font-size: 0.95em;
 }
 
 .price {
   color: #888;
-  font-size: 0.9em;
-}
-
-.side {
-  color: #555;
-  font-size: 0.9em;
+  white-space: nowrap;
+  margin-left: 8px;
 }
 
 .food-card img {

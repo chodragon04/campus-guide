@@ -12,20 +12,22 @@ const todayFood = document.querySelector("#today-food");
 fetch("data/food.json")
   .then((res) => res.json())
   .then((data) => {
+    // 생활관 식당의 오늘 중식
     let found = false;
     for (let cafeteria of data.cafeterias) {
       if (cafeteria.type !== "daily") continue;
       const day = cafeteria.days[todayKey];
-      if (!day || day.error || day.lunch.length === 0) continue;
+      if (!day) continue;
+      const lunch = day.meals.find((meal) => meal.name === "중식");
+      if (!lunch) continue;
       const p = document.createElement("p");
-      const names = day.lunch.map((menu) => menu.name).join(", ");
-      p.innerText = `${cafeteria.name} 중식: ${names}`;
+      p.innerText = `${cafeteria.name} 중식: ${lunch.items.join(", ")}`;
       todayFood.appendChild(p);
       found = true;
     }
     if (!found) {
       const p = document.createElement("p");
-      p.innerText = "오늘 등록된 학식이 없습니다.";
+      p.innerText = "오늘 등록된 생활관 식단이 없습니다.";
       todayFood.appendChild(p);
     }
     const a = document.createElement("a");

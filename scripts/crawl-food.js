@@ -76,6 +76,23 @@ function clean(text) {
 
 // ---------- 학교 학식 페이지 ----------
 
+// [임시 디버그] 페이지 구조 요약: 식당 선택 메뉴, 표 목록
+let debugInfo = null;
+function describePage($, url) {
+  const options = [];
+  $("select option, a[href*='location_code']").each((i, el) => {
+    options.push(`${clean($(el).text())} | ${$(el).attr("value") || $(el).attr("href")}`);
+  });
+  const tables = [];
+  $("table").each((i, t) => {
+    const parents = $(t).parents().slice(0, 4).map((j, p) => `${p.tagName}.${($(p).attr("class") || "").trim()}#${$(p).attr("id") || ""}`).get();
+    const rows = $(t).find("tr").slice(0, 4).map((j, tr) => clean($(tr).text()).replace(/\s+/g, " ").slice(0, 120)).get();
+    tables.push({ class: $(t).attr("class") || "", parents: parents, rows: rows });
+  });
+  const headings = $("h2, h3, h4, .tit, .title").slice(0, 20).map((i, h) => clean($(h).text()).slice(0, 60)).get();
+  return { url: url, options: options.slice(0, 40), tables: tables.slice(0, 10), headings: headings };
+}
+
 // menucrawler.py의 student_cafeteria_2()와 같은 선택자 사용
 // 중식: .dts_design > div:nth-child(5) > div:nth-child(2) 의 표
 // 석식: .dts_design > div:nth-child(5) > div:nth-child(4) 의 표
@@ -105,6 +122,7 @@ async function crawlCafeteriaDay(cafeteria, date) {
   const lunch = parseMenuTable($, ".dts_design > div:nth-child(5) > div:nth-child(2) table");
   const dinner = parseMenuTable($, ".dts_design > div:nth-child(5) > div:nth-child(4) table");
   if (lunch.length === 0 && dinner.length === 0) {
+    if (!debugInfo) debugInfo = describePage($, url);
     throw new Error("식단 없음 (휴무이거나 페이지 구조가 바뀜)");
   }
   return { lunch, dinner };
@@ -200,6 +218,7 @@ async function main() {
     week: dates,
     cafeterias: cafeterias,
   };
+  if (debugInfo) data.debug = debugInfo;
   fs.writeFileSync(OUTPUT, JSON.stringify(data, null, 2) + "\n");
   console.log(`${OUTPUT} 저장 완료`);
 }

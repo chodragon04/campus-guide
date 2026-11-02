@@ -2,34 +2,28 @@
 import fs from "node:fs";
 import * as cheerio from "cheerio";
 
-const UA = { "User-Agent": "Mozilla/5.0 (campus-guide student project)" };
 const BASE = "https://www.seoultech.ac.kr/life/student/food";
+const out = { summary: [], samples: {} };
+const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
-async function load(url, opts = {}) {
-  const res = await fetch(url, { ...opts, headers: { ...UA, ...(opts.headers || {}) }, signal: AbortSignal.timeout(15000) });
-  return { status: res.status, html: await res.text() };
-}
-
-function around(html) {
-  const $ = cheerio.load(html);
-  const form = $("select[name=place]").closest("form");
-  const area = form.parent().parent();
-  return {
-    form: $.html(form).replace(/\s+/g, " ").slice(0, 1500),
-    after: $.html(area).replace(/\s+/g, " ").replace(/<select[\s\S]*?<\/select>/g, "[select]").slice(0, 9000),
-    siblings: form.parent().nextAll().map((i, e) => $.html(e).replace(/\s+/g, " ").slice(0, 3000)).get().slice(0, 6),
-    imgs: $("#sub img, .sub img, img").map((i, e) => $(e).attr("src")).get().filter((s) => !/res\/img|logo|btn|icon/.test(s)).slice(0, 20),
-    scripts: $("script").map((i, e) => $(e).attr("src") || $(e).html().replace(/\s+/g, " ").slice(0, 400)).get().filter((s) => /food|place|week|ajax|submit/i.test(s)),
-  };
-}
-
-const out = [];
-try {
-  const a = await load(`${BASE}?place=2&year=2026&month=11&week=1`);
-  out.push({ kind: "GET", status: a.status, ...around(a.html) });
-  const b = await load(BASE, { method: "POST", headers: { "Content-Type": "application/x-www-form-urlencoded" }, body: "place=2&year=2026&month=11&week=1" });
-  out.push({ kind: "POST", status: b.status, ...around(b.html) });
-} catch (err) {
-  out.push({ error: `${err.message} ${err.cause ? err.cause.code || err.cause.message : ""}` });
+for (const place of [1, 2, 3, 4]) {
+  for (const [month, week] of [[11, 1], [11, 2], [10, 4], [10, 5], [10, 3], [9, 3]]) {
+    const url = `${BASE}?place=${place}&year=2026&month=${month}&week=${week}`;
+    try {
+      const res = await fetch(url, { headers: { "User-Agent": "Mozilla/5.0 (campus-guide student project)" }, signal: AbortSignal.timeout(15000) });
+      const $ = cheerio.load(await res.text());
+      const area = $(".dts_design");
+      const empty = area.find(".info_msg").text().trim();
+      out.summary.push(`${place} ${month}월 ${week}주: ${empty || "표 있음 (" + area.find("table").length + ")"}`);
+      if (!empty && !out.samples[place]) {
+        area.find("style, form, select").remove();
+        out.samples[place] = { url, html: $.html(area).replace(/\s+/g, " ").slice(0, 12000) };
+      }
+    } catch (err) {
+      out.summary.push(`${place} ${month}월 ${week}주: 오류 ${err.message}`);
+    }
+    await sleep(500);
+    if (out.samples[place]) break;
+  }
 }
 fs.writeFileSync("data/debug.json", JSON.stringify(out, null, 2));

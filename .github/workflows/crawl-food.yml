@@ -6,7 +6,7 @@ on:
   workflow_dispatch:          # Actions 탭에서 직접 실행
   push:
     paths:
-      - "scripts/**"
+      - "scripts/crawl-food.js"
       - ".github/workflows/crawl-food.yml"
 
 permissions:

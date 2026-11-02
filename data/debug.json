@@ -1,0 +1,198 @@
+[
+  {
+    "url": "https://www.seoultech.ac.kr/life/student/food",
+    "status": 200,
+    "finalUrl": "https://www.seoultech.ac.kr/life/student/food",
+    "title": "서울과학기술대학교 - 대학생활 - 학생지원 - 식단표",
+    "links": [
+      "홍보관 | /intro/infobox",
+      "식단 | https://www.seoultech.ac.kr/life/student/welfare/menu/",
+      "도서관 | https://library.seoultech.ac.kr/",
+      "생활관 | https://domi.seoultech.ac.kr/",
+      "식단 | https://www.seoultech.ac.kr/life/student/welfare/menu/",
+      "홍보관 | /intro/infobox",
+      "식단표 | /life/student/food",
+      "정보마당 | http://serve.seoultech.ac.kr/bbs/notice/",
+      "학생처 추천 생활관생 모집 | /life/student/support/task7",
+      "체육관 | /life/student/welfare/gym",
+      "식단 | /life/student/welfare/menu",
+      "도서관 | /life/support/library",
+      "생활관 | /life/support/housing",
+      "공동실험실습관 | /life/support/lab",
+      "미술관 | /life/facility/art",
+      "학생 제1식당 | 1",
+      "학생 제2식당 | 2",
+      "테크노파크 식당 | 3",
+      "1 주 | 1",
+      "2 주 | 2",
+      "3 주 | 3",
+      "4 주 | 4",
+      "5 주 | 5",
+      "6 주 | 6"
+    ],
+    "forms": [
+      {
+        "action": "",
+        "inputs": [
+          "select[name=place] value= type=",
+          "select[name=year] value= type=",
+          "select[name=month] value= type=",
+          "select[name=week] value= type=",
+          "input[name=undefined] value= 조회  type=submit"
+        ]
+      }
+    ],
+    "tables": [],
+    "iframes": [],
+    "scripts": [
+      "/site/www/js/simple_menu_module.js",
+      "https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/js/swiper.js",
+      "$(document).ready(function() { $(\".menu .link1\").each(function(index) { $(this).attr(\"target\" , \"_blank\"); $(this).attr(\"title\" , \"새창으로 이동\"); // $(this).append(\"<img class='bg1' alt='' src='/site/ko/r",
+      "$(\"#title\").attr(\"style\", \"background-image:url('\"+$(\"#lnb .bg\").attr(\"src\")+\"')\"); $(document).ready(function() { $(\"#lnb\").css(\"min-height\", $(\"#sub\").innerHeight()); $(\".lnb .link1\").each(function(",
+      "$(function() { $.post(\"/hcm/access/log_ajax.jsp?menu=7571\") .done(function(ret) { console.log(\"menu = 7571, accesslog ret = \"+ ret); }); })"
+    ],
+    "snippet": ""
+  },
+  {
+    "url": "https://housing.seoultech.ac.kr/livng/dining",
+    "status": 200,
+    "finalUrl": "https://housing.seoultech.ac.kr/livng/dining",
+    "title": "서울과학기술대학교 생활관, SeoulTech Office of Housing < 생활관 생활 < 식당이용안내",
+    "links": [
+      "생활관 | /",
+      "생활관 소개 SeoulTech Housing | /about",
+      "생활관 소개 | /about/greetings",
+      "생활관 연혁 | /about/history",
+      "생활관 현황 | /about/overview",
+      "생활관 연락처 | /about/organization",
+      "생활관 위치 | /about/location",
+      "생활관 규정 | /about/regulation",
+      "성림(유학생거주) | /facilities/sunglim",
+      "생활관비 안내 | /procedures/fees",
+      "생활관 생활 Living in dorm | /livng",
+      "식당이용안내 | /livng/dining",
+      "정보 및 소식 News & Informatoin | /information",
+      "교외주거서비스 | /information/offcampus",
+      "생활관 소식 | /information/news",
+      "기숙사신청 및 거주정보 | https://suis.seoultech.ac.kr/",
+      "생활관 | /",
+      "생활관 소개 | /about/greetings",
+      "생활관 연혁 | /about/history",
+      "생활관 현황 | /about/overview",
+      "생활관 연락처 | /about/organization",
+      "생활관 위치 | /about/location",
+      "생활관 규정 | /about/regulation",
+      "성림(유학생거주) | /facilities/sunglim",
+      "생활관비 안내 | /procedures/fees",
+      "식당이용안내 | /livng/dining",
+      "교외주거서비스 | /information/offcampus",
+      "생활관 소식 | /information/news",
+      "기숙사신청 및 거주정보 | https://suis.seoultech.ac.kr/",
+      "식당이용안내 | /livng/dining",
+      "생활관 소개 | /about",
+      "생활관 생활 | /livng",
+      "정보 및 소식 | /information",
+      "식당이용안내 | /livng/dining",
+      "생활관 생활 | /livng",
+      "KB학사 | /livng/dining/?foodtype=kb",
+      "성림학사 | /livng/dining/?foodtype=sunglim",
+      "수림학사 | /livng/dining/?foodtype=surim",
+      "식품공학과 | https://food.seoultech.ac.kr",
+      "주택도시대학원 | https://gsh.seoultech.ac.kr",
+      "공동실험실습관 | http://www.seoultechlab.kr",
+      "도서관 | https://library.seoultech.ac.kr",
+      "미술관 | https://art.seoultech.ac.kr",
+      "생활관 | https://domi.seoultech.ac.kr",
+      "지식재산교육선도대학사업단 | https://ipe.seoultech.ac.kr"
+    ],
+    "forms": [
+      {
+        "action": "/site/www/search/index.jsp",
+        "inputs": [
+          "input[name=nx_query] value= type=text"
+        ]
+      },
+      {
+        "action": "",
+        "inputs": [
+          "input[name=foodtype] value=kb type=hidden",
+          "input[name=year] value=2026 type=hidden",
+          "input[name=month] value=10 type=hidden",
+          "input[name=day] value=26 type=hidden",
+          "input[name=undefined] value= type=image"
+        ]
+      },
+      {
+        "action": "",
+        "inputs": [
+          "input[name=foodtype] value=kb type=hidden",
+          "input[name=year] value=2026 type=hidden",
+          "input[name=month] value=11 type=hidden",
+          "input[name=day] value=9 type=hidden",
+          "input[name=undefined] value= type=image"
+        ]
+      }
+    ],
+    "tables": [
+      {
+        "class": "t-table",
+        "parents": [
+          "div.table-wrap#",
+          "div.t1#",
+          "div.food#",
+          "div.food_container#",
+          "div.#contents"
+        ],
+        "rows": [
+          "th:학기",
+          "th:입장 시간 || th:퇴장 시간",
+          "th:구분 || th:평일 || th:주말, 공휴일 || th:평일 || th:주말, 공휴일",
+          "td:조식 || td:07:30~08:50 || td:08:00~08:50 || td:09:00 || td:09:00",
+          "td:중식 || td:11:30~13:30 || td:12:30~13:20 || td:14:00 || td:13:30",
+          "td:석식 || td:17:30~18:40 || td:17:30~18:20 || td:18:50 || td:18:30"
+        ]
+      },
+      {
+        "class": "t-table",
+        "parents": [
+          "div.table-wrap#",
+          "div.t1#",
+          "div.food#",
+          "div.food_container#",
+          "div.#contents"
+        ],
+        "rows": [
+          "th:방학",
+          "th:입장 시간 || th:퇴장 시간",
+          "th:구분 || th:평일 || th:주말, 공휴일 || th:평일 || th:주말, 공휴일",
+          "td:조식 || td:08:00~08:50 || td:08:00~08:50 || td:09:00 || td:09:00",
+          "td:중식 || td:12:00~13:20 || td:12:30~13:20 || td:13:30 || td:13:30",
+          "td:석식 || td:17:30~18:20 || td:17:30~18:20 || td:18:30 || td:18:30"
+        ]
+      },
+      {
+        "class": "chang",
+        "parents": [
+          "div.t4#",
+          "div.food#",
+          "div.food_container#",
+          "div.#contents",
+          "div.sub#"
+        ],
+        "rows": [
+          "th:2일 || th:월 || td:아침 : 소고기두부탕국, 삼치데리야끼조림, 계란말이, 고추무침, 배추김치/로투스, 선택식 ",
+          "th:3일 || th:화 || td:아침 : 물떡어묵탕, 닭갈비, 도토리묵무침, 시금치나물, 배추김치/야쿠르트, 선택식 - 빵",
+          "th:4일 || th:수 || td:아침 : 연두부계란국, 쇠불고기, 알감자조림, 취나물무침, 깍두기/미니팝콘, 선택식 - 빵",
+          "th:5일 || th:목 || td:아침 : 얼큰수제비국, 돈육짜장볶음, 땅콩조림, 오이탕탕이, 깍두기/현미볼강정, 선택식 -",
+          "th:6일 || th:금 || td:아침 : 근대된장국, 훈제오리볶음, 모듬전, 부추무침, 배추김치/야쿠르트, 선택식 - 빵/",
+          "th:7일 || th:토 || td:아침 : 크림스프, 함박스테이크, 고구마범벅, 그린샐러드, 배추김치/야쿠르트, 점심 : 소"
+        ]
+      }
+    ],
+    "iframes": [],
+    "scripts": [
+      "// hover 했을 때 나오는 이미지 숨기기 $(\".m_img_on\").show(); $(\".m_img\").hide(); $(\".m_open_sub\").show(); // 모바일 버튼 $(\".m_menu_btn\").toggle( function () { $(this).find(\".m_open\").hide(); $(this).find(\".m_close\")."
+    ],
+    "snippet": "nts\">\r\n\r\n\r\n\t\t\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n<div class=\"wrap_title\">\r\n\t<div style=\"float:left;\">\r\n\t\t<img alt=\"\" class=\"tit_icon\" style=\"margin-top:5px; margin-right:8px;\" src=\"/common/images/navi_icon.jpg\"  />\r\n\t\t<b style=\"font-size:18px;\">식당이용안내 </b>\r\n\t</div>\r\n\t<div class=\"location\">\r\n\t\t<a class='home' href='/'>홈</a><span>&nbsp;</span><a class='home' href='/livng'>생활관 생활</a><span>&nbsp;</span><strong>식당이용안내 </strong>\r\n\t</div>\r\n\t<div style=\"clear:both;\"></div>\r\n</div>\r\n\t\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n<link rel=\"stylesheet\" type=\"text/css\" href=\"/site/domi/res/css/food.css\" />\r\n<div class=\"food_container\">\r\n\t<div class=\"food\">\r\n\t\t<div class=\"doublec\">\r\n\t\t\t<div></div>\r\n\t\t\t<div></div>\r\n\t\t</div>\r\n\t\t<div class=\"ti15l t20\">식당이용안내</div>\r\n\t\t\r\n\t\t<div class=\"mt20\">\r\n\t\t\t<div class=\"co\">\r\n\t\t\t\t<div></div>\r\n\t\t\t</div>\r\n\t\t\t\r\n\t\t\t<div class=\"ti15l t18\">식당이용시간</div>\r\n\t\t</div>\r\n\t\t\r\n\t\t<div class=\"t1\">\r\n\t\t\t  <div class=\"table-wrap\">\r\n\t\t\t    <table class=\"t-table\">\r\n\t\t\t      <tr>\r\n\t\t\t        <th class=\"title\" colspan=\"5\">학기</th>\r\n\t\t\t      </tr>\r\n\t\t\t\r\n\t\t\t      <tr>\r\n\t\t\t        <th class=\"sub-title\" colspan=\"3\">입장 시간</th>\r\n\t\t\t        <th class=\"sub-title\" colspan=\"2\">퇴장 시간</th>\r\n\t\t\t      </tr>\r\n\t\t\t\r\n\t\t\t      <tr>\r\n\t\t\t        <th class=\"t-head\">구분</th>\r\n\t\t\t        <th class=\"t-head\">평일</th>\r\n\t\t\t        <th class=\"t-head holiday\">주말, 공휴일</th>\r\n\t\t\t        <th class=\"t-head\">평일</th>\r\n\t\t\t        <th class=\"t-head holiday\">주말, 공휴일</th>\r\n\t\t\t      </tr>\r\n\t\t\t\r\n\t\t\t      <tr>\r\n\t\t\t        <td class=\"category\">조식</td>\r\n\t\t\t        <td>07:30~08:50</td>\r\n\t\t\t        <td>08:00~08:50</td>\r\n\t\t\t        <td>09:00</td>\r\n\t\t\t        <td>09:00</td>\r\n\t\t\t      </tr>\r\n\t\t\t\r\n\t\t\t      <tr>\r\n\t\t\t        <td class=\"category\">중식</td>\r\n\t\t\t        <td>11:30~13:30</td>\r\n\t\t\t        <td>12:30~13:20</td>\r\n\t\t\t        <td>14:00</td>\r\n\t\t\t        <td>13:30</td>\r\n\t\t\t      </tr>\r\n\t\t\t\r\n\t\t\t      <tr>\r\n\t\t\t        <td class=\"category\">석식</td>\r\n\t\t\t        <td>17:30~18:40</td>\r\n\t\t\t        <td>17:30~18:20</td>\r\n\t\t\t        <td>18:50</td>\r\n\t\t\t        <td>18:30</td>\r\n\t\t\t      </tr>\r\n\t\t\t    </table>\r\n\t\t\t  </div>\r\n\t\t\t\r\n\t\t\t  <!-- 방학 -->\r\n\t\t\t  <div class=\"table-wrap\">\r\n\t\t\t    <table class=\"t-table\">\r\n\t\t\t      <tr>\r\n\t\t\t        <th class=\"title2\" colspan=\"5\">방학</th>\r\n\t\t\t      </tr>\r\n\t\t\t\r\n\t\t\t      <tr>\r\n\t\t\t        <th class=\"sub-title2\" colspan=\"3\">입장 시간</th>\r\n\t\t\t        <th class=\"sub-title2\" colspan=\"2\">퇴장 시간</th>\r\n\t\t\t      </tr>\r\n\t\t\t\r\n\t\t\t      <tr>\r\n\t\t\t        <th class=\"t-head2\">구분</th>\r\n\t\t\t        <th class=\"t-head2\">평일</th>\r\n\t\t\t        <th class=\"t-head2 holiday\">주말, 공휴일</th>\r\n\t\t\t        <th class=\"t-head2\">평일</th>\r\n\t\t\t        <th class=\"t-head2 holiday\">주말, 공휴일</th>\r\n\t\t\t      </tr>\r\n\t\t\t\r\n\t\t\t      <tr>\r\n\t\t\t        <td class=\"category\">조식</td>\r\n\t\t\t        <td>08:00~08:50</td>\r\n\t\t\t        <td>08:00~08:50</td>\r\n\t\t\t        <td>09:00</td>\r\n\t\t\t        <td>09:00</td>\r\n\t\t\t      </tr>\r\n\t\t\t\r\n\t\t\t      <tr>\r\n\t\t\t        <td class=\"category\">중식</td>\r\n\t\t\t        <td>12:00~13:20</td>\r\n\t\t\t        <td>12:30~13:20</td>\r\n\t\t\t        <td>13:30</td>"
+  }
+]

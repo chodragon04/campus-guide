@@ -2,8 +2,7 @@ name: 학식 크롤링
 
 on:
   schedule:
-    - cron: "0 21 * * 0-4"   # 월~금 06:00 (한국 시간)
-    - cron: "0 2 * * 1-5"    # 월~금 11:00 (한국 시간), 늦게 올라온 식단 반영
+    - cron: "0 21 * * *"     # 매일 06:00 (한국 시간). 학교 서버 부담을 줄이려고 하루 한 번만 실행
   workflow_dispatch:          # Actions 탭에서 직접 실행
   push:
     paths:
@@ -37,7 +36,7 @@ jobs:
         run: |
           cd "$RUNNER_TEMP"
           : > extra-ca.pem
-          for HOST in www.seoultech.ac.kr housing.seoultech.ac.kr; do
+          for HOST in housing.seoultech.ac.kr; do
             echo | openssl s_client -connect "$HOST:443" -servername "$HOST" 2>/dev/null | openssl x509 > leaf.pem || continue
             ISSUER_URL=$(openssl x509 -in leaf.pem -noout -text | grep -m1 "CA Issuers" | sed 's/.*URI://')
             echo "$HOST 중간 인증서 주소: $ISSUER_URL"
@@ -50,11 +49,9 @@ jobs:
 
       - run: npm run crawl
 
-      - run: node scripts/inspect.js   # [임시] 페이지 구조 확인
-
       - name: 변경된 식단 커밋
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/food.json data/debug.json
+          git add data/food.json
           git diff --staged --quiet || (git commit -m "학식 데이터 업데이트" && git pull --rebase && git push)

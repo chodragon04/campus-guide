@@ -9,14 +9,19 @@ let cookie = "";
 
 async function req(path, opts = {}) {
   const res = await fetch(HOST + path, { ...opts, headers: { ...UA, Cookie: cookie, Referer: HOST + "/html/pub/schedule.jsp", ...(opts.headers || {}) }, signal: AbortSignal.timeout(60000) });
-  const sc = res.headers.get("set-cookie");
-  if (sc && !cookie) cookie = sc.split(";")[0];
+  const list = res.headers.getSetCookie ? res.headers.getSetCookie() : [];
+  if (list.length) {
+    out.setCookies = (out.setCookies || []).concat(list.map((c) => c.replace(/=([^;]{6})[^;]*/, "=$1…")));
+    const jar = Object.fromEntries(cookie.split("; ").filter(Boolean).map((c) => c.split(/=(.*)/s).slice(0, 2)));
+    for (const c of list) { const [k, v] = c.split(";")[0].split(/=(.*)/s); jar[k] = v; }
+    cookie = Object.entries(jar).map(([k, v]) => `${k}=${v}`).join("; ");
+  }
   return { status: res.status, type: res.headers.get("content-type"), body: await res.text() };
 }
 
 async function grid(params) {
   const body = { fsp_action: "GridAction", fsp_cmd: "getScheduleGridData", SP_YMST: "20262", LESS_CD: "", DN_DIV: "00500001", SUBJ_NM: "", LECT_DIV: "", DOTW_CD: "", ...params };
-  const r = await req("/JSONMain", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body) });
+  const r = await req("/JSONMain", { method: "POST", headers: { "Content-Type": "application/json", "X-Requested-With": "XMLHttpRequest", Accept: "application/json, text/javascript, */*; q=0.01" }, body: JSON.stringify(body) });
   try {
     const j = JSON.parse(r.body);
     const rows = j.rows || [];
@@ -29,13 +34,10 @@ async function grid(params) {
 try {
   await req("/html/pub/schedule.jsp");
   out.cookie = cookie ? "있음" : "없음";
-  const g = (await req("/js/stech/grid.js")).body;
-  out.reloadGrid = g.slice(g.indexOf("reloadGrid = function"), g.indexOf("reloadGrid = function") + 1500);
-  out.gridDefaults = g.slice(0, 2500);
-  const f = (await req("/js/fsp/sz_fsp_json.js.jsp")).body;
-  const i = f.indexOf("callService");
-  out.callService = f.slice(i, i + 3000);
-  out.fspHead = f.slice(0, 2500);
+  // 브라우저처럼 페이지가 불러오는 스크립트도 차례로 요청 (세션 초기화가 스크립트에서 일어날 수 있음)
+  for (const p of ["/js/fsp/sz_fsp_json.js.jsp", "/js/stech/lang.js.jsp"]) await req(p);
+  const nf = (await req("/js/stech/netfunnel.js")).body;
+  out.netfunnelHead = nf.slice(0, 800);
   out.byName = await grid({ SUBJ_NM: "웹프로그래밍" });
   out.all = await grid({});
 } catch (e) { out.error = err(e); }

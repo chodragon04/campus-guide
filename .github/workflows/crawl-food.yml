@@ -30,6 +30,20 @@ jobs:
 
       - run: npm ci
 
+      # 학교 서버가 중간 인증서를 보내지 않아 Node.js가 접속을 거부한다(UNABLE_TO_VERIFY_LEAF_SIGNATURE).
+      # 보안 검사를 끄는 대신, 학교 인증서에 적힌 발급처(CA Issuers) 주소에서 중간 인증서를 받아 추가한다.
+      - name: 학교 사이트 중간 인증서 받기
+        continue-on-error: true
+        run: |
+          cd "$RUNNER_TEMP"
+          echo | openssl s_client -connect www.seoultech.ac.kr:443 -servername www.seoultech.ac.kr 2>/dev/null | openssl x509 > leaf.pem
+          ISSUER_URL=$(openssl x509 -in leaf.pem -noout -text | grep -m1 "CA Issuers" | sed 's/.*URI://')
+          echo "중간 인증서 주소: $ISSUER_URL"
+          curl -sSL "$ISSUER_URL" -o intermediate.crt
+          openssl x509 -inform DER -in intermediate.crt -out intermediate.pem 2>/dev/null || cp intermediate.crt intermediate.pem
+          openssl x509 -in intermediate.pem -noout -subject
+          echo "NODE_EXTRA_CA_CERTS=$RUNNER_TEMP/intermediate.pem" >> "$GITHUB_ENV"
+
       - run: npm run crawl
 
       - name: 변경된 식단 커밋

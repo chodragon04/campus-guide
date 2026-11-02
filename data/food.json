@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-02T02:29:03.367Z",
+  "updatedAt": "2026-11-02T02:29:53.019Z",
   "week": [
     "2026-11-02",
     "2026-11-03",
@@ -15,19 +15,19 @@
       "success": 0,
       "days": {
         "2026-11-02": {
-          "error": "fetch failed"
+          "error": "fetch failed (UNABLE_TO_VERIFY_LEAF_SIGNATURE)"
         },
         "2026-11-03": {
-          "error": "fetch failed"
+          "error": "fetch failed (UNABLE_TO_VERIFY_LEAF_SIGNATURE)"
         },
         "2026-11-04": {
-          "error": "fetch failed"
+          "error": "fetch failed (UNABLE_TO_VERIFY_LEAF_SIGNATURE)"
         },
         "2026-11-05": {
-          "error": "fetch failed"
+          "error": "fetch failed (UNABLE_TO_VERIFY_LEAF_SIGNATURE)"
         },
         "2026-11-06": {
-          "error": "fetch failed"
+          "error": "fetch failed (UNABLE_TO_VERIFY_LEAF_SIGNATURE)"
         }
       }
     },

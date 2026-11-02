@@ -13,10 +13,11 @@ async function load(url, opts = {}) {
 function around(html) {
   const $ = cheerio.load(html);
   const form = $("select[name=place]").closest("form");
-  const area = form.parent();
+  const area = form.parent().parent();
   return {
     form: $.html(form).replace(/\s+/g, " ").slice(0, 1500),
-    after: $.html(area).replace(/\s+/g, " ").slice(0, 6000),
+    after: $.html(area).replace(/\s+/g, " ").replace(/<select[\s\S]*?<\/select>/g, "[select]").slice(0, 9000),
+    siblings: form.parent().nextAll().map((i, e) => $.html(e).replace(/\s+/g, " ").slice(0, 3000)).get().slice(0, 6),
     imgs: $("#sub img, .sub img, img").map((i, e) => $(e).attr("src")).get().filter((s) => !/res\/img|logo|btn|icon/.test(s)).slice(0, 20),
     scripts: $("script").map((i, e) => $(e).attr("src") || $(e).html().replace(/\s+/g, " ").slice(0, 400)).get().filter((s) => /food|place|week|ajax|submit/i.test(s)),
   };

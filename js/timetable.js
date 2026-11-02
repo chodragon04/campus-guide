@@ -79,12 +79,13 @@ function removeCourse(id) {
 
 function search(keyword) {
   searchResults.innerHTML = "";
-  keyword = keyword.trim();
+  keyword = keyword.trim().toLowerCase(); // 영어 과목명은 대소문자 구분 없이 ("database" → "Database")
   if (keyword.length < 2) return;
 
-  const found = allCourses.filter((c) => c.name.includes(keyword) || c.prof.includes(keyword));
+  const found = allCourses.filter((c) => c.name.toLowerCase().includes(keyword) || c.prof.toLowerCase().includes(keyword));
   // 검색어로 시작하는 과목을 먼저 (예: "웹프로그래밍" 검색 시 "고급웹프로그래밍"보다 앞에)
-  found.sort((a, b) => Number(b.name.startsWith(keyword)) - Number(a.name.startsWith(keyword)));
+  const startsWith = (c) => Number(c.name.toLowerCase().startsWith(keyword));
+  found.sort((a, b) => startsWith(b) - startsWith(a));
   if (found.length === 0) {
     searchResults.appendChild(make("li", "notice", "검색 결과가 없습니다."));
     return;

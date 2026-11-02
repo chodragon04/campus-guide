@@ -6,11 +6,8 @@
 //  2) 학생식당(ST:Table, ST:Dining): 학교 식단 페이지가 연결해 둔 노션 메뉴판(공개 페이지)의 데이터베이스
 //  3) 서울테크노파크: 식단 게시판의 최신 글에 올라온 주간 식단 이미지
 //
-// 참고: 과기대 디스코드 봇의 menucrawler.py(Python)를 JavaScript로 옮기면서 시작했다.
-//  - 테크노파크 수집 방식(게시판 첫 글 → 본문 이미지)은 원본을 그대로 따름
-//  - 원본의 제2학생회관 주소(life/student/food2)는 학교 사이트 개편으로 없어져서,
-//    현재 학교가 안내하는 노션 메뉴판과 생활관 식단 페이지를 새로 분석해 작성함
-//  - DB(sqlite) 대신 JSON 파일로 저장
+// 학교 홈페이지의 옛 학식 페이지(life/student/food)는 더 이상 식단이 올라오지 않아서,
+// 학교가 현재 안내하는 출처(생활관 페이지, 노션 메뉴판, 테크노파크 게시판)를 직접 분석해 작성했다.
 
 import fs from "node:fs";
 import * as cheerio from "cheerio";
@@ -229,19 +226,30 @@ async function queryNotionMenu(menu) {
 
 // ---------- 3) 서울테크노파크 (주간 식단 이미지) ----------
 
-// menucrawler.py의 technopark()와 같은 방식: 게시판 첫 글에서 식단 이미지 주소를 찾는다
+// 게시판 목록에서 제목에 "식단"이 들어간 가장 최근 글을 찾고, 글 본문의 첨부 이미지 주소를 가져온다.
 async function crawlTechnopark() {
-  const listHtml = await getHtml(TECHNOPARK_LIST);
-  let $ = cheerio.load(listHtml);
-  const link = $(".board-list > tbody tr").first().find("td:nth-child(2) a").first();
-  if (link.length === 0) throw new Error("게시글을 찾지 못함");
-  const boardNo = $.html(link).split("'")[5]; // onclick 안의 게시글 번호
-  const title = clean(link.text());
-  const uploaded = clean($(".board-list > tbody tr").first().find("td:nth-child(4)").text());
+  let $ = cheerio.load(await getHtml(TECHNOPARK_LIST));
 
-  const viewHtml = await getHtml(`${TECHNOPARK_LIST}?View&boardNo=${boardNo}`);
-  $ = cheerio.load(viewHtml);
-  const img = $(".board-write > tbody tr:nth-child(4) img").first();
+  let post = null;
+  $("tbody tr").each((i, tr) => {
+    if (post) return; // 이미 찾았으면 건너뛰기 (목록은 최신 글이 위)
+    const a = $(tr).find("a").filter((j, el) => $(el).text().includes("식단")).first();
+    if (a.length === 0) return;
+    // 글 번호는 링크의 onclick 속성 안에 숫자로 들어 있다: fn_view('...', '...', '12345')
+    const numbers = (a.attr("onclick") || a.attr("href") || "").match(/\d+/g);
+    if (!numbers) return;
+    const date = $(tr).text().match(/\d{4}[.-]\d{2}[.-]\d{2}/); // 작성일
+    post = {
+      boardNo: numbers[numbers.length - 1],
+      title: clean(a.text()),
+      uploaded: date ? date[0] : "",
+    };
+  });
+  if (!post) throw new Error("식단 게시글을 찾지 못함");
+
+  const link = `${TECHNOPARK_LIST}?View&boardNo=${post.boardNo}`;
+  $ = cheerio.load(await getHtml(link));
+  const img = $("img").filter((i, el) => ($(el).attr("src") || "").includes("attachfile")).first();
   if (img.length === 0) throw new Error("식단 이미지를 찾지 못함");
 
   return {
@@ -250,10 +258,10 @@ async function crawlTechnopark() {
     group: "테크노파크",
     type: "weekly-image",
     success: 1,
-    title: title,
-    uploaded: uploaded,
-    imageUrl: TECHNOPARK_HOST + img.attr("src"),
-    link: `${TECHNOPARK_LIST}?View&boardNo=${boardNo}`,
+    title: post.title,
+    uploaded: post.uploaded,
+    imageUrl: new URL(img.attr("src"), TECHNOPARK_HOST).href,
+    link: link,
   };
 }
 

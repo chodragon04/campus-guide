@@ -1,10 +1,138 @@
 {
-  "status": 200,
-  "html": "<div id=\"sub\"> <div id=\"lnb\"> <div class=\"lnb_title\">대학생활</div> <div class=\"lnb\"> <a class=\"a1 \" href=\"/life/sch\">학사일정</a> <!-- 자랑스러운 과기대인 연도 lnb 삭제 --> <div class=\"l2\"> <a class=\"a2 \" href=\"/life/sch/common\">학부 학사일정</a> <div class=\"l3n\"> </div> <a class=\"a2 \" href=\"/life/sch/grad\">대학원 학사일정</a> <div class=\"l3n\"> </div> </div> <a class=\"a1 \" href=\"/life/info\">학사안내</a> <!-- 자랑스러운 과기대인 연도 lnb 삭제 --> <div class=\"l2\"> <a class=\"a2 \" href=\"/life/info/college\">학부학사</a> <div class=\"l3n\"> <a class=\"a3 \" href=\"/life/info/college/schedule\">교육과정</a> <a class=\"a3 \" href=\"/life/info/college/course\">수강신청</a> <a class=\"a3 \" href=\"/life/info/college/rest\">휴학/복학</a> <a class=\"a3 \" href=\"/life/info/college/caution\">학사경고</a> <a class=\"a3 \" href=\"/life/info/college/leave\">제적/자퇴</a> <a class=\"a3 \" href=\"/life/info/college/season\">계절학기</a> <a class=\"a3 \" href=\"/life/info/college/readmit\">재입학</a> <a class=\"a3 \" href=\"/life/info/college/change\">전과(부)</a> <a class=\"a3 \" href=\"/life/info/college/graduate\">학년수료 및 졸업</a> <a class=\"a3 \" href=\"/life/info/college/relearning\">재수강</a> <a class=\"a3 \" href=\"/life/info/college/tests\">시험과 성적</a> <a class=\"a3 \" href=\"/life/info/college/attendance\">출석인정</a> <a class=\"a3 \" href=\"/life/info/college/exchange\">국내 타 대학 등 학점교류</a> <a class=\"a3 \" href=\"/life/info/college/hakjuk_edit\">학적부기재사항정정</a> <a class=\"a3 \" href=\"/life/info/college/multimajor\">다전공(복수(부)전공, 연계융합전공, 학생설계전공, 마이크로디그리, 프락시스디그리) </a> </div> <a class=\"a2 \" href=\"/life/info/graduate\">대학원학사</a> <div class=\"l3n\"> <a class=\"a3 \" href=\"/life/info/graduate/rest\">휴학/복학</a> <a class=\"a3 \" href=\"/life/info/graduate/course\">수강신청</a> <a class=\"a3 \" href=\"/life/info/graduate/leave\">제적/자퇴</a> <a class=\"a3 \" href=\"/life/info/graduate/change\">전과</a> <a class=\"a3 \" href=\"/life/info/graduate/readmin\">재입학</a> <a class=\"a3 \" href=\"/life/info/graduate/exam\">학위자격시험</a> <a class=\"a3 \" href=\"/life/info/graduate/finish\">수료 요건</a> <a class=\"a3 \" href=\"/life/info/graduate/finishreg\">수료 후 등록</a> <a class=\"a3 \" href=\"/life/info/graduate/perfinish\">영구수료생 등록</a> <a class=\"a3 \" href=\"/life/info/graduate/founded\">창업과정</a> <a class=\"a3 \" href=\"/life/info/graduate/recognition\">교과목 이수 및 학점 인정</a> <a class=\"a3 \" href=\"/life/info/graduate/class\">수업시간표</a> <a class=\"a3 \" href=\"/life/info/graduate/master\">학·석사연계과정</a> </div> <a class=\"a2 \" href=\"/life/info/special\">특별교육과정</a> <div class=\"l3n\"> <a class=\"a3 \" href=\"/life/info/special/teach\">교직과정</a> <a class=\"a3 \" href=\"/life/info/special/archidesign_in\">건축학인증</a> <a class=\"a3 \" href=\"/life/info/special/engineer_in\">공학인증</a> </div> <a class=\"a2 \" href=\"/life/info/service\">봉사활동교과목</a> <div class=\"l3n\"> <a class=\"a3 \" href=\"/life/info/service/info\">교과목안내</a> <a class=\"a3 \" href=\"/life/info/service/report\">교과목 운영일지</a> <a class=\"a3 \" href=\"/life/info/service/process\">신청방법 및 이수절차</a> </div> <a class=\"a2 \" href=\"/life/info/camplife\">대학생활안내</a> <div class=\"l3n\"> </div> <a class=\"a2 \" href=\"/service/sccenter/certificate\">증명서발급</a> <div class=\"l3n\"> </div> </div> <a class=\"a1 link1\" href=\"http://serve.seoultech.ac.kr/\">ST나눔공헌단</a> <!-- 자랑스러운 과기대인 연도 lnb 삭제 --> <div class=\"l2\"> <a class=\"a2 link2\" href=\"http://serve.seoultech.ac.kr/intro/greet/\">ST나눔공헌단 소개</a> <div class=\"l3n\"> </div> <a class=\"a2 link2\" href=\"http://serve.seoultech.ac.kr/subject/intro/\">봉사활동과목소개</a> <div class=\"l3n\"> </div> <a class=\"a2 link2\" href=\"http://serve.seoultech.ac.kr/bbs/notice/\">정보마당</a> <div class=\"l3n\"> </div> </div> <a class=\"a1 \" href=\"/life/military\">병무·예비군</a> <!-- 자랑스러운 과기대인 연도 lnb 삭제 --> <div class=\"l2\"> <a class=\"a2 \" href=\"/life/military/info\">학생병무안내</a> <div class=\"l3n\"> </div> <a class=\"a2 \" href=\"/life/military/reserve\">예비군안내</a> <div class=\"l3n\"> </div> <a class=\"a2 \" href=\"/life/military/rotc\">학생군사교육단</a> <div class=\"l3n\"> <a class=\"a3 \" href=\"/life/military/rotc/rotc\">육군학군단(ROTC)</a> <a class=\"a3 \" href=\"/life/military/rotc/afrotc\">공군학군단(AF ROTC)</a> </div> </div> <a class=\"a1 \" href=\"/life/scholarship\">장학제도</a> <!-- 자랑스러운 과기대인 연도 lnb 삭제 --> <div class=\"l2\"> <a class=\"a2 \" href=\"/life/scholarship/janghag\">장학제도안내</a> <div class=\"l3n\"> </div> <a class=\"a2 \" href=\"/life/scholarship/lookup\">맞춤형장학조회</a> <div class=\"l3n\"> </div> <a class=\"a2 link2\" href=\"http://www.kosaf.go.kr/ko/tuition.do?pg=tuition_info&amp;naviParam=HD,01,00,00\">학자금대출</a> <div class=\"l3n\"> </div> </div> <a class=\"a1 \" href=\"/life/tution\">등록제도</a> <!-- 자랑스러운 과기대인 연도 lnb 삭제 --> <div class=\"l2\"> <a class=\"a2 \" href=\"/life/tution/infotution\">등록안내</a> <div class=\"l3n\"> </div> <a class=\"a2 \" href=\"/life/tution/paiement\">등록금 납부 안내</a> <div class=\"l3n\"> </div> <a class=\"a2 \" href=\"/life/tution/dividpay\">등록금 분할납부 안내</a> <div class=\"l3n\"> </div> <a class=\"a2 \" href=\"/life/tution/returnpay\">등록금 반환 안내</a> <div class=\"l3n\"> </div> </div> <a class=\"a1 \" href=\"/life/student\">학생지원</a> <!-- 자랑스러운 과기대인 연도 lnb 삭제 --> <div class=\"l2\"> <a class=\"a2 \" href=\"/life/student/organ\">학생자치기구</a> <div class=\"l3n\"> <a class=\"a3 \" href=\"/life/support/organ/union\">학생회</a> <a class=\"a3 \" href=\"/life/student/organ/club\">동아리</a> </div> <a class=\"a2 \" href=\"/life/student/support\">학생지원제도</a> <div class=\"l3n\"> <a class=\"a3 \" href=\"/life/student/support/task2\">ST신입생 적응지원 멘토링</a> <a class=\"a3 \" href=\"/life/student/support/task4\">대학생멘토링 장학금</a> <a class=\"a3 \" href=\"/life/student/support/task5\">학생자치기구 활동 지원</a> <a class=\"a3 \" href=\"/life/student/support/task6\">학교생활지원</a> <a class=\"a3 \" href=\"/life/student/support/task7\">학생처 추천 생활관생 모집</a> </div> <a class=\"a2 \" href=\"/life/student/studentid\">학생증발급</a> <div class=\"l3n\"> </div> <a class=\"a2 \" href=\"/life/student/administrator_insurance\">학교경영자 배상책임보험</a> <div class=\"l3n\"> </div> </div> <a class=\"a1 on \" href=\"/life/facility\">시설이용</a> <!-- 자랑스러운 과기대인 연도 lnb 삭제 --> <div class=\"l2\"> <a class=\"a2 on2 \" href=\"/life/student/welfare\">편의/복지</a> <div class=\"l3n\"> <a class=\"a3 \" href=\"/life/student/welfare/info\">편의시설정보</a> <a class=\"a3 \" href=\"/life/student/welfare/gym\">체육관</a> <a class=\"a3 on3 \" href=\"/life/student/welfare/menu\">식단</a> </div> <a class=\"a2 \" href=\"/life/support/library\">도서관</a> <div class=\"l3n\"> </div> <a class=\"a2 \" href=\"/life/support/housing\">생활관</a> <div class=\"l3n\"> </div> <a class=\"a2 \" href=\"/life/support/lab\">공동실험실습관</a> <div class=\"l3n\"> </div> <a class=\"a2 \" href=\"/life/attatched/clinic\">보건진료소</a> <div class=\"l3n\"> </div> <a class=\"a2 \" href=\"/life/jobinfo/life\">학생상담센터</a> <div class=\"l3n\"> </div> <a class=\"a2 \" href=\"/life/jobinfo/equal\">인권센터</a> <div class=\"l3n\"> </div> <a class=\"a2 \" href=\"/life/attatched/support\">장애학생지원센터</a> <div class=\"l3n\"> </div> <a class=\"a2 link2\" href=\"http://lifelong.seoultech.ac.kr/\">평생교육원</a> <div class=\"l3n\"> </div> <a class=\"a2 link2\" href=\"http://childcare.seoultech.ac.kr/\">SeoulTech어린이집</a> <div class=\"l3n\"> </div> <a class=\"a2 \" href=\"/life/facility/art\">미술관</a> <div class=\"l3n\"> </div> </div> <a class=\"a1 \" href=\"/intro/calendar\">학생활동 통합캘린더</a> <!-- 자랑스러운 과기대인 연도 lnb 삭제 --> <div class=\"\"> </div> </div> <img class=\"bg\" alt=\"\" src=\"/site/ko/2021/res/img/sub_title2562.png\" onerror=\"src='/site/ko/2021/res/img/sub_title00.png';\" style=\"display:none;\"> <script type=\"text/javascript\"> $(\"#title\").attr(\"style\", \"background-image:url('\"+$(\"#lnb .bg\").attr(\"src\")+\"')\"); $(document).ready(function() { $(\"#lnb\").css(\"min-height\", $(\"#sub\").innerHeight()); $(\".lnb .link1\").each(function(index) { $(this).attr(\"target\" , \"_blank\"); $(this).attr(\"title\" , \"새창으로 이동\"); $(this).append(\"<img class='bg1' alt='' src='/site/ko/res/img/link_off.png'>\"); }); /* $(\".lnb .link1\").hover(function() { $(this).children(\".bg1\").attr(\"src\", \"/site/ko/res/img/link_on.png\"); }, function() { $(this).children(\".bg1\").attr(\"src\", \"/site/ko/res/img/link_off.png\"); }); */ $(\".lnb .link2\").each(function(index) { $(this).attr(\"target\" , \"_blank\"); $(this).attr(\"title\" , \"새창으로 이동\"); $(this).append(\"<img class='bg2' alt='' src='/site/ko/res/img/link_off.png'>\"); }); $(window).resize(); $(\"#lnb .lnb .a1\").focus(function () { $(\".navi .n1\").removeClass(\"on1\"); }); }); </script> </div> <div class=\"sub\" id=\"hcms_content\"> <h1 class=\"sub_title\"> 식단 </h1> <div class=\"tab\"> <ul> <li class=\"\"> <a class=\"\" href=\"/life/student/welfare/info\"><span>&nbsp;</span>편의시설정보</a> </li> <li class=\"\"> <a class=\"\" href=\"/life/student/welfare/gym\"><span>&nbsp;</span>체육관</a> </li> <li class=\"on\"> <a class=\"\" title=\"선택됨\" href=\"/life/student/welfare/menu\"><span>&nbsp;</span>식단</a> </li> </ul> <script type=\"text/javascript\"> $(\".tab .link\").each(function(index) { $(this).attr(\"target\" , \"_blank\"); $(this).attr(\"title\" , \"새창으로 이동\"); $(this).append(\"<img class='bg' alt='' src='/site/ko/res/img/link_off.png'>\"); }); </script> </div> <div id=\"contents\"> <div class=\"wrap_title\"> <div style=\"float:left;\"> <img alt=\"\" class=\"tit_icon\" style=\"margin-top:5px; margin-right:8px;\" src=\"/common/images/navi_icon.jpg\"> <b style=\"font-size:18px;\">편의/복지</b> </div> <div class=\"location\"> <a class=\"home\" href=\"/\">홈</a><span>&nbsp;</span><a class=\"home\" href=\"/life\">대학생활</a><span>&nbsp;</span><a class=\"home\" href=\"/life/facility\">시설이용</a><span>&nbsp;</span><a class=\"home\" href=\"/life/student/welfare\">편의/복지</a><span>&nbsp;</span><strong>식단</strong> </div> <div style=\"clear:both;\"></div> </div> <ul class=\"wrap_tab\"> <li> <img alt=\"편의시설정보\" style=\"margin:6px 7px 0px 2px;\" src=\"/site/english/images/common/eng_bolet.jpg\"><a href=\"/life/student/welfare/info\">편의시설정보</a> </li> <li> <img alt=\"체육관\" style=\"margin:6px 7px 0px 2px;\" src=\"/site/english/images/common/eng_bolet.jpg\"><a href=\"/life/student/welfare/gym\">체육관</a> </li> <li class=\"on\"> <img alt=\"식단\" style=\"margin:6px 7px 0px 2px;\" src=\"/site/english/images/common/eng_bolet.jpg\"><a href=\"/life/student/welfare/menu\">식단</a> </li> </ul> <div class=\"section_default\"> <div class=\"t18 tm bg\">ST:Table</div> <div class=\"round_box\"> <div class=\"inner\"> <div class=\"mid\"> <h3 class=\"tit03\"><span style=\"font-size: 18px; letter-spacing: -0.3px;\">ST: Table 판매&nbsp;메뉴: <u><a href=\"https://fern-magic-bde.notion.site/21e45244ac0a80fdb02ad064ce75d674\" target=\"_blank\"><span style=\"color:#0000FF;\">식단 바로가기</span></a></u></span></h3> <!-- 기존 테이블 (웹 버전용) --><!-- <table cellpadding=\"0\" cellspacing=\"0\" class=\"tbl_basic\"> <colgroup> <col width=\"14%\" /> <col span=\"5\" width=\"14%\" /> </colgroup> <thead> <tr> <th scope=\"col\" style=\"height: 35px; background-color: #f3faff;\">매장명</th> <th scope=\"col\" style=\"height: 35px; background-color: #f3faff;\">51장국밥</th> <th scope=\"col\" style=\"height: 35px; background-color: #f3faff;\">폭풍분식</th> <th scope=\"col\" style=\"height: 35px; background-color: #f3faff;\">경성카츠</th> <th scope=\"col\" style=\"height: 35px; background-color: #f3faff;\">바비든든</th> <th scope=\"col\" style=\"height: 35px; background-color: #f3faff;\">포포420</th> </tr> </thead> <tbody> <tr> <td class=\"cm\" style=\"height: 60px; background-color: #f3faff;\"><span style=\"font-size:16px;\"><strong>메뉴</strong></span></td> <td class=\"cm\"><span style=\"color:#333333;\">순대국밥 등 6종<br /> (6,500원~)</span></td> <td class=\"cm\"><span style=\"color:#333333;\">라면 등 16종<br /> (3,500원~)</span></td> <td class=\"cm\"><span style=\"color:#333333;\">옐로우커리라이스 등 7종<br /> (5,900원~)</span></td> <td class=\"cm\"><span style=\"color:#333333;\">치킨마요덮밥 등 5종<br /> (3,500원~)</span></td> <td class=\"cm\"><span style=\"color:#333333;\">포포쌀국수 등5종<br /> (7,900원~)</span></td> </tr> </tbody> </table> --> <p><span style=\"letter-spacing: -0.3px;\"><span style=\"color: rgb(66, 126, 226); letter-spacing: -0.75px;\">※ 판매메뉴는 업체 사정에 따라 변경될 수 있음</span></span></p> <p>&nbsp;</p> </div> </div> </div> <div class=\"t18 tm bg\">ST:Dining</div> <h3 class=\"tit03\"><span style=\"font-size: 18px; letter-spacing: -0.3px;\">ST: Dining&nbsp;판매 메뉴: <u><a href=\"https://fern-magic-bde.notion.site/21e45244ac0a80fdb02ad064ce75d674\" target=\"_blank\"><span style=\"color:#0000FF;\">식단 바로가기</span></a></u></span></h3> <!-- <table cellpadding=\"0\" cellspacing=\"0\" class=\"tbl_basic\"> <colgroup> <col width=\"14%\" /> <col span=\"5\" width=\"14%\" /> </colgroup> <thead> <tr> <th scope=\"col\" style=\"height: 35px; background-color: #f3faff;\">매장명</th> <th scope=\"col\" style=\"height: 35px; background-color: #f3faff;\">값찌게</th> <th scope=\"col\" style=\"height: 35px; background-color: #f3faff;\">중식대장</th> <th scope=\"col\" style=\"height: 35px; background-color: #f3faff;\">경성카츠</th> <th scope=\"col\" style=\"height: 35px; background-color: #f3faff;\">플라잉팬</th> <th scope=\"col\" style=\"height: 35px; background-color: #f3faff;\">파스타요</th> </tr> </thead> <tbody> <tr> <td class=\"cm\" style=\"height: 60px; background-color: #f3faff;\"><span style=\"font-size:16px;\"><strong>메뉴</strong></span></td> <td class=\"cm\"><span style=\"color:#333333;\">순두부찌개 등 7종<br /> (5,500원~)</span></td> <td class=\"cm\"><span style=\"color:#333333;\">짜장면 등 7종<br /> (5,900원~)</span></td> <td class=\"cm\"><span style=\"color:#333333;\">옛날등심돈까스 등 5종<br /> (6,200원~)</span></td> <td class=\"cm\"><span style=\"color:#333333;\">철판소금삼겹 등 6종<br /> (7,900원~)</span></td> <td class=\"cm\"><span style=\"color:#333333;\">베이컨 토마토 파스타 등 11종<br /> (7,900원~)</span></td> </tr> </tbody> </table> --> <p><strong><span style=\"color: rgb(66, 126, 226); letter-spacing: -0.75px;\">※ 판매메뉴는 업체 사정에 따라 변경될 수 있음</span></strong></p> <p>&nbsp;</p> <div class=\"t18 tm bg\">테크노파크</div> <h3 class=\"tit03\"><u><a href=\"https://www.seoultp.or.kr/user/nd70791.do\"><span style=\"color:#0000FF;\"><span style=\"font-size: 18px; letter-spacing: -0.3px;\">테크노파크 홈페이지 식단 바로가기</span></span></a></u></h3> </div> <div id=\"wrap_charge\"> </div> </div> </div> <div class=\"print\"> <script type=\"text/javascript\"> function print_content() { doPrint(document.getElementById(\"hcms_content\")); } function doPrint(obj) { var w = obj.offsetWidth; //screen.availWidth; var h = obj.offsetHeight; //screen.availHeight; var features = \"menubar=no,toolbar=no,location=no,directories=no,status=no,scrollbars=yes,resizable=yes,width=\" + w + \",height=\" + h + \",left=0,top=0\"; var PrintPage = window.open(\"about:blank\", obj.id, features); PrintPage.document.open(); PrintPage.document.write(\"<!DOCTYPE HTML PUBLIC \\\"-//W3C//DTD HTML 4.01 Transitional//EN\\\" \\\"http://www.w3.org/TR/html4/loose.dtd\\\">\"); PrintPage.document.write(\"<html lang='ko'>\"); PrintPage.document.write(\"<link rel='stylesheet' type='text/css' href='/site/ko/res/css/sub.css' />\"); PrintPage.document.write(\"<body><div id='sub'><div class='sub'>\" + obj.innerHTML + \"</div><div></body>\"); PrintPage.document.write(\"</html>\"); PrintPage.document.close(); PrintPage.document.title = \"서울과학기술대학교 - 식단\"; PrintPage.print(); } </script> <div class=\"box\"> <div class=\"text\"> <span><img alt=\"\" src=\"/site/ko/res/img/icon01.png\"> 담당부서 : 학생지원과, 테크노파크</span> </div> <a class=\"icon\" title=\"새창으로 인쇄\" href=\"javascript:print_content();\"><img src=\"/site/ko/res/img/print.png\" alt=\"인쇄\"></a> </div> </div> </div>",
-  "scripts": [
-    "/site/www/js/simple_menu_module.js",
-    " $(document).ready(function() { $(\".menu .link1\").each(function(index) { $(this).attr(\"target\" , \"_blank\"); $(this).attr(\"title\" , \"새창으로 이동\"); // $(this).append(\"<img class='bg1' alt='' src='/site/ko/res/img/link_on.png'>\"); }); }); $(\".m_head .ko\").click(function () { if (\"none\" == $(this).children(\".on\").css(\"display\")) { $(this).children(\".on\").slideDown(); } else { $(this).children(\".on\").slideUp(); } }); $(\".btn_menu\").click(function () { if (\"none\" == $(\"#m_head .menu\").css(\"display\")) { $(\"#m_head .menu\").slideDown(); $(\"#m_head .menu_bg\").css(\"display\", \"block\"); $(\"#m_head .menu_bg\").",
-    " function print_content() { doPrint(document.getElementById(\"hcms_content\")); } function doPrint(obj) { var w = obj.offsetWidth; //screen.availWidth; var h = obj.offsetHeight; //screen.availHeight; var features = \"menubar=no,toolbar=no,location=no,directories=no,status=no,scrollbars=yes,resizable=yes,width=\" + w + \",height=\" + h + \",left=0,top=0\"; var PrintPage = window.open(\"about:blank\", obj.id, features); PrintPage.document.open(); PrintPage.document.write(\"<!DOCTYPE HTML PUBLIC \\\"-//W3C//DTD HTML 4.01 Transitional//EN\\\" \\\"http://www.w3.org/TR/html4/loose.dtd\\\">\"); PrintPage.document.write(",
-    " window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-ZKBG3QKP89'); "
-  ]
+  "https://fern-magic-bde.notion.site": {
+    "status": 200,
+    "blocks": [
+      {
+        "id": "21e45244-ac0a-80fd-b02a-d064ce75d674",
+        "type": "page",
+        "title": "서울과학기술대학교 메뉴판",
+        "parent": "21e45244-ac0a-80e0-bc7c-000ba763ca98",
+        "children": 6,
+        "props": [
+          "uF^c",
+          "title"
+        ],
+        "format": "{\"site_id\":\"22345244-ac0a-809d-b34f-0079357a0729\",\"page_cover\":\"attachment:9e1a2070-ba70-45d1-877d-d7f3bb44ee4b:학식이즐겁다.png\",\"page_full_width\":true,\"page_cover_position\":0.2058,\"social_media_image_preview_url\":\"attachment:b19865c2-9730-47bd-8c9c-ef76c5ab8d53:SocialMediaPreviewImage.png\"}"
+      },
+      {
+        "id": "21e45244-ac0a-80ed-af84-d8b2f12f10a8",
+        "type": "collection_view",
+        "title": "",
+        "parent": "21e45244-ac0a-80e8-b293-f3a08e1f068d",
+        "children": 0,
+        "props": [],
+        "format": "{\"collection_pointer\":{\"id\":\"21e45244-ac0a-80e0-bc7c-000ba763ca98\",\"table\":\"collection\",\"spaceId\":\"5a939ea0-b332-4365-96e0-413703544878\"},\"collection_pointers\":[{\"id\":\"21e45244-ac0a-80e0-bc7c-000ba763ca98\",\"table\":\"collection\",\"spaceId\":\"5a939ea0-b332-4365-96e0-413703544878\"}]}",
+        "collection": "21e45244-ac0a-80e0-bc7c-000ba763ca98",
+        "views": [
+          "21e45244-ac0a-807c-adcb-000c2c58eb84"
+        ]
+      },
+      {
+        "id": "21e45244-ac0a-80e8-b293-f3a08e1f068d",
+        "type": "page",
+        "title": "메뉴판",
+        "parent": "32145244-ac0a-81ab-a4ee-00427f85665d",
+        "children": 2,
+        "props": [
+          "title"
+        ],
+        "format": "{\"site_id\":\"2d545244-ac0a-80a5-bb30-00793802f241\",\"page_icon\":\"🔖\",\"page_full_width\":true}"
+      },
+      {
+        "id": "22345244-ac0a-8043-82ea-ee55b50b331a",
+        "type": "callout",
+        "title": "",
+        "parent": "21e45244-ac0a-80fd-b02a-d064ce75d674",
+        "children": 1,
+        "props": [],
+        "format": "{\"block_color\":\"teal\",\"callout_version\":2}"
+      },
+      {
+        "id": "22345244-ac0a-8077-b80f-f0914e921107",
+        "type": "collection_view",
+        "title": "",
+        "parent": "21e45244-ac0a-80fd-b02a-d064ce75d674",
+        "children": 0,
+        "props": [],
+        "format": "{\"collection_pointer\":{\"id\":\"22345244-ac0a-8062-86bd-000b564de5f4\",\"table\":\"collection\",\"spaceId\":\"5a939ea0-b332-4365-96e0-413703544878\"},\"collection_pointers\":[{\"id\":\"22345244-ac0a-8062-86bd-000b564de5f4\",\"table\":\"collection\",\"spaceId\":\"5a939ea0-b332-4365-96e0-413703544878\"}],\"hide_inline_collectio",
+        "collection": "22345244-ac0a-8062-86bd-000b564de5f4",
+        "views": [
+          "22345244-ac0a-807c-ad39-000c423759b5"
+        ]
+      },
+      {
+        "id": "22345244-ac0a-80e0-8203-ff72b67bb868",
+        "type": "text",
+        "title": "",
+        "parent": "21e45244-ac0a-80fd-b02a-d064ce75d674",
+        "children": 0,
+        "props": []
+      },
+      {
+        "id": "22345244-ac0a-8097-a2f2-c9c64b99ae66",
+        "type": "callout",
+        "title": "",
+        "parent": "21e45244-ac0a-80fd-b02a-d064ce75d674",
+        "children": 1,
+        "props": [],
+        "format": "{\"block_color\":\"teal\",\"callout_version\":2,\"copied_from_pointer\":{\"id\":\"22345244-ac0a-8043-82ea-ee55b50b331a\",\"table\":\"block\",\"spaceId\":\"5a939ea0-b332-4365-96e0-413703544878\"}}"
+      },
+      {
+        "id": "22345244-ac0a-8058-be2e-c66662432a03",
+        "type": "collection_view",
+        "title": "",
+        "parent": "21e45244-ac0a-80fd-b02a-d064ce75d674",
+        "children": 0,
+        "props": [],
+        "format": "{\"collection_pointer\":{\"id\":\"22345244-ac0a-801b-8ee1-000b50d50c14\",\"table\":\"collection\",\"spaceId\":\"5a939ea0-b332-4365-96e0-413703544878\"},\"collection_pointers\":[{\"id\":\"22345244-ac0a-801b-8ee1-000b50d50c14\",\"table\":\"collection\",\"spaceId\":\"5a939ea0-b332-4365-96e0-413703544878\"}],\"hide_inline_collectio",
+        "collection": "22345244-ac0a-801b-8ee1-000b50d50c14",
+        "views": [
+          "22345244-ac0a-8001-8c7e-000c2da02c00"
+        ]
+      },
+      {
+        "id": "32d45244-ac0a-805d-b007-eeeb133315f6",
+        "type": "text",
+        "title": "",
+        "parent": "21e45244-ac0a-80fd-b02a-d064ce75d674",
+        "children": 0,
+        "props": []
+      },
+      {
+        "id": "22345244-ac0a-80f4-becf-cd8bffee57d4",
+        "type": "header",
+        "title": "ST: Table 메뉴판",
+        "parent": "22345244-ac0a-8043-82ea-ee55b50b331a",
+        "children": 0,
+        "props": [
+          "title"
+        ]
+      },
+      {
+        "id": "22345244-ac0a-8030-92d6-f0f52fb2477d",
+        "type": "header",
+        "title": "ST: Dining 메뉴판",
+        "parent": "22345244-ac0a-8097-a2f2-c9c64b99ae66",
+        "children": 0,
+        "props": [
+          "title"
+        ],
+        "format": "{\"copied_from_pointer\":{\"id\":\"22345244-ac0a-80f4-becf-cd8bffee57d4\",\"table\":\"block\",\"spaceId\":\"5a939ea0-b332-4365-96e0-413703544878\"}}"
+      }
+    ],
+    "collections": [
+      {
+        "id": "21e45244-ac0a-80e0-bc7c-000ba763ca98",
+        "schema": "{\"U;}X\":{\"name\":\"최종 편집 일시\",\"type\":\"last_edited_time\",\"date_format\":\"relative\"},\"uF^c\":{\"icon\":\"/icons/shop_gray.svg\",\"name\":\"지점\",\"type\":\"url\"},\"title\":{\"icon\":\"/icons/book-closed_gray.svg\",\"name\":\"메뉴판\",\"type\":\"title\"}}"
+      },
+      {
+        "id": "22345244-ac0a-8062-86bd-000b564de5f4",
+        "schema": "{\"Jl?^\":{\"name\":\"브랜드\",\"type\":\"select\",\"options\":[{\"id\":\"517a30e9-dcc0-4427-a3a8-87c106fe350f\",\"color\":\"yellow\",\"value\":\"바비든든\"},{\"id\":\"c9f1f6a1-6090-45f0-b2dc-44ad04070998\",\"color\":\"blue\",\"value\":\"포포420\"},{\"id\":\"c270c97b-0ba5-4a0c-bf97-a8c52d6936e8\",\"color\":\"green\",\"value\":\"경성카츠\"},{\"id\":\"1924c8d9-f5e3-4a13-bcbb-2acae9914cc8\",\"color\":\"brown\",\"value\":\"값찌개\"},{\"id\":\"0a0bf9b6-34c9-4d66-918f-5e7c073be4ff\",\"color\":\"orange\",\"value\":\"뽀까뽀까\"}]},\"XoP:\":{\"icon\":\"/icons/tag_gray.svg\",\"name\":\"가격\",\"type\":\"number\",\"number_format\":\"won\"},\"title\":{\"name\":\"이름\",\"type\":\"title\"}}"
+      },
+      {
+        "id": "22345244-ac0a-801b-8ee1-000b50d50c14",
+        "schema": "{\":nFI\":{\"icon\":\"/icons/tag_gray.svg\",\"name\":\"가격\",\"type\":\"number\",\"number_format\":\"won\"},\"rPir\":{\"name\":\"브랜드\",\"type\":\"select\",\"options\":[{\"id\":\"1e63f2f5-bf70-478b-86a4-5201e29ce384\",\"color\":\"yellow\",\"value\":\"비비고고\"},{\"id\":\"879b4f51-a450-495a-a2e4-137a7e9f4f2f\",\"color\":\"purple\",\"value\":\"플라잉팬\"},{\"id\":\"f9963deb-9d8d-44a5-ab75-537caa2ea298\",\"color\":\"brown\",\"value\":\"값찌개\"},{\"id\":\"b74a5447-a9f2-4466-897a-f6a8af0322ac\",\"color\":\"blue\",\"value\":\"광뚝\"},{\"id\":\"4c18446e-d606-44d7-987f-f6a8fdbad5e1\",\"color\":\"green\",\"value\":\"경성카츠\"}]},\"title\":{\"icon\":\"/icons/book-closed_gray.svg\",\"name\":\"메뉴\",\"type\":\"title\"}}"
+      }
+    ]
+  }
 }

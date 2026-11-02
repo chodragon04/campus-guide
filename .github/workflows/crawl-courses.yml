@@ -1,23 +1,40 @@
-# [임시] 페이지 구조 확인용. 확인이 끝나면 삭제한다.
-name: 페이지 구조 확인
+name: 개설 강좌 수집
+
 on:
-  workflow_dispatch:
+  schedule:
+    - cron: "30 21 * * 0"    # 매주 월요일 06:30 (한국 시간). 강좌 목록은 자주 바뀌지 않아 주 1회
+  workflow_dispatch:          # Actions 탭에서 직접 실행
   push:
-    paths: ["scripts/inspect.js", ".github/workflows/inspect.yml"]
+    paths:
+      - "scripts/crawl-courses.js"
+      - ".github/workflows/crawl-courses.yml"
+
 permissions:
   contents: write
+
+concurrency:
+  group: crawl-courses
+  cancel-in-progress: false
+
 jobs:
-  inspect:
+  crawl:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
       - uses: actions/setup-node@v4
-        with: { node-version: 20, cache: npm }
+        with:
+          node-version: 20
+          cache: npm
+
       - run: npm ci
-      - name: 중간 인증서 받기
+
+      # 학교 서버가 중간 인증서를 보내지 않는 경우를 대비해 발급처(CA Issuers)에서 받아 추가한다.
+      - name: 학교 사이트 중간 인증서 받기
         continue-on-error: true
         run: |
-          cd "$RUNNER_TEMP"; : > extra-ca.pem
+          cd "$RUNNER_TEMP"
+          : > extra-ca.pem
           for HOST in for-s.seoultech.ac.kr; do
             echo | openssl s_client -connect "$HOST:443" -servername "$HOST" 2>/dev/null | openssl x509 > leaf.pem || continue
             ISSUER_URL=$(openssl x509 -in leaf.pem -noout -text | grep -m1 "CA Issuers" | sed 's/.*URI://')
@@ -27,9 +44,12 @@ jobs:
             cat intermediate.pem >> extra-ca.pem
           done
           echo "NODE_EXTRA_CA_CERTS=$RUNNER_TEMP/extra-ca.pem" >> "$GITHUB_ENV"
-      - run: node scripts/inspect.js
-      - run: |
+
+      - run: node scripts/crawl-courses.js
+
+      - name: 변경된 강좌 목록 커밋
+        run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/debug.json
-          git diff --staged --quiet || (git commit -m "[임시] 페이지 구조 확인 결과" && git pull --rebase && git push)
+          git add data/courses.json
+          git diff --staged --quiet || (git commit -m "개설 강좌 데이터 업데이트" && git pull --rebase && git push)

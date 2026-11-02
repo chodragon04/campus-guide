@@ -3,7 +3,8 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "crawl": "node scripts/crawl-food.js"
+    "crawl": "node scripts/crawl-food.js",
+    "courses": "node scripts/crawl-courses.js"
   },
   "dependencies": {
     "cheerio": "^1.0.0"

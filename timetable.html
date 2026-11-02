@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>내 시간표 | 과기대 캠퍼스 가이드</title>
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/timetable.css">
+</head>
+<body data-page="timetable">
+  <header id="site-header">
+    <a href="index.html" id="logo">과기대 캠퍼스 가이드</a>
+    <nav id="menu">
+      <a href="index.html" data-key="home">홈</a>
+      <a href="map.html" data-key="map">캠퍼스 지도</a>
+      <a href="buildings.html" data-key="buildings">건물·시설</a>
+      <a href="food.html" data-key="food">학식</a>
+      <a href="timetable.html" data-key="timetable">내 시간표</a>
+    </nav>
+  </header>
+
+  <main id="content">
+    <h1>내 시간표</h1>
+    <form id="course-form">
+      <input type="text" id="course-name" placeholder="과목명">
+      <input type="text" id="course-room" placeholder="강의실 (예: 미래관 101)">
+      <button type="submit">추가</button>
+    </form>
+    <ul id="course-list"></ul>
+  </main>
+
+  <footer id="site-footer">
+    <p>웹프로그래밍 프로젝트 · 서울과학기술대학교</p>
+  </footer>
+
+  <script src="js/common.js"></script>
+  <script src="js/timetable.js"></script>
+</body>
+</html>

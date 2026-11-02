@@ -1,0 +1,54 @@
+/* 모든 페이지 공통 스타일 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Pretendard", "Malgun Gothic", sans-serif;
+  color: #222;
+  line-height: 1.6;
+}
+
+#site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 24px;
+  background-color: #1a3d7c;
+}
+
+#logo {
+  color: #fff;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+#menu a {
+  margin-left: 16px;
+  color: #cfd8ea;
+  text-decoration: none;
+}
+
+#menu a.current {
+  color: #fff;
+  font-weight: bold;
+}
+
+#content {
+  max-width: 960px;
+  margin: 32px auto;
+  padding: 0 24px;
+}
+
+#content h1 {
+  margin-bottom: 16px;
+}
+
+#site-footer {
+  padding: 24px;
+  text-align: center;
+  color: #888;
+  font-size: 0.9em;
+}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>건물·시설 | 과기대 캠퍼스 가이드</title>
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/buildings.css">
+</head>
+<body data-page="buildings">
+  <header id="site-header">
+    <a href="index.html" id="logo">과기대 캠퍼스 가이드</a>
+    <nav id="menu">
+      <a href="index.html" data-key="home">홈</a>
+      <a href="map.html" data-key="map">캠퍼스 지도</a>
+      <a href="buildings.html" data-key="buildings">건물·시설</a>
+      <a href="food.html" data-key="food">학식</a>
+      <a href="timetable.html" data-key="timetable">내 시간표</a>
+    </nav>
+  </header>
+
+  <main id="content">
+    <h1>건물·시설</h1>
+    <input type="text" id="search" placeholder="건물 이름 검색">
+    <div id="filters">
+      <button data-category="all">전체</button>
+      <button data-category="lecture">강의동</button>
+      <button data-category="cafe">카페</button>
+      <button data-category="store">편의점</button>
+      <button data-category="print">프린터</button>
+    </div>
+    <ul id="building-list"></ul>
+  </main>
+
+  <footer id="site-footer">
+    <p>웹프로그래밍 프로젝트 · 서울과학기술대학교</p>
+  </footer>
+
+  <script src="js/common.js"></script>
+  <script src="js/buildings.js"></script>
+</body>
+</html>

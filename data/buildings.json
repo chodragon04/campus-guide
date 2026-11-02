@@ -1,0 +1,10 @@
+[
+  {
+    "id": 1,
+    "name": "예시 건물",
+    "category": "lecture",
+    "lat": 37.6316,
+    "lng": 127.0771,
+    "description": "건물 설명을 입력하세요."
+  }
+]

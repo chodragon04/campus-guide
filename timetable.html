@@ -21,11 +21,17 @@
 
   <main id="content">
     <h1>내 시간표</h1>
-    <form id="course-form">
-      <input type="text" id="course-name" placeholder="과목명">
-      <input type="text" id="course-room" placeholder="강의실 (예: 미래관 101)">
-      <button type="submit">추가</button>
-    </form>
+    <p id="semester" class="hint"></p>
+
+    <section id="search-area">
+      <input type="text" id="course-search" placeholder="과목명 또는 교수명으로 검색 (2글자 이상)" autocomplete="off">
+      <ul id="search-results"></ul>
+    </section>
+
+    <p id="message"></p>
+    <div id="timetable"></div>
+
+    <h2>담은 과목 <span id="credit-sum"></span></h2>
     <ul id="course-list"></ul>
   </main>
 

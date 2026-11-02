@@ -52,12 +52,21 @@ async function request(path, options = {}) {
 // ---------- 데이터 다듬기 ----------
 
 // "수(3 ~ 4), 목(3)" → [{ day: "수", start: 3, end: 4 }, { day: "목", start: 3, end: 3 }]
+// 괄호 안에 구간이 여러 개인 경우도 있다: "화(2 ~ 2, 11 ~ 13)", "화(2, 8 ~ 9)", "화(1A, 2 ~ 2)"
 function parseTimes(text) {
   const slots = [];
-  for (let match of (text || "").matchAll(/([월화수목금토일])\((\d+)(?:\s*~\s*(\d+))?\)/g)) {
-    const start = Number(match[2]);
-    const end = match[3] ? Number(match[3]) : start;
-    slots.push({ day: match[1], start: start, end: end });
+  for (let match of (text || "").matchAll(/([월화수목금토일])\(([^)]*)\)/g)) {
+    const day = match[1];
+    for (let part of match[2].split(",")) {
+      const numbers = part.split("~").map((n) => parseInt(n)); // "1A" → 1
+      if (numbers.some((n) => isNaN(n))) continue;
+      const start = numbers[0];
+      const end = numbers[numbers.length - 1];
+      // 같은 구간이 반복해서 적힌 경우("5A ~ 5A, 5A ~ 5A") 한 번만
+      if (!slots.some((s) => s.day === day && s.start === start && s.end === end)) {
+        slots.push({ day: day, start: start, end: end });
+      }
+    }
   }
   return slots;
 }

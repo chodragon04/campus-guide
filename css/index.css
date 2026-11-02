@@ -1,1 +1,12 @@
 /* index.html 전용 스타일 */
+
+#today-class,
+#today-food {
+  margin-top: 24px;
+}
+
+#today-class h2,
+#today-food h2 {
+  margin-bottom: 8px;
+  font-size: 1.2em;
+}

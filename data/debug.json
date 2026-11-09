@@ -1,182 +1,1386 @@
 {
-  "categories": {
-    "대학": " <ul class=\"a1\"> <li><div class=\"badge\">1</div> <a id=\"link_001\" class=\"popup fancybox.iframe\" href=\"/site/www/intro/map/building_info.jsp?id=001&amp;pic=SNUST1446171259513.jpg\" title=\"팝업 열림\">연계융합전공</a> </li> <li><div class=\"badge\">2</div> <a id=\"link_002\" class=\"popup fancybox.iframe\" href=\"/site/www/intro/map/building_info.jsp?id=002&amp;pic=SNUST7C2373BF368F40A0AF9DAD051CD3A639.jpg\" title=\"팝업 열림\">공과대학</a> </li> <li><div class=\"badge\">3</div> <a id=\"link_003\" class=\"popup fancybox.iframe\" href=\"/site/www/intro/map/building_info.jsp?id=003&amp;pic=SNUST30A91A65983D47ACA210D7D5F6ADBAAD.jpg\" title=\"팝업 열림\">정보통신대학</a> </li> <li><div class=\"badge\">6</div> <a id=\"link_006\" class=\"popup fancybox.iframe\" href=\"/site/www/intro/map/building_info.jsp?id=006&amp;pic=SNUSTF8238225E76142A79D3A2E8C2D73F5DD.jpg\" title=\"팝업 열림\">에너지바이오대학</a> </li> <li><div class=\"badge\">38</div> <a id=\"link_038\" class=\"popup fancybox.iframe\" href=\"/site/www/intro/map/building_info.jsp?id=038&amp;pic=SNUST1446172066232.jpg\" title=\"팝업 열림\">국제대학</a> </li> <li><div class=\"badge\">39</div> <a id=\"link_039\" class=\"popup fancybox.iframe\" href=\"/site/www/intro/map/building_info.jsp?id=039&amp;pic=SNUST1446172120805.jpg\" title=\"팝업 열림\">조형대학</a> </li> <li><div class=\"badge\">40</div> <a id=\"link_040\" class=\"popup fancybox.iframe\" href=\"/site/www/intro/map/building_info.jsp?id=040&amp;pic=SNUST042071408B5A42579AD17670B753106C.jpg\" title=\"팝업 열림\">교양대학</a> </li> <li><div class=\"badge\">40</div> <a id=\"link_040\" class=\"popup fancybox.iframe\" href=\"/site/www/intro/map/building_info.jsp?id=040&amp;pic=SNUST042071408B5A42579AD17670B753106C.jpg\" title=\"팝업 열림\">미래융합대학</a> </li> <li><div class=\"badge\">53</div> <a id=\"link_053\" class=\"popup fancybox.iframe\" href=\"/site/www/intro/map/building_info.jsp?id=053&amp;pic=SNUST1610347663522.JPG\" title=\"팝업 열림\">창의융합대학</a> </li> <li><div class=\"badge\">53</div> <a id=\"link_053\" class=\"popup fancybox.iframe\" href=\"/site/www/intro/map/building_info.jsp?id=053&amp;pic=SNUST1610347663522.JPG\" title=\"팝업 열림\">인문사회대학</a> </li> <li><div class=\"badge\">57</div> <a id=\"link_057\" class=\"popup fancybox.iframe\" href=\"/site/www/intro/map/building_info.jsp?id=057&amp;pic=SNUST1446176028036.jpg\" title=\"팝업 열림\">기술경영융합대학</a> </li> <li>&nbsp;</li><li>&nbsp;</li><li>&nbsp;</li><li>&nbsp;</li> </ul> ",
-    "대학원": " <ul class=\"a1\"> <li><div class=\"badge\">8</div> <a id=\"link_008\" class=\"popup fancybox.iframe\" href=\"/site/www/intro/map/building_info.jsp?id=008&amp;pic=SNUST1446171574095.jpg\" title=\"팝업 열림\">SeoulTech-KIRAMS 의과학대학원</a> </li> <li><div class=\"badge\">40</div> <a id=\"link_040\" class=\"popup fancybox.iframe\" href=\"/site/www/intro/map/building_info.jsp?id=040&amp;pic=SNUST042071408B5A42579AD17670B753106C.jpg\" title=\"팝업 열림\">산업대학원</a> </li> <li><div class=\"badge\">40</div> <a id=\"link_040\" class=\"popup fancybox.iframe\" href=\"/site/www/intro/map/building_info.jsp?id=040&amp;pic=SNUST042071408B5A42579AD17670B753106C.jpg\" title=\"팝업 열림\">주택도시대학원</a> </li> <li><div class=\"badge\">40</div> <a id=\"link_040\" class=\"popup fancybox.iframe\" href=\"/site/www/intro/map/building_info.jsp?id=040&amp;pic=SNUST042071408B5A42579AD17670B753106C.jpg\" title=\"팝업 열림\">철도전문대학원</a> </li> <li><div class=\"badge\">40</div> <a id=\"link_040\" class=\"popup fancybox.iframe\" href=\"/site/www/intro/map/building_info.jsp?id=040&amp;pic=SNUST042071408B5A42579AD17670B753106C.jpg\" title=\"팝업 열림\">IT정책전문대학원</a> </li> <li><div class=\"badge\">40</div> <a id=\"link_040\" class=\"popup fancybox.iframe\" href=\"/site/www/intro/map/building_info.jsp?id=040&amp;pic=SNUST042071408B5A42579AD17670B753106C.jpg\" title=\"팝업 열림\">국방융합과학대학원</a> </li> <li><div class=\"badge\">40</div> <a id=\"link_040\" class=\"popup fancybox.iframe\" href=\"/site/www/intro/map/building_info.jsp?id=040&amp;pic=SNUST042071408B5A42579AD17670B753106C.jpg\" title=\"팝업 열림\">나노IT디자인융합대학원</a> </li> <li><div class=\"badge\">40</div> <a id=\"link_040\" class=\"popup fancybox.iframe\" href=\"/site/www/intro/map/building_info.jsp?id=040&amp;pic=SNUST042071408B5A42579AD17670B753106C.jpg\" title=\"팝업 열림\">일반대학원</a> </li> <li>&nbsp;</li><li>&nbsp;</li> </ul> ",
-    "복지시설": " <ul class=\"a1\"> <li><div class=\"badge\">32</div> <a id=\"link_032\" class=\"popup fancybox.iframe\" href=\"/site/www/intro/map/building_info.jsp?id=032&amp;pic=SNUST1446171833024.jpg\" title=\"팝업 열림\">프론티어 카페</a> </li> <li><div class=\"badge\">34</div> <a id=\"link_034\" class=\"popup fancybox.iframe\" href=\"/site/www/intro/map/building_info.jsp?id=034&amp;pic=SNUST1446171951824.jpg\" title=\"팝업 열림\">도서관북카페</a> </li> <li><div class=\"badge\">36</div> <a id=\"link_036\" class=\"popup fancybox.iframe\" href=\"/site/www/intro/map/building_info.jsp?id=036&amp;pic=SNUST1610949609783.jpg\" title=\"팝업 열림\">구내미용실</a> </li> <li><div class=\"badge\">37</div> <a id=\"link_037\" class=\"popup fancybox.iframe\" href=\"/site/www/intro/map/building_info.jsp?id=037&amp;pic=SNUST1610949761775.jpg\" title=\"팝업 열림\">제1매점</a> </li> <li><div class=\"badge\">37</div> <a id=\"link_037\" class=\"popup fancybox.iframe\" href=\"/site/www/intro/map/building_info.jsp?id=037&amp;pic=SNUST1610949761775.jpg\" title=\"팝업 열림\">화방</a> </li> <li><div class=\"badge\">37</div> <a id=\"link_037\" class=\"popup fancybox.iframe\" href=\"/site/www/intro/map/building_info.jsp?id=037&amp;pic=SNUST1610949761775.jpg\" title=\"팝업 열림\">안경점</a> </li> <li><div class=\"badge\">37</div> <a id=\"link_037\" class=\"popup fancybox.iframe\" href=\"/site/www/intro/map/building_info.jsp?id=037&amp;pic=SNUST1610949761775.jpg\" title=\"팝업 열림\">학생 제1식당</a> </li> <li><div class=\"badge\">37</div> <a id=\"link_037\" class=\"popup fancybox.iframe\" href=\"/site/www/intro/map/building_info.jsp?id=037&amp;pic=SNUST1610949761775.jpg\" title=\"팝업 열림\">휴게실</a> </li> <li><div class=\"badge\">37</div> <a id=\"link_037\" class=\"popup fancybox.iframe\" href=\"/site/www/intro/map/building_info.jsp?id=037&amp;pic=SNUST1610949761775.jpg\" title=\"팝업 열림\">1학생회관카페</a> </li> <li><div class=\"badge\">43</div> <a id=\"link_043\" class=\"popup fancybox.iframe\" href=\"/site/www/intro/map/building_info.jsp?id=043&amp;pic=SNUST1446175477480.jpg\" title=\"팝업 열림\">제4매점</a> </li> <li><div class=\"badge\">43</div> <a id=\"link_043\" class=\"popup fancybox.iframe\" href=\"/site/www/intro/map/building_info.jsp?id=043&amp;pic=SNUST1446175477480.jpg\" title=\"팝업 열림\">당구장/탁구장</a> </li> <li><div class=\"badge\">43</div> <a id=\"link_043\" class=\"popup fancybox.iframe\" href=\"/site/www/intro/map/building_info.jsp?id=043&amp;pic=SNUST1446175477480.jpg\" title=\"팝업 열림\">휘트니스센터</a> </li> <li><div class=\"badge\">51</div> <a id=\"link_051\" class=\"popup fancybox.iframe\" href=\"/site/www/intro/map/building_info.jsp?id=051&amp;pic=SNUST1446176431182.jpg\" title=\"팝업 열림\">서점/문구</a> </li> <li><div class=\"badge\">51</div> <a id=\"link_051\" class=\"popup fancybox.iframe\" href=\"/site/www/intro/map/building_info.jsp?id=051&amp;pic=SNUST1446176431182.jpg\" title=\"팝업 열림\">복사실</a> </li> <li><div class=\"badge\">52</div> <a id=\"link_052\" class=\"popup fancybox.iframe\" href=\"/site/www/intro/map/building_info.jsp?id=052&amp;pic=SNUST1446175533971.jpg\" title=\"팝업 열림\">KB국민은행</a> </li> <li><div class=\"badge\">52</div> <a id=\"link_052\" class=\"popup fancybox.iframe\" href=\"/site/www/intro/map/building_info.jsp?id=052&amp;pic=SNUST1446175533971.jpg\" title=\"팝업 열림\">제2매점</a> </li> <li><div class=\"badge\">52</div> <a id=\"link_052\" class=\"popup fancybox.iframe\" href=\"/site/www/intro/map/building_info.jsp?id=052&amp;pic=SNUST1446175533971.jpg\" title=\"팝업 열림\">우체국</a> </li> <li><div class=\"badge\">52</div> <a id=\"link_052\" class=\"popup fancybox.iframe\" href=\"/site/www/intro/map/building_info.jsp?id=052&amp;pic=SNUST1446175533971.jpg\" title=\"팝업 열림\">휴(休)</a> </li> <li><div class=\"badge\">52</div> <a id=\"link_052\" class=\"popup fancybox.iframe\" href=\"/site/www/intro/map/building_info.jsp?id=052&amp;pic=SNUST1446175533971.jpg\" title=\"팝업 열림\">증명발급기</a> </li> <li><div class=\"badge\">52</div> <a id=\"link_052\" class=\"popup fancybox.iframe\" href=\"/site/www/intro/map/building_info.jsp?id=052&amp;pic=SNUST1446175533971.jpg\" title=\"팝업 열림\">보건진료소</a> </li> <li><div class=\"badge\">52</div> <a id=\"link_052\" class=\"popup fancybox.iframe\" href=\"/site/www/intro/map/building_info.jsp?id=052&amp;pic=SNUST1446175533971.jpg\" title=\"팝업 열림\">학생 제2식당</a> </li> <li><div class=\"badge\">53</div> <a id=\"link_053\" class=\"popup fancybox.iframe\" href=\"/site/www/intro/map/building_info.jsp?id=053&amp;pic=SNUST1610347663522.JPG\" title=\"팝업 열림\">상상관카페</a> </li> <li><div class=\"badge\">57</div> <a id=\"link_057\" class=\"popup fancybox.iframe\" href=\"/site/www/intro/map/building_info.jsp?id=057&amp;pic=SNUST1446176028036.jpg\" title=\"팝업 열림\">무궁관 카페</a> </li> <li><div class=\"badge\">60</div> <a id=\"link_060\" class=\"popup fancybox.iframe\" href=\"/site/www/intro/map/building_info.jsp?id=060&amp;pic=SNUST1446176176382.jpg\" title=\"팝업 열림\">미래관 카페</a> </li> <li><div class=\"badge\">62</div> <a id=\"link_062\" class=\"popup fancybox.iframe\" href=\"/site/www/intro/map/building_info.jsp?id=062&amp;pic=SNUST1610347638139.JPG\" title=\"팝업 열림\">큐브 카페</a> </li> </ul> ",
-    "행정지원": " <ul class=\"a1\"> <li><div class=\"badge\">1</div> <a id=\"link_001\" class=\"popup fancybox.iframe\" href=\"/site/www/intro/map/building_info.jsp?id=001&amp;pic=SNUST1446171259513.jpg\" title=\"팝업 열림\">교무처</a> </li> <li><div class=\"badge\">1</div> <a id=\"link_001\" class=\"popup fancybox.iframe\" href=\"/site/www/intro/map/building_info.jsp?id=001&amp;pic=SNUST1446171259513.jpg\" title=\"팝업 열림\">기획처</a> </li> <li><div class=\"badge\">1</div> <a id=\"link_001\" class=\"popup fancybox.iframe\" href=\"/site/www/intro/map/building_info.jsp?id=001&amp;pic=SNUST1446171259513.jpg\" title=\"팝업 열림\">사무국</a> </li> <li><div class=\"badge\">1</div> <a id=\"link_001\" class=\"popup fancybox.iframe\" href=\"/site/www/intro/map/building_info.jsp?id=001&amp;pic=SNUST1446171259513.jpg\" title=\"팝업 열림\">재난안전관리본부</a> </li> <li><div class=\"badge\">2</div> <a id=\"link_002\" class=\"popup fancybox.iframe\" href=\"/site/www/intro/map/building_info.jsp?id=002&amp;pic=SNUST7C2373BF368F40A0AF9DAD051CD3A639.jpg\" title=\"팝업 열림\">신문방송사</a> </li> <li><div class=\"badge\">5</div> <a id=\"link_005\" class=\"popup fancybox.iframe\" href=\"/site/www/intro/map/building_info.jsp?id=005&amp;pic=SNUST1610347069072.JPG\" title=\"팝업 열림\">공동실험실습관</a> </li> <li><div class=\"badge\">32</div> <a id=\"link_032\" class=\"popup fancybox.iframe\" href=\"/site/www/intro/map/building_info.jsp?id=032&amp;pic=SNUST1446171833024.jpg\" title=\"팝업 열림\">기록관</a> </li> <li><div class=\"badge\">34</div> <a id=\"link_034\" class=\"popup fancybox.iframe\" href=\"/site/www/intro/map/building_info.jsp?id=034&amp;pic=SNUST1446171951824.jpg\" title=\"팝업 열림\">정보전산원</a> </li> <li><div class=\"badge\">34</div> <a id=\"link_034\" class=\"popup fancybox.iframe\" href=\"/site/www/intro/map/building_info.jsp?id=034&amp;pic=SNUST1446171951824.jpg\" title=\"팝업 열림\">도서관</a> </li> <li><div class=\"badge\">38</div> <a id=\"link_038\" class=\"popup fancybox.iframe\" href=\"/site/www/intro/map/building_info.jsp?id=038&amp;pic=SNUST1446172066232.jpg\" title=\"팝업 열림\">국제교류처</a> </li> <li><div class=\"badge\">40</div> <a id=\"link_040\" class=\"popup fancybox.iframe\" href=\"/site/www/intro/map/building_info.jsp?id=040&amp;pic=SNUST042071408B5A42579AD17670B753106C.jpg\" title=\"팝업 열림\">장애학생지원센터</a> </li> <li><div class=\"badge\">42</div> <a id=\"link_042\" class=\"popup fancybox.iframe\" href=\"/site/www/intro/map/building_info.jsp?id=042&amp;pic=SNUST1446175420431.jpg\" title=\"팝업 열림\">생활관</a> </li> <li><div class=\"badge\">51</div> <a id=\"link_051\" class=\"popup fancybox.iframe\" href=\"/site/www/intro/map/building_info.jsp?id=051&amp;pic=SNUST1446176431182.jpg\" title=\"팝업 열림\">교수학습개발센터</a> </li> <li><div class=\"badge\">51</div> <a id=\"link_051\" class=\"popup fancybox.iframe\" href=\"/site/www/intro/map/building_info.jsp?id=051&amp;pic=SNUST1446176431182.jpg\" title=\"팝업 열림\">입학처</a> </li> <li><div class=\"badge\">51</div> <a id=\"link_051\" class=\"popup fancybox.iframe\" href=\"/site/www/intro/map/building_info.jsp?id=051&amp;pic=SNUST1446176431182.jpg\" title=\"팝업 열림\">교육혁신원</a> </li> <li><div class=\"badge\">51</div> <a id=\"link_051\" class=\"popup fancybox.iframe\" href=\"/site/www/intro/map/building_info.jsp?id=051&amp;pic=SNUST1446176431182.jpg\" title=\"팝업 열림\">소비자생활협동조합</a> </li> <li><div class=\"badge\">51</div> <a id=\"link_051\" class=\"popup fancybox.iframe\" href=\"/site/www/intro/map/building_info.jsp?id=051&amp;pic=SNUST1446176431182.jpg\" title=\"팝업 열림\">교양교육연구센터</a> </li> <li><div class=\"badge\">52</div> <a id=\"link_052\" class=\"popup fancybox.iframe\" href=\"/site/www/intro/map/building_info.jsp?id=052&amp;pic=SNUST1446175533971.jpg\" title=\"팝업 열림\">학생상담센터</a> </li> <li><div class=\"badge\">52</div> <a id=\"link_052\" class=\"popup fancybox.iframe\" href=\"/site/www/intro/map/building_info.jsp?id=052&amp;pic=SNUST1446175533971.jpg\" title=\"팝업 열림\">인권센터</a> </li> <li><div class=\"badge\">52</div> <a id=\"link_052\" class=\"popup fancybox.iframe\" href=\"/site/www/intro/map/building_info.jsp?id=052&amp;pic=SNUST1446175533971.jpg\" title=\"팝업 열림\">취업진로본부</a> </li> <li><div class=\"badge\">52</div> <a id=\"link_052\" class=\"popup fancybox.iframe\" href=\"/site/www/intro/map/building_info.jsp?id=052&amp;pic=SNUST1446175533971.jpg\" title=\"팝업 열림\">학생처</a> </li> <li><div class=\"badge\">53</div> <a id=\"link_053\" class=\"popup fancybox.iframe\" href=\"/site/www/intro/map/building_info.jsp?id=053&amp;pic=SNUST1610347663522.JPG\" title=\"팝업 열림\">(재)발전기금</a> </li> <li><div class=\"badge\">53</div> <a id=\"link_053\" class=\"popup fancybox.iframe\" href=\"/site/www/intro/map/building_info.jsp?id=053&amp;pic=SNUST1610347663522.JPG\" title=\"팝업 열림\">대외협력처</a> </li> <li><div class=\"badge\">53</div> <a id=\"link_053\" class=\"popup fancybox.iframe\" href=\"/site/www/intro/map/building_info.jsp?id=053&amp;pic=SNUST1610347663522.JPG\" title=\"팝업 열림\">평생교육원</a> </li> <li><div class=\"badge\">53</div> <a id=\"link_053\" class=\"popup fancybox.iframe\" href=\"/site/www/intro/map/building_info.jsp?id=053&amp;pic=SNUST1610347663522.JPG\" title=\"팝업 열림\">홍보실</a> </li> <li><div class=\"badge\">53</div> <a id=\"link_053\" class=\"popup fancybox.iframe\" href=\"/site/www/intro/map/building_info.jsp?id=053&amp;pic=SNUST1610347663522.JPG\" title=\"팝업 열림\">창업지원단</a> </li> <li><div class=\"badge\">59</div> <a id=\"link_059\" class=\"popup fancybox.iframe\" href=\"/site/www/intro/map/building_info.jsp?id=059&amp;pic=SNUST1446176131424.jpg\" title=\"팝업 열림\">육군학생군사교육단</a> </li> <li><div class=\"badge\">59</div> <a id=\"link_059\" class=\"popup fancybox.iframe\" href=\"/site/www/intro/map/building_info.jsp?id=059&amp;pic=SNUST1446176131424.jpg\" title=\"팝업 열림\">공군학생군사교육단</a> </li> <li><div class=\"badge\">62</div> <a id=\"link_062\" class=\"popup fancybox.iframe\" href=\"/site/www/intro/map/building_info.jsp?id=062&amp;pic=SNUST1610347638139.JPG\" title=\"팝업 열림\">산학협력단</a> </li> <li>&nbsp;</li> </ul> "
-  },
-  "info": {
-    "571": {
-      "text": "무궁관-A 57번 무궁관-A 571번 건물 호실및 공간명 호실 공간명 정보가 없습니다.",
-      "html": " <div class=\"container\"> <h1 class=\"tb15\" id=\"popup_top\"> <!-- <img src=\"/common/images/favicon.gif\" alt=\"\" style=\"margin-top: 6px;\" /> --> 무궁관-A&nbsp;57번 </h1> <div class=\"img\"><img alt=\"무궁관-A 건물사진\" src=\"/storage/campus_map/null\"></div> <!-- 슬라이드 --> <div class=\"list1\"> </div> <div class=\"list2\"> <table class=\"tbl_list\" cellpadding=\"0\" cellspacing=\"0\" summary=\"호실, 공간명등 설명 테이블 입니다.\"> <caption class=\"screen_hide\">무궁관-A&nbsp;571번 건물 호실및 공간명</caption> <colgroup> <col width=\"20%\"> <col width=\"80%\"> </colgroup> <thead> <tr> <th scope=\"col\">호실</th> <th scope=\"col\">공간명</th> </tr> </thead> <tbody id=\"tbodyList\"><tr><td colspan=\"2\" style=\"text-align:center;\">정보가 없습니다.</td></tr></tbody> </table> </div> </div><br> "
+ "logs": [],
+ "results": [
+  {
+   "code": "001",
+   "name": "대학본부",
+   "a": [
+    {
+     "place": "서울과학기술대학교 대학본부",
+     "category": "교육,학문 > 학교부속시설",
+     "x": 127.080263049121,
+     "y": 37.6318305564418,
+     "address": "서울 노원구 공릉로 232"
     },
-    "001": {
-      "text": "대학본부 1번 공통 지하 1층 지상 1층 지상 2층 지상 3층 지상 4층 지상 5층 대학본부 1번 건물 호실및 공간명 호실 공간명",
-      "html": " <div class=\"container\"> <h1 class=\"tb15\" id=\"popup_top\"> <!-- <img src=\"/common/images/favicon.gif\" alt=\"\" style=\"margin-top: 6px;\" /> --> 대학본부&nbsp;1번 </h1> <div class=\"img\"><img alt=\"대학본부 건물사진\" src=\"/storage/campus_map/null\"></div> <!-- 슬라이드 --> <div class=\"list1\"> <div class=\"list_title on\" onkeyup=\"changeFloor2(this)\" title=\"선택됨\"><span>공통</span></div> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>지하 1층</span></div> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>지상 1층</span></div> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>지상 2층</span></div> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>지상 3층</span></div> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>지상 4층</span></div> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>지상 5층</span></div> </div> <div class=\"list2\"> <table class=\"tbl_list\" cellpadding=\"0\" cellspacing=\"0\" summary=\"호실, 공간명등 설명 테이블 입니다.\"> <caption class=\"screen_hide\">대학본부&nbsp;1번 건물 호실및 공간명</caption> <colgroup> <col width=\"20%\"> <col width=\"80%\"> </colgroup> <thead> <tr> <th scope=\"col\">호실</th> <th scope=\"col\">공간명</th> </tr> </thead> <tbody id=\"tbodyList\"></tbody> </table> </div> </div><br> "
+    {
+     "place": "서울과학기술대학교 국제교육본부",
+     "category": "교육,학문 > 학교부속시설",
+     "x": 127.077542823967,
+     "y": 37.6349524883243,
+     "address": "서울 노원구 공릉로 232"
     },
-    "002": {
-      "text": "다산관 2번 공통 지하 1층 지상 1층 지상 2층 지상 3층 지상 5층 지상 6층 지상 7층 다산관 2번 건물 호실및 공간명 호실 공간명",
-      "html": " <div class=\"container\"> <h1 class=\"tb15\" id=\"popup_top\"> <!-- <img src=\"/common/images/favicon.gif\" alt=\"\" style=\"margin-top: 6px;\" /> --> 다산관&nbsp;2번 </h1> <div class=\"img\"><img alt=\"다산관 건물사진\" src=\"/storage/campus_map/null\"></div> <!-- 슬라이드 --> <div class=\"list1\"> <div class=\"list_title on\" onkeyup=\"changeFloor2(this)\" title=\"선택됨\"><span>공통</span></div> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>지하 1층</span></div> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>지상 1층</span></div> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>지상 2층</span></div> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>지상 3층</span></div> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>지상 5층</span></div> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>지상 6층</span></div> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>지상 7층</span></div> </div> <div class=\"list2\"> <table class=\"tbl_list\" cellpadding=\"0\" cellspacing=\"0\" summary=\"호실, 공간명등 설명 테이블 입니다.\"> <caption class=\"screen_hide\">다산관&nbsp;2번 건물 호실및 공간명</caption> <colgroup> <col width=\"20%\"> <col width=\"80%\"> </colgroup> <thead> <tr> <th scope=\"col\">호실</th> <th scope=\"col\">공간명</th> </tr> </thead> <tbody id=\"tbodyList\"></tbody> </table> </div> </div><br> "
-    },
-    "003": {
-      "text": "창학관 3번 공통 지상 1층 지상 2층 지상 3층 지상 4층 창학관 3번 건물 호실및 공간명 호실 공간명",
-      "html": " <div class=\"container\"> <h1 class=\"tb15\" id=\"popup_top\"> <!-- <img src=\"/common/images/favicon.gif\" alt=\"\" style=\"margin-top: 6px;\" /> --> 창학관&nbsp;3번 </h1> <div class=\"img\"><img alt=\"창학관 건물사진\" src=\"/storage/campus_map/null\"></div> <!-- 슬라이드 --> <div class=\"list1\"> <div class=\"list_title on\" onkeyup=\"changeFloor2(this)\" title=\"선택됨\"><span>공통</span></div> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>지상 1층</span></div> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>지상 2층</span></div> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>지상 3층</span></div> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>지상 4층</span></div> </div> <div class=\"list2\"> <table class=\"tbl_list\" cellpadding=\"0\" cellspacing=\"0\" summary=\"호실, 공간명등 설명 테이블 입니다.\"> <caption class=\"screen_hide\">창학관&nbsp;3번 건물 호실및 공간명</caption> <colgroup> <col width=\"20%\"> <col width=\"80%\"> </colgroup> <thead> <tr> <th scope=\"col\">호실</th> <th scope=\"col\">공간명</th> </tr> </thead> <tbody id=\"tbodyList\"></tbody> </table> </div> </div><br> "
-    },
-    "004": {
-      "text": "제2창업보육센터 4번 제2창업보육센터 4번 건물 호실및 공간명 호실 공간명 정보가 없습니다.",
-      "html": " <div class=\"container\"> <h1 class=\"tb15\" id=\"popup_top\"> <!-- <img src=\"/common/images/favicon.gif\" alt=\"\" style=\"margin-top: 6px;\" /> --> 제2창업보육센터&nbsp;4번 </h1> <div class=\"img\"><img alt=\"제2창업보육센터 건물사진\" src=\"/storage/campus_map/null\"></div> <!-- 슬라이드 --> <div class=\"list1\"> </div> <div class=\"list2\"> <table class=\"tbl_list\" cellpadding=\"0\" cellspacing=\"0\" summary=\"호실, 공간명등 설명 테이블 입니다.\"> <caption class=\"screen_hide\">제2창업보육센터&nbsp;4번 건물 호실및 공간명</caption> <colgroup> <col width=\"20%\"> <col width=\"80%\"> </colgroup> <thead> <tr> <th scope=\"col\">호실</th> <th scope=\"col\">공간명</th> </tr> </thead> <tbody id=\"tbodyList\"><tr><td colspan=\"2\" style=\"text-align:center;\">정보가 없습니다.</td></tr></tbody> </table> </div> </div><br> "
-    },
-    "005": {
-      "text": "혜성관 5번 공통 지하 1층 지상 1층 옥탑 1층 지상 2층 지상 3층 지상 4층 지상 5층 혜성관 5번 건물 호실및 공간명 호실 공간명",
-      "html": " <div class=\"container\"> <h1 class=\"tb15\" id=\"popup_top\"> <!-- <img src=\"/common/images/favicon.gif\" alt=\"\" style=\"margin-top: 6px;\" /> --> 혜성관&nbsp;5번 </h1> <div class=\"img\"><img alt=\"혜성관 건물사진\" src=\"/storage/campus_map/null\"></div> <!-- 슬라이드 --> <div class=\"list1\"> <div class=\"list_title on\" onkeyup=\"changeFloor2(this)\" title=\"선택됨\"><span>공통</span></div> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>지하 1층</span></div> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>지상 1층</span></div> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>옥탑 1층</span></div> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>지상 2층</span></div> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>지상 3층</span></div> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>지상 4층</span></div> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>지상 5층</span></div> </div> <div class=\"list2\"> <table class=\"tbl_list\" cellpadding=\"0\" cellspacing=\"0\" summary=\"호실, 공간명등 설명 테이블 입니다.\"> <caption class=\"screen_hide\">혜성관&nbsp;5번 건물 호실및 공간명</caption> <colgroup> <col width=\"20%\"> <col width=\"80%\"> </colgroup> <thead> <tr> <th scope=\"col\">호실</th> <th scope=\"col\">공간명</th> </tr> </thead> <tbody id=\"tbodyList\"></tbody> </table> </div> </div><br> "
-    },
-    "006": {
-      "text": "청운관 6번 공통 지하 1층 지상 1층 지상 2층 지상 3층 지상 4층 청운관 6번 건물 호실및 공간명 호실 공간명",
-      "html": " <div class=\"container\"> <h1 class=\"tb15\" id=\"popup_top\"> <!-- <img src=\"/common/images/favicon.gif\" alt=\"\" style=\"margin-top: 6px;\" /> --> 청운관&nbsp;6번 </h1> <div class=\"img\"><img alt=\"청운관 건물사진\" src=\"/storage/campus_map/null\"></div> <!-- 슬라이드 --> <div class=\"list1\"> <div class=\"list_title on\" onkeyup=\"changeFloor2(this)\" title=\"선택됨\"><span>공통</span></div> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>지하 1층</span></div> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>지상 1층</span></div> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>지상 2층</span></div> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>지상 3층</span></div> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>지상 4층</span></div> </div> <div class=\"list2\"> <table class=\"tbl_list\" cellpadding=\"0\" cellspacing=\"0\" summary=\"호실, 공간명등 설명 테이블 입니다.\"> <caption class=\"screen_hide\">청운관&nbsp;6번 건물 호실및 공간명</caption> <colgroup> <col width=\"20%\"> <col width=\"80%\"> </colgroup> <thead> <tr> <th scope=\"col\">호실</th> <th scope=\"col\">공간명</th> </tr> </thead> <tbody id=\"tbodyList\"></tbody> </table> </div> </div><br> "
-    },
-    "007": {
-      "text": "서울테크노파크 7번 지상 3층 지상 4층 지상 5층 지상 6층 서울테크노파크 7번 건물 호실및 공간명 호실 공간명",
-      "html": " <div class=\"container\"> <h1 class=\"tb15\" id=\"popup_top\"> <!-- <img src=\"/common/images/favicon.gif\" alt=\"\" style=\"margin-top: 6px;\" /> --> 서울테크노파크&nbsp;7번 </h1> <div class=\"img\"><img alt=\"서울테크노파크 건물사진\" src=\"/storage/campus_map/null\"></div> <!-- 슬라이드 --> <div class=\"list1\"> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>지상 3층</span></div> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>지상 4층</span></div> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>지상 5층</span></div> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>지상 6층</span></div> </div> <div class=\"list2\"> <table class=\"tbl_list\" cellpadding=\"0\" cellspacing=\"0\" summary=\"호실, 공간명등 설명 테이블 입니다.\"> <caption class=\"screen_hide\">서울테크노파크&nbsp;7번 건물 호실및 공간명</caption> <colgroup> <col width=\"20%\"> <col width=\"80%\"> </colgroup> <thead> <tr> <th scope=\"col\">호실</th> <th scope=\"col\">공간명</th> </tr> </thead> <tbody id=\"tbodyList\"></tbody> </table> </div> </div><br> "
-    },
-    "008": {
-      "text": "창조관 8번 공통 지하 1층 지상 1층 옥탑 1층 지상 2층 지상 3층 지상 4층 지상 5층 창조관 8번 건물 호실및 공간명 호실 공간명",
-      "html": " <div class=\"container\"> <h1 class=\"tb15\" id=\"popup_top\"> <!-- <img src=\"/common/images/favicon.gif\" alt=\"\" style=\"margin-top: 6px;\" /> --> 창조관&nbsp;8번 </h1> <div class=\"img\"><img alt=\"창조관 건물사진\" src=\"/storage/campus_map/null\"></div> <!-- 슬라이드 --> <div class=\"list1\"> <div class=\"list_title on\" onkeyup=\"changeFloor2(this)\" title=\"선택됨\"><span>공통</span></div> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>지하 1층</span></div> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>지상 1층</span></div> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>옥탑 1층</span></div> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>지상 2층</span></div> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>지상 3층</span></div> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>지상 4층</span></div> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>지상 5층</span></div> </div> <div class=\"list2\"> <table class=\"tbl_list\" cellpadding=\"0\" cellspacing=\"0\" summary=\"호실, 공간명등 설명 테이블 입니다.\"> <caption class=\"screen_hide\">창조관&nbsp;8번 건물 호실및 공간명</caption> <colgroup> <col width=\"20%\"> <col width=\"80%\"> </colgroup> <thead> <tr> <th scope=\"col\">호실</th> <th scope=\"col\">공간명</th> </tr> </thead> <tbody id=\"tbodyList\"></tbody> </table> </div> </div><br> "
-    },
-    "010": {
-      "text": "파워플랜트 10번 지하 1층 지하 2층 지상 1층 파워플랜트 10번 건물 호실및 공간명 호실 공간명",
-      "html": " <div class=\"container\"> <h1 class=\"tb15\" id=\"popup_top\"> <!-- <img src=\"/common/images/favicon.gif\" alt=\"\" style=\"margin-top: 6px;\" /> --> 파워플랜트&nbsp;10번 </h1> <div class=\"img\"><img alt=\"파워플랜트 건물사진\" src=\"/storage/campus_map/null\"></div> <!-- 슬라이드 --> <div class=\"list1\"> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>지하 1층</span></div> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>지하 2층</span></div> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>지상 1층</span></div> </div> <div class=\"list2\"> <table class=\"tbl_list\" cellpadding=\"0\" cellspacing=\"0\" summary=\"호실, 공간명등 설명 테이블 입니다.\"> <caption class=\"screen_hide\">파워플랜트&nbsp;10번 건물 호실및 공간명</caption> <colgroup> <col width=\"20%\"> <col width=\"80%\"> </colgroup> <thead> <tr> <th scope=\"col\">호실</th> <th scope=\"col\">공간명</th> </tr> </thead> <tbody id=\"tbodyList\"></tbody> </table> </div> </div><br> "
-    },
-    "011": {
-      "text": "붕어방 11번 붕어방 11번 건물 호실및 공간명 호실 공간명 정보가 없습니다.",
-      "html": " <div class=\"container\"> <h1 class=\"tb15\" id=\"popup_top\"> <!-- <img src=\"/common/images/favicon.gif\" alt=\"\" style=\"margin-top: 6px;\" /> --> 붕어방&nbsp;11번 </h1> <div class=\"img\"><img alt=\"붕어방 건물사진\" src=\"/storage/campus_map/null\"></div> <!-- 슬라이드 --> <div class=\"list1\"> </div> <div class=\"list2\"> <table class=\"tbl_list\" cellpadding=\"0\" cellspacing=\"0\" summary=\"호실, 공간명등 설명 테이블 입니다.\"> <caption class=\"screen_hide\">붕어방&nbsp;11번 건물 호실및 공간명</caption> <colgroup> <col width=\"20%\"> <col width=\"80%\"> </colgroup> <thead> <tr> <th scope=\"col\">호실</th> <th scope=\"col\">공간명</th> </tr> </thead> <tbody id=\"tbodyList\"><tr><td colspan=\"2\" style=\"text-align:center;\">정보가 없습니다.</td></tr></tbody> </table> </div> </div><br> "
-    },
-    "013": {
-      "text": "정문 13번 정문 13번 건물 호실및 공간명 호실 공간명 정보가 없습니다.",
-      "html": " <div class=\"container\"> <h1 class=\"tb15\" id=\"popup_top\"> <!-- <img src=\"/common/images/favicon.gif\" alt=\"\" style=\"margin-top: 6px;\" /> --> 정문&nbsp;13번 </h1> <div class=\"img\"><img alt=\"정문 건물사진\" src=\"/storage/campus_map/null\"></div> <!-- 슬라이드 --> <div class=\"list1\"> </div> <div class=\"list2\"> <table class=\"tbl_list\" cellpadding=\"0\" cellspacing=\"0\" summary=\"호실, 공간명등 설명 테이블 입니다.\"> <caption class=\"screen_hide\">정문&nbsp;13번 건물 호실및 공간명</caption> <colgroup> <col width=\"20%\"> <col width=\"80%\"> </colgroup> <thead> <tr> <th scope=\"col\">호실</th> <th scope=\"col\">공간명</th> </tr> </thead> <tbody id=\"tbodyList\"><tr><td colspan=\"2\" style=\"text-align:center;\">정보가 없습니다.</td></tr></tbody> </table> </div> </div><br> "
-    },
-    "014": {
-      "text": "도예관 14번 지상 1층 도예관 14번 건물 호실및 공간명 호실 공간명",
-      "html": " <div class=\"container\"> <h1 class=\"tb15\" id=\"popup_top\"> <!-- <img src=\"/common/images/favicon.gif\" alt=\"\" style=\"margin-top: 6px;\" /> --> 도예관&nbsp;14번 </h1> <div class=\"img\"><img alt=\"도예관 건물사진\" src=\"/storage/campus_map/null\"></div> <!-- 슬라이드 --> <div class=\"list1\"> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>지상 1층</span></div> </div> <div class=\"list2\"> <table class=\"tbl_list\" cellpadding=\"0\" cellspacing=\"0\" summary=\"호실, 공간명등 설명 테이블 입니다.\"> <caption class=\"screen_hide\">도예관&nbsp;14번 건물 호실및 공간명</caption> <colgroup> <col width=\"20%\"> <col width=\"80%\"> </colgroup> <thead> <tr> <th scope=\"col\">호실</th> <th scope=\"col\">공간명</th> </tr> </thead> <tbody id=\"tbodyList\"></tbody> </table> </div> </div><br> "
-    },
-    "030": {
-      "text": "SeoulTech어린이집 30번 SeoulTech어린이집 30번 건물 호실및 공간명 호실 공간명 정보가 없습니다.",
-      "html": " <div class=\"container\"> <h1 class=\"tb15\" id=\"popup_top\"> <!-- <img src=\"/common/images/favicon.gif\" alt=\"\" style=\"margin-top: 6px;\" /> --> SeoulTech어린이집&nbsp;30번 </h1> <div class=\"img\"><img alt=\"SeoulTech어린이집 건물사진\" src=\"/storage/campus_map/null\"></div> <!-- 슬라이드 --> <div class=\"list1\"> </div> <div class=\"list2\"> <table class=\"tbl_list\" cellpadding=\"0\" cellspacing=\"0\" summary=\"호실, 공간명등 설명 테이블 입니다.\"> <caption class=\"screen_hide\">SeoulTech어린이집&nbsp;30번 건물 호실및 공간명</caption> <colgroup> <col width=\"20%\"> <col width=\"80%\"> </colgroup> <thead> <tr> <th scope=\"col\">호실</th> <th scope=\"col\">공간명</th> </tr> </thead> <tbody id=\"tbodyList\"><tr><td colspan=\"2\" style=\"text-align:center;\">정보가 없습니다.</td></tr></tbody> </table> </div> </div><br> "
-    },
-    "031": {
-      "text": "창업보육센터 31번 지하 1층 지상 1층 지상 2층 지상 3층 지상 4층 창업보육센터 31번 건물 호실및 공간명 호실 공간명",
-      "html": " <div class=\"container\"> <h1 class=\"tb15\" id=\"popup_top\"> <!-- <img src=\"/common/images/favicon.gif\" alt=\"\" style=\"margin-top: 6px;\" /> --> 창업보육센터&nbsp;31번 </h1> <div class=\"img\"><img alt=\"창업보육센터 건물사진\" src=\"/storage/campus_map/null\"></div> <!-- 슬라이드 --> <div class=\"list1\"> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>지하 1층</span></div> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>지상 1층</span></div> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>지상 2층</span></div> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>지상 3층</span></div> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>지상 4층</span></div> </div> <div class=\"list2\"> <table class=\"tbl_list\" cellpadding=\"0\" cellspacing=\"0\" summary=\"호실, 공간명등 설명 테이블 입니다.\"> <caption class=\"screen_hide\">창업보육센터&nbsp;31번 건물 호실및 공간명</caption> <colgroup> <col width=\"20%\"> <col width=\"80%\"> </colgroup> <thead> <tr> <th scope=\"col\">호실</th> <th scope=\"col\">공간명</th> </tr> </thead> <tbody id=\"tbodyList\"></tbody> </table> </div> </div><br> "
-    },
-    "032": {
-      "text": "프론티어관 32번 공통 지하 1층 지상 1층 옥탑 1층 지상 10층 지상 2층 지상 3층 지상 4층 지상 5층 지상 6층 지상 7층 지상 8층 지상 9층 프론티어관 32번 건물 호실및 공간명 호실 공간명",
-      "html": " <div class=\"container\"> <h1 class=\"tb15\" id=\"popup_top\"> <!-- <img src=\"/common/images/favicon.gif\" alt=\"\" style=\"margin-top: 6px;\" /> --> 프론티어관&nbsp;32번 </h1> <div class=\"img\"><img alt=\"프론티어관 건물사진\" src=\"/storage/campus_map/null\"></div> <!-- 슬라이드 --> <div class=\"list1\"> <div class=\"list_title on\" onkeyup=\"changeFloor2(this)\" title=\"선택됨\"><span>공통</span></div> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>지하 1층</span></div> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>지상 1층</span></div> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>옥탑 1층</span></div> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>지상 10층</span></div> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>지상 2층</span></div> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>지상 3층</span></div> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>지상 4층</span></div> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>지상 5층</span></div> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>지상 6층</span></div> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>지상 7층</span></div> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>지상 8층</span></div> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>지상 9층</span></div> </div> <div class=\"list2\"> <table class=\"tbl_list\" cellpadding=\"0\" cellspacing=\"0\" summary=\"호실, 공간명등 설명 테이블 입니다.\"> <caption class=\"screen_hide\">프론티어관&nbsp;32번 건물 호실및 공간명</caption> <colgroup> <col width=\"20%\"> <col width=\"80%\"> </colgroup> <thead> <tr> <th scope=\"col\">호실</th> <th scope=\"col\">공간명</th> </tr> </thead> <tbody id=\"tbodyList\"></tbody> </table> </div> </div><br> "
-    },
-    "033": {
-      "text": "하이테크관 33번 옥탑 1층 지상 1층 지상 2층 하이테크관 33번 건물 호실및 공간명 호실 공간명",
-      "html": " <div class=\"container\"> <h1 class=\"tb15\" id=\"popup_top\"> <!-- <img src=\"/common/images/favicon.gif\" alt=\"\" style=\"margin-top: 6px;\" /> --> 하이테크관&nbsp;33번 </h1> <div class=\"img\"><img alt=\"하이테크관 건물사진\" src=\"/storage/campus_map/null\"></div> <!-- 슬라이드 --> <div class=\"list1\"> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>옥탑 1층</span></div> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>지상 1층</span></div> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>지상 2층</span></div> </div> <div class=\"list2\"> <table class=\"tbl_list\" cellpadding=\"0\" cellspacing=\"0\" summary=\"호실, 공간명등 설명 테이블 입니다.\"> <caption class=\"screen_hide\">하이테크관&nbsp;33번 건물 호실및 공간명</caption> <colgroup> <col width=\"20%\"> <col width=\"80%\"> </colgroup> <thead> <tr> <th scope=\"col\">호실</th> <th scope=\"col\">공간명</th> </tr> </thead> <tbody id=\"tbodyList\"></tbody> </table> </div> </div><br> "
-    },
-    "034": {
-      "text": "도서관 34번 공통 옥탑 1층 지상 1층 지상 2층 지상 3층 도서관 34번 건물 호실및 공간명 호실 공간명",
-      "html": " <div class=\"container\"> <h1 class=\"tb15\" id=\"popup_top\"> <!-- <img src=\"/common/images/favicon.gif\" alt=\"\" style=\"margin-top: 6px;\" /> --> 도서관&nbsp;34번 </h1> <div class=\"img\"><img alt=\"도서관 건물사진\" src=\"/storage/campus_map/null\"></div> <!-- 슬라이드 --> <div class=\"list1\"> <div class=\"list_title on\" onkeyup=\"changeFloor2(this)\" title=\"선택됨\"><span>공통</span></div> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>옥탑 1층</span></div> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>지상 1층</span></div> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>지상 2층</span></div> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>지상 3층</span></div> </div> <div class=\"list2\"> <table class=\"tbl_list\" cellpadding=\"0\" cellspacing=\"0\" summary=\"호실, 공간명등 설명 테이블 입니다.\"> <caption class=\"screen_hide\">도서관&nbsp;34번 건물 호실및 공간명</caption> <colgroup> <col width=\"20%\"> <col width=\"80%\"> </colgroup> <thead> <tr> <th scope=\"col\">호실</th> <th scope=\"col\">공간명</th> </tr> </thead> <tbody id=\"tbodyList\"></tbody> </table> </div> </div><br> "
-    },
-    "035": {
-      "text": "도서관 별관 35번 지하 1층 지상 1층 지상 2층 도서관 별관 35번 건물 호실및 공간명 호실 공간명",
-      "html": " <div class=\"container\"> <h1 class=\"tb15\" id=\"popup_top\"> <!-- <img src=\"/common/images/favicon.gif\" alt=\"\" style=\"margin-top: 6px;\" /> --> 도서관 별관&nbsp;35번 </h1> <div class=\"img\"><img alt=\"도서관 별관 건물사진\" src=\"/storage/campus_map/null\"></div> <!-- 슬라이드 --> <div class=\"list1\"> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>지하 1층</span></div> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>지상 1층</span></div> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>지상 2층</span></div> </div> <div class=\"list2\"> <table class=\"tbl_list\" cellpadding=\"0\" cellspacing=\"0\" summary=\"호실, 공간명등 설명 테이블 입니다.\"> <caption class=\"screen_hide\">도서관 별관&nbsp;35번 건물 호실및 공간명</caption> <colgroup> <col width=\"20%\"> <col width=\"80%\"> </colgroup> <thead> <tr> <th scope=\"col\">호실</th> <th scope=\"col\">공간명</th> </tr> </thead> <tbody id=\"tbodyList\"></tbody> </table> </div> </div><br> "
-    },
-    "037": {
-      "text": "학생회관 37번 공통 지하 1층 지상 1층 옥탑 1층 지상 2층 지상 3층 학생회관 37번 건물 호실및 공간명 호실 공간명",
-      "html": " <div class=\"container\"> <h1 class=\"tb15\" id=\"popup_top\"> <!-- <img src=\"/common/images/favicon.gif\" alt=\"\" style=\"margin-top: 6px;\" /> --> 학생회관&nbsp;37번 </h1> <div class=\"img\"><img alt=\"학생회관 건물사진\" src=\"/storage/campus_map/null\"></div> <!-- 슬라이드 --> <div class=\"list1\"> <div class=\"list_title on\" onkeyup=\"changeFloor2(this)\" title=\"선택됨\"><span>공통</span></div> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>지하 1층</span></div> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>지상 1층</span></div> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>옥탑 1층</span></div> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>지상 2층</span></div> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>지상 3층</span></div> </div> <div class=\"list2\"> <table class=\"tbl_list\" cellpadding=\"0\" cellspacing=\"0\" summary=\"호실, 공간명등 설명 테이블 입니다.\"> <caption class=\"screen_hide\">학생회관&nbsp;37번 건물 호실및 공간명</caption> <colgroup> <col width=\"20%\"> <col width=\"80%\"> </colgroup> <thead> <tr> <th scope=\"col\">호실</th> <th scope=\"col\">공간명</th> </tr> </thead> <tbody id=\"tbodyList\"></tbody> </table> </div> </div><br> "
-    },
-    "038": {
-      "text": "국제관 38번 공통 지하 1층 지상 1층 지상 2층 지상 3층 지상 4층 지상 5층 국제관 38번 건물 호실및 공간명 호실 공간명",
-      "html": " <div class=\"container\"> <h1 class=\"tb15\" id=\"popup_top\"> <!-- <img src=\"/common/images/favicon.gif\" alt=\"\" style=\"margin-top: 6px;\" /> --> 국제관&nbsp;38번 </h1> <div class=\"img\"><img alt=\"국제관 건물사진\" src=\"/storage/campus_map/null\"></div> <!-- 슬라이드 --> <div class=\"list1\"> <div class=\"list_title on\" onkeyup=\"changeFloor2(this)\" title=\"선택됨\"><span>공통</span></div> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>지하 1층</span></div> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>지상 1층</span></div> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>지상 2층</span></div> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>지상 3층</span></div> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>지상 4층</span></div> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>지상 5층</span></div> </div> <div class=\"list2\"> <table class=\"tbl_list\" cellpadding=\"0\" cellspacing=\"0\" summary=\"호실, 공간명등 설명 테이블 입니다.\"> <caption class=\"screen_hide\">국제관&nbsp;38번 건물 호실및 공간명</caption> <colgroup> <col width=\"20%\"> <col width=\"80%\"> </colgroup> <thead> <tr> <th scope=\"col\">호실</th> <th scope=\"col\">공간명</th> </tr> </thead> <tbody id=\"tbodyList\"></tbody> </table> </div> </div><br> "
-    },
-    "039": {
-      "text": "다빈치관 39번 공통 지하 1층 지상 1층 옥탑 1층 지상 2층 지상 3층 지상 4층 지상 5층 지상 6층 지상 7층 다빈치관 39번 건물 호실및 공간명 호실 공간명",
-      "html": " <div class=\"container\"> <h1 class=\"tb15\" id=\"popup_top\"> <!-- <img src=\"/common/images/favicon.gif\" alt=\"\" style=\"margin-top: 6px;\" /> --> 다빈치관&nbsp;39번 </h1> <div class=\"img\"><img alt=\"다빈치관 건물사진\" src=\"/storage/campus_map/null\"></div> <!-- 슬라이드 --> <div class=\"list1\"> <div class=\"list_title on\" onkeyup=\"changeFloor2(this)\" title=\"선택됨\"><span>공통</span></div> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>지하 1층</span></div> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>지상 1층</span></div> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>옥탑 1층</span></div> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>지상 2층</span></div> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>지상 3층</span></div> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>지상 4층</span></div> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>지상 5층</span></div> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>지상 6층</span></div> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>지상 7층</span></div> </div> <div class=\"list2\"> <table class=\"tbl_list\" cellpadding=\"0\" cellspacing=\"0\" summary=\"호실, 공간명등 설명 테이블 입니다.\"> <caption class=\"screen_hide\">다빈치관&nbsp;39번 건물 호실및 공간명</caption> <colgroup> <col width=\"20%\"> <col width=\"80%\"> </colgroup> <thead> <tr> <th scope=\"col\">호실</th> <th scope=\"col\">공간명</th> </tr> </thead> <tbody id=\"tbodyList\"></tbody> </table> </div> </div><br> "
-    },
-    "040": {
-      "text": "어의관 40번 공통 지상 1층 지상 2층 지상 3층 지상 4층 지상 5층 지상 6층 지상 7층 어의관 40번 건물 호실및 공간명 호실 공간명",
-      "html": " <div class=\"container\"> <h1 class=\"tb15\" id=\"popup_top\"> <!-- <img src=\"/common/images/favicon.gif\" alt=\"\" style=\"margin-top: 6px;\" /> --> 어의관&nbsp;40번 </h1> <div class=\"img\"><img alt=\"어의관 건물사진\" src=\"/storage/campus_map/null\"></div> <!-- 슬라이드 --> <div class=\"list1\"> <div class=\"list_title on\" onkeyup=\"changeFloor2(this)\" title=\"선택됨\"><span>공통</span></div> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>지상 1층</span></div> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>지상 2층</span></div> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>지상 3층</span></div> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>지상 4층</span></div> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>지상 5층</span></div> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>지상 6층</span></div> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>지상 7층</span></div> </div> <div class=\"list2\"> <table class=\"tbl_list\" cellpadding=\"0\" cellspacing=\"0\" summary=\"호실, 공간명등 설명 테이블 입니다.\"> <caption class=\"screen_hide\">어의관&nbsp;40번 건물 호실및 공간명</caption> <colgroup> <col width=\"20%\"> <col width=\"80%\"> </colgroup> <thead> <tr> <th scope=\"col\">호실</th> <th scope=\"col\">공간명</th> </tr> </thead> <tbody id=\"tbodyList\"></tbody> </table> </div> </div><br> "
-    },
-    "041": {
-      "text": "불암학사 41번 지하 1층 지상 1층 옥탑 1층 지상 2층 지상 3층 지상 4층 불암학사 41번 건물 호실및 공간명 호실 공간명",
-      "html": " <div class=\"container\"> <h1 class=\"tb15\" id=\"popup_top\"> <!-- <img src=\"/common/images/favicon.gif\" alt=\"\" style=\"margin-top: 6px;\" /> --> 불암학사&nbsp;41번 </h1> <div class=\"img\"><img alt=\"불암학사 건물사진\" src=\"/storage/campus_map/null\"></div> <!-- 슬라이드 --> <div class=\"list1\"> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>지하 1층</span></div> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>지상 1층</span></div> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>옥탑 1층</span></div> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>지상 2층</span></div> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>지상 3층</span></div> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>지상 4층</span></div> </div> <div class=\"list2\"> <table class=\"tbl_list\" cellpadding=\"0\" cellspacing=\"0\" summary=\"호실, 공간명등 설명 테이블 입니다.\"> <caption class=\"screen_hide\">불암학사&nbsp;41번 건물 호실및 공간명</caption> <colgroup> <col width=\"20%\"> <col width=\"80%\"> </colgroup> <thead> <tr> <th scope=\"col\">호실</th> <th scope=\"col\">공간명</th> </tr> </thead> <tbody id=\"tbodyList\"></tbody> </table> </div> </div><br> "
-    },
-    "042": {
-      "text": "KB학사 42번 공통 지하 1층 지상 1층 옥탑 1층 지상 2층 지상 3층 지상 4층 지상 5층 지상 6층 지상 7층 KB학사 42번 건물 호실및 공간명 호실 공간명",
-      "html": " <div class=\"container\"> <h1 class=\"tb15\" id=\"popup_top\"> <!-- <img src=\"/common/images/favicon.gif\" alt=\"\" style=\"margin-top: 6px;\" /> --> KB학사&nbsp;42번 </h1> <div class=\"img\"><img alt=\"KB학사 건물사진\" src=\"/storage/campus_map/null\"></div> <!-- 슬라이드 --> <div class=\"list1\"> <div class=\"list_title on\" onkeyup=\"changeFloor2(this)\" title=\"선택됨\"><span>공통</span></div> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>지하 1층</span></div> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>지상 1층</span></div> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>옥탑 1층</span></div> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>지상 2층</span></div> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>지상 3층</span></div> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>지상 4층</span></div> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>지상 5층</span></div> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>지상 6층</span></div> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>지상 7층</span></div> </div> <div class=\"list2\"> <table class=\"tbl_list\" cellpadding=\"0\" cellspacing=\"0\" summary=\"호실, 공간명등 설명 테이블 입니다.\"> <caption class=\"screen_hide\">KB학사&nbsp;42번 건물 호실및 공간명</caption> <colgroup> <col width=\"20%\"> <col width=\"80%\"> </colgroup> <thead> <tr> <th scope=\"col\">호실</th> <th scope=\"col\">공간명</th> </tr> </thead> <tbody id=\"tbodyList\"></tbody> </table> </div> </div><br> "
-    },
-    "043": {
-      "text": "성림학사 43번 공통 지하 1층 지상 1층 지상 10층 지상 11층 지상 12층 지상 2층 지상 3층 지상 4층 지상 5층 지상 6층 지상 7층 지상 8층 지상 9층 성림학사 43번 건물 호실및 공간명 호실 공간명",
-      "html": " <div class=\"container\"> <h1 class=\"tb15\" id=\"popup_top\"> <!-- <img src=\"/common/images/favicon.gif\" alt=\"\" style=\"margin-top: 6px;\" /> --> 성림학사&nbsp;43번 </h1> <div class=\"img\"><img alt=\"성림학사 건물사진\" src=\"/storage/campus_map/null\"></div> <!-- 슬라이드 --> <div class=\"list1\"> <div class=\"list_title on\" onkeyup=\"changeFloor2(this)\" title=\"선택됨\"><span>공통</span></div> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>지하 1층</span></div> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>지상 1층</span></div> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>지상 10층</span></div> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>지상 11층</span></div> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>지상 12층</span></div> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>지상 2층</span></div> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>지상 3층</span></div> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>지상 4층</span></div> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>지상 5층</span></div> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>지상 6층</span></div> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>지상 7층</span></div> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>지상 8층</span></div> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>지상 9층</span></div> </div> <div class=\"list2\"> <table class=\"tbl_list\" cellpadding=\"0\" cellspacing=\"0\" summary=\"호실, 공간명등 설명 테이블 입니다.\"> <caption class=\"screen_hide\">성림학사&nbsp;43번 건물 호실및 공간명</caption> <colgroup> <col width=\"20%\"> <col width=\"80%\"> </colgroup> <thead> <tr> <th scope=\"col\">호실</th> <th scope=\"col\">공간명</th> </tr> </thead> <tbody id=\"tbodyList\"></tbody> </table> </div> </div><br> "
-    },
-    "044": {
-      "text": "협동문 44번 협동문 44번 건물 호실및 공간명 호실 공간명 정보가 없습니다.",
-      "html": " <div class=\"container\"> <h1 class=\"tb15\" id=\"popup_top\"> <!-- <img src=\"/common/images/favicon.gif\" alt=\"\" style=\"margin-top: 6px;\" /> --> 협동문&nbsp;44번 </h1> <div class=\"img\"><img alt=\"협동문 건물사진\" src=\"/storage/campus_map/null\"></div> <!-- 슬라이드 --> <div class=\"list1\"> </div> <div class=\"list2\"> <table class=\"tbl_list\" cellpadding=\"0\" cellspacing=\"0\" summary=\"호실, 공간명등 설명 테이블 입니다.\"> <caption class=\"screen_hide\">협동문&nbsp;44번 건물 호실및 공간명</caption> <colgroup> <col width=\"20%\"> <col width=\"80%\"> </colgroup> <thead> <tr> <th scope=\"col\">호실</th> <th scope=\"col\">공간명</th> </tr> </thead> <tbody id=\"tbodyList\"><tr><td colspan=\"2\" style=\"text-align:center;\">정보가 없습니다.</td></tr></tbody> </table> </div> </div><br> "
-    },
-    "045": {
-      "text": "수림학사 45번 수림학사 45번 건물 호실및 공간명 호실 공간명 정보가 없습니다.",
-      "html": " <div class=\"container\"> <h1 class=\"tb15\" id=\"popup_top\"> <!-- <img src=\"/common/images/favicon.gif\" alt=\"\" style=\"margin-top: 6px;\" /> --> 수림학사&nbsp;45번 </h1> <div class=\"img\"><img alt=\"수림학사 건물사진\" src=\"/storage/campus_map/null\"></div> <!-- 슬라이드 --> <div class=\"list1\"> </div> <div class=\"list2\"> <table class=\"tbl_list\" cellpadding=\"0\" cellspacing=\"0\" summary=\"호실, 공간명등 설명 테이블 입니다.\"> <caption class=\"screen_hide\">수림학사&nbsp;45번 건물 호실및 공간명</caption> <colgroup> <col width=\"20%\"> <col width=\"80%\"> </colgroup> <thead> <tr> <th scope=\"col\">호실</th> <th scope=\"col\">공간명</th> </tr> </thead> <tbody id=\"tbodyList\"><tr><td colspan=\"2\" style=\"text-align:center;\">정보가 없습니다.</td></tr></tbody> </table> </div> </div><br> "
-    },
-    "046": {
-      "text": "누리학사 46번 누리학사 46번 건물 호실및 공간명 호실 공간명 정보가 없습니다.",
-      "html": " <div class=\"container\"> <h1 class=\"tb15\" id=\"popup_top\"> <!-- <img src=\"/common/images/favicon.gif\" alt=\"\" style=\"margin-top: 6px;\" /> --> 누리학사&nbsp;46번 </h1> <div class=\"img\"><img alt=\"누리학사 건물사진\" src=\"/storage/campus_map/null\"></div> <!-- 슬라이드 --> <div class=\"list1\"> </div> <div class=\"list2\"> <table class=\"tbl_list\" cellpadding=\"0\" cellspacing=\"0\" summary=\"호실, 공간명등 설명 테이블 입니다.\"> <caption class=\"screen_hide\">누리학사&nbsp;46번 건물 호실및 공간명</caption> <colgroup> <col width=\"20%\"> <col width=\"80%\"> </colgroup> <thead> <tr> <th scope=\"col\">호실</th> <th scope=\"col\">공간명</th> </tr> </thead> <tbody id=\"tbodyList\"><tr><td colspan=\"2\" style=\"text-align:center;\">정보가 없습니다.</td></tr></tbody> </table> </div> </div><br> "
-    },
-    "047": {
-      "text": "창명학사 47번 창명학사 47번 건물 호실및 공간명 호실 공간명 정보가 없습니다.",
-      "html": " <div class=\"container\"> <h1 class=\"tb15\" id=\"popup_top\"> <!-- <img src=\"/common/images/favicon.gif\" alt=\"\" style=\"margin-top: 6px;\" /> --> 창명학사&nbsp;47번 </h1> <div class=\"img\"><img alt=\"창명학사 건물사진\" src=\"/storage/campus_map/null\"></div> <!-- 슬라이드 --> <div class=\"list1\"> </div> <div class=\"list2\"> <table class=\"tbl_list\" cellpadding=\"0\" cellspacing=\"0\" summary=\"호실, 공간명등 설명 테이블 입니다.\"> <caption class=\"screen_hide\">창명학사&nbsp;47번 건물 호실및 공간명</caption> <colgroup> <col width=\"20%\"> <col width=\"80%\"> </colgroup> <thead> <tr> <th scope=\"col\">호실</th> <th scope=\"col\">공간명</th> </tr> </thead> <tbody id=\"tbodyList\"><tr><td colspan=\"2\" style=\"text-align:center;\">정보가 없습니다.</td></tr></tbody> </table> </div> </div><br> "
-    },
-    "051": {
-      "text": "100주년기념관 51번 공통 지하 1층 지상 1층 지상 2층 지상 3층 지상 4층 100주년기념관 51번 건물 호실및 공간명 호실 공간명",
-      "html": " <div class=\"container\"> <h1 class=\"tb15\" id=\"popup_top\"> <!-- <img src=\"/common/images/favicon.gif\" alt=\"\" style=\"margin-top: 6px;\" /> --> 100주년기념관&nbsp;51번 </h1> <div class=\"img\"><img alt=\"100주년기념관 건물사진\" src=\"/storage/campus_map/null\"></div> <!-- 슬라이드 --> <div class=\"list1\"> <div class=\"list_title on\" onkeyup=\"changeFloor2(this)\" title=\"선택됨\"><span>공통</span></div> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>지하 1층</span></div> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>지상 1층</span></div> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>지상 2층</span></div> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>지상 3층</span></div> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>지상 4층</span></div> </div> <div class=\"list2\"> <table class=\"tbl_list\" cellpadding=\"0\" cellspacing=\"0\" summary=\"호실, 공간명등 설명 테이블 입니다.\"> <caption class=\"screen_hide\">100주년기념관&nbsp;51번 건물 호실및 공간명</caption> <colgroup> <col width=\"20%\"> <col width=\"80%\"> </colgroup> <thead> <tr> <th scope=\"col\">호실</th> <th scope=\"col\">공간명</th> </tr> </thead> <tbody id=\"tbodyList\"></tbody> </table> </div> </div><br> "
-    },
-    "052": {
-      "text": "제2학생회관 52번 공통 지하 1층 지상 1층 옥탑 1층 지상 2층 지상 3층 제2학생회관 52번 건물 호실및 공간명 호실 공간명",
-      "html": " <div class=\"container\"> <h1 class=\"tb15\" id=\"popup_top\"> <!-- <img src=\"/common/images/favicon.gif\" alt=\"\" style=\"margin-top: 6px;\" /> --> 제2학생회관&nbsp;52번 </h1> <div class=\"img\"><img alt=\"제2학생회관 건물사진\" src=\"/storage/campus_map/null\"></div> <!-- 슬라이드 --> <div class=\"list1\"> <div class=\"list_title on\" onkeyup=\"changeFloor2(this)\" title=\"선택됨\"><span>공통</span></div> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>지하 1층</span></div> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>지상 1층</span></div> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>옥탑 1층</span></div> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>지상 2층</span></div> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>지상 3층</span></div> </div> <div class=\"list2\"> <table class=\"tbl_list\" cellpadding=\"0\" cellspacing=\"0\" summary=\"호실, 공간명등 설명 테이블 입니다.\"> <caption class=\"screen_hide\">제2학생회관&nbsp;52번 건물 호실및 공간명</caption> <colgroup> <col width=\"20%\"> <col width=\"80%\"> </colgroup> <thead> <tr> <th scope=\"col\">호실</th> <th scope=\"col\">공간명</th> </tr> </thead> <tbody id=\"tbodyList\"></tbody> </table> </div> </div><br> "
-    },
-    "053": {
-      "text": "상상관 53번 공통 지하 지하1층 지상 1층 지상 2층 지상 3층 지상 4층 지상 5층 지상 6층 지상 7층 지상 8층 상상관 53번 건물 호실및 공간명 호실 공간명",
-      "html": " <div class=\"container\"> <h1 class=\"tb15\" id=\"popup_top\"> <!-- <img src=\"/common/images/favicon.gif\" alt=\"\" style=\"margin-top: 6px;\" /> --> 상상관&nbsp;53번 </h1> <div class=\"img\"><img alt=\"상상관 건물사진\" src=\"/storage/campus_map/null\"></div> <!-- 슬라이드 --> <div class=\"list1\"> <div class=\"list_title on\" onkeyup=\"changeFloor2(this)\" title=\"선택됨\"><span>공통</span></div> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>지하 지하1층</span></div> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>지상 1층</span></div> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>지상 2층</span></div> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>지상 3층</span></div> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>지상 4층</span></div> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>지상 5층</span></div> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>지상 6층</span></div> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>지상 7층</span></div> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>지상 8층</span></div> </div> <div class=\"list2\"> <table class=\"tbl_list\" cellpadding=\"0\" cellspacing=\"0\" summary=\"호실, 공간명등 설명 테이블 입니다.\"> <caption class=\"screen_hide\">상상관&nbsp;53번 건물 호실및 공간명</caption> <colgroup> <col width=\"20%\"> <col width=\"80%\"> </colgroup> <thead> <tr> <th scope=\"col\">호실</th> <th scope=\"col\">공간명</th> </tr> </thead> <tbody id=\"tbodyList\"></tbody> </table> </div> </div><br> "
-    },
-    "054": {
-      "text": "아름관 54번 지하 1층 지상 1층 옥탑 1층 지상 2층 지상 3층 지상 4층 아름관 54번 건물 호실및 공간명 호실 공간명",
-      "html": " <div class=\"container\"> <h1 class=\"tb15\" id=\"popup_top\"> <!-- <img src=\"/common/images/favicon.gif\" alt=\"\" style=\"margin-top: 6px;\" /> --> 아름관&nbsp;54번 </h1> <div class=\"img\"><img alt=\"아름관 건물사진\" src=\"/storage/campus_map/null\"></div> <!-- 슬라이드 --> <div class=\"list1\"> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>지하 1층</span></div> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>지상 1층</span></div> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>옥탑 1층</span></div> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>지상 2층</span></div> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>지상 3층</span></div> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>지상 4층</span></div> </div> <div class=\"list2\"> <table class=\"tbl_list\" cellpadding=\"0\" cellspacing=\"0\" summary=\"호실, 공간명등 설명 테이블 입니다.\"> <caption class=\"screen_hide\">아름관&nbsp;54번 건물 호실및 공간명</caption> <colgroup> <col width=\"20%\"> <col width=\"80%\"> </colgroup> <thead> <tr> <th scope=\"col\">호실</th> <th scope=\"col\">공간명</th> </tr> </thead> <tbody id=\"tbodyList\"></tbody> </table> </div> </div><br> "
-    },
-    "055": {
-      "text": "체육관 55번 지하 1층 지상 1층 지상 2층 체육관 55번 건물 호실및 공간명 호실 공간명",
-      "html": " <div class=\"container\"> <h1 class=\"tb15\" id=\"popup_top\"> <!-- <img src=\"/common/images/favicon.gif\" alt=\"\" style=\"margin-top: 6px;\" /> --> 체육관&nbsp;55번 </h1> <div class=\"img\"><img alt=\"체육관 건물사진\" src=\"/storage/campus_map/null\"></div> <!-- 슬라이드 --> <div class=\"list1\"> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>지하 1층</span></div> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>지상 1층</span></div> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>지상 2층</span></div> </div> <div class=\"list2\"> <table class=\"tbl_list\" cellpadding=\"0\" cellspacing=\"0\" summary=\"호실, 공간명등 설명 테이블 입니다.\"> <caption class=\"screen_hide\">체육관&nbsp;55번 건물 호실및 공간명</caption> <colgroup> <col width=\"20%\"> <col width=\"80%\"> </colgroup> <thead> <tr> <th scope=\"col\">호실</th> <th scope=\"col\">공간명</th> </tr> </thead> <tbody id=\"tbodyList\"></tbody> </table> </div> </div><br> "
-    },
-    "056": {
-      "text": "대륙관 56번 지상 1층 지상 2층 대륙관 56번 건물 호실및 공간명 호실 공간명",
-      "html": " <div class=\"container\"> <h1 class=\"tb15\" id=\"popup_top\"> <!-- <img src=\"/common/images/favicon.gif\" alt=\"\" style=\"margin-top: 6px;\" /> --> 대륙관&nbsp;56번 </h1> <div class=\"img\"><img alt=\"대륙관 건물사진\" src=\"/storage/campus_map/null\"></div> <!-- 슬라이드 --> <div class=\"list1\"> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>지상 1층</span></div> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>지상 2층</span></div> </div> <div class=\"list2\"> <table class=\"tbl_list\" cellpadding=\"0\" cellspacing=\"0\" summary=\"호실, 공간명등 설명 테이블 입니다.\"> <caption class=\"screen_hide\">대륙관&nbsp;56번 건물 호실및 공간명</caption> <colgroup> <col width=\"20%\"> <col width=\"80%\"> </colgroup> <thead> <tr> <th scope=\"col\">호실</th> <th scope=\"col\">공간명</th> </tr> </thead> <tbody id=\"tbodyList\"></tbody> </table> </div> </div><br> "
-    },
-    "057": {
-      "text": "무궁관 57번 공통 지하 1층 지상 1층 지상 2층 지상 3층 지상 4층 지상 5층 지상 6층 지상 7층 지상 8층 지상 9층 무궁관 57번 건물 호실및 공간명 호실 공간명",
-      "html": " <div class=\"container\"> <h1 class=\"tb15\" id=\"popup_top\"> <!-- <img src=\"/common/images/favicon.gif\" alt=\"\" style=\"margin-top: 6px;\" /> --> 무궁관&nbsp;57번 </h1> <div class=\"img\"><img alt=\"무궁관 건물사진\" src=\"/storage/campus_map/null\"></div> <!-- 슬라이드 --> <div class=\"list1\"> <div class=\"list_title on\" onkeyup=\"changeFloor2(this)\" title=\"선택됨\"><span>공통</span></div> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>지하 1층</span></div> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>지상 1층</span></div> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>지상 2층</span></div> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>지상 3층</span></div> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>지상 4층</span></div> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>지상 5층</span></div> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>지상 6층</span></div> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>지상 7층</span></div> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>지상 8층</span></div> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>지상 9층</span></div> </div> <div class=\"list2\"> <table class=\"tbl_list\" cellpadding=\"0\" cellspacing=\"0\" summary=\"호실, 공간명등 설명 테이블 입니다.\"> <caption class=\"screen_hide\">무궁관&nbsp;57번 건물 호실및 공간명</caption> <colgroup> <col width=\"20%\"> <col width=\"80%\"> </colgroup> <thead> <tr> <th scope=\"col\">호실</th> <th scope=\"col\">공간명</th> </tr> </thead> <tbody id=\"tbodyList\"></tbody> </table> </div> </div><br> "
-    },
-    "058": {
-      "text": "제2파워플랜트 58번 지하 1층 지하 2층 지상 1층 제2파워플랜트 58번 건물 호실및 공간명 호실 공간명",
-      "html": " <div class=\"container\"> <h1 class=\"tb15\" id=\"popup_top\"> <!-- <img src=\"/common/images/favicon.gif\" alt=\"\" style=\"margin-top: 6px;\" /> --> 제2파워플랜트&nbsp;58번 </h1> <div class=\"img\"><img alt=\"제2파워플랜트 건물사진\" src=\"/storage/campus_map/null\"></div> <!-- 슬라이드 --> <div class=\"list1\"> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>지하 1층</span></div> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>지하 2층</span></div> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>지상 1층</span></div> </div> <div class=\"list2\"> <table class=\"tbl_list\" cellpadding=\"0\" cellspacing=\"0\" summary=\"호실, 공간명등 설명 테이블 입니다.\"> <caption class=\"screen_hide\">제2파워플랜트&nbsp;58번 건물 호실및 공간명</caption> <colgroup> <col width=\"20%\"> <col width=\"80%\"> </colgroup> <thead> <tr> <th scope=\"col\">호실</th> <th scope=\"col\">공간명</th> </tr> </thead> <tbody id=\"tbodyList\"></tbody> </table> </div> </div><br> "
-    },
-    "059": {
-      "text": "학군단 59번 공통 지하 1층 지상 1층 지상 2층 지상 3층 학군단 59번 건물 호실및 공간명 호실 공간명",
-      "html": " <div class=\"container\"> <h1 class=\"tb15\" id=\"popup_top\"> <!-- <img src=\"/common/images/favicon.gif\" alt=\"\" style=\"margin-top: 6px;\" /> --> 학군단&nbsp;59번 </h1> <div class=\"img\"><img alt=\"학군단 건물사진\" src=\"/storage/campus_map/null\"></div> <!-- 슬라이드 --> <div class=\"list1\"> <div class=\"list_title on\" onkeyup=\"changeFloor2(this)\" title=\"선택됨\"><span>공통</span></div> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>지하 1층</span></div> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>지상 1층</span></div> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>지상 2층</span></div> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>지상 3층</span></div> </div> <div class=\"list2\"> <table class=\"tbl_list\" cellpadding=\"0\" cellspacing=\"0\" summary=\"호실, 공간명등 설명 테이블 입니다.\"> <caption class=\"screen_hide\">학군단&nbsp;59번 건물 호실및 공간명</caption> <colgroup> <col width=\"20%\"> <col width=\"80%\"> </colgroup> <thead> <tr> <th scope=\"col\">호실</th> <th scope=\"col\">공간명</th> </tr> </thead> <tbody id=\"tbodyList\"></tbody> </table> </div> </div><br> "
-    },
-    "060": {
-      "text": "미래관 60번 공통 지하 1층 지상 1층 지상 2층 지상 3층 지상 4층 지상 5층 미래관 60번 건물 호실및 공간명 호실 공간명",
-      "html": " <div class=\"container\"> <h1 class=\"tb15\" id=\"popup_top\"> <!-- <img src=\"/common/images/favicon.gif\" alt=\"\" style=\"margin-top: 6px;\" /> --> 미래관&nbsp;60번 </h1> <div class=\"img\"><img alt=\"미래관 건물사진\" src=\"/storage/campus_map/null\"></div> <!-- 슬라이드 --> <div class=\"list1\"> <div class=\"list_title on\" onkeyup=\"changeFloor2(this)\" title=\"선택됨\"><span>공통</span></div> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>지하 1층</span></div> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>지상 1층</span></div> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>지상 2층</span></div> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>지상 3층</span></div> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>지상 4층</span></div> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>지상 5층</span></div> </div> <div class=\"list2\"> <table class=\"tbl_list\" cellpadding=\"0\" cellspacing=\"0\" summary=\"호실, 공간명등 설명 테이블 입니다.\"> <caption class=\"screen_hide\">미래관&nbsp;60번 건물 호실및 공간명</caption> <colgroup> <col width=\"20%\"> <col width=\"80%\"> </colgroup> <thead> <tr> <th scope=\"col\">호실</th> <th scope=\"col\">공간명</th> </tr> </thead> <tbody id=\"tbodyList\"></tbody> </table> </div> </div><br> "
-    },
-    "075": {
-      "text": "창의문 61번 창의문 75번 건물 호실및 공간명 호실 공간명 정보가 없습니다.",
-      "html": " <div class=\"container\"> <h1 class=\"tb15\" id=\"popup_top\"> <!-- <img src=\"/common/images/favicon.gif\" alt=\"\" style=\"margin-top: 6px;\" /> --> 창의문&nbsp;61번 </h1> <div class=\"img\"><img alt=\"창의문 건물사진\" src=\"/storage/campus_map/null\"></div> <!-- 슬라이드 --> <div class=\"list1\"> </div> <div class=\"list2\"> <table class=\"tbl_list\" cellpadding=\"0\" cellspacing=\"0\" summary=\"호실, 공간명등 설명 테이블 입니다.\"> <caption class=\"screen_hide\">창의문&nbsp;75번 건물 호실및 공간명</caption> <colgroup> <col width=\"20%\"> <col width=\"80%\"> </colgroup> <thead> <tr> <th scope=\"col\">호실</th> <th scope=\"col\">공간명</th> </tr> </thead> <tbody id=\"tbodyList\"><tr><td colspan=\"2\" style=\"text-align:center;\">정보가 없습니다.</td></tr></tbody> </table> </div> </div><br> "
-    },
-    "062": {
-      "text": "Techno Cube 62번 공통 지하 지하층 지상 1층 지상 10층 지상 11층 지상 12층 지상 2층 지상 3층 지상 4층 지상 5층 지상 6층 지상 7층 지상 8층 지상 9층 Techno Cube 62번 건물 호실및 공간명 호실 공간명",
-      "html": " <div class=\"container\"> <h1 class=\"tb15\" id=\"popup_top\"> <!-- <img src=\"/common/images/favicon.gif\" alt=\"\" style=\"margin-top: 6px;\" /> --> Techno Cube&nbsp;62번 </h1> <div class=\"img\"><img alt=\"Techno Cube 건물사진\" src=\"/storage/campus_map/null\"></div> <!-- 슬라이드 --> <div class=\"list1\"> <div class=\"list_title on\" onkeyup=\"changeFloor2(this)\" title=\"선택됨\"><span>공통</span></div> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>지하 지하층</span></div> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>지상 1층</span></div> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>지상 10층</span></div> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>지상 11층</span></div> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>지상 12층</span></div> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>지상 2층</span></div> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>지상 3층</span></div> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>지상 4층</span></div> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>지상 5층</span></div> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>지상 6층</span></div> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>지상 7층</span></div> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>지상 8층</span></div> <div class=\"list_title\" onkeyup=\"changeFloor2(this)\"><span>지상 9층</span></div> </div> <div class=\"list2\"> <table class=\"tbl_list\" cellpadding=\"0\" cellspacing=\"0\" summary=\"호실, 공간명등 설명 테이블 입니다.\"> <caption class=\"screen_hide\">Techno Cube&nbsp;62번 건물 호실및 공간명</caption> <colgroup> <col width=\"20%\"> <col width=\"80%\"> </colgroup> <thead> <tr> <th scope=\"col\">호실</th> <th scope=\"col\">공간명</th> </tr> </thead> <tbody id=\"tbodyList\"></tbody> </table> </div> </div><br> "
-    },
-    "063": {
-      "text": "종합스타디움 63번 종합스타디움 63번 건물 호실및 공간명 호실 공간명 정보가 없습니다.",
-      "html": " <div class=\"container\"> <h1 class=\"tb15\" id=\"popup_top\"> <!-- <img src=\"/common/images/favicon.gif\" alt=\"\" style=\"margin-top: 6px;\" /> --> 종합스타디움&nbsp;63번 </h1> <div class=\"img\"><img alt=\"종합스타디움 건물사진\" src=\"/storage/campus_map/null\"></div> <!-- 슬라이드 --> <div class=\"list1\"> </div> <div class=\"list2\"> <table class=\"tbl_list\" cellpadding=\"0\" cellspacing=\"0\" summary=\"호실, 공간명등 설명 테이블 입니다.\"> <caption class=\"screen_hide\">종합스타디움&nbsp;63번 건물 호실및 공간명</caption> <colgroup> <col width=\"20%\"> <col width=\"80%\"> </colgroup> <thead> <tr> <th scope=\"col\">호실</th> <th scope=\"col\">공간명</th> </tr> </thead> <tbody id=\"tbodyList\"><tr><td colspan=\"2\" style=\"text-align:center;\">정보가 없습니다.</td></tr></tbody> </table> </div> </div><br> "
+    {
+     "place": "서울과학기술대학교 입학처",
+     "category": "교육,학문 > 학교부속시설",
+     "x": 127.07871303456729,
+     "y": 37.63054769584522,
+     "address": "서울 노원구 공릉로 232"
     }
+   ],
+   "b": [
+    {
+     "place": "서울과학기술대학교 대학본부",
+     "category": "교육,학문 > 학교부속시설",
+     "x": 127.080263049121,
+     "y": 37.6318305564418,
+     "address": "서울 노원구 공릉로 232"
+    },
+    {
+     "place": "서울과학기술대학교 국제교육본부",
+     "category": "교육,학문 > 학교부속시설",
+     "x": 127.077542823967,
+     "y": 37.6349524883243,
+     "address": "서울 노원구 공릉로 232"
+    },
+    {
+     "place": "서울과학기술대학교 입학처",
+     "category": "교육,학문 > 학교부속시설",
+     "x": 127.07871303456729,
+     "y": 37.63054769584522,
+     "address": "서울 노원구 공릉로 232"
+    }
+   ]
+  },
+  {
+   "code": "002",
+   "name": "다산관",
+   "a": [
+    {
+     "place": "서울과학기술대학교 다산관",
+     "category": "교육,학문 > 학교부속시설",
+     "x": 127.077621817214,
+     "y": 37.6324738253956,
+     "address": "서울 노원구 공릉로 232"
+    }
+   ],
+   "b": [
+    {
+     "place": "서울과학기술대학교 다산관",
+     "category": "교육,학문 > 학교부속시설",
+     "x": 127.077621817214,
+     "y": 37.6324738253956,
+     "address": "서울 노원구 공릉로 232"
+    }
+   ]
+  },
+  {
+   "code": "003",
+   "name": "창학관",
+   "a": [
+    {
+     "place": "서울과학기술대학교 창학관",
+     "category": "교육,학문 > 학교부속시설",
+     "x": 127.07945689586,
+     "y": 37.6322671791534,
+     "address": "서울 노원구 공릉로 232"
+    }
+   ],
+   "b": [
+    {
+     "place": "서울과학기술대학교 창학관",
+     "category": "교육,학문 > 학교부속시설",
+     "x": 127.07945689586,
+     "y": 37.6322671791534,
+     "address": "서울 노원구 공릉로 232"
+    }
+   ]
+  },
+  {
+   "code": "004",
+   "name": "제2창업보육센터",
+   "a": [
+    {
+     "place": "서울과학기술대학교 제2창업보육센터",
+     "category": "교육,학문 > 학교부속시설",
+     "x": 127.081069506137,
+     "y": 37.6316822434316,
+     "address": "서울 노원구 공릉로 232"
+    }
+   ],
+   "b": [
+    {
+     "place": "서울과학기술대학교 제2창업보육센터",
+     "category": "교육,학문 > 학교부속시설",
+     "x": 127.081069506137,
+     "y": 37.6316822434316,
+     "address": "서울 노원구 공릉로 232"
+    }
+   ]
+  },
+  {
+   "code": "005",
+   "name": "혜성관",
+   "a": [
+    {
+     "place": "서울과학기술대학교 혜성관",
+     "category": "교육,학문 > 학교부속시설",
+     "x": 127.081853464298,
+     "y": 37.6316817021808,
+     "address": "서울 노원구 공릉로 232"
+    }
+   ],
+   "b": [
+    {
+     "place": "서울과학기술대학교 혜성관",
+     "category": "교육,학문 > 학교부속시설",
+     "x": 127.081853464298,
+     "y": 37.6316817021808,
+     "address": "서울 노원구 공릉로 232"
+    }
+   ]
+  },
+  {
+   "code": "006",
+   "name": "청운관",
+   "a": [
+    {
+     "place": "서울과학기술대학교 청운관",
+     "category": "교육,학문 > 학교부속시설",
+     "x": 127.080731448875,
+     "y": 37.6333547045331,
+     "address": "서울 노원구 공릉로 232"
+    },
+    {
+     "place": "서울과학기술대학교 환경공학과",
+     "category": "교육,학문 > 학교부속시설",
+     "x": 127.080781355563,
+     "y": 37.6334087295042,
+     "address": "서울 노원구 공릉로 232"
+    }
+   ],
+   "b": [
+    {
+     "place": "서울과학기술대학교 청운관",
+     "category": "교육,학문 > 학교부속시설",
+     "x": 127.080731448875,
+     "y": 37.6333547045331,
+     "address": "서울 노원구 공릉로 232"
+    },
+    {
+     "place": "서울과학기술대학교 환경공학과",
+     "category": "교육,학문 > 학교부속시설",
+     "x": 127.080781355563,
+     "y": 37.6334087295042,
+     "address": "서울 노원구 공릉로 232"
+    }
+   ]
+  },
+  {
+   "code": "007",
+   "name": "서울테크노파크",
+   "a": [
+    {
+     "place": "서울과학기술대학교 서울테크노파크",
+     "category": "교육,학문 > 학교부속시설",
+     "x": 127.08059681496,
+     "y": 37.6345729288378,
+     "address": "서울 노원구 공릉로 232"
+    },
+    {
+     "place": "서울과학기술대학교 서울테크노파크 지하주차장",
+     "category": "교통,수송 > 교통시설 > 주차장",
+     "x": 127.081176236805,
+     "y": 37.6339850891664,
+     "address": "서울 노원구 공릉로 232"
+    },
+    {
+     "place": "서울테크노파크",
+     "category": "교육,학문 > 학교부속시설",
+     "x": 127.08057301853549,
+     "y": 37.634568440164145,
+     "address": "서울 노원구 공릉로 232"
+    },
+    {
+     "place": "본우리집밥 서울테크노파크점",
+     "category": "음식점 > 구내식당",
+     "x": 127.08050509805877,
+     "y": 37.63461984268434,
+     "address": "서울 노원구 공릉로 232"
+    },
+    {
+     "place": "한국셉테드학회",
+     "category": "사회,공공기관 > 단체,협회",
+     "x": 127.079593173998,
+     "y": 37.6325770263628,
+     "address": "서울 노원구 공릉로 232"
+    }
+   ],
+   "b": [
+    {
+     "place": "서울과학기술대학교 서울테크노파크",
+     "category": "교육,학문 > 학교부속시설",
+     "x": 127.08059681496,
+     "y": 37.6345729288378,
+     "address": "서울 노원구 공릉로 232"
+    },
+    {
+     "place": "서울과학기술대학교 서울테크노파크 지하주차장",
+     "category": "교통,수송 > 교통시설 > 주차장",
+     "x": 127.081176236805,
+     "y": 37.6339850891664,
+     "address": "서울 노원구 공릉로 232"
+    },
+    {
+     "place": "한국셉테드학회",
+     "category": "사회,공공기관 > 단체,협회",
+     "x": 127.079593173998,
+     "y": 37.6325770263628,
+     "address": "서울 노원구 공릉로 232"
+    },
+    {
+     "place": "스탠스",
+     "category": "서비스,산업 > 인터넷,IT > 소프트웨어",
+     "x": 127.08055488968846,
+     "y": 37.634566650572246,
+     "address": "서울 노원구 공릉로 232"
+    },
+    {
+     "place": "스타비스코리아",
+     "category": "문화,예술 > 문화시설 > 전시관",
+     "x": 127.08052201426291,
+     "y": 37.634547752321595,
+     "address": "서울 노원구 공릉로 232"
+    }
+   ]
+  },
+  {
+   "code": "008",
+   "name": "창조관",
+   "a": [
+    {
+     "place": "서울과학기술대학교 창조관",
+     "category": "교육,학문 > 학교부속시설",
+     "x": 127.079214902565,
+     "y": 37.6348225366672,
+     "address": "서울 노원구 공릉로 232"
+    }
+   ],
+   "b": [
+    {
+     "place": "서울과학기술대학교 창조관",
+     "category": "교육,학문 > 학교부속시설",
+     "x": 127.079214902565,
+     "y": 37.6348225366672,
+     "address": "서울 노원구 공릉로 232"
+    }
+   ]
+  },
+  {
+   "code": "010",
+   "name": "파워플랜트",
+   "a": [
+    {
+     "place": "서울과학기술대학교 파워플랜트",
+     "category": "교육,학문 > 학교부속시설",
+     "x": 127.079308805124,
+     "y": 37.6336331729006,
+     "address": "서울 노원구 공릉로 232"
+    },
+    {
+     "place": "서울과학기술대학교 제2파워플랜트",
+     "category": "교육,학문 > 학교부속시설",
+     "x": 127.08202919255,
+     "y": 37.6307697825014,
+     "address": "서울 노원구 공릉로 232"
+    }
+   ],
+   "b": [
+    {
+     "place": "서울과학기술대학교 파워플랜트",
+     "category": "교육,학문 > 학교부속시설",
+     "x": 127.079308805124,
+     "y": 37.6336331729006,
+     "address": "서울 노원구 공릉로 232"
+    },
+    {
+     "place": "서울과학기술대학교 제2파워플랜트",
+     "category": "교육,학문 > 학교부속시설",
+     "x": 127.08202919255,
+     "y": 37.6307697825014,
+     "address": "서울 노원구 공릉로 232"
+    }
+   ]
+  },
+  {
+   "code": "011",
+   "name": "붕어방",
+   "a": [
+    {
+     "place": "서울과학기술대학교 붕어방",
+     "category": "여행 > 관광,명소 > 연못",
+     "x": 127.078134861382,
+     "y": 37.6334033038727,
+     "address": "서울 노원구 공릉로 232"
+    }
+   ],
+   "b": [
+    {
+     "place": "서울과학기술대학교 붕어방",
+     "category": "여행 > 관광,명소 > 연못",
+     "x": 127.078134861382,
+     "y": 37.6334033038727,
+     "address": "서울 노원구 공릉로 232"
+    }
+   ]
+  },
+  {
+   "code": "013",
+   "name": "정문",
+   "a": [
+    {
+     "place": "서울과학기술대학교 정문",
+     "category": "교통,수송 > 입출구",
+     "x": 127.07672337790524,
+     "y": 37.63022194847668,
+     "address": "서울 노원구 공릉로 232"
+    }
+   ],
+   "b": [
+    {
+     "place": "서울과학기술대학교 정문",
+     "category": "교통,수송 > 입출구",
+     "x": 127.07672337790524,
+     "y": 37.63022194847668,
+     "address": "서울 노원구 공릉로 232"
+    }
+   ]
+  },
+  {
+   "code": "014",
+   "name": "도예실습실",
+   "a": [],
+   "b": []
+  },
+  {
+   "code": "030",
+   "name": "SeoulTech어린이집",
+   "a": [
+    {
+     "place": "서울테크어린이집",
+     "category": "교육,학문 > 유아교육 > 어린이집",
+     "x": 127.07631159249347,
+     "y": 37.63078713371108,
+     "address": "서울 노원구 공릉로 232"
+    }
+   ],
+   "b": [
+    {
+     "place": "서울테크어린이집",
+     "category": "교육,학문 > 유아교육 > 어린이집",
+     "x": 127.07631159249347,
+     "y": 37.63078713371108,
+     "address": "서울 노원구 공릉로 232"
+    }
+   ]
+  },
+  {
+   "code": "031",
+   "name": "창업보육센터",
+   "a": [
+    {
+     "place": "서울과학기술대학교 창업보육센터",
+     "category": "교육,학문 > 학교부속시설",
+     "x": 127.075911773172,
+     "y": 37.6308711833083,
+     "address": "서울 노원구 공릉로 232"
+    },
+    {
+     "place": "서울과학기술대학교 제2창업보육센터",
+     "category": "교육,학문 > 학교부속시설",
+     "x": 127.081069506137,
+     "y": 37.6316822434316,
+     "address": "서울 노원구 공릉로 232"
+    },
+    {
+     "place": "스페이스앤빈",
+     "category": "서비스,산업 > 제조업",
+     "x": 127.07592538142522,
+     "y": 37.63088468933568,
+     "address": "서울 노원구 공릉로 232"
+    },
+    {
+     "place": "빌립애드",
+     "category": "서비스,산업 > 마케팅 > 광고기획,광고대행",
+     "x": 127.075936668927,
+     "y": 37.6308441377063,
+     "address": "서울 노원구 공릉로 232"
+    },
+    {
+     "place": "초이랩",
+     "category": "교육,학문 > 연구소",
+     "x": 127.075829114466,
+     "y": 37.6309117808194,
+     "address": "서울 노원구 공릉로 232"
+    }
+   ],
+   "b": [
+    {
+     "place": "서울과학기술대학교 창업보육센터",
+     "category": "교육,학문 > 학교부속시설",
+     "x": 127.075911773172,
+     "y": 37.6308711833083,
+     "address": "서울 노원구 공릉로 232"
+    },
+    {
+     "place": "서울과학기술대학교 제2창업보육센터",
+     "category": "교육,학문 > 학교부속시설",
+     "x": 127.081069506137,
+     "y": 37.6316822434316,
+     "address": "서울 노원구 공릉로 232"
+    },
+    {
+     "place": "스페이스앤빈",
+     "category": "서비스,산업 > 제조업",
+     "x": 127.07592538142522,
+     "y": 37.63088468933568,
+     "address": "서울 노원구 공릉로 232"
+    },
+    {
+     "place": "빌립애드",
+     "category": "서비스,산업 > 마케팅 > 광고기획,광고대행",
+     "x": 127.075936668927,
+     "y": 37.6308441377063,
+     "address": "서울 노원구 공릉로 232"
+    },
+    {
+     "place": "초이랩",
+     "category": "교육,학문 > 연구소",
+     "x": 127.075829114466,
+     "y": 37.6309117808194,
+     "address": "서울 노원구 공릉로 232"
+    }
+   ]
+  },
+  {
+   "code": "032",
+   "name": "프론티어관",
+   "a": [
+    {
+     "place": "서울과학기술대학교 프론티어관",
+     "category": "교육,학문 > 학교부속시설",
+     "x": 127.07600308218998,
+     "y": 37.631537854055075,
+     "address": "서울 노원구 공릉로 232"
+    }
+   ],
+   "b": [
+    {
+     "place": "서울과학기술대학교 프론티어관",
+     "category": "교육,학문 > 학교부속시설",
+     "x": 127.07600308218998,
+     "y": 37.631537854055075,
+     "address": "서울 노원구 공릉로 232"
+    }
+   ]
+  },
+  {
+   "code": "033",
+   "name": "하이테크관",
+   "a": [
+    {
+     "place": "서울과학기술대학교 하이테크관",
+     "category": "교육,학문 > 학교부속시설",
+     "x": 127.076266497219,
+     "y": 37.6321107110214,
+     "address": "서울 노원구 공릉로 232"
+    }
+   ],
+   "b": [
+    {
+     "place": "서울과학기술대학교 하이테크관",
+     "category": "교육,학문 > 학교부속시설",
+     "x": 127.076266497219,
+     "y": 37.6321107110214,
+     "address": "서울 노원구 공릉로 232"
+    }
+   ]
+  },
+  {
+   "code": "034",
+   "name": "중앙도서관",
+   "a": [
+    {
+     "place": "서울과학기술대학교 중앙도서관",
+     "category": "교육,학문 > 학습시설 > 도서관",
+     "x": 127.076747822819,
+     "y": 37.6330618397475,
+     "address": "서울 노원구 공릉로 232"
+    },
+    {
+     "place": "서울여자대학교 중앙도서관",
+     "category": "교육,학문 > 학습시설 > 도서관",
+     "x": 127.0912817813453,
+     "y": 37.628320414116004,
+     "address": "서울 노원구 화랑로 621"
+    },
+    {
+     "place": "서울여자대학교 전기차충전소",
+     "category": "교통,수송 > 자동차 > 전기차 충전소",
+     "x": 127.09162047867183,
+     "y": 37.62738042292534,
+     "address": "서울 노원구 화랑로 621"
+    }
+   ],
+   "b": [
+    {
+     "place": "서울과학기술대학교 중앙도서관",
+     "category": "교육,학문 > 학습시설 > 도서관",
+     "x": 127.076747822819,
+     "y": 37.6330618397475,
+     "address": "서울 노원구 공릉로 232"
+    }
+   ]
+  },
+  {
+   "code": "035",
+   "name": "중앙도서관 별관",
+   "a": [],
+   "b": []
+  },
+  {
+   "code": "037",
+   "name": "학생회관",
+   "a": [
+    {
+     "place": "서울과학기술대학교 제1학생회관",
+     "category": "교육,학문 > 학교부속시설",
+     "x": 127.0768577215643,
+     "y": 37.634168178373166,
+     "address": "서울 노원구 공릉로 232"
+    },
+    {
+     "place": "서울과학기술대학교 제2학생회관",
+     "category": "교육,학문 > 학교부속시설",
+     "x": 127.079210606591,
+     "y": 37.6307753122984,
+     "address": "서울 노원구 공릉로 232"
+    },
+    {
+     "place": "구시아푸드마켓 서울과학기술대학교 제2학생회관점",
+     "category": "음식점 > 푸드코트",
+     "x": 127.079293274789,
+     "y": 37.6307455242323,
+     "address": "서울 노원구 공릉로 232"
+    },
+    {
+     "place": "CU 과학기술대생활관점",
+     "category": "가정,생활 > 편의점 > CU",
+     "x": 127.07599243746971,
+     "y": 37.635547246341524,
+     "address": "서울 노원구 공릉로58길 130"
+    },
+    {
+     "place": "CU 서울과학기술대1관점",
+     "category": "가정,생활 > 편의점 > CU",
+     "x": 127.0767240604539,
+     "y": 37.63419169098495,
+     "address": "서울 노원구 공릉로 232"
+    }
+   ],
+   "b": [
+    {
+     "place": "서울과학기술대학교 제1학생회관",
+     "category": "교육,학문 > 학교부속시설",
+     "x": 127.0768577215643,
+     "y": 37.634168178373166,
+     "address": "서울 노원구 공릉로 232"
+    },
+    {
+     "place": "서울과학기술대학교 제2학생회관",
+     "category": "교육,학문 > 학교부속시설",
+     "x": 127.079210606591,
+     "y": 37.6307753122984,
+     "address": "서울 노원구 공릉로 232"
+    },
+    {
+     "place": "CU 과학기술대생활관점",
+     "category": "가정,생활 > 편의점 > CU",
+     "x": 127.07599243746971,
+     "y": 37.635547246341524,
+     "address": "서울 노원구 공릉로58길 130"
+    },
+    {
+     "place": "구시아푸드마켓 서울과학기술대학교 제2학생회관점",
+     "category": "음식점 > 푸드코트",
+     "x": 127.079293274789,
+     "y": 37.6307455242323,
+     "address": "서울 노원구 공릉로 232"
+    },
+    {
+     "place": "아이랩",
+     "category": "가정,생활 > 패션 > 패션잡화점 > 안경,렌즈",
+     "x": 127.07698010353,
+     "y": 37.6341933261804,
+     "address": "서울 노원구 공릉로 232"
+    }
+   ]
+  },
+  {
+   "code": "038",
+   "name": "국제관",
+   "a": [
+    {
+     "place": "서울과학기술대학교 국제관",
+     "category": "교육,학문 > 학교부속시설",
+     "x": 127.077572251301,
+     "y": 37.6349245384372,
+     "address": "서울 노원구 공릉로 232"
+    }
+   ],
+   "b": [
+    {
+     "place": "서울과학기술대학교 국제관",
+     "category": "교육,학문 > 학교부속시설",
+     "x": 127.077572251301,
+     "y": 37.6349245384372,
+     "address": "서울 노원구 공릉로 232"
+    }
+   ]
+  },
+  {
+   "code": "039",
+   "name": "다빈치관",
+   "a": [
+    {
+     "place": "서울과학기술대학교 다빈치관",
+     "category": "교육,학문 > 학교부속시설",
+     "x": 127.078612720143,
+     "y": 37.6353346990441,
+     "address": "서울 노원구 공릉로 232"
+    }
+   ],
+   "b": [
+    {
+     "place": "서울과학기술대학교 다빈치관",
+     "category": "교육,학문 > 학교부속시설",
+     "x": 127.078612720143,
+     "y": 37.6353346990441,
+     "address": "서울 노원구 공릉로 232"
+    }
+   ]
+  },
+  {
+   "code": "040",
+   "name": "어의관",
+   "a": [
+    {
+     "place": "서울과학기술대학교 어의관",
+     "category": "교육,학문 > 학교부속시설",
+     "x": 127.076759240088,
+     "y": 37.6353503351963,
+     "address": "서울 노원구 공릉로 232"
+    }
+   ],
+   "b": [
+    {
+     "place": "서울과학기술대학교 어의관",
+     "category": "교육,학문 > 학교부속시설",
+     "x": 127.076759240088,
+     "y": 37.6353503351963,
+     "address": "서울 노원구 공릉로 232"
+    }
+   ]
+  },
+  {
+   "code": "041",
+   "name": "불암학사",
+   "a": [
+    {
+     "place": "서울과학기술대학교 불암학사",
+     "category": "교육,학문 > 학교부속시설",
+     "x": 127.076116757633,
+     "y": 37.6363598547825,
+     "address": "서울 노원구 공릉로58길 130"
+    }
+   ],
+   "b": [
+    {
+     "place": "서울과학기술대학교 불암학사",
+     "category": "교육,학문 > 학교부속시설",
+     "x": 127.076116757633,
+     "y": 37.6363598547825,
+     "address": "서울 노원구 공릉로58길 130"
+    }
+   ]
+  },
+  {
+   "code": "042",
+   "name": "KB학사",
+   "a": [
+    {
+     "place": "서울과학기술대학교 KB학사",
+     "category": "교육,학문 > 학교부속시설",
+     "x": 127.07612544626818,
+     "y": 37.6359922472617,
+     "address": "서울 노원구 공릉로58길 130"
+    }
+   ],
+   "b": [
+    {
+     "place": "서울과학기술대학교 KB학사",
+     "category": "교육,학문 > 학교부속시설",
+     "x": 127.07612544626818,
+     "y": 37.6359922472617,
+     "address": "서울 노원구 공릉로58길 130"
+    }
+   ]
+  },
+  {
+   "code": "043",
+   "name": "성림학사",
+   "a": [
+    {
+     "place": "서울과학기술대학교 성림학사",
+     "category": "부동산 > 주거시설 > 기숙사,기숙시설",
+     "x": 127.075975456118,
+     "y": 37.6355598710702,
+     "address": "서울 노원구 공릉로58길 130"
+    },
+    {
+     "place": "서울과학기술대학교 성림학사 국제동",
+     "category": "부동산 > 주거시설 > 기숙사,기숙시설",
+     "x": 127.07615613537759,
+     "y": 37.63497952010148,
+     "address": "서울 노원구 공릉로58길 130"
+    },
+    {
+     "place": "서울과학기술대학교 성림학사 여학생동",
+     "category": "부동산 > 주거시설 > 기숙사,기숙시설",
+     "x": 127.076793157706,
+     "y": 37.6330798299611,
+     "address": "서울 노원구 공릉로 232"
+    },
+    {
+     "place": "서울과학기술대학교 수림학사",
+     "category": "교육,학문 > 학교부속시설",
+     "x": 127.0782826456089,
+     "y": 37.636044894803625,
+     "address": "서울 노원구 공릉로 232"
+    },
+    {
+     "place": "서울과학기술대학교",
+     "category": "교육,학문 > 학교 > 대학교",
+     "x": 127.08027896385352,
+     "y": 37.631881000815284,
+     "address": "서울 노원구 공릉로 232"
+    }
+   ],
+   "b": [
+    {
+     "place": "서울과학기술대학교 성림학사",
+     "category": "부동산 > 주거시설 > 기숙사,기숙시설",
+     "x": 127.075975456118,
+     "y": 37.6355598710702,
+     "address": "서울 노원구 공릉로58길 130"
+    },
+    {
+     "place": "서울과학기술대학교 성림학사 국제동",
+     "category": "부동산 > 주거시설 > 기숙사,기숙시설",
+     "x": 127.07615613537759,
+     "y": 37.63497952010148,
+     "address": "서울 노원구 공릉로58길 130"
+    },
+    {
+     "place": "서울과학기술대학교 성림학사 여학생동",
+     "category": "부동산 > 주거시설 > 기숙사,기숙시설",
+     "x": 127.076793157706,
+     "y": 37.6330798299611,
+     "address": "서울 노원구 공릉로 232"
+    },
+    {
+     "place": "서울과학기술대학교 수림학사",
+     "category": "교육,학문 > 학교부속시설",
+     "x": 127.0782826456089,
+     "y": 37.636044894803625,
+     "address": "서울 노원구 공릉로 232"
+    },
+    {
+     "place": "서울과학기술대학교",
+     "category": "교육,학문 > 학교 > 대학교",
+     "x": 127.08027896385352,
+     "y": 37.631881000815284,
+     "address": "서울 노원구 공릉로 232"
+    }
+   ]
+  },
+  {
+   "code": "044",
+   "name": "협동문",
+   "a": [
+    {
+     "place": "서울과학기술대학교 협동문",
+     "category": "교통,수송 > 입출구",
+     "x": 127.075613734931,
+     "y": 37.6363709900495,
+     "address": "서울 노원구 공릉로58길 130"
+    }
+   ],
+   "b": [
+    {
+     "place": "서울과학기술대학교 협동문",
+     "category": "교통,수송 > 입출구",
+     "x": 127.075613734931,
+     "y": 37.6363709900495,
+     "address": "서울 노원구 공릉로58길 130"
+    }
+   ]
+  },
+  {
+   "code": "045",
+   "name": "수림학사",
+   "a": [
+    {
+     "place": "서울과학기술대학교 수림학사",
+     "category": "교육,학문 > 학교부속시설",
+     "x": 127.0782826456089,
+     "y": 37.636044894803625,
+     "address": "서울 노원구 공릉로 232"
+    }
+   ],
+   "b": [
+    {
+     "place": "서울과학기술대학교 수림학사",
+     "category": "교육,학문 > 학교부속시설",
+     "x": 127.0782826456089,
+     "y": 37.636044894803625,
+     "address": "서울 노원구 공릉로 232"
+    },
+    {
+     "place": "이마트24 과기대수림학사점",
+     "category": "가정,생활 > 편의점 > 이마트24",
+     "x": 127.07839258377989,
+     "y": 37.6360844651481,
+     "address": "서울 노원구 하계동 78-1"
+    },
+    {
+     "place": "입주청소이사청소대한깔끔크린",
+     "category": "서비스,산업 > 전문대행 > 청소대행",
+     "x": 127.077998180955,
+     "y": 37.6359558856756,
+     "address": "서울 노원구 하계동 78-1"
+    }
+   ]
+  },
+  {
+   "code": "046",
+   "name": "누리학사",
+   "a": [
+    {
+     "place": "서울과학기술대학교 누리학사",
+     "category": "부동산 > 주거시설 > 기숙사,기숙시설",
+     "x": 127.077084574687,
+     "y": 37.6344275141681,
+     "address": "서울 노원구 공릉로58길 130"
+    }
+   ],
+   "b": [
+    {
+     "place": "서울과학기술대학교 누리학사",
+     "category": "부동산 > 주거시설 > 기숙사,기숙시설",
+     "x": 127.077084574687,
+     "y": 37.6344275141681,
+     "address": "서울 노원구 공릉로58길 130"
+    },
+    {
+     "place": "이마트24 과기대누리학사점",
+     "category": "가정,생활 > 편의점 > 이마트24",
+     "x": 127.0771004208025,
+     "y": 37.63441308804874,
+     "address": "서울 노원구 공릉로58길 130"
+    }
+   ]
+  },
+  {
+   "code": "047",
+   "name": "창명학사",
+   "a": [
+    {
+     "place": "서울과학기술대학교 창명학사",
+     "category": "부동산 > 주거시설 > 기숙사,기숙시설",
+     "x": 127.07937548017,
+     "y": 37.6366712502432,
+     "address": "서울 노원구 공릉로58마길 50-13"
+    }
+   ],
+   "b": [
+    {
+     "place": "서울과학기술대학교 창명학사",
+     "category": "부동산 > 주거시설 > 기숙사,기숙시설",
+     "x": 127.07937548017,
+     "y": 37.6366712502432,
+     "address": "서울 노원구 공릉로58마길 50-13"
+    }
+   ]
+  },
+  {
+   "code": "051",
+   "name": "100주년기념관",
+   "a": [
+    {
+     "place": "서울과학기술대학교 100주년기념관",
+     "category": "교육,학문 > 학교부속시설",
+     "x": 127.078621333761,
+     "y": 37.6306063210693,
+     "address": "서울 노원구 공릉로 232"
+    },
+    {
+     "place": "서울과학기술대학교 입학처",
+     "category": "교육,학문 > 학교부속시설",
+     "x": 127.07871303456729,
+     "y": 37.63054769584522,
+     "address": "서울 노원구 공릉로 232"
+    },
+    {
+     "place": "서울과학기술대학교 산학/연구지원처",
+     "category": "교육,학문 > 학교부속시설",
+     "x": 127.078616802276,
+     "y": 37.6306063240886,
+     "address": "서울 노원구 공릉로 232"
+    },
+    {
+     "place": "서울과학기술대학교 대학교육혁신원",
+     "category": "교육,학문 > 학교부속시설",
+     "x": 127.078620261635,
+     "y": 37.6306639848826,
+     "address": "서울 노원구 공릉로 232"
+    }
+   ],
+   "b": [
+    {
+     "place": "서울과학기술대학교 100주년기념관",
+     "category": "교육,학문 > 학교부속시설",
+     "x": 127.078621333761,
+     "y": 37.6306063210693,
+     "address": "서울 노원구 공릉로 232"
+    },
+    {
+     "place": "서울과학기술대학교 산학/연구지원처",
+     "category": "교육,학문 > 학교부속시설",
+     "x": 127.078616802276,
+     "y": 37.6306063240886,
+     "address": "서울 노원구 공릉로 232"
+    }
+   ]
+  },
+  {
+   "code": "052",
+   "name": "제2학생회관",
+   "a": [
+    {
+     "place": "서울과학기술대학교 제2학생회관",
+     "category": "교육,학문 > 학교부속시설",
+     "x": 127.079210606591,
+     "y": 37.6307753122984,
+     "address": "서울 노원구 공릉로 232"
+    },
+    {
+     "place": "구시아푸드마켓 서울과학기술대학교 제2학생회관점",
+     "category": "음식점 > 푸드코트",
+     "x": 127.079293274789,
+     "y": 37.6307455242323,
+     "address": "서울 노원구 공릉로 232"
+    },
+    {
+     "place": "CU 과학기술대생활관점",
+     "category": "가정,생활 > 편의점 > CU",
+     "x": 127.07599243746971,
+     "y": 37.635547246341524,
+     "address": "서울 노원구 공릉로58길 130"
+    },
+    {
+     "place": "서울과학기술대학교 우편취급국",
+     "category": "사회,공공기관 > 행정기관 > 과학기술정보통신부 > 우편취급국",
+     "x": 127.07933966033879,
+     "y": 37.630686928967165,
+     "address": "서울 노원구 공릉로 232"
+    },
+    {
+     "place": "서울과학기술대학교 안경점",
+     "category": "가정,생활 > 패션 > 패션잡화점 > 안경,렌즈",
+     "x": 127.079174339336,
+     "y": 37.6307609208656,
+     "address": "서울 노원구 공릉로 232"
+    }
+   ],
+   "b": [
+    {
+     "place": "서울과학기술대학교 제2학생회관",
+     "category": "교육,학문 > 학교부속시설",
+     "x": 127.079210606591,
+     "y": 37.6307753122984,
+     "address": "서울 노원구 공릉로 232"
+    },
+    {
+     "place": "CU 과학기술대생활관점",
+     "category": "가정,생활 > 편의점 > CU",
+     "x": 127.07599243746971,
+     "y": 37.635547246341524,
+     "address": "서울 노원구 공릉로58길 130"
+    },
+    {
+     "place": "구시아푸드마켓 서울과학기술대학교 제2학생회관점",
+     "category": "음식점 > 푸드코트",
+     "x": 127.079293274789,
+     "y": 37.6307455242323,
+     "address": "서울 노원구 공릉로 232"
+    },
+    {
+     "place": "비춤안경 공릉점",
+     "category": "가정,생활 > 패션 > 패션잡화점 > 안경,렌즈",
+     "x": 127.0792015512499,
+     "y": 37.630782526264305,
+     "address": "서울 노원구 공릉로 232"
+    },
+    {
+     "place": "서울노원우체국ATM점외",
+     "category": "금융,보험 > 금융서비스 > 은행 > ATM",
+     "x": 127.07674901594797,
+     "y": 37.62981558710033,
+     "address": "서울 노원구 공릉로 232"
+    }
+   ]
+  },
+  {
+   "code": "053",
+   "name": "상상관",
+   "a": [
+    {
+     "place": "서울과학기술대학교 상상관",
+     "category": "교육,학문 > 학교부속시설",
+     "x": 127.08034374421108,
+     "y": 37.631019614310205,
+     "address": "서울 노원구 공릉로 232"
+    }
+   ],
+   "b": [
+    {
+     "place": "서울과학기술대학교 상상관",
+     "category": "교육,학문 > 학교부속시설",
+     "x": 127.08034374421108,
+     "y": 37.631019614310205,
+     "address": "서울 노원구 공릉로 232"
+    }
+   ]
+  },
+  {
+   "code": "054",
+   "name": "아름관",
+   "a": [
+    {
+     "place": "서울과학기술대학교 아름관",
+     "category": "교육,학문 > 학교부속시설",
+     "x": 127.080719204686,
+     "y": 37.630413895528,
+     "address": "서울 노원구 공릉로 232"
+    }
+   ],
+   "b": [
+    {
+     "place": "서울과학기술대학교 아름관",
+     "category": "교육,학문 > 학교부속시설",
+     "x": 127.080719204686,
+     "y": 37.630413895528,
+     "address": "서울 노원구 공릉로 232"
+    }
+   ]
+  },
+  {
+   "code": "055",
+   "name": "체육관",
+   "a": [
+    {
+     "place": "서울과학기술대학교 체육관",
+     "category": "스포츠,레저 > 스포츠시설 > 체육관",
+     "x": 127.079480788378,
+     "y": 37.6291713754987,
+     "address": "서울 노원구 공릉로 232"
+    },
+    {
+     "place": "공릉구민체육센터",
+     "category": "스포츠,레저 > 스포츠시설 > 체육관",
+     "x": 127.08152999618588,
+     "y": 37.62491461831873,
+     "address": "서울 노원구 공릉로34길 81"
+    },
+    {
+     "place": "불암산스포츠타운",
+     "category": "스포츠,레저 > 스포츠시설 > 체육관",
+     "x": 127.08418278132336,
+     "y": 37.63879874721023,
+     "address": "서울 노원구 공릉동 141"
+    },
+    {
+     "place": "서울여자대학교 체육관",
+     "category": "스포츠,레저 > 스포츠시설 > 체육관",
+     "x": 127.088929048918,
+     "y": 37.625611142625,
+     "address": "서울 노원구 화랑로 621"
+    },
+    {
+     "place": "공릉주짓수&칼리 익스트림짐",
+     "category": "스포츠,레저 > 스포츠시설 > 체육관",
+     "x": 127.074852806794,
+     "y": 37.6209763233511,
+     "address": "서울 노원구 동일로 1018"
+    }
+   ],
+   "b": [
+    {
+     "place": "서울과학기술대학교 체육관",
+     "category": "스포츠,레저 > 스포츠시설 > 체육관",
+     "x": 127.079480788378,
+     "y": 37.6291713754987,
+     "address": "서울 노원구 공릉로 232"
+    }
+   ]
+  },
+  {
+   "code": "056",
+   "name": "대륙관",
+   "a": [
+    {
+     "place": "서울과학기술대학교 대륙관",
+     "category": "교육,학문 > 학교부속시설",
+     "x": 127.08036457393,
+     "y": 37.6293221425349,
+     "address": "서울 노원구 공릉로 232"
+    }
+   ],
+   "b": [
+    {
+     "place": "서울과학기술대학교 대륙관",
+     "category": "교육,학문 > 학교부속시설",
+     "x": 127.08036457393,
+     "y": 37.6293221425349,
+     "address": "서울 노원구 공릉로 232"
+    }
+   ]
+  },
+  {
+   "code": "571",
+   "name": "무궁관-A",
+   "a": [],
+   "b": []
+  },
+  {
+   "code": "057",
+   "name": "무궁관",
+   "a": [
+    {
+     "place": "서울과학기술대학교 무궁관",
+     "category": "교육,학문 > 학교부속시설",
+     "x": 127.081408432818,
+     "y": 37.6308206676382,
+     "address": "서울 노원구 공릉로 232"
+    }
+   ],
+   "b": [
+    {
+     "place": "서울과학기술대학교 무궁관",
+     "category": "교육,학문 > 학교부속시설",
+     "x": 127.081408432818,
+     "y": 37.6308206676382,
+     "address": "서울 노원구 공릉로 232"
+    }
+   ]
+  },
+  {
+   "code": "058",
+   "name": "제2파워플랜트",
+   "a": [
+    {
+     "place": "서울과학기술대학교 제2파워플랜트",
+     "category": "교육,학문 > 학교부속시설",
+     "x": 127.08202919255,
+     "y": 37.6307697825014,
+     "address": "서울 노원구 공릉로 232"
+    }
+   ],
+   "b": [
+    {
+     "place": "서울과학기술대학교 제2파워플랜트",
+     "category": "교육,학문 > 학교부속시설",
+     "x": 127.08202919255,
+     "y": 37.6307697825014,
+     "address": "서울 노원구 공릉로 232"
+    }
+   ]
+  },
+  {
+   "code": "059",
+   "name": "학군단",
+   "a": [
+    {
+     "place": "서울과학기술대학교 학군단",
+     "category": "교육,학문 > 학교부속시설",
+     "x": 127.081297462747,
+     "y": 37.6287881196604,
+     "address": "서울 노원구 공릉로 232"
+    }
+   ],
+   "b": [
+    {
+     "place": "서울과학기술대학교 학군단",
+     "category": "교육,학문 > 학교부속시설",
+     "x": 127.081297462747,
+     "y": 37.6287881196604,
+     "address": "서울 노원구 공릉로 232"
+    }
+   ]
+  },
+  {
+   "code": "060",
+   "name": "미래관",
+   "a": [
+    {
+     "place": "서울과학기술대학교 미래관",
+     "category": "교육,학문 > 학교부속시설",
+     "x": 127.081565495199,
+     "y": 37.62941141709,
+     "address": "서울 노원구 공릉로 232"
+    }
+   ],
+   "b": [
+    {
+     "place": "서울과학기술대학교 미래관",
+     "category": "교육,학문 > 학교부속시설",
+     "x": 127.081565495199,
+     "y": 37.62941141709,
+     "address": "서울 노원구 공릉로 232"
+    }
+   ]
+  },
+  {
+   "code": "075",
+   "name": "창의문",
+   "a": [
+    {
+     "place": "서울과학기술대학교 창의문",
+     "category": "교통,수송 > 입출구",
+     "x": 127.08305249432318,
+     "y": 37.63152013408023,
+     "address": "서울 노원구 공릉동 172-18"
+    }
+   ],
+   "b": [
+    {
+     "place": "서울과학기술대학교 창의문",
+     "category": "교통,수송 > 입출구",
+     "x": 127.08305249432318,
+     "y": 37.63152013408023,
+     "address": "서울 노원구 공릉동 172-18"
+    }
+   ]
+  },
+  {
+   "code": "062",
+   "name": "Techno Cube",
+   "a": [
+    {
+     "place": "서울과학기술대학교 테크노큐브",
+     "category": "교육,학문 > 학교부속시설",
+     "x": 127.079650296399,
+     "y": 37.6298397928726,
+     "address": "서울 노원구 공릉로 232"
+    }
+   ],
+   "b": [
+    {
+     "place": "서울과학기술대학교 테크노큐브",
+     "category": "교육,학문 > 학교부속시설",
+     "x": 127.079650296399,
+     "y": 37.6298397928726,
+     "address": "서울 노원구 공릉로 232"
+    }
+   ]
+  },
+  {
+   "code": "063",
+   "name": "축구장",
+   "a": [
+    {
+     "place": "불암산종합스타디움 축구장",
+     "category": "스포츠,레저 > 축구 > 축구장",
+     "x": 127.084928636668,
+     "y": 37.638105355447,
+     "address": "서울 노원구 중계로 36"
+    },
+    {
+     "place": "AAFC 화랑초등학교 구장",
+     "category": "스포츠,레저 > 축구 > 축구장",
+     "x": 127.09413234017,
+     "y": 37.6276919890227,
+     "address": "서울 노원구 화랑로 621"
+    },
+    {
+     "place": "육사화랑구장",
+     "category": "스포츠,레저 > 축구 > 축구장",
+     "x": 127.097298747611,
+     "y": 37.6278101526308,
+     "address": "서울 노원구 공릉동 25-5"
+    },
+    {
+     "place": "불암산스포츠타운",
+     "category": "스포츠,레저 > 스포츠시설 > 체육관",
+     "x": 127.08418278132336,
+     "y": 37.63879874721023,
+     "address": "서울 노원구 공릉동 141"
+    },
+    {
+     "place": "불암산배드민턴장",
+     "category": "스포츠,레저 > 스포츠시설",
+     "x": 127.083229830587,
+     "y": 37.6387084238589,
+     "address": "서울 노원구 중계로 36"
+    }
+   ],
+   "b": [
+    {
+     "place": "불암산종합스타디움 축구장",
+     "category": "스포츠,레저 > 축구 > 축구장",
+     "x": 127.084928636668,
+     "y": 37.638105355447,
+     "address": "서울 노원구 중계로 36"
+    },
+    {
+     "place": "AAFC 화랑초등학교 구장",
+     "category": "스포츠,레저 > 축구 > 축구장",
+     "x": 127.09413234017,
+     "y": 37.6276919890227,
+     "address": "서울 노원구 화랑로 621"
+    },
+    {
+     "place": "육사화랑구장",
+     "category": "스포츠,레저 > 축구 > 축구장",
+     "x": 127.097298747611,
+     "y": 37.6278101526308,
+     "address": "서울 노원구 공릉동 25-5"
+    },
+    {
+     "place": "불암산스포츠타운",
+     "category": "스포츠,레저 > 스포츠시설 > 체육관",
+     "x": 127.08418278132336,
+     "y": 37.63879874721023,
+     "address": "서울 노원구 공릉동 141"
+    },
+    {
+     "place": "불암산배드민턴장",
+     "category": "스포츠,레저 > 스포츠시설",
+     "x": 127.083229830587,
+     "y": 37.6387084238589,
+     "address": "서울 노원구 중계로 36"
+    }
+   ]
   }
+ ]
 }

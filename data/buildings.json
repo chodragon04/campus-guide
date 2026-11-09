@@ -1,10 +1,620 @@
-[
+{
+ "source": "서울과학기술대학교 캠퍼스지도(www.seoultech.ac.kr/intro/map), 좌표는 카카오 장소 검색",
+ "updatedAt": "2026-11-09",
+ "categories": {
+  "lecture": "강의동",
+  "dorm": "생활관",
+  "student": "학생 편의",
+  "admin": "행정·산학",
+  "etc": "기타"
+ },
+ "buildings": [
   {
-    "id": 1,
-    "name": "예시 건물",
-    "category": "lecture",
-    "lat": 37.6316,
-    "lng": 127.0771,
-    "description": "건물 설명을 입력하세요."
+   "id": "001",
+   "no": 1,
+   "name": "대학본부",
+   "category": "admin",
+   "lat": 37.631831,
+   "lng": 127.080263,
+   "floors": "지하 1층 ~ 지상 5층",
+   "colleges": [
+    "연계융합전공"
+   ],
+   "offices": [
+    "교무처",
+    "기획처",
+    "사무국",
+    "재난안전관리본부"
+   ]
+  },
+  {
+   "id": "002",
+   "no": 2,
+   "name": "다산관",
+   "category": "lecture",
+   "lat": 37.632474,
+   "lng": 127.077622,
+   "floors": "지하 1층 ~ 지상 7층",
+   "colleges": [
+    "공과대학"
+   ],
+   "offices": [
+    "신문방송사"
+   ]
+  },
+  {
+   "id": "003",
+   "no": 3,
+   "name": "창학관",
+   "category": "lecture",
+   "lat": 37.632267,
+   "lng": 127.079457,
+   "floors": "지상 4층",
+   "colleges": [
+    "정보통신대학"
+   ]
+  },
+  {
+   "id": "004",
+   "no": 4,
+   "name": "제2창업보육센터",
+   "category": "admin",
+   "lat": 37.631682,
+   "lng": 127.08107
+  },
+  {
+   "id": "005",
+   "no": 5,
+   "name": "혜성관",
+   "category": "lecture",
+   "lat": 37.631682,
+   "lng": 127.081853,
+   "floors": "지하 1층 ~ 지상 5층",
+   "offices": [
+    "공동실험실습관"
+   ]
+  },
+  {
+   "id": "006",
+   "no": 6,
+   "name": "청운관",
+   "category": "lecture",
+   "lat": 37.633355,
+   "lng": 127.080731,
+   "aliases": [
+    "청운관(북관)",
+    "청운관(남관)"
+   ],
+   "floors": "지하 1층 ~ 지상 4층",
+   "colleges": [
+    "에너지바이오대학"
+   ]
+  },
+  {
+   "id": "007",
+   "no": 7,
+   "name": "서울테크노파크",
+   "category": "admin",
+   "lat": 37.634573,
+   "lng": 127.080597,
+   "aliases": [
+    "서울테크노파크(TP)"
+   ],
+   "floors": "지상 6층"
+  },
+  {
+   "id": "008",
+   "no": 8,
+   "name": "창조관",
+   "category": "lecture",
+   "lat": 37.634823,
+   "lng": 127.079215,
+   "floors": "지하 1층 ~ 지상 5층",
+   "colleges": [
+    "SeoulTech-KIRAMS 의과학대학원"
+   ]
+  },
+  {
+   "id": "010",
+   "no": 10,
+   "name": "파워플랜트",
+   "category": "etc",
+   "lat": 37.633633,
+   "lng": 127.079309,
+   "floors": "지하 2층 ~ 지상 1층"
+  },
+  {
+   "id": "011",
+   "no": 11,
+   "name": "붕어방",
+   "category": "etc",
+   "lat": 37.633403,
+   "lng": 127.078135
+  },
+  {
+   "id": "013",
+   "no": 13,
+   "name": "정문",
+   "category": "etc",
+   "lat": 37.630222,
+   "lng": 127.076723
+  },
+  {
+   "id": "014",
+   "no": 14,
+   "name": "도예실습실",
+   "category": "lecture",
+   "lat": 37.63532,
+   "lng": 127.07919,
+   "aliases": [
+    "도예관"
+   ],
+   "floors": "지상 1층"
+  },
+  {
+   "id": "030",
+   "no": 30,
+   "name": "SeoulTech어린이집",
+   "category": "admin",
+   "lat": 37.630787,
+   "lng": 127.076312
+  },
+  {
+   "id": "031",
+   "no": 31,
+   "name": "창업보육센터",
+   "category": "admin",
+   "lat": 37.630871,
+   "lng": 127.075912,
+   "floors": "지하 1층 ~ 지상 4층"
+  },
+  {
+   "id": "032",
+   "no": 32,
+   "name": "프론티어관",
+   "category": "lecture",
+   "lat": 37.631538,
+   "lng": 127.076003,
+   "floors": "지하 1층 ~ 지상 10층",
+   "facilities": [
+    {
+     "name": "프론티어 카페",
+     "type": "cafe"
+    }
+   ],
+   "offices": [
+    "기록관"
+   ]
+  },
+  {
+   "id": "033",
+   "no": 33,
+   "name": "하이테크관",
+   "category": "lecture",
+   "lat": 37.632111,
+   "lng": 127.076266,
+   "floors": "지상 2층"
+  },
+  {
+   "id": "034",
+   "no": 34,
+   "name": "중앙도서관",
+   "category": "student",
+   "lat": 37.633062,
+   "lng": 127.076748,
+   "floors": "지상 3층",
+   "facilities": [
+    {
+     "name": "도서관북카페",
+     "type": "cafe"
+    }
+   ],
+   "offices": [
+    "정보전산원",
+    "도서관"
+   ]
+  },
+  {
+   "id": "035",
+   "no": 35,
+   "name": "중앙도서관 별관",
+   "category": "student",
+   "lat": 37.63385,
+   "lng": 127.07671,
+   "aliases": [
+    "별관도서관"
+   ],
+   "floors": "지하 1층 ~ 지상 2층"
+  },
+  {
+   "id": "037",
+   "no": 37,
+   "name": "학생회관",
+   "category": "student",
+   "lat": 37.634168,
+   "lng": 127.076858,
+   "aliases": [
+    "제1학생회관"
+   ],
+   "floors": "지하 1층 ~ 지상 3층",
+   "facilities": [
+    {
+     "name": "제1매점",
+     "type": "store"
+    },
+    {
+     "name": "화방",
+     "type": "etc"
+    },
+    {
+     "name": "안경점",
+     "type": "etc"
+    },
+    {
+     "name": "학생 제1식당",
+     "type": "food"
+    },
+    {
+     "name": "휴게실",
+     "type": "etc"
+    },
+    {
+     "name": "1학생회관카페",
+     "type": "cafe"
+    }
+   ]
+  },
+  {
+   "id": "038",
+   "no": 38,
+   "name": "국제관",
+   "category": "lecture",
+   "lat": 37.634925,
+   "lng": 127.077572,
+   "floors": "지하 1층 ~ 지상 5층",
+   "colleges": [
+    "국제대학"
+   ],
+   "offices": [
+    "국제교류처"
+   ]
+  },
+  {
+   "id": "039",
+   "no": 39,
+   "name": "다빈치관",
+   "category": "lecture",
+   "lat": 37.635335,
+   "lng": 127.078613,
+   "floors": "지하 1층 ~ 지상 7층",
+   "colleges": [
+    "조형대학"
+   ]
+  },
+  {
+   "id": "040",
+   "no": 40,
+   "name": "어의관",
+   "category": "lecture",
+   "lat": 37.63535,
+   "lng": 127.076759,
+   "floors": "지상 7층",
+   "colleges": [
+    "교양대학",
+    "미래융합대학",
+    "산업대학원",
+    "주택도시대학원",
+    "철도전문대학원",
+    "IT정책전문대학원",
+    "국방융합과학대학원",
+    "나노IT디자인융합대학원",
+    "일반대학원"
+   ],
+   "offices": [
+    "장애학생지원센터"
+   ]
+  },
+  {
+   "id": "041",
+   "no": 41,
+   "name": "불암학사",
+   "category": "dorm",
+   "lat": 37.63636,
+   "lng": 127.076117,
+   "floors": "지하 1층 ~ 지상 4층"
+  },
+  {
+   "id": "042",
+   "no": 42,
+   "name": "KB학사",
+   "category": "dorm",
+   "lat": 37.635992,
+   "lng": 127.076125,
+   "floors": "지하 1층 ~ 지상 7층",
+   "offices": [
+    "생활관"
+   ]
+  },
+  {
+   "id": "043",
+   "no": 43,
+   "name": "성림학사",
+   "category": "dorm",
+   "lat": 37.63556,
+   "lng": 127.075975,
+   "floors": "지하 1층 ~ 지상 12층",
+   "facilities": [
+    {
+     "name": "제4매점",
+     "type": "store"
+    },
+    {
+     "name": "당구장/탁구장",
+     "type": "etc"
+    },
+    {
+     "name": "휘트니스센터",
+     "type": "etc"
+    }
+   ]
+  },
+  {
+   "id": "044",
+   "no": 44,
+   "name": "협동문",
+   "category": "etc",
+   "lat": 37.636371,
+   "lng": 127.075614
+  },
+  {
+   "id": "045",
+   "no": 45,
+   "name": "수림학사",
+   "category": "dorm",
+   "lat": 37.636045,
+   "lng": 127.078283
+  },
+  {
+   "id": "046",
+   "no": 46,
+   "name": "누리학사",
+   "category": "dorm",
+   "lat": 37.634428,
+   "lng": 127.077085
+  },
+  {
+   "id": "047",
+   "no": 47,
+   "name": "창명학사",
+   "category": "dorm",
+   "lat": 37.636671,
+   "lng": 127.079375
+  },
+  {
+   "id": "051",
+   "no": 51,
+   "name": "100주년기념관",
+   "category": "lecture",
+   "lat": 37.630606,
+   "lng": 127.078621,
+   "floors": "지하 1층 ~ 지상 4층",
+   "facilities": [
+    {
+     "name": "서점/문구",
+     "type": "etc"
+    },
+    {
+     "name": "복사실",
+     "type": "print"
+    }
+   ],
+   "offices": [
+    "교수학습개발센터",
+    "입학처",
+    "교육혁신원",
+    "소비자생활협동조합",
+    "교양교육연구센터"
+   ]
+  },
+  {
+   "id": "052",
+   "no": 52,
+   "name": "제2학생회관",
+   "category": "student",
+   "lat": 37.630775,
+   "lng": 127.079211,
+   "floors": "지하 1층 ~ 지상 3층",
+   "facilities": [
+    {
+     "name": "KB국민은행",
+     "type": "bank"
+    },
+    {
+     "name": "제2매점",
+     "type": "store"
+    },
+    {
+     "name": "우체국",
+     "type": "bank"
+    },
+    {
+     "name": "휴(休)",
+     "type": "etc"
+    },
+    {
+     "name": "증명발급기",
+     "type": "print"
+    },
+    {
+     "name": "보건진료소",
+     "type": "health"
+    },
+    {
+     "name": "학생 제2식당",
+     "type": "food"
+    }
+   ],
+   "offices": [
+    "학생상담센터",
+    "인권센터",
+    "취업진로본부",
+    "학생처"
+   ]
+  },
+  {
+   "id": "053",
+   "no": 53,
+   "name": "상상관",
+   "category": "lecture",
+   "lat": 37.63102,
+   "lng": 127.080344,
+   "floors": "지상 8층",
+   "colleges": [
+    "창의융합대학",
+    "인문사회대학"
+   ],
+   "facilities": [
+    {
+     "name": "상상관카페",
+     "type": "cafe"
+    }
+   ],
+   "offices": [
+    "(재)발전기금",
+    "대외협력처",
+    "평생교육원",
+    "홍보실",
+    "창업지원단"
+   ]
+  },
+  {
+   "id": "054",
+   "no": 54,
+   "name": "아름관",
+   "category": "lecture",
+   "lat": 37.630414,
+   "lng": 127.080719,
+   "floors": "지하 1층 ~ 지상 4층"
+  },
+  {
+   "id": "055",
+   "no": 55,
+   "name": "체육관",
+   "category": "student",
+   "lat": 37.629171,
+   "lng": 127.079481,
+   "floors": "지하 1층 ~ 지상 2층"
+  },
+  {
+   "id": "056",
+   "no": 56,
+   "name": "대륙관",
+   "category": "lecture",
+   "lat": 37.629322,
+   "lng": 127.080365,
+   "floors": "지상 2층"
+  },
+  {
+   "id": "571",
+   "no": 57,
+   "name": "무궁관-A",
+   "category": "lecture",
+   "lat": 37.630299,
+   "lng": 127.08151,
+   "approx": true
+  },
+  {
+   "id": "057",
+   "no": 57,
+   "name": "무궁관",
+   "category": "lecture",
+   "lat": 37.630821,
+   "lng": 127.081408,
+   "floors": "지하 1층 ~ 지상 9층",
+   "colleges": [
+    "기술경영융합대학"
+   ],
+   "facilities": [
+    {
+     "name": "무궁관 카페",
+     "type": "cafe"
+    }
+   ]
+  },
+  {
+   "id": "058",
+   "no": 58,
+   "name": "제2파워플랜트",
+   "category": "etc",
+   "lat": 37.63077,
+   "lng": 127.082029,
+   "floors": "지하 2층 ~ 지상 1층"
+  },
+  {
+   "id": "059",
+   "no": 59,
+   "name": "학군단",
+   "category": "admin",
+   "lat": 37.628788,
+   "lng": 127.081297,
+   "floors": "지하 1층 ~ 지상 3층",
+   "offices": [
+    "육군학생군사교육단",
+    "공군학생군사교육단"
+   ]
+  },
+  {
+   "id": "060",
+   "no": 60,
+   "name": "미래관",
+   "category": "lecture",
+   "lat": 37.629411,
+   "lng": 127.081565,
+   "floors": "지하 1층 ~ 지상 5층",
+   "facilities": [
+    {
+     "name": "미래관 카페",
+     "type": "cafe"
+    }
+   ]
+  },
+  {
+   "id": "075",
+   "no": 61,
+   "name": "창의문",
+   "category": "etc",
+   "lat": 37.63152,
+   "lng": 127.083052
+  },
+  {
+   "id": "062",
+   "no": 62,
+   "name": "Techno Cube",
+   "category": "lecture",
+   "lat": 37.62984,
+   "lng": 127.07965,
+   "aliases": [
+    "테크노큐브",
+    "Techno, Cube(테크노, 큐브)"
+   ],
+   "floors": "지상 12층",
+   "facilities": [
+    {
+     "name": "큐브 카페",
+     "type": "cafe"
+    }
+   ],
+   "offices": [
+    "산학협력단"
+   ]
+  },
+  {
+   "id": "063",
+   "no": 63,
+   "name": "축구장",
+   "category": "etc",
+   "lat": 37.629459,
+   "lng": 127.07845
   }
-]
+ ]
+}

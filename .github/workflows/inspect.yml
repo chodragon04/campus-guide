@@ -3,7 +3,7 @@ name: 페이지 구조 확인
 on:
   workflow_dispatch:
   push:
-    paths: ["scripts/inspect.js", ".github/workflows/inspect.yml"]
+    paths: ["scripts/geocode/**", ".github/workflows/inspect.yml"]
 permissions:
   contents: write
 jobs:
@@ -27,7 +27,11 @@ jobs:
             cat intermediate.pem >> extra-ca.pem
           done
           echo "NODE_EXTRA_CA_CERTS=$RUNNER_TEMP/extra-ca.pem" >> "$GITHUB_ENV"
-      - run: node scripts/inspect.js
+      - run: npm install --no-save playwright && npx playwright install --with-deps chromium
+      - run: |
+          python3 -m http.server 5500 --bind 127.0.0.1 &
+          sleep 2
+          node scripts/geocode/run.mjs
       - run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"

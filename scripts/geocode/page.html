@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<!-- [임시] 카카오 장소 검색으로 건물 좌표 찾기. 등록된 도메인(127.0.0.1:5500)에서 열어야 동작 -->
+<html lang="ko">
+<head><meta charset="UTF-8"><title>geocode</title></head>
+<body>
+<script src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=0cf3b1df4a0e40e7b19fe11317791c77&libraries=services&autoload=false"></script>
+<script>
+function search(places, keyword) {
+  return new Promise((resolve) => {
+    places.keywordSearch(keyword, (data, status) => {
+      resolve(status === kakao.maps.services.Status.OK ? data.slice(0, 5).map((p) => ({
+        place: p.place_name, category: p.category_name, x: Number(p.x), y: Number(p.y), address: p.road_address_name || p.address_name,
+      })) : []);
+    }, { location: new kakao.maps.LatLng(37.6316, 127.0771), radius: 2000 });
+  });
+}
+window.runGeocode = (targets) => new Promise((resolve) => {
+  kakao.maps.load(async () => {
+    const places = new kakao.maps.services.Places();
+    const results = [];
+    for (const t of targets) {
+      const r = { code: t.code, name: t.name };
+      r.a = await search(places, `서울과학기술대학교 ${t.name}`);
+      r.b = await search(places, `과기대 ${t.name}`);
+      results.push(r);
+      await new Promise((ok) => setTimeout(ok, 200));
+    }
+    resolve(results);
+  });
+});
+</script>
+</body>
+</html>

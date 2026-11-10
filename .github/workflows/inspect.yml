@@ -1,0 +1,39 @@
+# [임시] 페이지 구조 확인용. 확인이 끝나면 삭제한다.
+name: 페이지 구조 확인
+on:
+  workflow_dispatch:
+  push:
+    paths: ["scripts/geocode/**", ".github/workflows/inspect.yml"]
+permissions:
+  contents: write
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 20, cache: npm }
+      - run: npm ci
+      - name: 중간 인증서 받기
+        continue-on-error: true
+        run: |
+          cd "$RUNNER_TEMP"; : > extra-ca.pem
+          for HOST in www.seoultech.ac.kr; do
+            echo | openssl s_client -connect "$HOST:443" -servername "$HOST" 2>/dev/null | openssl x509 > leaf.pem || continue
+            ISSUER_URL=$(openssl x509 -in leaf.pem -noout -text | grep -m1 "CA Issuers" | sed 's/.*URI://')
+            [ -n "$ISSUER_URL" ] || continue
+            curl -sSL "$ISSUER_URL" -o intermediate.crt
+            openssl x509 -inform DER -in intermediate.crt -out intermediate.pem 2>/dev/null || cp intermediate.crt intermediate.pem
+            cat intermediate.pem >> extra-ca.pem
+          done
+          echo "NODE_EXTRA_CA_CERTS=$RUNNER_TEMP/extra-ca.pem" >> "$GITHUB_ENV"
+      - run: npm install --no-save playwright && npx playwright install --with-deps chromium
+      - run: |
+          python3 -m http.server 5500 --bind 127.0.0.1 &
+          sleep 2
+          node scripts/geocode/run.mjs
+      - run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/debug.json
+          git diff --staged --quiet || (git commit -m "[임시] 페이지 구조 확인 결과" && git pull --rebase && git push)

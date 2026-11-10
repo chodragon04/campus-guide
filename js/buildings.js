@@ -1,17 +1,6 @@
 // buildings.html: 건물·시설 목록, 검색, 종류·편의시설 필터
 // data/buildings.json의 건물 정보를 카드로 보여준다
 
-const FACILITY_LABELS = {
-  cafe: "카페",
-  food: "식당",
-  store: "매점",
-  atm: "ATM",
-  print: "증명서·복사",
-  bank: "은행·우체국",
-  health: "보건",
-  etc: "기타",
-};
-
 const searchInput = document.querySelector("#search");
 const categoryButtons = document.querySelectorAll("#category-filters button");
 const facilityButtons = document.querySelectorAll("#facility-filters button");
@@ -23,44 +12,11 @@ let categoryNames = {};
 let selectedCategory = "all";
 let selectedFacility = null; // null이면 편의시설 조건 없음
 
-function make(tag, className, text) {
-  const el = document.createElement(tag);
-  if (className) el.className = className;
-  if (text) el.innerText = text;
-  return el;
-}
-
 // ---------- 카드 만들기 ----------
 
 function makeCard(building) {
   const li = make("li", "building-card");
-
-  const head = make("div", "card-head");
-  head.appendChild(make("span", "no", String(building.no)));
-  head.appendChild(make("h2", "", building.name));
-  head.appendChild(make("span", `tag cat-${building.category}`, categoryNames[building.category]));
-  li.appendChild(head);
-
-  if (building.floors) li.appendChild(make("p", "floors", building.floors));
-
-  // 편의시설 태그 (종류는 테두리 색으로 구분)
-  if (building.facilities) {
-    const ul = make("ul", "facilities");
-    for (let facility of building.facilities) {
-      ul.appendChild(make("li", `fac fac-${facility.type}`, facility.name));
-    }
-    li.appendChild(ul);
-  }
-
-  // 입주 대학·부서는 길어서 접어 둔다
-  const members = (building.colleges || []).concat(building.offices || []);
-  if (members.length > 0) {
-    const details = make("details", "members");
-    details.appendChild(make("summary", "", `입주 대학·부서 (${members.length})`));
-    details.appendChild(make("p", "", members.join(", ")));
-    li.appendChild(details);
-  }
-
+  li.appendChild(makeBuildingInfo(building, categoryNames));
   const link = make("a", "map-link", "지도에서 보기 →");
   link.href = `map.html?b=${building.id}`;
   li.appendChild(link);

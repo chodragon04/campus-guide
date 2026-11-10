@@ -9,14 +9,6 @@ const fixedList = document.querySelector("#fixed-list");
 const weeklyList = document.querySelector("#weekly-list");
 let foodData = null;
 
-// 태그 하나 만들기 (글자는 innerText로 넣어 크롤링한 내용이 HTML로 해석되지 않게 한다)
-function make(tag, className, text) {
-  const el = document.createElement(tag);
-  if (className) el.className = className;
-  if (text) el.innerText = text;
-  return el;
-}
-
 function makeCard(cafeteria) {
   const card = make("section", "food-card");
   card.appendChild(make("h3", "", cafeteria.name));

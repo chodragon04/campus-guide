@@ -28,3 +28,56 @@ function courseTime(course) {
   if (!course.slots || course.slots.length === 0) return "시간 미정";
   return course.slots.map((slot) => `${slot.day} ${slotTime(slot)}`).join(", ");
 }
+
+// 태그 하나 만들기 (글자는 innerText로 넣어 데이터가 HTML로 해석되지 않게 한다)
+function make(tag, className, text) {
+  const el = document.createElement(tag);
+  if (className) el.className = className;
+  if (text) el.innerText = text;
+  return el;
+}
+
+// ---------- 건물 정보 (건물·시설 페이지 카드와 지도 정보 창에서 같이 사용) ----------
+
+const FACILITY_LABELS = {
+  cafe: "카페",
+  food: "식당",
+  store: "매점",
+  atm: "ATM",
+  print: "증명서·복사",
+  bank: "은행·우체국",
+  health: "보건",
+  etc: "기타",
+};
+
+// 번호·이름·종류, 층, 편의시설 태그, 입주 대학·부서(접기)를 담은 요소
+function makeBuildingInfo(building, categoryNames) {
+  const box = make("div", "building-info");
+
+  const head = make("div", "card-head");
+  head.appendChild(make("span", "no", String(building.no)));
+  head.appendChild(make("h2", "", building.name));
+  head.appendChild(make("span", `tag cat-${building.category}`, categoryNames[building.category]));
+  box.appendChild(head);
+
+  if (building.floors) box.appendChild(make("p", "floors", building.floors));
+
+  // 편의시설 태그 (종류는 테두리 색으로 구분)
+  if (building.facilities) {
+    const ul = make("ul", "facilities");
+    for (let facility of building.facilities) {
+      ul.appendChild(make("li", `fac fac-${facility.type}`, facility.name));
+    }
+    box.appendChild(ul);
+  }
+
+  // 입주 대학·부서는 길어서 접어 둔다
+  const members = (building.colleges || []).concat(building.offices || []);
+  if (members.length > 0) {
+    const details = make("details", "members");
+    details.appendChild(make("summary", "", `입주 대학·부서 (${members.length})`));
+    details.appendChild(make("p", "", members.join(", ")));
+    box.appendChild(details);
+  }
+  return box;
+}

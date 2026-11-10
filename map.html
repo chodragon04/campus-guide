@@ -21,11 +21,36 @@
 
   <main id="content">
     <h1>캠퍼스 지도</h1>
+
+    <div class="filter-row">
+      <span class="filter-label">종류</span>
+      <div id="category-filters">
+        <button data-category="all" class="active">전체</button>
+        <button data-category="lecture">강의동</button>
+        <button data-category="dorm">생활관</button>
+        <button data-category="student">학생 편의</button>
+        <button data-category="admin">행정·산학</button>
+        <button data-category="etc">기타</button>
+      </div>
+    </div>
+    <div class="filter-row">
+      <span class="filter-label">편의시설</span>
+      <div id="facility-filters">
+        <button data-facility="cafe">카페</button>
+        <button data-facility="food">식당</button>
+        <button data-facility="store">매점</button>
+        <button data-facility="atm">ATM</button>
+        <button data-facility="print">증명서·복사</button>
+      </div>
+    </div>
+
+    <p id="map-status" class="hint"></p>
     <div id="map"></div>
-    <!-- 카카오 지도 + 건물 마커, 마커 클릭 시 모달 -->
+
+    <!-- 마커를 누르면 건물 정보를 보여주는 모달 -->
     <div id="modal-box">
       <div id="modal-contents">
-        <button id="close">&times;</button>
+        <button id="close" aria-label="닫기">&times;</button>
         <div id="modal-body"></div>
       </div>
     </div>

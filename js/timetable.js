@@ -29,13 +29,6 @@ function saveCourses() {
   localStorage.setItem(STORAGE_KEY, JSON.stringify(myCourses));
 }
 
-function make(tag, className, text) {
-  const el = document.createElement(tag);
-  if (className) el.className = className;
-  if (text) el.innerText = text;
-  return el;
-}
-
 function showMessage(text) {
   message.innerText = text;
 }

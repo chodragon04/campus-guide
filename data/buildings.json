@@ -1,6 +1,6 @@
 {
- "source": "서울과학기술대학교 캠퍼스지도(www.seoultech.ac.kr/intro/map), 좌표는 카카오 장소 검색",
- "updatedAt": "2026-11-09",
+ "source": "서울과학기술대학교 캠퍼스지도(www.seoultech.ac.kr/intro/map)와 캠퍼스맵 PDF(2024), 좌표는 카카오 장소 검색",
+ "updatedAt": "2026-11-10",
  "categories": {
   "lecture": "강의동",
   "dorm": "생활관",
@@ -25,6 +25,16 @@
     "기획처",
     "사무국",
     "재난안전관리본부"
+   ],
+   "facilities": [
+    {
+     "name": "ATM",
+     "type": "atm"
+    },
+    {
+     "name": "증명서 발급기",
+     "type": "print"
+    }
    ]
   },
   {
@@ -40,6 +50,12 @@
    ],
    "offices": [
     "신문방송사"
+   ],
+   "facilities": [
+    {
+     "name": "ATM",
+     "type": "atm"
+    }
    ]
   },
   {
@@ -100,7 +116,21 @@
    "aliases": [
     "서울테크노파크(TP)"
    ],
-   "floors": "지상 6층"
+   "floors": "지상 6층",
+   "facilities": [
+    {
+     "name": "ATM",
+     "type": "atm"
+    },
+    {
+     "name": "테크노파크 식당",
+     "type": "food"
+    },
+    {
+     "name": "카페",
+     "type": "cafe"
+    }
+   ]
   },
   {
    "id": "008",
@@ -112,6 +142,9 @@
    "floors": "지하 1층 ~ 지상 5층",
    "colleges": [
     "SeoulTech-KIRAMS 의과학대학원"
+   ],
+   "aliases": [
+    "대학원"
    ]
   },
   {
@@ -129,7 +162,20 @@
    "name": "붕어방",
    "category": "etc",
    "lat": 37.633403,
-   "lng": 127.078135
+   "lng": 127.078135,
+   "aliases": [
+    "붕어방(연못)",
+    "연못"
+   ]
+  },
+  {
+   "id": "012",
+   "no": 12,
+   "name": "어의천",
+   "category": "etc",
+   "lat": 37.631014,
+   "lng": 127.078964,
+   "approx": true
   },
   {
    "id": "013",
@@ -142,12 +188,12 @@
   {
    "id": "014",
    "no": 14,
-   "name": "도예실습실",
+   "name": "도예관",
    "category": "lecture",
    "lat": 37.63532,
    "lng": 127.07919,
    "aliases": [
-    "도예관"
+    "도예실습실"
    ],
    "floors": "지상 1층"
   },
@@ -261,6 +307,10 @@
     {
      "name": "1학생회관카페",
      "type": "cafe"
+    },
+    {
+     "name": "ATM",
+     "type": "atm"
     }
    ]
   },
@@ -355,6 +405,10 @@
     {
      "name": "휘트니스센터",
      "type": "etc"
+    },
+    {
+     "name": "카페",
+     "type": "cafe"
     }
    ]
   },
@@ -380,7 +434,13 @@
    "name": "누리학사",
    "category": "dorm",
    "lat": 37.634428,
-   "lng": 127.077085
+   "lng": 127.077085,
+   "facilities": [
+    {
+     "name": "카페",
+     "type": "cafe"
+    }
+   ]
   },
   {
    "id": "047",
@@ -406,6 +466,10 @@
     {
      "name": "복사실",
      "type": "print"
+    },
+    {
+     "name": "ATM",
+     "type": "atm"
     }
    ],
    "offices": [
@@ -439,7 +503,7 @@
     },
     {
      "name": "휴(休)",
-     "type": "etc"
+     "type": "cafe"
     },
     {
      "name": "증명발급기",
@@ -452,6 +516,10 @@
     {
      "name": "학생 제2식당",
      "type": "food"
+    },
+    {
+     "name": "ATM",
+     "type": "atm"
     }
    ],
    "offices": [
@@ -515,15 +583,6 @@
    "floors": "지상 2층"
   },
   {
-   "id": "571",
-   "no": 57,
-   "name": "무궁관-A",
-   "category": "lecture",
-   "lat": 37.630299,
-   "lng": 127.08151,
-   "approx": true
-  },
-  {
    "id": "057",
    "no": 57,
    "name": "무궁관",
@@ -538,8 +597,21 @@
     {
      "name": "무궁관 카페",
      "type": "cafe"
+    },
+    {
+     "name": "ATM",
+     "type": "atm"
     }
    ]
+  },
+  {
+   "id": "571",
+   "no": 57,
+   "name": "무궁관-A",
+   "category": "lecture",
+   "lat": 37.630299,
+   "lng": 127.08151,
+   "approx": true
   },
   {
    "id": "058",
@@ -589,13 +661,13 @@
   {
    "id": "062",
    "no": 62,
-   "name": "Techno Cube",
+   "name": "테크노큐브",
    "category": "lecture",
    "lat": 37.62984,
    "lng": 127.07965,
    "aliases": [
-    "테크노큐브",
-    "Techno, Cube(테크노, 큐브)"
+    "Techno Cube",
+    "Techno Cube(테크노 큐브)"
    ],
    "floors": "지상 12층",
    "facilities": [
@@ -611,10 +683,23 @@
   {
    "id": "063",
    "no": 63,
-   "name": "축구장",
+   "name": "종합운동장",
    "category": "etc",
    "lat": 37.629459,
-   "lng": 127.07845
+   "lng": 127.07845,
+   "aliases": [
+    "축구장",
+    "운동장"
+   ]
+  },
+  {
+   "id": "064",
+   "no": 64,
+   "name": "남문",
+   "category": "etc",
+   "lat": 37.6282,
+   "lng": 127.079117,
+   "approx": true
   }
  ]
 }

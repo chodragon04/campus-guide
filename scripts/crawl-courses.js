@@ -72,8 +72,10 @@ function parseTimes(text) {
 }
 
 // "다산관-316 다산관-316 " → "다산관-316" (같은 강의실이 반복되면 한 번만)
+// 건물 이름에 띄어쓰기가 있는 경우도 있어서("중앙도서관 별관-103", "Techno Cube(테크노 큐브)-403")
+// 공백으로 자르지 않고 "건물-호실" 단위로 찾는다
 function cleanRoom(text) {
-  const rooms = (text || "").trim().split(/\s+/).filter((r) => r !== "");
+  const rooms = ((text || "").trim().match(/.+?-\S+(?=\s|$)/g) || []).map((r) => r.trim());
   return [...new Set(rooms)].join(", ");
 }
 

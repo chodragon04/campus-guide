@@ -21,14 +21,33 @@
 
   <main id="content">
     <h1>건물·시설</h1>
-    <input type="text" id="search" placeholder="건물 이름 검색">
-    <div id="filters">
-      <button data-category="all">전체</button>
-      <button data-category="lecture">강의동</button>
-      <button data-category="cafe">카페</button>
-      <button data-category="store">편의점</button>
-      <button data-category="print">프린터</button>
+    <p class="hint">캠퍼스 건물·장소 정보 · 학교 캠퍼스지도와 캠퍼스맵(2024) 기준</p>
+
+    <input type="text" id="search" placeholder="건물·편의시설·부서 검색 (예: 카페, ATM, 학생처)" autocomplete="off">
+
+    <div class="filter-row">
+      <span class="filter-label">종류</span>
+      <div id="category-filters">
+        <button data-category="all" class="active">전체</button>
+        <button data-category="lecture">강의동</button>
+        <button data-category="dorm">생활관</button>
+        <button data-category="student">학생 편의</button>
+        <button data-category="admin">행정·산학</button>
+        <button data-category="etc">기타</button>
+      </div>
     </div>
+    <div class="filter-row">
+      <span class="filter-label">편의시설</span>
+      <div id="facility-filters">
+        <button data-facility="cafe">카페</button>
+        <button data-facility="food">식당</button>
+        <button data-facility="store">매점</button>
+        <button data-facility="atm">ATM</button>
+        <button data-facility="print">증명서·복사</button>
+      </div>
+    </div>
+
+    <p id="result-count"></p>
     <ul id="building-list"></ul>
   </main>
 

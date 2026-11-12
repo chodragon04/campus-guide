@@ -9,9 +9,21 @@ const fixedList = document.querySelector("#fixed-list");
 const weeklyList = document.querySelector("#weekly-list");
 let foodData = null;
 
+// 식당 ID → 건물 ID (지도에서 위치 보기 링크용). 위치를 확인한 식당만 적는다
+const CAFETERIA_BUILDINGS = {
+  technopark: "007", // 서울테크노파크 (캠퍼스맵 편의시설: 7번 건물 식당)
+};
+
 function makeCard(cafeteria) {
   const card = make("section", "food-card");
-  card.appendChild(make("h3", "", cafeteria.name));
+  const title = make("h3", "", cafeteria.name);
+  const buildingId = CAFETERIA_BUILDINGS[cafeteria.id];
+  if (buildingId) {
+    const link = make("a", "place-link", "위치 보기");
+    link.href = `map.html?b=${buildingId}`;
+    title.appendChild(link);
+  }
+  card.appendChild(title);
   return card;
 }
 

@@ -13,6 +13,7 @@ const timetable = document.querySelector("#timetable");
 const courseList = document.querySelector("#course-list");
 
 let allCourses = [];
+let buildings = []; // 강의실 → 지도 링크용
 let myCourses = loadCourses();
 
 // ---------- 저장 / 불러오기 ----------
@@ -138,7 +139,7 @@ function drawTimetable() {
       block.style.gridRow = `${slot.start + 1} / ${slot.end + 2}`;
       block.style.backgroundColor = COLORS[index % COLORS.length];
       block.appendChild(make("strong", "", course.name));
-      block.appendChild(make("span", "", course.room));
+      block.appendChild(makeRoomLinks(course.room, buildings));
       timetable.appendChild(block);
     }
   });
@@ -150,7 +151,9 @@ function drawList() {
   for (let course of myCourses) {
     credits += course.credit;
     const li = make("li");
-    li.appendChild(make("span", "", `${course.name} (${course.prof || "교수 미정"}) · ${courseTime(course)} · ${course.room || "강의실 미정"}`));
+    const text = make("span", "", `${course.name} (${course.prof || "교수 미정"}) · ${courseTime(course)} · `);
+    text.appendChild(makeRoomLinks(course.room, buildings));
+    li.appendChild(text);
     const button = make("button", "", "삭제");
     button.addEventListener("click", () => removeCourse(course.id));
     li.appendChild(button);
@@ -170,6 +173,12 @@ function render() {
 // ---------- 시작 ----------
 
 render();
+
+// 건물 목록을 받으면 강의실을 지도 링크로 다시 그린다
+loadBuildings().then((data) => {
+  buildings = data;
+  render();
+});
 
 fetch("data/courses.json")
   .then((res) => res.json())

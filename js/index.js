@@ -21,11 +21,17 @@ for (let course of myCourses) {
   }
 }
 todaySlots.sort((a, b) => a.slot.start - b.slot.start);
+const classLines = [];
 for (let item of todaySlots) {
   const p = document.createElement("p");
-  p.innerText = `${slotTime(item.slot)} ${item.course.name} · ${item.course.room}`;
+  p.innerText = `${slotTime(item.slot)} ${item.course.name} · `;
   todayClass.appendChild(p);
+  classLines.push({ p: p, room: item.course.room });
 }
+// 강의실을 지도 링크로 (건물 목록을 받은 뒤에)
+loadBuildings().then((buildings) => {
+  for (let line of classLines) line.p.appendChild(makeRoomLinks(line.room, buildings));
+});
 if (todaySlots.length === 0) {
   const p = document.createElement("p");
   p.innerText = myCourses.length === 0 ? "아직 시간표를 만들지 않았습니다." : "오늘은 수업이 없습니다.";

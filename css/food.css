@@ -109,3 +109,15 @@
   color: #888;
   font-size: 0.9em;
 }
+
+.place-link {
+  margin-left: 8px;
+  color: #1a3d7c;
+  font-size: 0.75em;
+  font-weight: normal;
+  text-decoration: none;
+}
+
+.place-link:hover {
+  text-decoration: underline;
+}

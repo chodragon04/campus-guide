@@ -81,3 +81,57 @@ function makeBuildingInfo(building, categoryNames) {
   }
   return box;
 }
+
+// ---------- 강의실 → 건물 연결 ----------
+
+let buildingsPromise = null;
+
+// 건물 목록은 한 번만 불러와서 재사용
+function loadBuildings() {
+  if (!buildingsPromise) {
+    buildingsPromise = fetch("data/buildings.json")
+      .then((res) => res.json())
+      .then((data) => data.buildings)
+      .catch(() => []);
+  }
+  return buildingsPromise;
+}
+
+// "미래관-320" → 미래관 건물. 이름이나 다른 이름(aliases)이 "이름-"으로 시작하는 건물을 찾는다
+function findBuildingByRoom(buildings, room) {
+  let found = null;
+  let foundLength = 0;
+  for (let building of buildings) {
+    for (let name of [building.name].concat(building.aliases || [])) {
+      // 더 긴 이름을 우선 ("중앙도서관 별관-103"이 "중앙도서관"보다 "중앙도서관 별관"에 맞도록)
+      if (room.startsWith(name + "-") && name.length > foundLength) {
+        found = building;
+        foundLength = name.length;
+      }
+    }
+  }
+  return found;
+}
+
+// "미래관-320, 다산관-101" → 강의실마다 지도 링크(map.html?b=건물ID)를 붙인 요소
+function makeRoomLinks(roomText, buildings) {
+  const span = make("span", "rooms");
+  if (!roomText) {
+    span.innerText = "강의실 미정";
+    return span;
+  }
+  // 강의실 사이 구분자는 ", " (건물 이름 안에는 쉼표가 없다)
+  roomText.split(", ").forEach((room, index) => {
+    if (index > 0) span.appendChild(document.createTextNode(", "));
+    const building = findBuildingByRoom(buildings, room);
+    if (building) {
+      const a = make("a", "room-link", room);
+      a.href = `map.html?b=${building.id}`;
+      a.title = `${building.name} 위치 보기`;
+      span.appendChild(a);
+    } else {
+      span.appendChild(document.createTextNode(room));
+    }
+  });
+  return span;
+}

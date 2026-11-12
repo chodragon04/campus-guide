@@ -177,3 +177,15 @@ body {
     gap: 4px;
   }
 }
+
+/* 강의실 → 지도 링크 */
+.room-link {
+  color: inherit;
+  text-decoration: underline dotted;
+  text-underline-offset: 2px;
+}
+
+.room-link:hover {
+  color: #1a3d7c;
+  text-decoration: underline;
+}

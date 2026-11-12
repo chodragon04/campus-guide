@@ -12,7 +12,7 @@ const message = document.querySelector("#message");
 const timetable = document.querySelector("#timetable");
 const courseList = document.querySelector("#course-list");
 
-let allCourses = [];
+let allCourses = []; // 서버 없이 열었을 때만 사용 (전체 강좌)
 let buildings = []; // 강의실 → 지도 링크용
 let myCourses = loadCourses();
 
@@ -71,20 +71,45 @@ function removeCourse(id) {
 
 // ---------- 검색 ----------
 
-function search(keyword) {
-  searchResults.innerHTML = "";
-  keyword = keyword.trim().toLowerCase(); // 영어 과목명은 대소문자 구분 없이 ("database" → "Database")
-  if (keyword.length < 2) return;
+const LIMIT = 30;
+let searchTimer = null;
+let latestKeyword = "";
+let noServer = false; // API가 한 번 실패하면(서버 없음) 다음부터 바로 브라우저에서 검색
 
-  const found = allCourses.filter((c) => c.name.toLowerCase().includes(keyword) || c.prof.toLowerCase().includes(keyword));
-  // 검색어로 시작하는 과목을 먼저 (예: "웹프로그래밍" 검색 시 "고급웹프로그래밍"보다 앞에)
-  const startsWith = (c) => Number(c.name.toLowerCase().startsWith(keyword));
-  found.sort((a, b) => startsWith(b) - startsWith(a));
-  if (found.length === 0) {
+// 서버 없이(GitHub Pages) 열었을 때만 쓰는 방법: 전체 강좌 파일을 받아 브라우저에서 검색
+function searchLocally(keyword) {
+  const load = allCourses.length > 0
+    ? Promise.resolve()
+    : fetch("data/courses.json").then((res) => res.json()).then((data) => (allCourses = data.courses));
+  return load.then(() => {
+    const found = allCourses.filter((c) => c.name.toLowerCase().includes(keyword) || c.prof.toLowerCase().includes(keyword));
+    const startsWith = (c) => Number(c.name.toLowerCase().startsWith(keyword));
+    found.sort((a, b) => startsWith(b) - startsWith(a));
+    return { total: found.length, courses: found.slice(0, LIMIT) };
+  });
+}
+
+// 서버 API로 검색: 서버가 검색해서 결과 30개만 보내 준다 (실패하면 브라우저에서 검색)
+function searchCourses(keyword) {
+  if (noServer) return searchLocally(keyword);
+  return fetch(`api/courses?q=${encodeURIComponent(keyword)}&limit=${LIMIT}`)
+    .then((res) => {
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      return res.json();
+    })
+    .catch(() => {
+      noServer = true;
+      return searchLocally(keyword);
+    });
+}
+
+function showResults(result) {
+  searchResults.innerHTML = "";
+  if (result.courses.length === 0) {
     searchResults.appendChild(make("li", "notice", "검색 결과가 없습니다."));
     return;
   }
-  for (let course of found.slice(0, 30)) {
+  for (let course of result.courses) {
     const li = make("li", "result");
     const info = make("div");
     info.appendChild(make("strong", "", course.name));
@@ -96,12 +121,29 @@ function search(keyword) {
     li.appendChild(button);
     searchResults.appendChild(li);
   }
-  if (found.length > 30) {
-    searchResults.appendChild(make("li", "notice", `${found.length}개 중 30개만 표시합니다. 검색어를 더 자세히 입력하세요.`));
+  if (result.total > LIMIT) {
+    searchResults.appendChild(make("li", "notice", `${result.total}개 중 ${LIMIT}개만 표시합니다. 검색어를 더 자세히 입력하세요.`));
   }
 }
 
-searchInput.addEventListener("input", () => search(searchInput.value));
+function search(keyword) {
+  keyword = keyword.trim().toLowerCase(); // 영어 과목명은 대소문자 구분 없이 ("database" → "Database")
+  latestKeyword = keyword;
+  if (keyword.length < 2) {
+    searchResults.innerHTML = "";
+    return;
+  }
+  searchCourses(keyword).then((result) => {
+    // 응답이 늦게 온 예전 검색어의 결과는 버린다
+    if (keyword === latestKeyword) showResults(result);
+  });
+}
+
+// 글자를 칠 때마다 요청하지 않도록, 입력이 0.2초 멈추면 검색
+searchInput.addEventListener("input", () => {
+  clearTimeout(searchTimer);
+  searchTimer = setTimeout(() => search(searchInput.value), 200);
+});
 
 // ---------- 시간표 그리기 ----------
 
@@ -180,14 +222,12 @@ loadBuildings().then((data) => {
   render();
 });
 
-fetch("data/courses.json")
-  .then((res) => res.json())
+// 학기·강좌 수 표시 (서버 API, 없으면 강좌 파일에서)
+fetchJson("api/courses/info", "data/courses.json")
   .then((data) => {
-    allCourses = data.courses;
     const [year, term] = data.semester.split("-");
     document.querySelector("#semester").innerText =
       `${year}학년도 ${term}학기 개설 강좌 ${data.count}개 · 수강신청시스템 시간표 조회 기준`;
-    search(searchInput.value);
   })
   .catch(() => {
     showMessage("강좌 목록을 불러오지 못했습니다.");

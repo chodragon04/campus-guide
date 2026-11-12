@@ -82,6 +82,19 @@ function makeBuildingInfo(building, categoryNames) {
   return box;
 }
 
+// ---------- 서버 API (서버가 없으면 정적 JSON 파일로 대신) ----------
+
+// Render 서버에서는 api/... 가 응답하고, GitHub Pages처럼 파일만 있는 곳에서는 404가 난다.
+// 그때는 같은 내용을 담은 data/*.json 파일을 대신 불러온다.
+function fetchJson(apiUrl, fallbackUrl) {
+  return fetch(apiUrl)
+    .then((res) => {
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      return res.json();
+    })
+    .catch(() => fetch(fallbackUrl).then((res) => res.json()));
+}
+
 // ---------- 강의실 → 건물 연결 ----------
 
 let buildingsPromise = null;

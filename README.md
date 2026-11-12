@@ -8,15 +8,35 @@
 
 | 페이지 | 기능 |
 | --- | --- |
-| `index.html` | 오늘 날짜, 오늘 수업(내 시간표), 오늘의 학식 요약 |
-| `map.html` | 카카오 지도에 건물 번호 핀 45곳, 핀을 누르면 건물 정보 창(카카오맵 길찾기 링크), 종류·편의시설 필터, `map.html?b=건물ID`로 특정 건물 열기 |
+| `index.html` | 오늘 날짜, 오늘 수업(강의실 → 지도 링크), 오늘의 학식 요약 |
+| `map.html` | 카카오 지도에 건물 번호 핀 45곳, 핀을 누르면 건물 정보 창(카카오맵 길찾기 링크), 종류·편의시설 필터, `map.html?b=건물ID`로 특정 건물 열기, `map.html?edit=1` 좌표 수정 모드 |
 | `buildings.html` | 건물 45곳 카드 목록, 이름·편의시설·부서 검색, 종류·편의시설 필터, 지도 바로가기 링크 |
-| `food.html` | 생활관 요일별 식단(월~일), 학생식당 브랜드별 메뉴판, 테크노파크 주간 식단 |
-| `timetable.html` | 개설 강좌 검색, 시간표에 담기·빼기(시간 겹침 확인), localStorage 저장 |
+| `food.html` | 생활관 요일별 식단(월~일), 학생식당 브랜드별 메뉴판, 테크노파크 주간 식단, 식당 위치 링크 |
+| `timetable.html` | 개설 강좌 검색(서버 API), 시간표에 담기·빼기(시간 겹침 확인), 강의실 → 지도 링크, localStorage 저장 |
 
 ## 사용 기술
 
-HTML, CSS, JavaScript(DOM, 이벤트), 카카오 지도 API, Geolocation API, localStorage, fetch(JSON), GitHub Pages
+HTML, CSS, JavaScript(DOM, 이벤트), 카카오 지도 API, Geolocation API, localStorage, fetch(JSON), Node.js + Express(서버·API), GitHub Actions, GitHub Pages
+
+## 서버 (Node.js + Express)
+
+`server.js`가 사이트 파일(html, css, js, data)을 제공하고, 필요한 데이터만 골라 응답하는 API를 둡니다.
+
+```
+npm install
+npm start          # http://localhost:3000
+```
+
+| API | 응답 |
+| --- | --- |
+| `GET /api/courses?q=검색어&limit=30` | 과목명·교수명 검색 결과(검색어로 시작하는 과목 우선)와 전체 결과 수 |
+| `GET /api/courses/info` | 학기, 전체 강좌 수, 갱신 시각 |
+| `GET /api/food` | 이번 주 학식 전체 |
+| `GET /api/food?date=2026-11-11` | 그날 식단만 |
+
+- 브라우저는 API를 먼저 부르고, 서버가 없는 곳(GitHub Pages)에서는 같은 내용의 `data/*.json`을 대신 불러온다.
+- 저장소의 크롤러·설정 파일은 공개하지 않도록 `css/`, `js/`, `data/` 폴더와 html 파일만 제공한다.
+- `data/*.json`이 바뀌면(Actions가 갱신) 다음 요청 때 다시 읽는다.
 
 ## 학식 자동 수집
 
@@ -63,8 +83,9 @@ HTML, CSS, JavaScript(DOM, 이벤트), 카카오 지도 API, Geolocation API, lo
 ```
 css/     공통·페이지별 스타일
 js/      공통·페이지별 스크립트
-data/    건물, 학식 JSON 데이터
-scripts/ 학식 크롤러 (Node.js)
+data/    건물, 학식, 강좌 JSON 데이터
+scripts/ 학식·강좌 크롤러 (Node.js)
+server.js Express 서버와 API
 .github/ GitHub Actions 설정
 images/  이미지
 ```
@@ -82,3 +103,4 @@ images/  이미지
 | 2026-11-10 | 캠퍼스맵 PDF로 건물 목록·편의시설 보완(45곳), 검색되지 않는 장소의 좌표 환산, 강의실 이름 분리 오류 수정 |
 | 2026-11-10 | 건물·시설 페이지(카드 목록, 검색, 종류·편의시설 필터) 구현 |
 | 2026-11-10 | 캠퍼스 지도(건물 핀·정보 창·필터·주소로 건물 열기) 구현, 건물 정보 표시 코드를 공통 파일로 정리 |
+| 2026-11-11 | 페이지 연결(시간표·홈 강의실 → 지도, 학식 → 식당 위치), 지도 좌표 수정 모드, Express 서버와 강좌 검색·학식 API |

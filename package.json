@@ -3,10 +3,15 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "start": "node server.js",
     "crawl": "node scripts/crawl-food.js",
     "courses": "node scripts/crawl-courses.js"
   },
   "dependencies": {
-    "cheerio": "^1.0.0"
+    "cheerio": "^1.0.0",
+    "express": "^4.22.3"
+  },
+  "engines": {
+    "node": ">=20"
   }
 }

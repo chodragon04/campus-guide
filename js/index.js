@@ -46,8 +46,7 @@ todayClass.appendChild(timetableLink);
 const todayKey = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, "0")}-${String(now.getDate()).padStart(2, "0")}`;
 const todayFood = document.querySelector("#today-food");
 
-fetch("data/food.json")
-  .then((res) => res.json())
+fetchJson("api/food", "data/food.json")
   .then((data) => {
     // 생활관 식당의 오늘 중식
     let found = false;

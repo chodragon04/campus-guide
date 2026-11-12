@@ -1,5 +1,7 @@
 // map.html: 카카오 지도, 건물 번호 마커, 정보 모달, 종류·편의시설 필터
 //  - map.html?b=040 처럼 건물 ID를 붙여 들어오면 그 건물로 이동하고 정보 창을 연다
+//  - map.html?edit=1 은 좌표 수정 모드: 핀을 고르고 지도에서 맞는 위치를 누르면 핀이 옮겨지고
+//    바뀐 좌표가 아래 칸에 쌓인다 (data/buildings.json을 고칠 때 사용)
 
 const mapContainer = document.querySelector("#map");
 const mapStatus = document.querySelector("#map-status");
@@ -13,6 +15,11 @@ let markers = []; // { building, overlay, pin }
 let categoryNames = {};
 let selectedCategory = "all";
 let selectedFacility = null;
+
+const params = new URLSearchParams(location.search);
+const EDIT_MODE = params.get("edit") === "1";
+let editTarget = null; // 좌표 수정 모드에서 고른 핀
+const edits = {}; // 건물 ID → 바뀐 좌표 한 줄
 
 // ---------- 지도 ----------
 
@@ -28,7 +35,6 @@ function addMarker(building) {
   const pin = make("button", `pin cat-${building.category}`);
   pin.appendChild(make("span", "", String(building.no))); // 핀은 기울어져 있고 숫자만 똑바로 세운다
   pin.title = building.name;
-  pin.addEventListener("click", () => openBuilding(building));
 
   const overlay = new kakao.maps.CustomOverlay({
     position: new kakao.maps.LatLng(building.lat, building.lng),
@@ -37,7 +43,13 @@ function addMarker(building) {
     clickable: true,
   });
   overlay.setMap(map);
-  markers.push({ building: building, overlay: overlay, pin: pin });
+  const marker = { building: building, overlay: overlay, pin: pin };
+  markers.push(marker);
+
+  pin.addEventListener("click", () => {
+    if (EDIT_MODE) selectForEdit(marker);
+    else openBuilding(building);
+  });
 }
 
 // 모든 건물이 화면에 들어오게 지도 범위 맞추기
@@ -85,6 +97,42 @@ document.addEventListener("keydown", (event) => {
   if (event.key === "Escape") closeModal();
 });
 
+// ---------- 좌표 수정 모드 (?edit=1) ----------
+
+function setupEditMode() {
+  const panel = make("section", "edit-panel");
+  panel.appendChild(make("h2", "", "좌표 수정 모드"));
+  const guide = make("p", "hint", "① 옮길 핀을 누르고 ② 지도에서 건물의 실제 위치를 누르세요. 바뀐 좌표가 아래에 쌓입니다.");
+  panel.appendChild(guide);
+  const log = make("textarea", "edit-log");
+  log.readOnly = true;
+  log.rows = 6;
+  panel.appendChild(log);
+  const copy = make("button", "", "좌표 복사");
+  copy.addEventListener("click", () => {
+    navigator.clipboard.writeText(log.value).then(() => (copy.innerText = "복사했습니다"));
+  });
+  panel.appendChild(copy);
+  mapContainer.after(panel);
+
+  // 지도를 누르면 고른 핀을 그 자리로 옮기고 좌표 기록
+  kakao.maps.event.addListener(map, "click", (mouseEvent) => {
+    if (!editTarget) return;
+    const latLng = mouseEvent.latLng;
+    const b = editTarget.building;
+    editTarget.overlay.setPosition(latLng);
+    edits[b.id] = `${b.id} ${b.name}: ${latLng.getLat().toFixed(6)}, ${latLng.getLng().toFixed(6)}`;
+    log.value = Object.values(edits).join("\n");
+    guide.innerText = `${b.no} ${b.name} 위치를 옮겼습니다. 다른 핀을 고르거나, 다시 눌러 위치를 고칠 수 있습니다.`;
+  });
+}
+
+function selectForEdit(marker) {
+  editTarget = marker;
+  for (let m of markers) m.pin.classList.toggle("selected", m === marker);
+  mapStatus.innerText = `${marker.building.no} ${marker.building.name} 선택됨 · 지도에서 실제 위치를 누르세요.`;
+}
+
 // ---------- 필터 ----------
 
 function applyFilters() {
@@ -128,9 +176,10 @@ if (typeof kakao === "undefined") {
       categoryNames = data.categories;
       for (let building of data.buildings) addMarker(building);
       applyFilters();
+      if (EDIT_MODE) setupEditMode();
 
       // 주소에 ?b=건물ID가 있으면 그 건물로 이동
-      const id = new URLSearchParams(location.search).get("b");
+      const id = params.get("b");
       const target = data.buildings.find((b) => b.id === id);
       if (target) {
         map.setLevel(2);

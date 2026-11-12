@@ -106,6 +106,34 @@
   cursor: pointer;
 }
 
+/* 좌표 수정 모드 */
+.edit-panel {
+  margin-top: 16px;
+  padding: 14px 16px;
+  border: 2px dashed #e8336a;
+  border-radius: 8px;
+}
+
+.edit-panel h2 {
+  font-size: 1.1em;
+}
+
+.edit-log {
+  width: 100%;
+  margin: 8px 0;
+  padding: 8px;
+  font-family: monospace;
+}
+
+.edit-panel button {
+  padding: 6px 12px;
+  border: 1px solid #1a3d7c;
+  border-radius: 6px;
+  background-color: #fff;
+  color: #1a3d7c;
+  cursor: pointer;
+}
+
 @media (max-width: 480px) {
   #map {
     height: 420px;

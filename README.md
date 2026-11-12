@@ -2,7 +2,10 @@
 
 서울과학기술대학교 학생과 방문자를 위한 캠퍼스 안내 웹사이트입니다. (2026-2 웹프로그래밍 프로젝트)
 
-- 홈페이지: https://chodragon04.github.io/campus-guide/
+- 홈페이지: https://campus-guide-az3a.onrender.com (Render, Node.js 서버 + API)
+- 예비 주소: https://chodragon04.github.io/campus-guide/ (GitHub Pages, 서버 없이 JSON 파일로 동작)
+
+> Render 무료 서버는 한동안 접속이 없으면 잠들어서 첫 접속에 30~50초가 걸릴 수 있습니다.
 
 ## 페이지
 
@@ -16,7 +19,7 @@
 
 ## 사용 기술
 
-HTML, CSS, JavaScript(DOM, 이벤트), 카카오 지도 API, Geolocation API, localStorage, fetch(JSON), Node.js + Express(서버·API), GitHub Actions, GitHub Pages
+HTML, CSS, JavaScript(DOM, 이벤트), 카카오 지도 API, Geolocation API, localStorage, fetch(JSON), Node.js + Express(서버·API), Render(배포), MongoDB Atlas, GitHub Actions, GitHub Pages
 
 ## 서버 (Node.js + Express)
 
@@ -26,6 +29,8 @@ HTML, CSS, JavaScript(DOM, 이벤트), 카카오 지도 API, Geolocation API, lo
 npm install
 npm start          # http://localhost:3000
 ```
+
+배포: Render 웹 서비스(지역 Singapore, 빌드 `npm install`, 시작 `npm start`). GitHub에 커밋이 올라오면 자동으로 다시 배포되므로 Actions가 갱신한 학식·강좌 데이터도 바로 반영된다. DB 접속 주소는 저장소에 넣지 않고 Render 환경 변수 `MONGODB_URI`로 전달한다.
 
 | API | 응답 |
 | --- | --- |
@@ -106,3 +111,4 @@ images/  이미지
 | 2026-11-10 | 캠퍼스 지도(건물 핀·정보 창·필터·주소로 건물 열기) 구현, 건물 정보 표시 코드를 공통 파일로 정리 |
 | 2026-11-11 | 페이지 연결(시간표·홈 강의실 → 지도, 학식 → 식당 위치), 지도 좌표 수정 모드, Express 서버와 강좌 검색·학식 API |
 | 2026-11-12 | 좌표 수정 모드로 맞춘 좌표 반영, 생활관·학생식당 위치 연결 |
+| 2026-11-12 | Render 배포 설정(지역·빌드·시작 명령·환경 변수)과 MongoDB Atlas 클러스터 설정 정리 |

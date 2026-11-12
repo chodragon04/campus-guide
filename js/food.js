@@ -9,9 +9,14 @@ const fixedList = document.querySelector("#fixed-list");
 const weeklyList = document.querySelector("#weekly-list");
 let foodData = null;
 
-// 식당 ID → 건물 ID (지도에서 위치 보기 링크용). 위치를 확인한 식당만 적는다
+// 식당 ID → 건물 ID (지도에서 위치 보기 링크용)
 const CAFETERIA_BUILDINGS = {
-  technopark: "007", // 서울테크노파크 (캠퍼스맵 편의시설: 7번 건물 식당)
+  "dorm-kb": "042", // KB학사 식당 (각 학사 건물 안)
+  "dorm-sunglim": "043", // 성림학사
+  "dorm-surim": "045", // 수림학사
+  "st-table": "037", // ST:Table: 학생회관(제1학생회관)
+  "st-dining": "052", // ST:Dining: 제2학생회관
+  technopark: "007", // 서울테크노파크
 };
 
 function makeCard(cafeteria) {

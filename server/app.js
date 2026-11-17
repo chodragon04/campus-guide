@@ -16,6 +16,19 @@ export function createApp({ db = null, sessionSecret, sessionStore } = {}) {
 
   // Render는 앞단 프록시가 HTTPS를 처리하므로, 프록시가 알려 주는 접속 정보를 믿도록 설정
   app.set("trust proxy", 1);
+  app.disable("x-powered-by"); // 서버 종류(Express)를 알리지 않음
+
+  // 보안 헤더: 다른 사이트가 우리 페이지를 iframe에 넣어 클릭을 유도하는 것(클릭재킹) 등을 막음
+  app.use((req, res, next) => {
+    res.set({
+      "Content-Security-Policy": "frame-ancestors 'none'",
+      "X-Frame-Options": "DENY",
+      "X-Content-Type-Options": "nosniff",
+      "Referrer-Policy": "strict-origin-when-cross-origin",
+    });
+    next();
+  });
+
   app.use(express.json({ limit: "20kb" }));
 
   // ---------- 세션 (로그인 상태) ----------
@@ -55,7 +68,8 @@ export function createApp({ db = null, sessionSecret, sessionStore } = {}) {
   // 과목명·교수명에 검색어가 들어간 강좌를 찾고, 검색어로 시작하는 과목을 앞에 둔다
   app.get("/api/courses", (req, res) => {
     const keyword = String(req.query.q || "").trim().toLowerCase();
-    const limit = Math.min(Number(req.query.limit) || 30, 100);
+    // 음수(limit=-1)면 slice가 거의 전부를 보내므로 1~100으로 제한
+    const limit = Math.max(1, Math.min(Number(req.query.limit) || 30, 100));
     const data = readData("courses.json");
 
     if (keyword.length < 2) {

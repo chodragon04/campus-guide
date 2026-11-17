@@ -10,7 +10,11 @@ import { rateLimit } from "express-rate-limit";
 
 const USERNAME = /^[a-z0-9_]{4,20}$/; // 영어 소문자·숫자·밑줄 4~20자
 const PASSWORD_MIN = 8;
-const PASSWORD_MAX = 64; // bcrypt는 72바이트까지만 쓰므로 넉넉히 제한
+const PASSWORD_MAX = 64;
+// bcrypt는 앞 72바이트만 쓰므로(한글은 1글자 3바이트) 바이트 수도 확인: 넘는 부분이 무시되지 않게
+function badPassword(p) {
+  return p.length < PASSWORD_MIN || p.length > PASSWORD_MAX || Buffer.byteLength(p) > 72;
+}
 const WRONG = "아이디 또는 비밀번호가 맞지 않습니다.";
 const NICKNAME_MAX = 12;
 
@@ -140,8 +144,8 @@ export function authRouter(db) {
       if (!USERNAME.test(username)) {
         return res.status(400).json({ error: "아이디는 영어 소문자, 숫자, 밑줄(_)로 4~20자입니다." });
       }
-      if (password.length < PASSWORD_MIN || password.length > PASSWORD_MAX) {
-        return res.status(400).json({ error: `비밀번호는 ${PASSWORD_MIN}~${PASSWORD_MAX}자입니다.` });
+      if (badPassword(password)) {
+        return res.status(400).json({ error: `비밀번호는 ${PASSWORD_MIN}~${PASSWORD_MAX}자입니다. (한글은 24자까지)` });
       }
       const nickname = cleanNickname(req.body.nickname);
       const nicknameError = checkNickname(nickname);
@@ -194,8 +198,8 @@ export function authRouter(db) {
       if (!user || !(await bcrypt.compare(currentPassword, user.passwordHash))) {
         return res.status(401).json({ error: "현재 비밀번호가 맞지 않습니다." });
       }
-      if (newPassword.length < PASSWORD_MIN || newPassword.length > PASSWORD_MAX) {
-        return res.status(400).json({ error: `새 비밀번호는 ${PASSWORD_MIN}~${PASSWORD_MAX}자입니다.` });
+      if (badPassword(newPassword)) {
+        return res.status(400).json({ error: `새 비밀번호는 ${PASSWORD_MIN}~${PASSWORD_MAX}자입니다. (한글은 24자까지)` });
       }
       if (newPassword === currentPassword) {
         return res.status(400).json({ error: "새 비밀번호가 현재 비밀번호와 같습니다." });
@@ -227,8 +231,8 @@ export function authRouter(db) {
       if (!user || !user.recoveryHash || !ok) {
         return res.status(401).json({ error: "아이디 또는 복구 코드가 맞지 않습니다." });
       }
-      if (newPassword.length < PASSWORD_MIN || newPassword.length > PASSWORD_MAX) {
-        return res.status(400).json({ error: `새 비밀번호는 ${PASSWORD_MIN}~${PASSWORD_MAX}자입니다.` });
+      if (badPassword(newPassword)) {
+        return res.status(400).json({ error: `새 비밀번호는 ${PASSWORD_MIN}~${PASSWORD_MAX}자입니다. (한글은 24자까지)` });
       }
 
       const recoveryCode = newRecoveryCode();

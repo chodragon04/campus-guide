@@ -41,6 +41,8 @@ jobs:
             [ -n "$ISSUER_URL" ] || continue
             curl -sSL "$ISSUER_URL" -o intermediate.crt
             openssl x509 -inform DER -in intermediate.crt -out intermediate.pem 2>/dev/null || cp intermediate.crt intermediate.pem
+            # 보통 http로 받으므로 가로채기로 바뀌었을 수 있다: 공인 루트 인증서가 서명한 것만 추가
+            openssl verify -CAfile /etc/ssl/certs/ca-certificates.crt intermediate.pem || continue
             cat intermediate.pem >> extra-ca.pem
           done
           echo "NODE_EXTRA_CA_CERTS=$RUNNER_TEMP/extra-ca.pem" >> "$GITHUB_ENV"

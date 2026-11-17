@@ -45,7 +45,23 @@
     </div>
 
     <p id="map-status" class="hint"></p>
-    <div id="map"></div>
+    <div class="map-layout">
+      <div id="map"></div>
+
+      <!-- 내 위치와 가까운 편의시설 (js/location.js) -->
+      <section id="nearby">
+        <div class="nearby-head">
+          <h2>가까운 편의시설</h2>
+          <div class="nearby-actions">
+            <button id="recenter">내 위치로</button>
+            <button id="locate">내 위치 보기</button>
+          </div>
+        </div>
+        <p id="nearby-status" class="hint"></p>
+        <div id="nearby-filters"></div>
+        <ul id="nearby-list"></ul>
+      </section>
+    </div>
 
     <!-- 마커를 누르면 건물 정보를 보여주는 모달 -->
     <div id="modal-box">
@@ -63,5 +79,6 @@
   <script src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=0cf3b1df4a0e40e7b19fe11317791c77"></script>
   <script src="js/common.js"></script>
   <script src="js/map.js"></script>
+  <script src="js/location.js"></script>
 </body>
 </html>

@@ -9,11 +9,160 @@
   margin: 14px 0 8px;
 }
 
+/* 지도 왼쪽, 가까운 편의시설 목록 오른쪽 (좁은 화면에서는 위아래) */
+.map-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 320px;
+  gap: 16px;
+}
+
 #map {
   width: 100%;
   height: 560px;
   border-radius: 8px;
   background-color: #eee;
+}
+
+/* ---------- 내 위치와 가까운 편의시설 ---------- */
+#nearby {
+  display: flex;
+  flex-direction: column;
+  height: 560px;
+  padding: 14px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.nearby-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+}
+
+.nearby-head h2 {
+  font-size: 1.05em;
+}
+
+.nearby-actions {
+  display: flex;
+  gap: 6px;
+}
+
+.nearby-actions button {
+  padding: 5px 10px;
+  border: 1px solid #1e6fff;
+  border-radius: 6px;
+  background-color: #fff;
+  color: #1e6fff;
+  font-size: 0.85em;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.nearby-actions button.active,
+.nearby-actions button:hover {
+  background-color: #1e6fff;
+  color: #fff;
+}
+
+#nearby-status {
+  margin: 8px 0;
+  font-size: 0.82em;
+  line-height: 1.45;
+}
+
+#nearby-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-bottom: 8px;
+}
+
+#nearby-filters button {
+  padding: 3px 9px;
+  border: 1px solid #1a3d7c;
+  border-radius: 20px;
+  background-color: #fff;
+  color: #1a3d7c;
+  font-size: 0.8em;
+  cursor: pointer;
+}
+
+#nearby-filters button.active {
+  background-color: #1a3d7c;
+  color: #fff;
+}
+
+#nearby-list {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  list-style: none;
+}
+
+#nearby-list li {
+  border-bottom: 1px solid #eee;
+}
+
+.nearby-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  padding: 8px 4px;
+  border: none;
+  background: none;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.nearby-item:hover {
+  background-color: #f4f7fc;
+}
+
+.nearby-main {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 2px 6px;
+  min-width: 0;
+}
+
+.nearby-main strong {
+  font-size: 0.92em;
+}
+
+.nearby-building {
+  width: 100%;
+  color: #777;
+  font-size: 0.8em;
+}
+
+.nearby-distance {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  flex-shrink: 0;
+  font-size: 0.8em;
+  color: #777;
+}
+
+.nearby-distance strong {
+  color: #1e6fff;
+  font-size: 1.1em;
+}
+
+/* 지도 위 내 위치: 파란 점 */
+.my-location {
+  width: 16px;
+  height: 16px;
+  border: 3px solid #fff;
+  border-radius: 50%;
+  background-color: #1e6fff;
+  box-shadow: 0 0 0 2px rgba(30, 111, 255, 0.35), 0 1px 4px rgba(0, 0, 0, 0.4);
 }
 
 /* 건물 번호 핀: 아래쪽 꼭짓점이 건물 위치를 가리키는 물방울 모양 */
@@ -132,6 +281,20 @@
   background-color: #fff;
   color: #1a3d7c;
   cursor: pointer;
+}
+
+@media (max-width: 860px) {
+  .map-layout {
+    grid-template-columns: 1fr;
+  }
+
+  #nearby {
+    height: auto;
+  }
+
+  #nearby-list {
+    max-height: 420px;
+  }
 }
 
 @media (max-width: 480px) {

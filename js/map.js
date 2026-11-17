@@ -2,6 +2,7 @@
 //  - map.html?b=040 처럼 건물 ID를 붙여 들어오면 그 건물로 이동하고 정보 창을 연다
 //  - map.html?edit=1 은 좌표 수정 모드: 핀을 고르고 지도에서 맞는 위치를 누르면 핀이 옮겨지고
 //    바뀐 좌표가 아래 칸에 쌓인다 (data/buildings.json을 고칠 때 사용)
+//  - 내 위치와 가까운 편의시설 목록은 js/location.js
 
 const mapContainer = document.querySelector("#map");
 const mapStatus = document.querySelector("#map-status");
@@ -164,16 +165,27 @@ for (let button of facilityButtons) {
   });
 }
 
+// 건물로 지도를 옮기고 정보 창 열기 (가까운 편의시설 목록에서도 사용)
+function focusBuilding(building) {
+  if (map) {
+    map.setLevel(2);
+    map.setCenter(new kakao.maps.LatLng(building.lat, building.lng));
+  }
+  openBuilding(building);
+}
+
 // ---------- 시작 ----------
+
+// 건물 데이터는 한 번만 받아 지도와 가까운 편의시설 목록(location.js)이 함께 쓴다
+const buildingsData = fetch("data/buildings.json").then((res) => res.json());
+buildingsData.then((data) => (categoryNames = data.categories)).catch(() => {});
 
 if (typeof kakao === "undefined") {
   mapStatus.innerText = "지도를 불러오지 못했습니다. 잠시 후 다시 시도해 주세요.";
 } else {
   createMap();
-  fetch("data/buildings.json")
-    .then((res) => res.json())
+  buildingsData
     .then((data) => {
-      categoryNames = data.categories;
       for (let building of data.buildings) addMarker(building);
       applyFilters();
       if (EDIT_MODE) setupEditMode();
@@ -182,9 +194,7 @@ if (typeof kakao === "undefined") {
       const id = params.get("b");
       const target = data.buildings.find((b) => b.id === id);
       if (target) {
-        map.setLevel(2);
-        map.setCenter(new kakao.maps.LatLng(target.lat, target.lng));
-        openBuilding(target);
+        focusBuilding(target);
       } else {
         fitAll();
       }

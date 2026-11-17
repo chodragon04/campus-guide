@@ -10,7 +10,7 @@ export async function connectDb(uri) {
     client: client,
     users: database.collection("users"), // { _id, username, passwordHash, createdAt }
     timetables: database.collection("timetables"), // { userId, courseIds, updatedAt }
-    reviews: database.collection("reviews"),
+    reviews: database.collection("reviews"), // { target, userId, rating, text, createdAt, updatedAt }
     friendships: database.collection("friendships"), // { pair, from, to, status, ... }
   };
 
@@ -21,5 +21,7 @@ export async function connectDb(uri) {
   await db.friendships.createIndex({ pair: 1 }, { unique: true });
   await db.friendships.createIndex({ from: 1 });
   await db.friendships.createIndex({ to: 1 });
+  // 한 사람은 한 대상에 한줄평 하나
+  await db.reviews.createIndex({ target: 1, userId: 1 }, { unique: true });
   return db;
 }

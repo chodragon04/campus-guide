@@ -14,11 +14,17 @@
   font-size: 0.9em;
 }
 
+/* 요일 탭: 스크롤해도 위에 붙어 있게 */
 #day-tabs {
+  position: sticky;
+  top: 0;
+  z-index: 5;
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
   margin-bottom: 16px;
+  padding: 8px 0;
+  background-color: #fff;
 }
 
 #day-tabs button {
@@ -71,28 +77,6 @@
   line-height: 1.5;
 }
 
-.brand {
-  border-top: 1px solid #f0f0f0;
-}
-
-.brand summary {
-  padding: 8px 0;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-.brand ul {
-  list-style: none;
-  padding-bottom: 8px;
-}
-
-.brand li {
-  display: flex;
-  justify-content: space-between;
-  padding: 4px 0 4px 12px;
-  font-size: 0.95em;
-}
-
 .price {
   color: #888;
   white-space: nowrap;
@@ -120,4 +104,305 @@
 
 .place-link:hover {
   text-decoration: underline;
+}
+
+/* ---------- 별점·한줄평 ---------- */
+.review-chip {
+  margin-left: 8px;
+  padding: 1px 8px;
+  border: 1px solid #e0c36a;
+  border-radius: 10px;
+  background-color: #fffaf0;
+  color: #8a6d00;
+  font-size: 0.8em;
+  font-weight: normal;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.review-chip:hover {
+  background-color: #fff1c9;
+}
+
+.review-modal {
+  position: fixed;
+  top: 0; left: 0; bottom: 0; right: 0;
+  z-index: 1000;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  padding: 16px;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.review-modal.active {
+  display: flex;
+}
+
+.review-panel {
+  position: relative;
+  width: 420px;
+  max-width: 100%;
+  max-height: 85vh;
+  overflow-y: auto;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #fff;
+}
+
+.review-panel h3 {
+  margin-bottom: 6px;
+  padding-right: 28px;
+  font-size: 1.05em;
+}
+
+.review-close {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  border: none;
+  background: none;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.review-summary {
+  margin-bottom: 10px;
+  color: #8a6d00;
+  font-weight: bold;
+}
+
+.review-form {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 14px;
+  padding: 12px;
+  border-radius: 8px;
+  background-color: #f5f7fb;
+}
+
+.star-input .star {
+  border: none;
+  background: none;
+  color: #ccc;
+  font-size: 26px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.star-input .star.on {
+  color: #f2b01e;
+}
+
+.review-form textarea {
+  padding: 8px;
+  border: 1px solid #bbb;
+  border-radius: 6px;
+  font: inherit;
+  resize: vertical;
+}
+
+.review-counter {
+  align-self: flex-end;
+  color: #999;
+  font-size: 0.8em;
+}
+
+.review-message {
+  color: #c0392b;
+  font-size: 0.85em;
+}
+
+.review-actions {
+  display: flex;
+  gap: 6px;
+}
+
+.review-actions button {
+  padding: 6px 14px;
+  border: 1px solid #1a3d7c;
+  border-radius: 6px;
+  background-color: #1a3d7c;
+  color: #fff;
+  cursor: pointer;
+}
+
+.review-actions button.secondary {
+  background-color: #fff;
+  color: #1a3d7c;
+}
+
+.review-login {
+  margin-bottom: 12px;
+  font-size: 0.9em;
+}
+
+.review-list {
+  list-style: none;
+}
+
+.review-list li {
+  padding: 8px 0;
+  border-top: 1px solid #eee;
+}
+
+.review-list li.mine {
+  background-color: #fffaf0;
+}
+
+.review-stars {
+  color: #f2b01e;
+}
+
+.review-name {
+  font-weight: bold;
+}
+
+.review-date {
+  color: #999;
+  font-size: 0.85em;
+}
+
+.review-text {
+  margin-top: 2px;
+  font-size: 0.95em;
+}
+
+/* ---------- 섹션 바로가기 ---------- */
+#food-nav {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+#food-nav a {
+  padding: 6px 14px;
+  border-radius: 8px;
+  background-color: #eef2f9;
+  color: #1a3d7c;
+  font-size: 0.9em;
+  text-decoration: none;
+}
+
+#food-nav a:hover {
+  background-color: #dbe4f3;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* 섹션으로 이동했을 때 제목이 화면 맨 위에 딱 붙지 않게 */
+.food-group {
+  scroll-margin-top: 12px;
+}
+
+/* ---------- 지금 식사 ---------- */
+#now-meal {
+  display: none;
+  margin-bottom: 8px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  background-color: #fff6e0;
+  color: #8a5a00;
+  font-size: 0.95em;
+  font-weight: bold;
+}
+
+.meal-now {
+  margin: 0 -10px;
+  padding: 8px 10px;
+  border-radius: 8px;
+  background-color: #fff6e0;
+}
+
+.now-label {
+  float: right;
+  padding: 0 8px;
+  border-radius: 8px;
+  background-color: #f2b01e;
+  color: #fff;
+  font-size: 0.75em;
+  font-weight: bold;
+}
+
+/* ---------- 학생식당: 브랜드 탭 + 메뉴 카드 ---------- */
+#fixed-list {
+  grid-template-columns: 1fr; /* 식당 카드는 한 줄에 하나 (안에 메뉴 격자) */
+}
+
+.brand-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+
+.brand-tabs button {
+  padding: 5px 12px;
+  border: 1px solid #ccd5e6;
+  border-radius: 16px;
+  background-color: #fff;
+  color: #333;
+  font-size: 0.9em;
+  cursor: pointer;
+}
+
+.brand-tabs button.active {
+  border-color: #1a3d7c;
+  background-color: #1a3d7c;
+  color: #fff;
+}
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+  gap: 10px;
+}
+
+.menu-item {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 10px 12px;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  background-color: #fafbfd;
+}
+
+.menu-name {
+  flex-grow: 1;
+  font-size: 0.95em;
+  line-height: 1.4;
+}
+
+.menu-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menu-bottom .review-chip {
+  margin-left: auto;
+}
+
+.menu-bottom .price {
+  margin-left: 0;
+}
+
+/* 좁은 화면: 요일 탭을 한 줄로 두고 옆으로 밀어서 보기 */
+@media (max-width: 600px) {
+  #day-tabs {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+  }
+
+  #day-tabs button {
+    flex-shrink: 0;
+  }
+
+  .menu-grid {
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  }
 }

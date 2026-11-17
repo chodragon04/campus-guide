@@ -22,9 +22,17 @@
   <main id="content">
     <h1>학식</h1>
 
-    <section class="food-group">
+    <!-- 섹션 바로가기 -->
+    <nav id="food-nav">
+      <a href="#dorm">생활관</a>
+      <a href="#student">학생식당</a>
+      <a href="#technopark">테크노파크</a>
+    </nav>
+
+    <section class="food-group" id="dorm">
       <h2>생활관 식당</h2>
       <p class="hint">학기 중 평일 조식 07:30~08:50 · 중식 11:30~13:30 · 석식 17:30~18:40 (주말은 시간이 다름)</p>
+      <p id="now-meal"></p>
       <div id="day-tabs">
         <button data-day="1">월</button>
         <button data-day="2">화</button>
@@ -37,13 +45,13 @@
       <div id="dorm-list" class="card-grid"></div>
     </section>
 
-    <section class="food-group">
+    <section class="food-group" id="student">
       <h2>학생식당 메뉴판</h2>
-      <p class="hint">ST:Table과 ST:Dining은 매일 바뀌는 식단 대신 브랜드별 고정 메뉴를 판매합니다. 브랜드를 누르면 메뉴가 펼쳐집니다.</p>
+      <p class="hint">ST:Table과 ST:Dining은 매일 바뀌는 식단 대신 브랜드별 고정 메뉴를 판매합니다. 브랜드를 고르면 그 브랜드의 메뉴가 보입니다.</p>
       <div id="fixed-list" class="card-grid"></div>
     </section>
 
-    <section class="food-group">
+    <section class="food-group" id="technopark">
       <h2>테크노파크</h2>
       <div id="weekly-list"></div>
     </section>

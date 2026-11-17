@@ -1,4 +1,4 @@
-// friends.html: 친구 신청 보내기, 받은 신청 수락·거절, 보낸 신청 취소, 친구 목록(함께 듣는 수업)
+// friends.html: 친구 신청 보내기, 받은 신청 수락·거절, 보낸 신청 취소, 친구 목록(함께 듣는 수업, 이름을 누르면 친구 시간표)
 
 const friendsArea = document.querySelector("#friends-area");
 const friendsStatus = document.querySelector("#friends-status");
@@ -17,13 +17,21 @@ function showRequestMessage(text, success) {
 }
 
 // 목록 한 줄: 닉네임(아이디), 설명, 버튼들
-// 닉네임은 겹칠 수 있어서 아이디도 함께 보여 준다
-function makeRow(person, detail, buttons) {
+// 닉네임은 겹칠 수 있어서 아이디도 함께 보여 준다. link가 있으면 이름을 링크로 만든다
+function makeRow(person, detail, buttons, link) {
   const li = make("li", "friend-row");
   const info = make("div", "friend-info");
   const name = make("strong", "", displayName(person));
   if (person.nickname) name.appendChild(make("span", "friend-id", ` (${person.username})`));
-  info.appendChild(name);
+  if (link) {
+    const a = make("a", "friend-link");
+    a.href = link;
+    a.title = `${displayName(person)}님의 시간표 보기`;
+    a.appendChild(name);
+    info.appendChild(a);
+  } else {
+    info.appendChild(name);
+  }
   if (detail) info.appendChild(make("p", "friend-detail", detail));
   li.appendChild(info);
   const actions = make("div", "friend-actions");
@@ -99,9 +107,12 @@ function render(data) {
     const shared = friend.sharedCourseIds.map((id) => courseNames.get(id)).filter(Boolean);
     const detail = shared.length > 0 ? `함께 듣는 수업: ${shared.join(", ")}` : "함께 듣는 수업이 없습니다.";
     friendList.appendChild(
-      makeRow(friend, detail, [
-        makeConfirmButton("삭제", "정말 삭제", () => act("DELETE", `api/friends/${encodeURIComponent(friend.username)}`)),
-      ])
+      makeRow(
+        friend,
+        detail,
+        [makeConfirmButton("삭제", "정말 삭제", () => act("DELETE", `api/friends/${encodeURIComponent(friend.username)}`))],
+        `timetable.html?friend=${encodeURIComponent(friend.username)}`
+      )
     );
   }
   if (data.friends.length === 0) friendList.appendChild(emptyRow("아직 친구가 없습니다. 위에서 친구 아이디로 신청해 보세요."));

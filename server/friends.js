@@ -1,12 +1,14 @@
 // 친구: 아이디로 신청하고, 상대가 수락하면 친구가 된다
 //  - friendships 컬렉션: { _id, pair, from, to, fromName, toName, status: "pending" | "accepted", createdAt, acceptedAt }
 //  - pair는 두 사람의 ID를 정렬해 이은 값이라, 누가 먼저 신청했든 두 사람 사이에는 하나만 생긴다
-//  - 친구에게도 시간표 전체는 보여 주지 않고, 나와 같은 강좌(과목+분반)만 알려 준다
+//  - 친구 목록에는 나와 같은 강좌(과목+분반)를 알려 주고, 친구 이름을 누르면 친구의 시간표 전체를 볼 수 있다
+//    (친구가 아닌 사람의 시간표는 볼 수 없다)
 //  - 닉네임은 바꿀 수 있으므로 저장해 두지 않고 목록을 줄 때마다 users에서 읽는다
 import crypto from "node:crypto";
 import express from "express";
 import { rateLimit } from "express-rate-limit";
 import { requireLogin } from "./auth.js";
+import { courseMap } from "./data.js";
 
 const MAX_FRIENDS = 100;
 const MAX_PENDING = 50; // 보낸 신청을 쌓아 둘 수 있는 최대 개수
@@ -78,6 +80,26 @@ export function friendsRouter(db) {
       }
       friends.sort((a, b) => (a.nickname || a.username).localeCompare(b.nickname || b.username, "ko"));
       res.json({ friends: friends, incoming: incoming, outgoing: outgoing });
+    } catch (err) {
+      next(err);
+    }
+  });
+
+  // 친구 시간표 보기: 서로 친구(수락됨)일 때만. 친구가 아니면 아이디가 있는지도 알려 주지 않는다
+  router.get("/:username/timetable", async (req, res, next) => {
+    try {
+      const target = await db.users.findOne({ username: String(req.params.username).toLowerCase() });
+      const link = target ? await db.friendships.findOne({ pair: pairOf(req.session.userId, target._id) }) : null;
+      if (!link || link.status !== "accepted") return res.status(404).json({ error: "친구의 시간표만 볼 수 있습니다." });
+
+      const doc = await db.timetables.findOne({ userId: target._id });
+      const map = courseMap();
+      const courses = (doc ? doc.courseIds : []).map((id) => map.get(id)).filter(Boolean);
+      res.json({
+        friend: { username: target.username, nickname: target.nickname || "" },
+        courses: courses,
+        updatedAt: doc ? doc.updatedAt : null,
+      });
     } catch (err) {
       next(err);
     }

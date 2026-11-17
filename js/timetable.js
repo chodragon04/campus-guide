@@ -2,6 +2,7 @@
 //  - data/courses.json(GitHub Actions가 수강신청시스템에서 수집)에서 과목을 검색해 담는다
 //  - 로그인하면 담은 과목을 서버(DB)에 저장해 어느 기기에서든 같은 시간표가 보이고,
 //    로그인하지 않으면 이 브라우저(localStorage)에 저장한다
+//  - timetable.html?friend=아이디 로 열면 친구의 시간표를 읽기 전용으로 보여 준다 (서로 친구일 때만)
 
 const DAYS = ["월", "화", "수", "목", "금", "토", "일"];
 const COLORS = ["#dbe8ff", "#ffe3d6", "#dff5e1", "#fff2c7", "#eadcff", "#ffd9e6", "#d6f3f5", "#e8e8e8"];
@@ -17,6 +18,9 @@ let buildings = []; // 강의실 → 지도 링크용
 let classmates = new Map(); // 강좌 ID → 함께 듣는 친구 아이디들 (로그인했을 때)
 let myCourses = [];
 let savedWhere = "local"; // "server"(로그인) 또는 "local"
+
+const friendName = new URLSearchParams(location.search).get("friend"); // 친구 시간표 보기일 때 친구 아이디
+let alsoMine = new Set(); // 친구 시간표 보기: 나도 듣는 강좌 ID
 
 // ---------- 저장 / 불러오기 ----------
 
@@ -188,7 +192,9 @@ function drawTimetable() {
       block.appendChild(make("strong", "", course.name));
       block.appendChild(makeRoomLinks(course.room, buildings));
       const friends = classmates.get(course.id);
-      if (friends) {
+      if (friendName) {
+        if (alsoMine.has(course.id)) block.appendChild(make("span", "classmates", "나도 들음"));
+      } else if (friends) {
         const badge = make("span", "classmates", `친구 ${friends.length}명`);
         badge.title = `함께 듣는 친구: ${friends.join(", ")}`;
         block.appendChild(badge);
@@ -207,15 +213,22 @@ function drawList() {
     const text = make("span", "", `${course.name} (${course.prof || "교수 미정"}) · ${courseTime(course)} · `);
     text.appendChild(makeRoomLinks(course.room, buildings));
     const friends = classmates.get(course.id);
-    if (friends) text.appendChild(make("span", "classmates", ` · 함께 듣는 친구: ${friends.join(", ")}`));
+    if (friendName) {
+      if (alsoMine.has(course.id)) text.appendChild(make("span", "classmates", " · 나도 듣는 수업"));
+    } else if (friends) {
+      text.appendChild(make("span", "classmates", ` · 함께 듣는 친구: ${friends.join(", ")}`));
+    }
     li.appendChild(text);
-    const button = make("button", "", "삭제");
-    button.addEventListener("click", () => removeCourse(course.id));
-    li.appendChild(button);
+    if (!friendName) {
+      const button = make("button", "", "삭제");
+      button.addEventListener("click", () => removeCourse(course.id));
+      li.appendChild(button);
+    }
     courseList.appendChild(li);
   }
   if (myCourses.length === 0) {
-    courseList.appendChild(make("li", "notice", "아직 담은 과목이 없습니다. 위에서 검색해 담아 보세요."));
+    const empty = friendName ? "아직 담은 과목이 없습니다." : "아직 담은 과목이 없습니다. 위에서 검색해 담아 보세요.";
+    courseList.appendChild(make("li", "notice", empty));
   }
   document.querySelector("#credit-sum").innerText = `(${myCourses.length}과목, ${credits}학점)`;
 }
@@ -228,30 +241,89 @@ function render() {
 // ---------- 시작 ----------
 
 render();
+if (friendName) startFriendView();
+else startMyView();
 
 // 내 시간표 불러오기 (로그인했으면 서버에서)
-loadMyCourses()
-  .then((result) => {
-    savedWhere = result.where;
-    myCourses = result.courses;
-    const local = loadLocalCourses();
+function startMyView() {
+  loadMyCourses()
+    .then((result) => {
+      savedWhere = result.where;
+      myCourses = result.courses;
+      const local = loadLocalCourses();
 
-    // 처음 로그인했을 때: 계정 시간표가 비어 있고 이 브라우저에 담아 둔 과목이 있으면 계정으로 옮긴다
-    if (savedWhere === "server" && myCourses.length === 0 && local.length > 0) {
-      return sendJson("PUT", "api/timetable", { courseIds: local.map((c) => c.id) }).then((moved) => {
-        if (!moved.ok) return;
-        myCourses = moved.data.courses;
-        saveLocalCourses([]);
-        showMessage("이 브라우저에 담아 둔 과목을 계정 시간표로 옮겼습니다.");
-      });
+      // 처음 로그인했을 때: 계정 시간표가 비어 있고 이 브라우저에 담아 둔 과목이 있으면 계정으로 옮긴다
+      if (savedWhere === "server" && myCourses.length === 0 && local.length > 0) {
+        return sendJson("PUT", "api/timetable", { courseIds: local.map((c) => c.id) }).then((moved) => {
+          if (!moved.ok) return;
+          myCourses = moved.data.courses;
+          saveLocalCourses([]);
+          showMessage("이 브라우저에 담아 둔 과목을 계정 시간표로 옮겼습니다.");
+        });
+      }
+    })
+    .catch(() => showMessage("시간표를 불러오지 못했습니다. 새로고침해 주세요."))
+    .then(() => {
+      render();
+      showSaveInfo();
+      refreshClassmates();
+    });
+}
+
+// 친구 시간표 보기: 검색·삭제 없이 친구가 담은 과목만 보여 준다
+function startFriendView() {
+  document.querySelector("#search-area").style.display = "none";
+  document.querySelector("#list-title").innerText = "듣는 과목";
+  const info = document.querySelector("#save-info");
+
+  // 볼 수 없을 때: 빈 시간표 대신 안내만
+  function cannotView(text, link) {
+    timetable.style.display = "none";
+    document.querySelector("#list-head").style.display = "none";
+    courseList.style.display = "none";
+    showMessage(text);
+    if (link) {
+      const a = make("a", "", link.text);
+      a.href = link.href;
+      info.appendChild(a);
     }
-  })
-  .catch(() => showMessage("시간표를 불러오지 못했습니다. 새로고침해 주세요."))
-  .then(() => {
-    render();
-    showSaveInfo();
-    refreshClassmates();
-  });
+  }
+
+  getMe()
+    .then((me) => {
+      if (!me.accounts) {
+        return cannotView("이 주소에서는 친구 시간표를 볼 수 없습니다. https://campus-guide-az3a.onrender.com 에서 이용해 주세요.");
+      }
+      if (!me.user) {
+        const next = encodeURIComponent(`timetable.html?friend=${friendName}`);
+        return cannotView("친구 시간표는 로그인 후 볼 수 있습니다.", { text: "로그인하기 →", href: `login.html?next=${next}` });
+      }
+      if (friendName.toLowerCase() === me.user.username) {
+        location.replace("timetable.html"); // 내 아이디면 내 시간표로
+        return;
+      }
+      const friendRequest = fetch(`api/friends/${encodeURIComponent(friendName)}/timetable`).then((res) =>
+        res.json().then((data) => ({ ok: res.ok, data: data }))
+      );
+      const mine = loadMyCourses().catch(() => ({ courses: [] }));
+      return Promise.all([friendRequest, mine]).then(([friend, my]) => {
+        if (!friend.ok) {
+          return cannotView(friend.data.error || "친구 시간표를 불러오지 못했습니다.", { text: "친구 목록으로 →", href: "friends.html" });
+        }
+        const name = displayName(friend.data.friend);
+        document.querySelector("#page-title").innerText = `${name}님의 시간표`;
+        document.title = `${name}님의 시간표 | 과기대 캠퍼스 가이드`;
+        info.innerText = "친구의 시간표는 볼 수만 있어요. ";
+        const back = make("a", "", "친구 목록으로 →");
+        back.href = "friends.html";
+        info.appendChild(back);
+        myCourses = friend.data.courses;
+        alsoMine = new Set(my.courses.map((c) => c.id));
+        render();
+      });
+    })
+    .catch(() => cannotView("친구 시간표를 불러오지 못했습니다. 새로고침해 주세요."));
+}
 
 // 같은 강좌를 담은 친구 (로그인했을 때만)
 function refreshClassmates() {

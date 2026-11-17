@@ -89,3 +89,13 @@
   font-weight: normal;
   font-size: 0.9em;
 }
+
+/* 친구 이름을 누르면 친구 시간표로 */
+.friend-link {
+  color: #1a3d7c;
+  text-decoration: none;
+}
+
+.friend-link:hover strong {
+  text-decoration: underline;
+}

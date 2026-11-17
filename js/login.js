@@ -28,6 +28,7 @@ function setMode(newMode) {
   // 비밀번호 관리자가 새 비밀번호를 제안하도록
   passwordInput.autocomplete = signup ? "new-password" : "current-password";
   rules.style.display = signup ? "block" : "none";
+  document.querySelector("#forgot-link").style.display = signup ? "none" : "block";
   authMessage.innerText = "";
 }
 
@@ -48,6 +49,18 @@ form.addEventListener("submit", (event) => {
   sendJson("POST", `api/auth/${mode}`, body)
     .then((result) => {
       if (result.ok) {
+        // 회원가입이면 복구 코드를 먼저 보여 주고, 저장했다고 확인하면 이동
+        if (result.data.recoveryCode) {
+          refreshAuthMenu();
+          form.style.display = "none";
+          document.querySelector("#switch-mode").style.display = "none";
+          title.innerText = "가입 완료";
+          document.querySelector("#auth-desc").innerText = "가입하고 로그인했어요. 계속하기 전에 아래 복구 코드를 저장해 주세요.";
+          document.querySelector("#auth-box").appendChild(
+            makeRecoveryCodeBox(result.data.recoveryCode, "계속하기", () => (location.href = nextPage()))
+          );
+          return;
+        }
         location.href = nextPage();
         return;
       }

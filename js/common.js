@@ -193,7 +193,12 @@ function setupAuthMenu() {
       if (currentPage === "friends") friends.classList.add("current");
       if (me.user.friendRequests > 0) friends.appendChild(make("span", "badge", String(me.user.friendRequests)));
       box.appendChild(friends);
-      box.appendChild(make("span", "auth-user", me.user.username));
+      // 아이디를 누르면 계정 설정(비밀번호 변경)
+      const account = make("a", "auth-user", me.user.username);
+      account.href = "settings.html";
+      account.title = "계정 설정";
+      if (currentPage === "settings") account.classList.add("current");
+      box.appendChild(account);
       const logout = make("button", "auth-button", "로그아웃");
       logout.addEventListener("click", () => {
         sendJson("POST", "api/auth/logout").then(() => location.reload());
@@ -211,6 +216,14 @@ function setupAuthMenu() {
 }
 
 setupAuthMenu();
+
+// 로그인 상태가 바뀌었을 때(가입·복구 직후) 헤더를 다시 그린다
+function refreshAuthMenu() {
+  mePromise = null;
+  const old = document.querySelector(".auth-menu");
+  if (old) old.remove();
+  setupAuthMenu();
+}
 
 // 내 시간표: 로그인했으면 서버(DB)에, 아니면 이 브라우저(localStorage)에 저장
 const LOCAL_TIMETABLE_KEY = "campus-guide-timetable";
@@ -263,4 +276,36 @@ function loadClassmates() {
       })
       .catch(() => classmates);
   });
+}
+
+// 복구 코드 안내 상자: 코드는 이때 한 번만 보여 주므로 저장했다고 체크해야 다음으로 넘어간다
+function makeRecoveryCodeBox(code, doneText, onDone) {
+  const box = make("section", "recovery-box");
+  box.appendChild(make("h2", "", "복구 코드"));
+  box.appendChild(
+    make("p", "", "비밀번호를 잊었을 때 이 코드로 재설정할 수 있어요. 다시 보여 드릴 수 없으니 캡처하거나 안전한 곳에 적어 두세요.")
+  );
+  box.appendChild(make("p", "recovery-code", code));
+
+  const copy = make("button", "recovery-copy", "코드 복사");
+  copy.type = "button";
+  copy.addEventListener("click", () => {
+    navigator.clipboard.writeText(code).then(() => (copy.innerText = "복사했습니다"));
+  });
+  box.appendChild(copy);
+
+  const label = make("label", "recovery-check");
+  const check = make("input");
+  check.type = "checkbox";
+  label.appendChild(check);
+  label.appendChild(document.createTextNode(" 복구 코드를 저장했습니다"));
+  box.appendChild(label);
+
+  const done = make("button", "recovery-done", doneText);
+  done.type = "button";
+  done.disabled = true;
+  check.addEventListener("change", () => (done.disabled = !check.checked));
+  done.addEventListener("click", onDone);
+  box.appendChild(done);
+  return box;
 }

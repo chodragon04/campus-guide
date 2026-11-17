@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>계정 설정 | 과기대 캠퍼스 가이드</title>
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/settings.css">
+</head>
+<body data-page="settings">
+  <header id="site-header">
+    <a href="index.html" id="logo">과기대 캠퍼스 가이드</a>
+    <nav id="menu">
+      <a href="index.html" data-key="home">홈</a>
+      <a href="map.html" data-key="map">캠퍼스 지도</a>
+      <a href="buildings.html" data-key="buildings">건물·시설</a>
+      <a href="food.html" data-key="food">학식</a>
+      <a href="timetable.html" data-key="timetable">내 시간표</a>
+    </nav>
+  </header>
+
+  <main id="content">
+    <h1>계정 설정</h1>
+    <p id="settings-status" class="hint"></p>
+
+    <div id="settings-area">
+      <section class="settings-section">
+        <h2>계정</h2>
+        <p>아이디: <strong id="account-name"></strong></p>
+      </section>
+
+      <section class="settings-section">
+        <h2>비밀번호 변경</h2>
+        <form id="password-form">
+          <label for="current-password">현재 비밀번호</label>
+          <input type="password" id="current-password" autocomplete="current-password" required>
+
+          <label for="new-password">새 비밀번호 (8자 이상)</label>
+          <input type="password" id="new-password" autocomplete="new-password" minlength="8" maxlength="64" required>
+
+          <label for="confirm-password">새 비밀번호 확인</label>
+          <input type="password" id="confirm-password" autocomplete="new-password" required>
+
+          <p id="password-message"></p>
+          <button type="submit" id="password-submit">비밀번호 변경</button>
+        </form>
+        <p class="hint">비밀번호를 바꾸면 다른 기기에서는 로그아웃됩니다.</p>
+      </section>
+
+      <section class="settings-section" id="recovery-section">
+        <h2>복구 코드</h2>
+        <p class="hint">비밀번호를 잊었을 때 쓰는 코드예요. 잃어버렸거나 다른 사람이 알게 됐다면 새로 받으세요. 새로 받으면 예전 코드는 쓸 수 없어요.</p>
+        <form id="recovery-form">
+          <label for="recovery-password">현재 비밀번호</label>
+          <input type="password" id="recovery-password" autocomplete="current-password" required>
+          <p id="recovery-message"></p>
+          <button type="submit" id="recovery-submit">새 복구 코드 받기</button>
+        </form>
+      </section>
+    </div>
+  </main>
+
+  <footer id="site-footer">
+    <p>웹프로그래밍 프로젝트 · 서울과학기술대학교</p>
+  </footer>
+
+  <script src="js/common.js"></script>
+  <script src="js/settings.js"></script>
+</body>
+</html>

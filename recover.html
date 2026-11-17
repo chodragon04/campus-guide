@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>비밀번호 찾기 | 과기대 캠퍼스 가이드</title>
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/login.css">
+</head>
+<body data-page="recover">
+  <header id="site-header">
+    <a href="index.html" id="logo">과기대 캠퍼스 가이드</a>
+    <nav id="menu">
+      <a href="index.html" data-key="home">홈</a>
+      <a href="map.html" data-key="map">캠퍼스 지도</a>
+      <a href="buildings.html" data-key="buildings">건물·시설</a>
+      <a href="food.html" data-key="food">학식</a>
+      <a href="timetable.html" data-key="timetable">내 시간표</a>
+    </nav>
+  </header>
+
+  <main id="content">
+    <section id="auth-box">
+      <h1 id="auth-title">비밀번호 찾기</h1>
+      <p class="hint" id="auth-desc">가입할 때 받은 복구 코드로 비밀번호를 새로 정할 수 있어요.</p>
+
+      <form id="recover-form">
+        <label for="username">아이디</label>
+        <input type="text" id="username" autocomplete="username" autocapitalize="none" required>
+
+        <label for="recovery-code">복구 코드</label>
+        <input type="text" id="recovery-code" placeholder="예: K7Q2-XP9M-4WTB" autocomplete="off" autocapitalize="characters" required>
+
+        <label for="new-password">새 비밀번호 (8자 이상)</label>
+        <input type="password" id="new-password" autocomplete="new-password" minlength="8" maxlength="64" required>
+
+        <label for="confirm-password">새 비밀번호 확인</label>
+        <input type="password" id="confirm-password" autocomplete="new-password" required>
+
+        <p id="auth-message"></p>
+        <button type="submit" id="submit">비밀번호 재설정</button>
+      </form>
+
+      <p class="hint" id="recover-note">복구 코드도 잃어버렸다면 새 계정을 만들어 주세요. 시간표는 과목을 다시 담고, 친구는 다시 신청하면 됩니다.</p>
+      <p id="switch-mode"><a href="login.html">로그인으로 돌아가기</a></p>
+    </section>
+  </main>
+
+  <footer id="site-footer">
+    <p>웹프로그래밍 프로젝트 · 서울과학기술대학교</p>
+  </footer>
+
+  <script src="js/common.js"></script>
+  <script src="js/recover.js"></script>
+</body>
+</html>

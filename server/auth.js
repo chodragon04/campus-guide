@@ -2,6 +2,7 @@
 //  - 비밀번호는 bcrypt로 해시해서 저장 (원래 비밀번호는 서버도 알 수 없음)
 //  - 로그인 상태는 세션(쿠키에는 세션 ID만, 내용은 DB에 저장)으로 유지
 //  - 같은 IP에서 짧은 시간에 너무 많이 시도하면 잠시 막음
+//  - 비밀번호를 잊었을 때는 가입 때 받은 복구 코드로 재설정 (이메일 없이)
 import crypto from "node:crypto";
 import express from "express";
 import bcrypt from "bcryptjs";
@@ -12,8 +13,47 @@ const PASSWORD_MIN = 8;
 const PASSWORD_MAX = 64; // bcrypt는 72바이트까지만 쓰므로 넉넉히 제한
 const WRONG = "아이디 또는 비밀번호가 맞지 않습니다.";
 
+// 복구 코드: 헷갈리는 글자(0·O, 1·I·L)를 뺀 31글자 중 무작위 12글자 → "K7Q2-XP9M-4WTB"
+const CODE_CHARS = "ABCDEFGHJKMNPQRSTUVWXYZ23456789";
+
+function newRecoveryCode() {
+  let code = "";
+  for (let i = 0; i < 12; i++) code += CODE_CHARS[crypto.randomInt(CODE_CHARS.length)];
+  return `${code.slice(0, 4)}-${code.slice(4, 8)}-${code.slice(8)}`;
+}
+
+// 입력한 코드 정리: 소문자·띄어쓰기·하이픈 차이는 무시
+function normalizeCode(code) {
+  return String(code || "").toUpperCase().replace(/[^A-Z0-9]/g, "");
+}
+
+// 복구 코드도 비밀번호처럼 해시로만 저장
+function hashRecoveryCode(code) {
+  return bcrypt.hash(normalizeCode(code), 10);
+}
+
 // 없는 아이디로 로그인할 때도 비밀번호 비교 시간을 똑같이 써서, 응답 시간으로 아이디 존재 여부를 알 수 없게 한다
 const DUMMY_HASH = bcrypt.hashSync("not-a-real-password", 10);
+
+// 세션 확인: 로그인 뒤에 계정이 지워졌거나(DB 초기화 등) 비밀번호가 바뀌었으면 로그아웃 처리
+// (다른 기기에서 비밀번호를 바꾸면 이 기기의 로그인도 끊긴다)
+export function checkSession(db) {
+  return async (req, res, next) => {
+    try {
+      if (!db || !req.session.userId) return next();
+      const user = await db.users.findOne({ _id: req.session.userId });
+      const changedAt = user && user.passwordChangedAt ? new Date(user.passwordChangedAt).getTime() : 0;
+      if (!user || changedAt > (req.session.loginAt || 0)) {
+        delete req.session.userId;
+        delete req.session.username;
+        delete req.session.loginAt;
+      }
+      next();
+    } catch (err) {
+      next(err);
+    }
+  };
+}
 
 // 로그인한 사람만 쓸 수 있는 API 앞에 붙이는 검사
 export function requireLogin(req, res, next) {
@@ -28,6 +68,7 @@ function startSession(req, user) {
       if (err) return reject(err);
       req.session.userId = user._id;
       req.session.username = user.username;
+      req.session.loginAt = Date.now(); // 비밀번호를 바꾸면 이 시각 이전의 로그인은 무효
       resolve();
     });
   });
@@ -39,6 +80,15 @@ export function authRouter(db) {
   const limiter = rateLimit({
     windowMs: 15 * 60 * 1000, // 15분 동안
     limit: 20, // 20번까지
+    standardHeaders: "draft-7",
+    legacyHeaders: false,
+    message: { error: "시도가 너무 많습니다. 15분 뒤에 다시 시도하세요." },
+  });
+
+  // 복구 코드로 재설정은 코드를 하나씩 넣어 보는 공격을 막으려고 더 엄격하게
+  const recoverLimiter = rateLimit({
+    windowMs: 15 * 60 * 1000,
+    limit: 10,
     standardHeaders: "draft-7",
     legacyHeaders: false,
     message: { error: "시도가 너무 많습니다. 15분 뒤에 다시 시도하세요." },
@@ -73,10 +123,12 @@ export function authRouter(db) {
         return res.status(400).json({ error: `비밀번호는 ${PASSWORD_MIN}~${PASSWORD_MAX}자입니다.` });
       }
 
+      const recoveryCode = newRecoveryCode();
       const user = {
         _id: crypto.randomUUID(),
         username: username,
         passwordHash: await bcrypt.hash(password, 10),
+        recoveryHash: await hashRecoveryCode(recoveryCode),
         createdAt: new Date(),
       };
       try {
@@ -86,7 +138,8 @@ export function authRouter(db) {
         throw err;
       }
       await startSession(req, user);
-      res.status(201).json({ user: { username: user.username } });
+      // 복구 코드는 이때 한 번만 보여 준다 (서버에는 해시만 남음)
+      res.status(201).json({ user: { username: user.username }, recoveryCode: recoveryCode });
     } catch (err) {
       next(err);
     }
@@ -102,6 +155,85 @@ export function authRouter(db) {
 
       await startSession(req, user);
       res.json({ user: { username: user.username } });
+    } catch (err) {
+      next(err);
+    }
+  });
+
+  // 비밀번호 변경: { currentPassword, newPassword }
+  router.post("/password", limiter, requireLogin, async (req, res, next) => {
+    try {
+      const currentPassword = String(req.body.currentPassword || "");
+      const newPassword = String(req.body.newPassword || "");
+      const user = await db.users.findOne({ _id: req.session.userId });
+      if (!user || !(await bcrypt.compare(currentPassword, user.passwordHash))) {
+        return res.status(401).json({ error: "현재 비밀번호가 맞지 않습니다." });
+      }
+      if (newPassword.length < PASSWORD_MIN || newPassword.length > PASSWORD_MAX) {
+        return res.status(400).json({ error: `새 비밀번호는 ${PASSWORD_MIN}~${PASSWORD_MAX}자입니다.` });
+      }
+      if (newPassword === currentPassword) {
+        return res.status(400).json({ error: "새 비밀번호가 현재 비밀번호와 같습니다." });
+      }
+
+      await db.users.updateOne(
+        { _id: user._id },
+        { $set: { passwordHash: await bcrypt.hash(newPassword, 10), passwordChangedAt: new Date() } }
+      );
+      // 이 기기는 새로 로그인한 것으로 처리하고, 다른 기기의 로그인은 끊는다(checkSession)
+      await startSession(req, user);
+      res.json({ result: "changed" });
+    } catch (err) {
+      next(err);
+    }
+  });
+
+  // 비밀번호 찾기: { username, recoveryCode, newPassword }
+  // 성공하면 비밀번호를 바꾸고 로그인하며, 쓴 복구 코드 대신 새 코드를 발급한다
+  router.post("/recover", recoverLimiter, async (req, res, next) => {
+    try {
+      const username = String(req.body.username || "").trim().toLowerCase();
+      const newPassword = String(req.body.newPassword || "");
+      const user = await db.users.findOne({ username: username });
+      const ok = await bcrypt.compare(
+        normalizeCode(req.body.recoveryCode),
+        user && user.recoveryHash ? user.recoveryHash : DUMMY_HASH
+      );
+      if (!user || !user.recoveryHash || !ok) {
+        return res.status(401).json({ error: "아이디 또는 복구 코드가 맞지 않습니다." });
+      }
+      if (newPassword.length < PASSWORD_MIN || newPassword.length > PASSWORD_MAX) {
+        return res.status(400).json({ error: `새 비밀번호는 ${PASSWORD_MIN}~${PASSWORD_MAX}자입니다.` });
+      }
+
+      const recoveryCode = newRecoveryCode();
+      await db.users.updateOne(
+        { _id: user._id },
+        {
+          $set: {
+            passwordHash: await bcrypt.hash(newPassword, 10),
+            recoveryHash: await hashRecoveryCode(recoveryCode),
+            passwordChangedAt: new Date(), // 다른 기기 로그인은 해제
+          },
+        }
+      );
+      await startSession(req, user);
+      res.json({ user: { username: user.username }, recoveryCode: recoveryCode });
+    } catch (err) {
+      next(err);
+    }
+  });
+
+  // 복구 코드 새로 받기 (로그인 상태 + 현재 비밀번호 확인): { password }
+  router.post("/recovery-code", limiter, requireLogin, async (req, res, next) => {
+    try {
+      const user = await db.users.findOne({ _id: req.session.userId });
+      if (!user || !(await bcrypt.compare(String(req.body.password || ""), user.passwordHash))) {
+        return res.status(401).json({ error: "비밀번호가 맞지 않습니다." });
+      }
+      const recoveryCode = newRecoveryCode();
+      await db.users.updateOne({ _id: user._id }, { $set: { recoveryHash: await hashRecoveryCode(recoveryCode) } });
+      res.json({ recoveryCode: recoveryCode }); // 예전 코드는 더 이상 쓸 수 없음
     } catch (err) {
       next(err);
     }

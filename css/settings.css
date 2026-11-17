@@ -1,0 +1,66 @@
+/* settings.html 전용 스타일 */
+.hint {
+  color: #777;
+  font-size: 0.9em;
+}
+
+.settings-section {
+  max-width: 420px;
+  margin-top: 28px;
+}
+
+.settings-section h2 {
+  margin-bottom: 8px;
+  font-size: 1.15em;
+}
+
+#password-form,
+#recovery-form {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 8px;
+}
+
+#password-form label,
+#recovery-form label {
+  margin-top: 6px;
+  font-size: 0.9em;
+  font-weight: bold;
+}
+
+#password-form input,
+#recovery-form input {
+  padding: 10px 12px;
+  border: 1px solid #bbb;
+  border-radius: 8px;
+  font-size: 1em;
+}
+
+#password-message,
+#recovery-message {
+  min-height: 1.4em;
+  color: #c0392b;
+  font-size: 0.9em;
+}
+
+#password-message.success {
+  color: #2e7d4f;
+}
+
+#password-submit,
+#recovery-submit {
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  background-color: #1a3d7c;
+  color: #fff;
+  font-size: 1em;
+  cursor: pointer;
+}
+
+#password-submit:disabled,
+#recovery-submit:disabled {
+  opacity: 0.6;
+  cursor: default;
+}

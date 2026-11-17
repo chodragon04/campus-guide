@@ -201,6 +201,13 @@ body {
 
 .auth-user {
   color: #fff;
+  text-decoration: none;
+}
+
+.auth-user:hover,
+.auth-user.current {
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 
 .auth-button {
@@ -252,4 +259,62 @@ body {
 .classmates {
   color: #2e7d4f;
   font-size: 0.9em;
+}
+
+/* 복구 코드 안내 상자 */
+.recovery-box {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 16px;
+  padding: 18px;
+  border: 2px solid #1a3d7c;
+  border-radius: 10px;
+  background-color: #f5f7fb;
+}
+
+.recovery-box h2 {
+  font-size: 1.1em;
+}
+
+.recovery-box p {
+  font-size: 0.9em;
+}
+
+.recovery-code {
+  padding: 10px;
+  border-radius: 8px;
+  background-color: #fff;
+  font-family: monospace;
+  font-size: 1.4em !important;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-align: center;
+  user-select: all;
+}
+
+.recovery-check {
+  font-size: 0.9em;
+  cursor: pointer;
+}
+
+.recovery-copy,
+.recovery-done {
+  padding: 9px;
+  border: 1px solid #1a3d7c;
+  border-radius: 8px;
+  background-color: #fff;
+  color: #1a3d7c;
+  font-size: 1em;
+  cursor: pointer;
+}
+
+.recovery-done {
+  background-color: #1a3d7c;
+  color: #fff;
+}
+
+.recovery-done:disabled {
+  opacity: 0.5;
+  cursor: default;
 }

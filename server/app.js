@@ -7,7 +7,7 @@ import express from "express";
 import session from "express-session";
 import MongoStore from "connect-mongo";
 import { ROOT, readData } from "./data.js";
-import { authRouter } from "./auth.js";
+import { authRouter, checkSession } from "./auth.js";
 import { timetableRouter } from "./timetable.js";
 import { friendsRouter } from "./friends.js";
 
@@ -99,6 +99,7 @@ export function createApp({ db = null, sessionSecret, sessionStore } = {}) {
   });
 
   // ---------- 회원·시간표·친구 API ----------
+  app.use("/api", checkSession(db)); // 지워진 계정, 비밀번호가 바뀐 뒤의 옛 로그인 정리
   app.use("/api/auth", authRouter(db));
   app.use("/api/timetable", timetableRouter(db));
   app.use("/api/friends", friendsRouter(db));

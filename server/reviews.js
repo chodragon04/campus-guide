@@ -58,14 +58,12 @@ export function reviewsRouter(db) {
   // 대상별 평균 별점·개수: { "dorm-kb|2026-11-17|중식": { avg: 4.2, count: 3 }, ... }
   router.get("/summary", async (req, res, next) => {
     try {
-      const all = await db.reviews.find({}).toArray();
-      const groups = {};
-      for (let review of all) {
-        if (!groups[review.target]) groups[review.target] = [];
-        groups[review.target].push(review);
-      }
+      // 로그인 없이 누구나 부르는 API라, 한줄평 전체를 서버로 가져오지 않고 DB에서 대상별로 계산한다
+      const groups = await db.reviews
+        .aggregate([{ $group: { _id: "$target", avg: { $avg: "$rating" }, count: { $sum: 1 } } }])
+        .toArray();
       const summary = {};
-      for (let target in groups) summary[target] = summarize(groups[target]);
+      for (let g of groups) summary[g._id] = { avg: Math.round(g.avg * 10) / 10, count: g.count };
       res.json(summary);
     } catch (err) {
       next(err);
@@ -86,7 +84,8 @@ export function reviewsRouter(db) {
       for (let review of reviews.slice(0, LIST_MAX)) {
         const writer = await db.users.findOne({ _id: review.userId });
         list.push({
-          nickname: (writer && (writer.nickname || writer.username)) || "탈퇴한 사용자",
+          // 닉네임이 없는 옛 계정이어도 아이디(로그인에 쓰는 값)는 공개하지 않는다
+          nickname: writer ? writer.nickname || "이름 없음" : "탈퇴한 사용자",
           rating: review.rating,
           text: review.text,
           updatedAt: review.updatedAt,

@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-17T02:11:03.058Z",
+  "updatedAt": "2026-11-17T02:30:16.656Z",
   "week": [
     "2026-11-16",
     "2026-11-17",
@@ -881,41 +881,45 @@
       "group": "학생식당",
       "type": "fixed",
       "success": 47,
+      "missingPrices": 0,
+      "priceColumns": [
+        "가격(number)"
+      ],
       "brands": [
         {
           "brand": "바비든든",
           "menus": [
             {
               "name": "스팸마요덮밥 + 제육 한접시 SET",
-              "price": null
+              "price": 6500
             },
             {
               "name": "참치마요덮밥 + 제육 한접시 SET",
-              "price": null
+              "price": 6500
             },
             {
               "name": "치킨마요덮밥 + 제육 한접시 SET",
-              "price": null
+              "price": 6500
             },
             {
               "name": "고기든든",
-              "price": null
+              "price": 3900
             },
             {
               "name": "제육덮밥",
-              "price": null
+              "price": 3900
             },
             {
               "name": "스팸마요덮밥",
-              "price": null
+              "price": 3800
             },
             {
               "name": "참치마요덮밥",
-              "price": null
+              "price": 3500
             },
             {
               "name": "치킨마요덮밥",
-              "price": null
+              "price": 3500
             }
           ]
         },
@@ -924,63 +928,63 @@
           "menus": [
             {
               "name": "마라 우삼겹 쌀국수(특) + 직화구이",
-              "price": null
+              "price": 10500
             },
             {
               "name": "포포볶음밥",
-              "price": null
+              "price": 4500
             },
             {
               "name": "포포쌀국수(고기없음)",
-              "price": null
+              "price": 4500
             },
             {
               "name": "우삼겹쌀국수",
-              "price": null
+              "price": 5900
             },
             {
               "name": "냉쌀국수",
-              "price": null
+              "price": 6500
             },
             {
               "name": "비빔쌀국수",
-              "price": null
+              "price": 6500
             },
             {
               "name": "마라우삼겹쌀국수",
-              "price": null
+              "price": 6500
             },
             {
               "name": "나시고랭",
-              "price": null
+              "price": 6900
             },
             {
               "name": "포포 쌀국수(기본) + 직화구이",
-              "price": null
+              "price": 7500
             },
             {
               "name": "포포 쌀국수(특) + 직화구이",
-              "price": null
+              "price": 8500
             },
             {
               "name": "우삼겹 쌀국수(기본) + 직화구이",
-              "price": null
+              "price": 8900
             },
             {
               "name": "비빔쌀국수+직화 양념구이",
-              "price": null
+              "price": 9500
             },
             {
               "name": "냉쌀국수+직화 양념구이",
-              "price": null
+              "price": 9500
             },
             {
               "name": "마라 우삼겹 쌀국수(기본) + 직화구이",
-              "price": null
+              "price": 9500
             },
             {
               "name": "우삼겹 쌀국수(특) + 직화구이",
-              "price": null
+              "price": 9900
             }
           ]
         },
@@ -989,23 +993,23 @@
           "menus": [
             {
               "name": "특 등심 왕돈까스",
-              "price": null
+              "price": 8900
             },
             {
               "name": "유부우동",
-              "price": null
+              "price": 5500
             },
             {
               "name": "비빔우동",
-              "price": null
+              "price": 5900
             },
             {
               "name": "경성 카레라이스",
-              "price": null
+              "price": 5900
             },
             {
               "name": "옛날 등심돈까스",
-              "price": null
+              "price": 6200
             },
             {
               "name": "경성 치킨 카레라이스",
@@ -1013,15 +1017,15 @@
             },
             {
               "name": "등심돈카츠",
-              "price": null
+              "price": 7500
             },
             {
               "name": "치즈 돈카츠",
-              "price": null
+              "price": 8200
             },
             {
               "name": "고구마 치즈 돈카츠",
-              "price": null
+              "price": 8300
             }
           ]
         },
@@ -1030,31 +1034,31 @@
           "menus": [
             {
               "name": "햄김치찌개",
-              "price": null
+              "price": 6500
             },
             {
               "name": "순두부찌개",
-              "price": null
+              "price": 5500
             },
             {
               "name": "쫄순찌개",
-              "price": null
+              "price": 6000
             },
             {
               "name": "쫄만찌개",
-              "price": null
+              "price": 6500
             },
             {
               "name": "햄순두부찌개",
-              "price": null
+              "price": 6500
             },
             {
               "name": "우삼겹김치찌개",
-              "price": null
+              "price": 6500
             },
             {
               "name": "우삼겹순두부찌개",
-              "price": null
+              "price": 6500
             },
             {
               "name": "된장찌개",
@@ -1103,6 +1107,10 @@
       "group": "학생식당",
       "type": "fixed",
       "success": 42,
+      "missingPrices": 0,
+      "priceColumns": [
+        "가격(number)"
+      ],
       "brands": [
         {
           "brand": "비비고고",
@@ -1134,31 +1142,31 @@
           "menus": [
             {
               "name": "철판치즈닭갈비",
-              "price": null
+              "price": 8500
             },
             {
               "name": "참치마요 덮밥",
-              "price": null
+              "price": 3500
             },
             {
               "name": "스팸마요 덮밥",
-              "price": null
+              "price": 3500
             },
             {
               "name": "고기든든",
-              "price": null
+              "price": 3900
             },
             {
               "name": "철판소금삽겹",
-              "price": null
+              "price": 7900
             },
             {
               "name": "철판고추장삼겹",
-              "price": null
+              "price": 7900
             },
             {
               "name": "철판닭갈비",
-              "price": null
+              "price": 7900
             }
           ]
         },
@@ -1167,39 +1175,39 @@
           "menus": [
             {
               "name": "햄김치찌개",
-              "price": null
+              "price": 6500
             },
             {
               "name": "된장찌개",
-              "price": null
+              "price": 5500
             },
             {
               "name": "순두부찌개",
-              "price": null
+              "price": 5500
             },
             {
               "name": "쫄순찌개",
-              "price": null
+              "price": 6000
             },
             {
               "name": "햄순두부찌개",
-              "price": null
+              "price": 6500
             },
             {
               "name": "쫄만찌개",
-              "price": null
+              "price": 6500
             },
             {
               "name": "우삼겹순두부찌개",
-              "price": null
+              "price": 6500
             },
             {
               "name": "우삼겹김치찌개",
-              "price": null
+              "price": 6500
             },
             {
               "name": "우삼겹된장찌개",
-              "price": null
+              "price": 6500
             },
             {
               "name": "순두부열라면",
@@ -1224,7 +1232,7 @@
             },
             {
               "name": "간장두루치기",
-              "price": null
+              "price": 5900
             },
             {
               "name": "매운찜닭매운찜닭",
@@ -1257,11 +1265,11 @@
           "menus": [
             {
               "name": "고구마치즈돈카츠",
-              "price": null
+              "price": 8300
             },
             {
               "name": "경성 카레라이스",
-              "price": null
+              "price": 5900
             },
             {
               "name": "경성 치킨 카레라이스",
@@ -1273,7 +1281,7 @@
             },
             {
               "name": "등심돈카츠",
-              "price": null
+              "price": 7500
             },
             {
               "name": "경성 소세지 카레라이스",

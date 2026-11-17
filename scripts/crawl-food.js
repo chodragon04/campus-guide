@@ -150,6 +150,16 @@ function propText(prop) {
   return (prop || []).map((piece) => piece[0]).join("").trim();
 }
 
+// 가격 글자 → 숫자: "6,500원", "6500", "₩6,500" 모두 6500. 첫 번째로 읽히는 값을 쓴다
+function parsePrice(texts) {
+  for (let text of texts) {
+    const digits = String(text || "").replace(/[^0-9]/g, "");
+    const price = Number(digits);
+    if (digits !== "" && price >= 100) return price;
+  }
+  return null;
+}
+
 // 페이지 구성: [안내 상자(제목 "ST: Table 메뉴판")] [메뉴 데이터베이스] [안내 상자(ST: Dining)] [데이터베이스]
 async function findNotionMenus() {
   const chunk = await notion("loadPageChunk", {
@@ -192,14 +202,18 @@ async function queryNotionMenu(menu) {
     data = await notion("queryCollection", { source: { type: "collection", ...target }, collectionView: view, loader: loader });
   }
 
-  // 열 이름(브랜드, 가격)으로 속성 키 찾기
+  // 열 이름으로 속성 키 찾기: 브랜드, 가격
+  // 가격은 열 이름이 조금 다르거나("가격(원)") 숫자·글자 열이 섞여 있을 수 있어서
+  // 이름에 "가격"이 들어간 열과 숫자 열을 모두 후보로 두고 처음 값이 있는 것을 쓴다
   const collection = recordValue(data.recordMap.collection?.[menu.collectionId]);
   const schema = collection.schema || {};
   let brandKey = null;
-  let priceKey = null;
+  const priceKeys = [];
   for (let key in schema) {
-    if (schema[key].name === "브랜드") brandKey = key;
-    if (schema[key].name === "가격") priceKey = key;
+    const column = schema[key];
+    if (column.name === "브랜드") brandKey = key;
+    if (/가격|price/i.test(column.name)) priceKeys.unshift(key); // 이름이 "가격"인 열을 먼저
+    else if (column.type === "number") priceKeys.push(key);
   }
 
   const ids = data.result?.reducerResults?.collection_group_results?.blockIds || [];
@@ -209,7 +223,7 @@ async function queryNotionMenu(menu) {
     const name = propText(props.title);
     if (name === "") continue;
     const brandName = propText(props[brandKey]) || "기타";
-    const price = Number(propText(props[priceKey])) || null;
+    const price = parsePrice(priceKeys.map((key) => propText(props[key])));
     let brand = brands.find((b) => b.brand === brandName);
     if (!brand) {
       brand = { brand: brandName, menus: [] };
@@ -220,8 +234,17 @@ async function queryNotionMenu(menu) {
   if (brands.length === 0) throw new Error("메뉴가 비어 있음");
 
   const id = "st-" + menu.name.split(":").pop().trim().toLowerCase(); // "ST: Table" → "st-table"
-  const count = brands.reduce((sum, b) => sum + b.menus.length, 0);
-  return { id: id, name: menu.name.replace(": ", ":"), group: "학생식당", type: "fixed", success: count, brands: brands };
+  const all = brands.flatMap((b) => b.menus);
+  return {
+    id: id,
+    name: menu.name.replace(": ", ":"),
+    group: "학생식당",
+    type: "fixed",
+    success: all.length,
+    missingPrices: all.filter((m) => m.price === null).length, // 가격을 못 읽은 메뉴 수 (확인용)
+    priceColumns: priceKeys.map((key) => `${schema[key].name}(${schema[key].type})`), // 가격 후보 열 (확인용)
+    brands: brands,
+  };
 }
 
 // ---------- 3) 서울테크노파크 (주간 식단 이미지) ----------

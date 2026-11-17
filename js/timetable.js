@@ -14,6 +14,7 @@ const courseList = document.querySelector("#course-list");
 
 let allCourses = []; // 서버 없이 열었을 때만 사용 (전체 강좌)
 let buildings = []; // 강의실 → 지도 링크용
+let classmates = new Map(); // 강좌 ID → 함께 듣는 친구 아이디들 (로그인했을 때)
 let myCourses = [];
 let savedWhere = "local"; // "server"(로그인) 또는 "local"
 
@@ -26,7 +27,11 @@ function saveCourses() {
     return;
   }
   sendJson("PUT", "api/timetable", { courseIds: myCourses.map((c) => c.id) }).then((result) => {
-    if (!result.ok) showMessage(result.data.error || "시간표를 저장하지 못했습니다. 다시 시도해 주세요.");
+    if (!result.ok) {
+      showMessage(result.data.error || "시간표를 저장하지 못했습니다. 다시 시도해 주세요.");
+      return;
+    }
+    refreshClassmates(); // 새로 담은 과목을 듣는 친구가 있는지 다시 확인
   });
 }
 
@@ -182,6 +187,12 @@ function drawTimetable() {
       block.style.backgroundColor = COLORS[index % COLORS.length];
       block.appendChild(make("strong", "", course.name));
       block.appendChild(makeRoomLinks(course.room, buildings));
+      const friends = classmates.get(course.id);
+      if (friends) {
+        const badge = make("span", "classmates", `친구 ${friends.length}명`);
+        badge.title = `함께 듣는 친구: ${friends.join(", ")}`;
+        block.appendChild(badge);
+      }
       timetable.appendChild(block);
     }
   });
@@ -195,6 +206,8 @@ function drawList() {
     const li = make("li");
     const text = make("span", "", `${course.name} (${course.prof || "교수 미정"}) · ${courseTime(course)} · `);
     text.appendChild(makeRoomLinks(course.room, buildings));
+    const friends = classmates.get(course.id);
+    if (friends) text.appendChild(make("span", "classmates", ` · 함께 듣는 친구: ${friends.join(", ")}`));
     li.appendChild(text);
     const button = make("button", "", "삭제");
     button.addEventListener("click", () => removeCourse(course.id));
@@ -237,7 +250,16 @@ loadMyCourses()
   .then(() => {
     render();
     showSaveInfo();
+    refreshClassmates();
   });
+
+// 같은 강좌를 담은 친구 (로그인했을 때만)
+function refreshClassmates() {
+  loadClassmates().then((map) => {
+    classmates = map;
+    render();
+  });
+}
 
 // 시간표가 어디에 저장되는지 안내
 function showSaveInfo() {

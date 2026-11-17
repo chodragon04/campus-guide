@@ -125,3 +125,13 @@ button:hover {
   margin-bottom: 8px;
   font-size: 1.2em;
 }
+
+.class-block .classmates {
+  display: inline-block;
+  margin-top: 2px;
+  padding: 0 6px;
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.7);
+  font-size: 0.95em;
+  cursor: help;
+}

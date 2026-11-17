@@ -1,0 +1,85 @@
+/* friends.html 전용 스타일 */
+.hint,
+.empty,
+.friend-detail {
+  color: #777;
+  font-size: 0.9em;
+}
+
+.friend-section {
+  margin-top: 28px;
+}
+
+.friend-section h2 {
+  margin-bottom: 8px;
+  font-size: 1.15em;
+}
+
+#request-form {
+  display: flex;
+  gap: 8px;
+  max-width: 420px;
+}
+
+#friend-id {
+  flex-grow: 1;
+  padding: 9px 12px;
+  border: 1px solid #bbb;
+  border-radius: 8px;
+  font-size: 1em;
+}
+
+#request-message {
+  min-height: 1.5em;
+  margin-top: 6px;
+  color: #c0392b;
+  font-size: 0.9em;
+}
+
+#request-message.success {
+  color: #2e7d4f;
+}
+
+.friend-list {
+  list-style: none;
+}
+
+.friend-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.friend-actions {
+  display: flex;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+.empty {
+  padding: 8px 0;
+}
+
+#friends-area button {
+  padding: 6px 14px;
+  border: 1px solid #1a3d7c;
+  border-radius: 6px;
+  background-color: #1a3d7c;
+  color: #fff;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+#friends-area button.secondary {
+  background-color: #fff;
+  color: #1a3d7c;
+}
+
+#friends-area button.danger {
+  border-color: #c0392b;
+  background-color: #c0392b;
+  color: #fff;
+}

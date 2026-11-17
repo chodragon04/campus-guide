@@ -11,7 +11,7 @@ const todayDay = days[now.getDay()];
 const classList = document.createElement("div");
 todayClass.appendChild(classList);
 
-Promise.all([loadMyCourses().catch(() => ({ courses: [] })), loadBuildings()]).then(([result, buildings]) => {
+Promise.all([loadMyCourses().catch(() => ({ courses: [] })), loadBuildings(), loadClassmates()]).then(([result, buildings, classmates]) => {
   const todaySlots = [];
   for (let course of result.courses) {
     for (let slot of course.slots) {
@@ -24,6 +24,8 @@ Promise.all([loadMyCourses().catch(() => ({ courses: [] })), loadBuildings()]).t
     const p = document.createElement("p");
     p.innerText = `${slotTime(item.slot)} ${item.course.name} · `;
     p.appendChild(makeRoomLinks(item.course.room, buildings)); // 강의실 → 지도 링크
+    const friends = classmates.get(item.course.id); // 같은 수업을 듣는 친구
+    if (friends) p.appendChild(make("span", "classmates", ` · 함께 듣는 친구: ${friends.join(", ")}`));
     classList.appendChild(p);
   }
   if (todaySlots.length === 0) {

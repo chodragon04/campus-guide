@@ -9,6 +9,7 @@ import MongoStore from "connect-mongo";
 import { ROOT, readData } from "./data.js";
 import { authRouter } from "./auth.js";
 import { timetableRouter } from "./timetable.js";
+import { friendsRouter } from "./friends.js";
 
 export function createApp({ db = null, sessionSecret, sessionStore } = {}) {
   const app = express();
@@ -97,9 +98,10 @@ export function createApp({ db = null, sessionSecret, sessionStore } = {}) {
     res.json({ updatedAt: data.updatedAt, date: date, cafeterias: cafeterias });
   });
 
-  // ---------- 회원·시간표 API ----------
+  // ---------- 회원·시간표·친구 API ----------
   app.use("/api/auth", authRouter(db));
   app.use("/api/timetable", timetableRouter(db));
+  app.use("/api/friends", friendsRouter(db));
 
   // 없는 API 주소
   app.use("/api", (req, res) => {

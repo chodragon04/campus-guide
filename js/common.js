@@ -187,6 +187,12 @@ function setupAuthMenu() {
     if (!me.accounts) return;
     const box = make("div", "auth-menu");
     if (me.user) {
+      // 친구 페이지 링크 (받은 친구 신청이 있으면 숫자 표시)
+      const friends = make("a", "auth-friends", "친구");
+      friends.href = "friends.html";
+      if (currentPage === "friends") friends.classList.add("current");
+      if (me.user.friendRequests > 0) friends.appendChild(make("span", "badge", String(me.user.friendRequests)));
+      box.appendChild(friends);
       box.appendChild(make("span", "auth-user", me.user.username));
       const logout = make("button", "auth-button", "로그아웃");
       logout.addEventListener("click", () => {
@@ -236,5 +242,25 @@ function loadMyCourses() {
         return res.json();
       })
       .then((data) => ({ courses: data.courses, where: "server" }));
+  });
+}
+
+// 함께 듣는 친구: 강좌 ID → 그 강좌를 같이 듣는 친구 아이디 목록 (로그인하지 않았으면 빈 Map)
+function loadClassmates() {
+  return getMe().then((me) => {
+    const classmates = new Map();
+    if (!me.user) return classmates;
+    return fetch("api/friends")
+      .then((res) => (res.ok ? res.json() : { friends: [] }))
+      .then((data) => {
+        for (let friend of data.friends) {
+          for (let id of friend.sharedCourseIds) {
+            if (!classmates.has(id)) classmates.set(id, []);
+            classmates.get(id).push(friend.username);
+          }
+        }
+        return classmates;
+      })
+      .catch(() => classmates);
   });
 }

@@ -45,9 +45,15 @@ export function authRouter(db) {
   });
 
   // 지금 로그인한 사람 (accounts: 회원 기능을 쓸 수 있는 서버인지)
-  router.get("/me", (req, res) => {
-    const user = req.session.userId ? { username: req.session.username } : null;
-    res.json({ accounts: Boolean(db), user: user });
+  // user.friendRequests: 받은 친구 신청 수 (헤더 알림용)
+  router.get("/me", async (req, res, next) => {
+    try {
+      if (!req.session.userId) return res.json({ accounts: Boolean(db), user: null });
+      const received = db ? await db.friendships.find({ to: req.session.userId, status: "pending" }).toArray() : [];
+      res.json({ accounts: Boolean(db), user: { username: req.session.username, friendRequests: received.length } });
+    } catch (err) {
+      next(err);
+    }
   });
 
   // DB가 없으면(접속 주소 미설정) 아래 기능은 쓸 수 없음

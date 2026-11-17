@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>친구 | 과기대 캠퍼스 가이드</title>
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/friends.css">
+</head>
+<body data-page="friends">
+  <header id="site-header">
+    <a href="index.html" id="logo">과기대 캠퍼스 가이드</a>
+    <nav id="menu">
+      <a href="index.html" data-key="home">홈</a>
+      <a href="map.html" data-key="map">캠퍼스 지도</a>
+      <a href="buildings.html" data-key="buildings">건물·시설</a>
+      <a href="food.html" data-key="food">학식</a>
+      <a href="timetable.html" data-key="timetable">내 시간표</a>
+    </nav>
+  </header>
+
+  <main id="content">
+    <h1>친구</h1>
+    <p id="friends-status" class="hint">친구가 되면 내 시간표와 홈 화면에서 같은 수업을 듣는 친구를 볼 수 있어요. 친구에게도 시간표 전체가 아니라 함께 듣는 수업만 보여요.</p>
+
+    <div id="friends-area">
+      <section class="friend-section">
+        <h2>친구 신청 보내기</h2>
+        <form id="request-form">
+          <input type="text" id="friend-id" placeholder="친구 아이디" autocomplete="off" autocapitalize="none" required>
+          <button type="submit">신청</button>
+        </form>
+        <p id="request-message"></p>
+      </section>
+
+      <section class="friend-section">
+        <h2>받은 신청 <span id="incoming-count"></span></h2>
+        <ul id="incoming" class="friend-list"></ul>
+      </section>
+
+      <section class="friend-section">
+        <h2>보낸 신청 <span id="outgoing-count"></span></h2>
+        <ul id="outgoing" class="friend-list"></ul>
+      </section>
+
+      <section class="friend-section">
+        <h2>친구 목록 <span id="friend-count"></span></h2>
+        <ul id="friend-list" class="friend-list"></ul>
+      </section>
+    </div>
+  </main>
+
+  <footer id="site-footer">
+    <p>웹프로그래밍 프로젝트 · 서울과학기술대학교</p>
+  </footer>
+
+  <script src="js/common.js"></script>
+  <script src="js/friends.js"></script>
+</body>
+</html>

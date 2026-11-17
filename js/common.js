@@ -148,3 +148,93 @@ function makeRoomLinks(roomText, buildings) {
   });
   return span;
 }
+
+// ---------- 로그인 상태와 내 시간표 ----------
+
+// JSON으로 보내고 JSON으로 받기 (회원·시간표 API용)
+function sendJson(method, url, body) {
+  return fetch(url, {
+    method: method,
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(body || {}),
+  }).then((res) =>
+    res
+      .json()
+      .catch(() => ({}))
+      .then((data) => ({ ok: res.ok, status: res.status, data: data }))
+  );
+}
+
+let mePromise = null;
+
+// 지금 로그인한 사람: { accounts, user }
+// accounts가 false면 회원 기능이 없는 곳(GitHub Pages, DB 미연결)
+function getMe() {
+  if (!mePromise) {
+    mePromise = fetch("api/auth/me")
+      .then((res) => {
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        return res.json();
+      })
+      .catch(() => ({ accounts: false, user: null }));
+  }
+  return mePromise;
+}
+
+// 헤더 오른쪽에 "로그인" 또는 "아이디 · 로그아웃" 표시
+function setupAuthMenu() {
+  getMe().then((me) => {
+    if (!me.accounts) return;
+    const box = make("div", "auth-menu");
+    if (me.user) {
+      box.appendChild(make("span", "auth-user", me.user.username));
+      const logout = make("button", "auth-button", "로그아웃");
+      logout.addEventListener("click", () => {
+        sendJson("POST", "api/auth/logout").then(() => location.reload());
+      });
+      box.appendChild(logout);
+    } else if (currentPage !== "login") {
+      const login = make("a", "auth-button", "로그인");
+      // 로그인 후 지금 보던 페이지로 돌아오도록
+      const here = location.pathname.split("/").pop() || "index.html";
+      login.href = `login.html?next=${encodeURIComponent(here + location.search)}`;
+      box.appendChild(login);
+    }
+    document.querySelector("#site-header").appendChild(box);
+  });
+}
+
+setupAuthMenu();
+
+// 내 시간표: 로그인했으면 서버(DB)에, 아니면 이 브라우저(localStorage)에 저장
+const LOCAL_TIMETABLE_KEY = "campus-guide-timetable";
+
+function loadLocalCourses() {
+  try {
+    return JSON.parse(localStorage.getItem(LOCAL_TIMETABLE_KEY)) || [];
+  } catch {
+    return [];
+  }
+}
+
+function saveLocalCourses(courses) {
+  try {
+    if (courses.length === 0) localStorage.removeItem(LOCAL_TIMETABLE_KEY);
+    else localStorage.setItem(LOCAL_TIMETABLE_KEY, JSON.stringify(courses));
+  } catch {
+    // 저장소를 쓸 수 없는 브라우저(일부 시크릿 창)는 이번 방문 동안만 유지
+  }
+}
+
+// { courses, where: "server" | "local" }
+function loadMyCourses() {
+  return getMe().then((me) => {
+    if (!me.user) return { courses: loadLocalCourses(), where: "local" };
+    return fetch("api/timetable")
+      .then((res) => {
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        return res.json();
+      })
+      .then((data) => ({ courses: data.courses, where: "server" }));
+  });
+}

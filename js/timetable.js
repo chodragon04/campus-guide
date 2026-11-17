@@ -1,8 +1,8 @@
 // timetable.html: 내 시간표
 //  - data/courses.json(GitHub Actions가 수강신청시스템에서 수집)에서 과목을 검색해 담는다
-//  - 담은 과목은 localStorage에 저장해 다음에 방문해도 남아 있다
+//  - 로그인하면 담은 과목을 서버(DB)에 저장해 어느 기기에서든 같은 시간표가 보이고,
+//    로그인하지 않으면 이 브라우저(localStorage)에 저장한다
 
-const STORAGE_KEY = "campus-guide-timetable";
 const DAYS = ["월", "화", "수", "목", "금", "토", "일"];
 const COLORS = ["#dbe8ff", "#ffe3d6", "#dff5e1", "#fff2c7", "#eadcff", "#ffd9e6", "#d6f3f5", "#e8e8e8"];
 
@@ -14,20 +14,20 @@ const courseList = document.querySelector("#course-list");
 
 let allCourses = []; // 서버 없이 열었을 때만 사용 (전체 강좌)
 let buildings = []; // 강의실 → 지도 링크용
-let myCourses = loadCourses();
+let myCourses = [];
+let savedWhere = "local"; // "server"(로그인) 또는 "local"
 
 // ---------- 저장 / 불러오기 ----------
 
-function loadCourses() {
-  try {
-    return JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
-  } catch {
-    return [];
-  }
-}
-
+// 담은 과목 저장: 로그인했으면 서버에 강좌 ID 목록을 보내고, 아니면 브라우저에 저장
 function saveCourses() {
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(myCourses));
+  if (savedWhere === "local") {
+    saveLocalCourses(myCourses);
+    return;
+  }
+  sendJson("PUT", "api/timetable", { courseIds: myCourses.map((c) => c.id) }).then((result) => {
+    if (!result.ok) showMessage(result.data.error || "시간표를 저장하지 못했습니다. 다시 시도해 주세요.");
+  });
 }
 
 function showMessage(text) {
@@ -215,6 +215,47 @@ function render() {
 // ---------- 시작 ----------
 
 render();
+
+// 내 시간표 불러오기 (로그인했으면 서버에서)
+loadMyCourses()
+  .then((result) => {
+    savedWhere = result.where;
+    myCourses = result.courses;
+    const local = loadLocalCourses();
+
+    // 처음 로그인했을 때: 계정 시간표가 비어 있고 이 브라우저에 담아 둔 과목이 있으면 계정으로 옮긴다
+    if (savedWhere === "server" && myCourses.length === 0 && local.length > 0) {
+      return sendJson("PUT", "api/timetable", { courseIds: local.map((c) => c.id) }).then((moved) => {
+        if (!moved.ok) return;
+        myCourses = moved.data.courses;
+        saveLocalCourses([]);
+        showMessage("이 브라우저에 담아 둔 과목을 계정 시간표로 옮겼습니다.");
+      });
+    }
+  })
+  .catch(() => showMessage("시간표를 불러오지 못했습니다. 새로고침해 주세요."))
+  .then(() => {
+    render();
+    showSaveInfo();
+  });
+
+// 시간표가 어디에 저장되는지 안내
+function showSaveInfo() {
+  getMe().then((me) => {
+    const info = document.querySelector("#save-info");
+    info.innerHTML = "";
+    if (me.user) {
+      info.innerText = `${me.user.username} 계정에 저장됩니다. 다른 기기에서 로그인해도 같은 시간표가 보입니다.`;
+    } else {
+      info.innerText = "지금은 이 브라우저에만 저장됩니다. ";
+      if (me.accounts) {
+        const login = make("a", "", "로그인하면 어느 기기에서든 볼 수 있어요 →");
+        login.href = "login.html?next=timetable.html";
+        info.appendChild(login);
+      }
+    }
+  });
+}
 
 // 건물 목록을 받으면 강의실을 지도 링크로 다시 그린다
 loadBuildings().then((data) => {

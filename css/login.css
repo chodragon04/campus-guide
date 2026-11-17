@@ -1,0 +1,64 @@
+/* login.html 전용 스타일 */
+#auth-box {
+  max-width: 360px;
+  margin: 24px auto;
+  padding: 28px 24px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+}
+
+.hint {
+  color: #777;
+  font-size: 0.9em;
+}
+
+#auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 20px;
+}
+
+#auth-form label {
+  margin-top: 6px;
+  font-size: 0.9em;
+  font-weight: bold;
+}
+
+#auth-form input {
+  padding: 10px 12px;
+  border: 1px solid #bbb;
+  border-radius: 8px;
+  font-size: 1em;
+}
+
+#auth-message {
+  min-height: 1.4em;
+  color: #c0392b;
+  font-size: 0.9em;
+}
+
+#submit {
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  background-color: #1a3d7c;
+  color: #fff;
+  font-size: 1em;
+  cursor: pointer;
+}
+
+#submit:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+#switch-mode {
+  margin-top: 16px;
+  text-align: center;
+  font-size: 0.9em;
+}
+
+#switch-mode a {
+  color: #1a3d7c;
+}

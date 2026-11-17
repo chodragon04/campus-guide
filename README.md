@@ -15,7 +15,8 @@
 | `map.html` | 카카오 지도에 건물 번호 핀 45곳, 핀을 누르면 건물 정보 창(카카오맵 길찾기 링크), 종류·편의시설 필터, `map.html?b=건물ID`로 특정 건물 열기, `map.html?edit=1` 좌표 수정 모드 |
 | `buildings.html` | 건물 45곳 카드 목록, 이름·편의시설·부서 검색, 종류·편의시설 필터, 지도 바로가기 링크 |
 | `food.html` | 생활관 요일별 식단(월~일), 학생식당 브랜드별 메뉴판, 테크노파크 주간 식단, 식당 위치 링크 |
-| `timetable.html` | 개설 강좌 검색(서버 API), 시간표에 담기·빼기(시간 겹침 확인), 강의실 → 지도 링크, localStorage 저장 |
+| `timetable.html` | 개설 강좌 검색(서버 API), 시간표에 담기·빼기(시간 겹침 확인), 강의실 → 지도 링크, 로그인하면 계정(DB)에 저장·아니면 브라우저(localStorage)에 저장 |
+| `login.html` | 로그인·회원가입 (성공하면 보던 페이지로 돌아감) |
 
 ## 사용 기술
 
@@ -38,10 +39,28 @@ npm start          # http://localhost:3000
 | `GET /api/courses/info` | 학기, 전체 강좌 수, 갱신 시각 |
 | `GET /api/food` | 이번 주 학식 전체 |
 | `GET /api/food?date=2026-11-11` | 그날 식단만 |
+| `GET /api/auth/me` | 로그인한 사용자(`user`)와 회원 기능 사용 가능 여부(`accounts`) |
+| `POST /api/auth/signup`, `POST /api/auth/login` | 회원가입·로그인 `{ username, password }` |
+| `POST /api/auth/logout` | 로그아웃 |
+| `GET /api/timetable`, `PUT /api/timetable` | 내 시간표 불러오기·저장 `{ courseIds: [...] }` (로그인 필요) |
 
 - 브라우저는 API를 먼저 부르고, 서버가 없는 곳(GitHub Pages)에서는 같은 내용의 `data/*.json`을 대신 불러온다.
 - 저장소의 크롤러·설정 파일은 공개하지 않도록 `css/`, `js/`, `data/` 폴더와 html 파일만 제공한다.
 - `data/*.json`이 바뀌면(Actions가 갱신) 다음 요청 때 다시 읽는다.
+
+### 회원·시간표 저장 (MongoDB Atlas)
+
+- 사용자: 아이디(영어 소문자·숫자·밑줄 4~20자)와 비밀번호(8자 이상). 비밀번호는 bcrypt 해시로만 저장한다.
+- 로그인 상태: 세션 쿠키(`HttpOnly`, `SameSite=Lax`, HTTPS에서는 `Secure`)에는 세션 ID만 담고, 세션 내용은 DB에 저장해 무료 서버가 잠들었다 깨어나도 로그인이 유지된다.
+- 로그인 성공 때 세션 ID를 새로 발급하고, 로그인·가입은 같은 IP에서 15분에 20번까지만 시도할 수 있다. 아이디가 없을 때와 비밀번호가 틀렸을 때 같은 메시지를 보낸다.
+- 시간표는 강좌 ID 목록만 저장하고, 불러올 때 `data/courses.json`의 강좌 정보로 바꿔 보낸다. 없는 강좌 ID는 저장을 거부한다.
+- 로그인하지 않으면 지금처럼 브라우저에 저장하고, 처음 로그인할 때 브라우저의 시간표를 계정으로 옮긴다.
+- 데이터를 바꾸는 요청은 JSON으로만 받는다.
+
+| 환경 변수 (Render) | 내용 |
+| --- | --- |
+| `MONGODB_URI` | MongoDB 접속 주소. 없으면 회원 기능 없이 실행 |
+| `SESSION_SECRET` | 세션 쿠키 서명용 긴 무작위 문자열 |
 
 ## 학식 자동 수집
 
@@ -91,7 +110,8 @@ css/     공통·페이지별 스타일
 js/      공통·페이지별 스크립트
 data/    건물, 학식, 강좌 JSON 데이터
 scripts/ 학식·강좌 크롤러 (Node.js)
-server.js Express 서버와 API
+server.js Express 서버 시작 (DB 연결)
+server/   Express 앱, 회원·시간표 API, DB 연결
 .github/ GitHub Actions 설정
 images/  이미지
 ```
@@ -112,3 +132,4 @@ images/  이미지
 | 2026-11-11 | 페이지 연결(시간표·홈 강의실 → 지도, 학식 → 식당 위치), 지도 좌표 수정 모드, Express 서버와 강좌 검색·학식 API |
 | 2026-11-12 | 좌표 수정 모드로 맞춘 좌표 반영, 생활관·학생식당 위치 연결 |
 | 2026-11-12 | Render 배포 설정(지역·빌드·시작 명령·환경 변수)과 MongoDB Atlas 클러스터 설정 정리 |
+| 2026-11-17 | 회원가입·로그인(bcrypt, 세션, 시도 제한), 시간표 DB 저장 API, 로그인 페이지와 헤더 로그인 상태, 브라우저 시간표를 계정으로 옮기기 |

@@ -7,7 +7,11 @@
 }
 
 #semester {
-  margin-bottom: 8px;
+  margin-bottom: 2px;
+}
+
+#save-info {
+  margin-bottom: 10px;
 }
 
 #course-search {

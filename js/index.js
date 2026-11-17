@@ -5,38 +5,33 @@ const now = new Date();
 const days = ["일", "월", "화", "수", "목", "금", "토"];
 todayText.innerText = `${now.getFullYear()}년 ${now.getMonth() + 1}월 ${now.getDate()}일 (${days[now.getDay()]})`;
 
-// 오늘 수업: 내 시간표(localStorage)에서 오늘 요일 수업을 시간 순서로
+// 오늘 수업: 내 시간표(로그인했으면 계정, 아니면 이 브라우저)에서 오늘 요일 수업을 시간 순서로
 const todayClass = document.querySelector("#today-class");
-let myCourses = [];
-try {
-  myCourses = JSON.parse(localStorage.getItem("campus-guide-timetable")) || [];
-} catch {
-  myCourses = [];
-}
 const todayDay = days[now.getDay()];
-const todaySlots = [];
-for (let course of myCourses) {
-  for (let slot of course.slots) {
-    if (slot.day === todayDay) todaySlots.push({ course: course, slot: slot });
+const classList = document.createElement("div");
+todayClass.appendChild(classList);
+
+Promise.all([loadMyCourses().catch(() => ({ courses: [] })), loadBuildings()]).then(([result, buildings]) => {
+  const todaySlots = [];
+  for (let course of result.courses) {
+    for (let slot of course.slots) {
+      if (slot.day === todayDay) todaySlots.push({ course: course, slot: slot });
+    }
   }
-}
-todaySlots.sort((a, b) => a.slot.start - b.slot.start);
-const classLines = [];
-for (let item of todaySlots) {
-  const p = document.createElement("p");
-  p.innerText = `${slotTime(item.slot)} ${item.course.name} · `;
-  todayClass.appendChild(p);
-  classLines.push({ p: p, room: item.course.room });
-}
-// 강의실을 지도 링크로 (건물 목록을 받은 뒤에)
-loadBuildings().then((buildings) => {
-  for (let line of classLines) line.p.appendChild(makeRoomLinks(line.room, buildings));
+  todaySlots.sort((a, b) => a.slot.start - b.slot.start);
+
+  for (let item of todaySlots) {
+    const p = document.createElement("p");
+    p.innerText = `${slotTime(item.slot)} ${item.course.name} · `;
+    p.appendChild(makeRoomLinks(item.course.room, buildings)); // 강의실 → 지도 링크
+    classList.appendChild(p);
+  }
+  if (todaySlots.length === 0) {
+    const p = document.createElement("p");
+    p.innerText = result.courses.length === 0 ? "아직 시간표를 만들지 않았습니다." : "오늘은 수업이 없습니다.";
+    classList.appendChild(p);
+  }
 });
-if (todaySlots.length === 0) {
-  const p = document.createElement("p");
-  p.innerText = myCourses.length === 0 ? "아직 시간표를 만들지 않았습니다." : "오늘은 수업이 없습니다.";
-  todayClass.appendChild(p);
-}
 const timetableLink = document.createElement("a");
 timetableLink.href = "timetable.html";
 timetableLink.innerText = "내 시간표 →";

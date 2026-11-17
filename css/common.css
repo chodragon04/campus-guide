@@ -189,3 +189,35 @@ body {
   color: #1a3d7c;
   text-decoration: underline;
 }
+
+/* 헤더의 로그인 상태 */
+.auth-menu {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: 20px;
+  font-size: 0.9em;
+}
+
+.auth-user {
+  color: #fff;
+}
+
+.auth-button {
+  padding: 3px 10px;
+  border: 1px solid #cfd8ea;
+  border-radius: 14px;
+  background: none;
+  color: #fff;
+  font-size: 1em;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.auth-button:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+#site-header nav {
+  margin-left: auto;
+}

@@ -12,6 +12,23 @@ const USERNAME = /^[a-z0-9_]{4,20}$/; // 영어 소문자·숫자·밑줄 4~20�
 const PASSWORD_MIN = 8;
 const PASSWORD_MAX = 64; // bcrypt는 72바이트까지만 쓰므로 넉넉히 제한
 const WRONG = "아이디 또는 비밀번호가 맞지 않습니다.";
+const NICKNAME_MAX = 12;
+
+// 닉네임 정리: 앞뒤 공백 제거, 연속 공백은 하나로, 제어 문자 제거 → 1~12글자
+// (닉네임에 <script> 같은 글자를 넣어도 화면에서는 항상 글자로만 표시한다: innerText 사용)
+export function cleanNickname(value) {
+  return String(value || "")
+    .replace(/[\u0000-\u001f\u007f]/g, "")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+// 닉네임 검사: 문제가 있으면 오류 메시지, 없으면 null (이모지 같은 글자도 한 글자로 센다)
+function checkNickname(nickname) {
+  const length = [...nickname].length;
+  if (length < 1 || length > NICKNAME_MAX) return `닉네임은 1~${NICKNAME_MAX}글자입니다.`;
+  return null;
+}
 
 // 복구 코드: 헷갈리는 글자(0·O, 1·I·L)를 뺀 31글자 중 무작위 12글자 → "K7Q2-XP9M-4WTB"
 const CODE_CHARS = "ABCDEFGHJKMNPQRSTUVWXYZ23456789";
@@ -98,9 +115,13 @@ export function authRouter(db) {
   // user.friendRequests: 받은 친구 신청 수 (헤더 알림용)
   router.get("/me", async (req, res, next) => {
     try {
-      if (!req.session.userId) return res.json({ accounts: Boolean(db), user: null });
-      const received = db ? await db.friendships.find({ to: req.session.userId, status: "pending" }).toArray() : [];
-      res.json({ accounts: Boolean(db), user: { username: req.session.username, friendRequests: received.length } });
+      if (!db || !req.session.userId) return res.json({ accounts: Boolean(db), user: null });
+      const user = await db.users.findOne({ _id: req.session.userId });
+      const received = await db.friendships.find({ to: req.session.userId, status: "pending" }).toArray();
+      res.json({
+        accounts: Boolean(db),
+        user: { username: req.session.username, nickname: (user && user.nickname) || "", friendRequests: received.length },
+      });
     } catch (err) {
       next(err);
     }
@@ -122,12 +143,16 @@ export function authRouter(db) {
       if (password.length < PASSWORD_MIN || password.length > PASSWORD_MAX) {
         return res.status(400).json({ error: `비밀번호는 ${PASSWORD_MIN}~${PASSWORD_MAX}자입니다.` });
       }
+      const nickname = cleanNickname(req.body.nickname);
+      const nicknameError = checkNickname(nickname);
+      if (nicknameError) return res.status(400).json({ error: nicknameError });
 
       const recoveryCode = newRecoveryCode();
       const user = {
         _id: crypto.randomUUID(),
         username: username,
         passwordHash: await bcrypt.hash(password, 10),
+        nickname: nickname,
         recoveryHash: await hashRecoveryCode(recoveryCode),
         createdAt: new Date(),
       };
@@ -139,7 +164,7 @@ export function authRouter(db) {
       }
       await startSession(req, user);
       // 복구 코드는 이때 한 번만 보여 준다 (서버에는 해시만 남음)
-      res.status(201).json({ user: { username: user.username }, recoveryCode: recoveryCode });
+      res.status(201).json({ user: { username: user.username, nickname: nickname }, recoveryCode: recoveryCode });
     } catch (err) {
       next(err);
     }
@@ -234,6 +259,19 @@ export function authRouter(db) {
       const recoveryCode = newRecoveryCode();
       await db.users.updateOne({ _id: user._id }, { $set: { recoveryHash: await hashRecoveryCode(recoveryCode) } });
       res.json({ recoveryCode: recoveryCode }); // 예전 코드는 더 이상 쓸 수 없음
+    } catch (err) {
+      next(err);
+    }
+  });
+
+  // 닉네임 바꾸기: { nickname } (1~12글자)
+  router.put("/nickname", requireLogin, async (req, res, next) => {
+    try {
+      const nickname = cleanNickname(req.body.nickname);
+      const nicknameError = checkNickname(nickname);
+      if (nicknameError) return res.status(400).json({ error: nicknameError });
+      await db.users.updateOne({ _id: req.session.userId }, { $set: { nickname: nickname } });
+      res.json({ nickname: nickname });
     } catch (err) {
       next(err);
     }

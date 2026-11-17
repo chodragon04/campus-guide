@@ -15,7 +15,8 @@
 }
 
 #password-form,
-#recovery-form {
+#recovery-form,
+#nickname-form {
   display: flex;
   flex-direction: column;
   gap: 6px;
@@ -30,7 +31,8 @@
 }
 
 #password-form input,
-#recovery-form input {
+#recovery-form input,
+#nickname-form input {
   padding: 10px 12px;
   border: 1px solid #bbb;
   border-radius: 8px;
@@ -38,18 +40,21 @@
 }
 
 #password-message,
-#recovery-message {
+#recovery-message,
+#nickname-message {
   min-height: 1.4em;
   color: #c0392b;
   font-size: 0.9em;
 }
 
-#password-message.success {
+#password-message.success,
+#nickname-message.success {
   color: #2e7d4f;
 }
 
 #password-submit,
-#recovery-submit {
+#recovery-submit,
+#nickname-submit {
   padding: 10px;
   border: none;
   border-radius: 8px;

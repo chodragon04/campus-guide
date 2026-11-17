@@ -38,6 +38,28 @@ passwordForm.addEventListener("submit", (event) => {
     });
 });
 
+// 닉네임 저장
+const nicknameForm = document.querySelector("#nickname-form");
+const nicknameInput = document.querySelector("#nickname");
+const nicknameMessage = document.querySelector("#nickname-message");
+
+nicknameForm.addEventListener("submit", (event) => {
+  event.preventDefault();
+  sendJson("PUT", "api/auth/nickname", { nickname: nicknameInput.value })
+    .then((result) => {
+      if (!result.ok) {
+        nicknameMessage.className = "";
+        nicknameMessage.innerText = result.data.error || "닉네임을 저장하지 못했습니다.";
+        return;
+      }
+      nicknameInput.value = result.data.nickname;
+      nicknameMessage.className = "success";
+      nicknameMessage.innerText = "닉네임을 저장했습니다.";
+      refreshAuthMenu(); // 헤더 이름도 바꾸기
+    })
+    .catch(() => (nicknameMessage.innerText = "서버에 연결하지 못했습니다."));
+});
+
 // 복구 코드 새로 받기
 const recoveryForm = document.querySelector("#recovery-form");
 const recoveryMessage = document.querySelector("#recovery-message");
@@ -80,5 +102,11 @@ getMe().then((me) => {
     settingsStatus.appendChild(login);
   } else {
     document.querySelector("#account-name").innerText = me.user.username;
+    nicknameInput.value = me.user.nickname;
+    // 닉네임 기능이 생기기 전에 가입한 계정
+    if (!me.user.nickname) {
+      nicknameMessage.className = "";
+      nicknameMessage.innerText = "아직 닉네임이 없어요. 친구에게 보일 닉네임을 정해 주세요.";
+    }
   }
 });

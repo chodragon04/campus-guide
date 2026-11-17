@@ -16,11 +16,14 @@ function showRequestMessage(text, success) {
   requestMessage.className = success ? "success" : "";
 }
 
-// 목록 한 줄: 아이디, 설명, 버튼들
-function makeRow(username, detail, buttons) {
+// 목록 한 줄: 닉네임(아이디), 설명, 버튼들
+// 닉네임은 겹칠 수 있어서 아이디도 함께 보여 준다
+function makeRow(person, detail, buttons) {
   const li = make("li", "friend-row");
   const info = make("div", "friend-info");
-  info.appendChild(make("strong", "", username));
+  const name = make("strong", "", displayName(person));
+  if (person.nickname) name.appendChild(make("span", "friend-id", ` (${person.username})`));
+  info.appendChild(name);
   if (detail) info.appendChild(make("p", "friend-detail", detail));
   li.appendChild(info);
   const actions = make("div", "friend-actions");
@@ -70,7 +73,7 @@ function render(data) {
   incomingList.innerHTML = "";
   for (let request of data.incoming) {
     incomingList.appendChild(
-      makeRow(request.username, "친구 신청을 보냈어요.", [
+      makeRow(request, "친구 신청을 보냈어요.", [
         makeButton("수락", "", () => act("POST", `api/friends/requests/${request.id}/accept`)),
         makeButton("거절", "secondary", () => act("DELETE", `api/friends/requests/${request.id}`)),
       ])
@@ -78,11 +81,12 @@ function render(data) {
   }
   if (data.incoming.length === 0) incomingList.appendChild(emptyRow("받은 신청이 없습니다."));
   document.querySelector("#incoming-count").innerText = data.incoming.length ? `(${data.incoming.length})` : "";
+  updateHeaderBadge(data.incoming.length);
 
   outgoingList.innerHTML = "";
   for (let request of data.outgoing) {
     outgoingList.appendChild(
-      makeRow(request.username, "수락을 기다리는 중", [
+      makeRow(request, "수락을 기다리는 중", [
         makeButton("취소", "secondary", () => act("DELETE", `api/friends/requests/${request.id}`)),
       ])
     );
@@ -95,13 +99,29 @@ function render(data) {
     const shared = friend.sharedCourseIds.map((id) => courseNames.get(id)).filter(Boolean);
     const detail = shared.length > 0 ? `함께 듣는 수업: ${shared.join(", ")}` : "함께 듣는 수업이 없습니다.";
     friendList.appendChild(
-      makeRow(friend.username, detail, [
+      makeRow(friend, detail, [
         makeConfirmButton("삭제", "정말 삭제", () => act("DELETE", `api/friends/${encodeURIComponent(friend.username)}`)),
       ])
     );
   }
   if (data.friends.length === 0) friendList.appendChild(emptyRow("아직 친구가 없습니다. 위에서 친구 아이디로 신청해 보세요."));
   document.querySelector("#friend-count").innerText = `(${data.friends.length}명)`;
+}
+
+// 수락·거절하면 헤더의 받은 신청 숫자도 바로 맞춘다
+function updateHeaderBadge(count) {
+  const link = document.querySelector(".auth-friends");
+  if (!link) return;
+  let badge = link.querySelector(".badge");
+  if (count === 0) {
+    if (badge) badge.remove();
+    return;
+  }
+  if (!badge) {
+    badge = make("span", "badge");
+    link.appendChild(badge);
+  }
+  badge.innerText = String(count);
 }
 
 function loadFriends() {

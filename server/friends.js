@@ -2,6 +2,7 @@
 //  - friendships 컬렉션: { _id, pair, from, to, fromName, toName, status: "pending" | "accepted", createdAt, acceptedAt }
 //  - pair는 두 사람의 ID를 정렬해 이은 값이라, 누가 먼저 신청했든 두 사람 사이에는 하나만 생긴다
 //  - 친구에게도 시간표 전체는 보여 주지 않고, 나와 같은 강좌(과목+분반)만 알려 준다
+//  - 닉네임은 바꿀 수 있으므로 저장해 두지 않고 목록을 줄 때마다 users에서 읽는다
 import crypto from "node:crypto";
 import express from "express";
 import { rateLimit } from "express-rate-limit";
@@ -58,21 +59,24 @@ export function friendsRouter(db) {
         const iSent = link.from === me;
         const otherId = iSent ? link.to : link.from;
         const otherName = iSent ? link.toName : link.fromName;
+        const other = await db.users.findOne({ _id: otherId });
+        const nickname = (other && other.nickname) || "";
 
         if (link.status === "accepted") {
           const theirs = await myCourseIds(otherId);
           friends.push({
             username: otherName,
+            nickname: nickname,
             since: link.acceptedAt,
             sharedCourseIds: theirs.filter((id) => mine.has(id)), // 겹치는 강좌만
           });
         } else if (iSent) {
-          outgoing.push({ id: link._id, username: otherName, createdAt: link.createdAt });
+          outgoing.push({ id: link._id, username: otherName, nickname: nickname, createdAt: link.createdAt });
         } else {
-          incoming.push({ id: link._id, username: otherName, createdAt: link.createdAt });
+          incoming.push({ id: link._id, username: otherName, nickname: nickname, createdAt: link.createdAt });
         }
       }
-      friends.sort((a, b) => a.username.localeCompare(b.username));
+      friends.sort((a, b) => (a.nickname || a.username).localeCompare(b.nickname || b.username, "ko"));
       res.json({ friends: friends, incoming: incoming, outgoing: outgoing });
     } catch (err) {
       next(err);

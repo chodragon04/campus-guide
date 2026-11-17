@@ -30,6 +30,16 @@
       </section>
 
       <section class="settings-section">
+        <h2>닉네임</h2>
+        <p class="hint">친구 목록과 "함께 듣는 친구"에 이 이름이 보여요. (1~12글자)</p>
+        <form id="nickname-form">
+          <input type="text" id="nickname" maxlength="24" placeholder="닉네임" autocomplete="nickname" required>
+          <p id="nickname-message"></p>
+          <button type="submit" id="nickname-submit">닉네임 저장</button>
+        </form>
+      </section>
+
+      <section class="settings-section">
         <h2>비밀번호 변경</h2>
         <form id="password-form">
           <label for="current-password">현재 비밀번호</label>

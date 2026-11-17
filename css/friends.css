@@ -83,3 +83,9 @@
   background-color: #c0392b;
   color: #fff;
 }
+
+.friend-id {
+  color: #888;
+  font-weight: normal;
+  font-size: 0.9em;
+}

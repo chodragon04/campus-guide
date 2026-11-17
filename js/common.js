@@ -194,7 +194,7 @@ function setupAuthMenu() {
       if (me.user.friendRequests > 0) friends.appendChild(make("span", "badge", String(me.user.friendRequests)));
       box.appendChild(friends);
       // 아이디를 누르면 계정 설정(비밀번호 변경)
-      const account = make("a", "auth-user", me.user.username);
+      const account = make("a", "auth-user", me.user.nickname || me.user.username);
       account.href = "settings.html";
       account.title = "계정 설정";
       if (currentPage === "settings") account.classList.add("current");
@@ -258,6 +258,11 @@ function loadMyCourses() {
   });
 }
 
+// 친구 이름 표시: 닉네임이 있으면 닉네임, 없으면 아이디
+function displayName(person) {
+  return person.nickname || person.username;
+}
+
 // 함께 듣는 친구: 강좌 ID → 그 강좌를 같이 듣는 친구 아이디 목록 (로그인하지 않았으면 빈 Map)
 function loadClassmates() {
   return getMe().then((me) => {
@@ -269,7 +274,7 @@ function loadClassmates() {
         for (let friend of data.friends) {
           for (let id of friend.sharedCourseIds) {
             if (!classmates.has(id)) classmates.set(id, []);
-            classmates.get(id).push(friend.username);
+            classmates.get(id).push(displayName(friend));
           }
         }
         return classmates;

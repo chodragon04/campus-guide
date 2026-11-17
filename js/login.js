@@ -28,6 +28,9 @@ function setMode(newMode) {
   // 비밀번호 관리자가 새 비밀번호를 제안하도록
   passwordInput.autocomplete = signup ? "new-password" : "current-password";
   rules.style.display = signup ? "block" : "none";
+  // 닉네임 칸은 회원가입 때만 보이고, 그때는 꼭 입력해야 한다
+  for (let el of document.querySelectorAll(".signup-only")) el.style.display = signup ? "" : "none";
+  document.querySelector("#nickname").required = signup;
   document.querySelector("#forgot-link").style.display = signup ? "none" : "block";
   authMessage.innerText = "";
 }
@@ -43,6 +46,7 @@ form.addEventListener("submit", (event) => {
     username: document.querySelector("#username").value,
     password: passwordInput.value,
   };
+  if (mode === "signup") body.nickname = document.querySelector("#nickname").value;
   submit.disabled = true;
   authMessage.innerText = "";
 

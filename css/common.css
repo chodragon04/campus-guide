@@ -2,7 +2,7 @@
 
 /* 디자인 (시안 C)
  *  - 색: 서울과기대 로고 색 세 가지 (PANTONE 281 C 남색, 1807 C 빨강, 423 C 회색)
- *  - 글꼴: 제목·로고 Jua, 본문 Gothic A1 (Google Fonts, 각 html에서 불러옴) */
+ *  - 글꼴: 제목·본문 모두 Jua (Google Fonts, 각 html에서 불러옴) */
 :root {
   --navy: #00205B; /* PANTONE 281 C: 헤더, 제목, 버튼 */
   --red: #A4343A; /* PANTONE 1807 C: 강조, 현재 메뉴, 알림 */
@@ -10,8 +10,8 @@
   --gray-text: #626666; /* 423 C를 글자용으로 어둡게 (흰 바탕에서 423 C는 흐려서 읽기 어려움) */
   --gray-line: #d4d6d6; /* 423 C 연하게: 테두리 */
   --gray-bg: #f3f4f4;
-  --font-body: "Gothic A1", "Malgun Gothic", sans-serif;
-  --font-title: "Jua", "Gothic A1", "Malgun Gothic", sans-serif;
+  --font-body: "Jua", "Malgun Gothic", sans-serif;
+  --font-title: "Jua", "Malgun Gothic", sans-serif;
 }
 
 * {
@@ -24,6 +24,14 @@ body {
   font-family: var(--font-body);
   color: #1b1f24;
   line-height: 1.6;
+}
+
+/* 버튼·입력칸은 기본으로 글꼴을 물려받지 않아서 직접 지정 */
+button,
+input,
+textarea,
+select {
+  font-family: inherit;
 }
 
 h1,

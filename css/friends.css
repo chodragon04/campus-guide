@@ -2,7 +2,7 @@
 .hint,
 .empty,
 .friend-detail {
-  color: #777;
+  color: var(--gray-text);
   font-size: 0.9em;
 }
 
@@ -32,7 +32,7 @@
 #request-message {
   min-height: 1.5em;
   margin-top: 6px;
-  color: #c0392b;
+  color: var(--red);
   font-size: 0.9em;
 }
 
@@ -65,9 +65,9 @@
 
 #friends-area button {
   padding: 6px 14px;
-  border: 1px solid #1a3d7c;
+  border: 1px solid var(--navy);
   border-radius: 6px;
-  background-color: #1a3d7c;
+  background-color: var(--navy);
   color: #fff;
   cursor: pointer;
   white-space: nowrap;
@@ -75,24 +75,24 @@
 
 #friends-area button.secondary {
   background-color: #fff;
-  color: #1a3d7c;
+  color: var(--navy);
 }
 
 #friends-area button.danger {
-  border-color: #c0392b;
-  background-color: #c0392b;
+  border-color: var(--red);
+  background-color: var(--red);
   color: #fff;
 }
 
 .friend-id {
-  color: #888;
+  color: var(--gray-text);
   font-weight: normal;
   font-size: 0.9em;
 }
 
 /* 친구 이름을 누르면 친구 시간표로 */
 .friend-link {
-  color: #1a3d7c;
+  color: var(--navy);
   text-decoration: none;
 }
 

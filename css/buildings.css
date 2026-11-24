@@ -2,7 +2,7 @@
 .hint,
 .notice,
 #result-count {
-  color: #777;
+  color: var(--gray-text);
   font-size: 0.9em;
 }
 
@@ -35,14 +35,14 @@
   flex-direction: column;
   gap: 8px;
   padding: 14px 16px;
-  border: 1px solid #ddd;
+  border: 1px solid var(--gray-line);
   border-radius: 8px;
   background-color: #fff;
 }
 
 .map-link {
   margin-top: auto;
-  color: #1a3d7c;
+  color: var(--navy);
   font-size: 0.9em;
   text-decoration: none;
 }

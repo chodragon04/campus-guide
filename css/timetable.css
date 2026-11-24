@@ -2,7 +2,7 @@
 .hint,
 .notice,
 .meta {
-  color: #777;
+  color: var(--gray-text);
   font-size: 0.9em;
 }
 
@@ -40,31 +40,31 @@
 
 button {
   padding: 6px 12px;
-  border: 1px solid #1a3d7c;
+  border: 1px solid var(--navy);
   border-radius: 6px;
   background-color: #fff;
-  color: #1a3d7c;
+  color: var(--navy);
   cursor: pointer;
   white-space: nowrap;
 }
 
 button:hover {
-  background-color: #1a3d7c;
+  background-color: var(--navy);
   color: #fff;
 }
 
 #message {
   min-height: 1.6em;
   margin: 12px 0 8px;
-  color: #c0392b;
+  color: var(--red);
 }
 
 /* 시간표: CSS grid로 요일(열) × 교시(행) */
 #timetable {
   display: grid;
   grid-auto-rows: 44px;
-  border-top: 1px solid #ddd;
-  border-left: 1px solid #ddd;
+  border-top: 1px solid var(--gray-line);
+  border-left: 1px solid var(--gray-line);
   margin-bottom: 32px;
 }
 
@@ -72,8 +72,8 @@ button:hover {
 .day-head,
 .period,
 .cell {
-  border-right: 1px solid #ddd;
-  border-bottom: 1px solid #ddd;
+  border-right: 1px solid var(--gray-line);
+  border-bottom: 1px solid var(--gray-line);
 }
 
 .day-head,
@@ -81,7 +81,7 @@ button:hover {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #f5f7fb;
+  background-color: var(--gray-bg);
   font-size: 0.9em;
 }
 

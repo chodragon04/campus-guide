@@ -29,15 +29,15 @@
 
 #day-tabs button {
   padding: 8px 14px;
-  border: 1px solid #1a3d7c;
+  border: 1px solid var(--navy);
   border-radius: 20px;
   background-color: #fff;
-  color: #1a3d7c;
+  color: var(--navy);
   cursor: pointer;
 }
 
 #day-tabs button.active {
-  background-color: #1a3d7c;
+  background-color: var(--navy);
   color: #fff;
 }
 
@@ -50,7 +50,7 @@
 
 .food-card {
   padding: 16px 20px;
-  border: 1px solid #ddd;
+  border: 1px solid var(--gray-line);
   border-radius: 8px;
   background-color: #fff;
 }
@@ -67,7 +67,7 @@
 
 .meal h4 {
   margin-bottom: 2px;
-  color: #1a3d7c;
+  color: var(--navy);
   font-size: 0.95em;
 }
 
@@ -78,7 +78,7 @@
 }
 
 .price {
-  color: #888;
+  color: var(--gray-text);
   white-space: nowrap;
   margin-left: 8px;
 }
@@ -90,13 +90,13 @@
 
 .notice,
 #updated {
-  color: #888;
+  color: var(--gray-text);
   font-size: 0.9em;
 }
 
 .place-link {
   margin-left: 8px;
-  color: #1a3d7c;
+  color: var(--navy);
   font-size: 0.75em;
   font-weight: normal;
   text-decoration: none;
@@ -179,7 +179,7 @@
   margin-bottom: 14px;
   padding: 12px;
   border-radius: 8px;
-  background-color: #f5f7fb;
+  background-color: var(--gray-bg);
 }
 
 .star-input .star {
@@ -210,7 +210,7 @@
 }
 
 .review-message {
-  color: #c0392b;
+  color: var(--red);
   font-size: 0.85em;
 }
 
@@ -221,16 +221,16 @@
 
 .review-actions button {
   padding: 6px 14px;
-  border: 1px solid #1a3d7c;
+  border: 1px solid var(--navy);
   border-radius: 6px;
-  background-color: #1a3d7c;
+  background-color: var(--navy);
   color: #fff;
   cursor: pointer;
 }
 
 .review-actions button.secondary {
   background-color: #fff;
-  color: #1a3d7c;
+  color: var(--navy);
 }
 
 .review-login {
@@ -280,7 +280,7 @@
   padding: 6px 14px;
   border-radius: 8px;
   background-color: #eef2f9;
-  color: #1a3d7c;
+  color: var(--navy);
   font-size: 0.9em;
   text-decoration: none;
 }
@@ -304,8 +304,9 @@ html {
   margin-bottom: 8px;
   padding: 8px 12px;
   border-radius: 8px;
-  background-color: #fff6e0;
-  color: #8a5a00;
+  background-color: #eef1f6;
+  border-left: 4px solid var(--red);
+  color: var(--navy);
   font-size: 0.95em;
   font-weight: bold;
 }
@@ -314,14 +315,14 @@ html {
   margin: 0 -10px;
   padding: 8px 10px;
   border-radius: 8px;
-  background-color: #fff6e0;
+  background-color: #f8eeee;
 }
 
 .now-label {
   float: right;
   padding: 0 8px;
   border-radius: 8px;
-  background-color: #f2b01e;
+  background-color: var(--red);
   color: #fff;
   font-size: 0.75em;
   font-weight: bold;
@@ -350,8 +351,8 @@ html {
 }
 
 .brand-tabs button.active {
-  border-color: #1a3d7c;
-  background-color: #1a3d7c;
+  border-color: var(--navy);
+  background-color: var(--navy);
   color: #fff;
 }
 

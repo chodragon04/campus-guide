@@ -1,7 +1,7 @@
 /* map.html 전용 스타일 */
 .hint,
 .notice {
-  color: #777;
+  color: var(--gray-text);
   font-size: 0.9em;
 }
 
@@ -29,7 +29,7 @@
   flex-direction: column;
   height: 560px;
   padding: 14px;
-  border: 1px solid #ddd;
+  border: 1px solid var(--gray-line);
   border-radius: 8px;
 }
 
@@ -51,10 +51,10 @@
 
 .nearby-actions button {
   padding: 5px 10px;
-  border: 1px solid #1e6fff;
+  border: 1px solid var(--navy);
   border-radius: 6px;
   background-color: #fff;
-  color: #1e6fff;
+  color: var(--navy);
   font-size: 0.85em;
   white-space: nowrap;
   cursor: pointer;
@@ -62,7 +62,7 @@
 
 .nearby-actions button.active,
 .nearby-actions button:hover {
-  background-color: #1e6fff;
+  background-color: var(--navy);
   color: #fff;
 }
 
@@ -81,16 +81,16 @@
 
 #nearby-filters button {
   padding: 3px 9px;
-  border: 1px solid #1a3d7c;
+  border: 1px solid var(--navy);
   border-radius: 20px;
   background-color: #fff;
-  color: #1a3d7c;
+  color: var(--navy);
   font-size: 0.8em;
   cursor: pointer;
 }
 
 #nearby-filters button.active {
-  background-color: #1a3d7c;
+  background-color: var(--navy);
   color: #fff;
 }
 
@@ -120,7 +120,7 @@
 }
 
 .nearby-item:hover {
-  background-color: #f4f7fc;
+  background-color: var(--gray-bg);
 }
 
 .nearby-main {
@@ -137,7 +137,7 @@
 
 .nearby-building {
   width: 100%;
-  color: #777;
+  color: var(--gray-text);
   font-size: 0.8em;
 }
 
@@ -147,11 +147,11 @@
   align-items: flex-end;
   flex-shrink: 0;
   font-size: 0.8em;
-  color: #777;
+  color: var(--gray-text);
 }
 
 .nearby-distance strong {
-  color: #1e6fff;
+  color: var(--navy);
   font-size: 1.1em;
 }
 
@@ -176,7 +176,7 @@
   border: 2px solid #fff;
   border-radius: 50% 50% 50% 0;
   transform: rotate(-45deg);
-  background-color: #1a3d7c;
+  background-color: var(--navy);
   color: #fff;
   font-size: 11px;
   font-weight: bold;
@@ -192,10 +192,10 @@
 .pin.cat-dorm { background-color: #2e8b57; }
 .pin.cat-student { background-color: #d48a00; }
 .pin.cat-admin { background-color: #7a4fc4; }
-.pin.cat-etc { background-color: #777; }
+.pin.cat-etc { background-color: var(--gray-text); }
 
 .pin.selected {
-  outline: 3px solid #e8336a;
+  outline: 3px solid var(--red);
 }
 
 /* 핀 위 건물 정보 창: 아래쪽 꼬리가 핀 머리를 가리킨다 */
@@ -291,7 +291,7 @@
 .route-link {
   display: inline-block;
   margin-top: 12px;
-  color: #1a3d7c;
+  color: var(--navy);
   font-size: 0.9em;
   text-decoration: none;
 }
@@ -314,7 +314,7 @@
 .edit-panel {
   margin-top: 16px;
   padding: 14px 16px;
-  border: 2px dashed #e8336a;
+  border: 2px dashed var(--red);
   border-radius: 8px;
 }
 
@@ -331,10 +331,10 @@
 
 .edit-panel button {
   padding: 6px 12px;
-  border: 1px solid #1a3d7c;
+  border: 1px solid var(--navy);
   border-radius: 6px;
   background-color: #fff;
-  color: #1a3d7c;
+  color: var(--navy);
   cursor: pointer;
 }
 

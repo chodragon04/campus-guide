@@ -1,4 +1,19 @@
 /* 모든 페이지 공통 스타일 */
+
+/* 디자인 (시안 C)
+ *  - 색: 서울과기대 로고 색 세 가지 (PANTONE 281 C 남색, 1807 C 빨강, 423 C 회색)
+ *  - 글꼴: 제목·로고 Jua, 본문 Gothic A1 (Google Fonts, 각 html에서 불러옴) */
+:root {
+  --navy: #00205B; /* PANTONE 281 C: 헤더, 제목, 버튼 */
+  --red: #A4343A; /* PANTONE 1807 C: 강조, 현재 메뉴, 알림 */
+  --gray: #898D8D; /* PANTONE 423 C */
+  --gray-text: #626666; /* 423 C를 글자용으로 어둡게 (흰 바탕에서 423 C는 흐려서 읽기 어려움) */
+  --gray-line: #d4d6d6; /* 423 C 연하게: 테두리 */
+  --gray-bg: #f3f4f4;
+  --font-body: "Gothic A1", "Malgun Gothic", sans-serif;
+  --font-title: "Jua", "Gothic A1", "Malgun Gothic", sans-serif;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -6,9 +21,17 @@
 }
 
 body {
-  font-family: "Pretendard", "Malgun Gothic", sans-serif;
-  color: #222;
+  font-family: var(--font-body);
+  color: #1b1f24;
   line-height: 1.6;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-title);
+  font-weight: normal; /* Jua는 원래 굵은 글꼴 */
+  letter-spacing: -0.01em;
 }
 
 #site-header {
@@ -16,24 +39,46 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 16px 24px;
-  background-color: #1a3d7c;
+  background-color: var(--navy);
+  border-bottom: 4px solid var(--red);
 }
 
+/* 로고: 둥근 타일(남색 점 → 빨간 점으로 이어지는 길) + 글자 */
 #logo {
+  display: flex;
+  align-items: center;
+  gap: 9px;
   color: #fff;
-  font-weight: bold;
+  font-family: var(--font-title);
+  font-size: 1.12em;
+  letter-spacing: -0.02em;
   text-decoration: none;
+}
+
+.logo-mark {
+  width: 28px;
+  height: 28px;
+  flex-shrink: 0;
 }
 
 #menu a {
   margin-left: 16px;
-  color: #cfd8ea;
+  color: #c3cad8;
   text-decoration: none;
 }
 
+#menu a:hover {
+  color: #fff;
+}
+
+/* 지금 보고 있는 메뉴: 흰 글자 + 빨간 밑줄 */
 #menu a.current {
   color: #fff;
   font-weight: bold;
+  text-decoration: underline;
+  text-decoration-color: var(--red);
+  text-decoration-thickness: 3px;
+  text-underline-offset: 8px;
 }
 
 #content {
@@ -44,12 +89,23 @@ body {
 
 #content h1 {
   margin-bottom: 16px;
+  color: var(--navy);
+}
+
+#content a {
+  color: var(--navy);
+  text-underline-offset: 3px;
+}
+
+#content a:hover {
+  color: var(--red);
 }
 
 #site-footer {
   padding: 24px;
+  border-top: 1px solid var(--gray-line);
   text-align: center;
-  color: #888;
+  color: var(--gray-text);
   font-size: 0.9em;
 }
 
@@ -78,15 +134,15 @@ body {
 
 .filter-row button {
   padding: 5px 12px;
-  border: 1px solid #1a3d7c;
+  border: 1px solid var(--navy);
   border-radius: 20px;
   background-color: #fff;
-  color: #1a3d7c;
+  color: var(--navy);
   cursor: pointer;
 }
 
 .filter-row button.active {
-  background-color: #1a3d7c;
+  background-color: var(--navy);
   color: #fff;
 }
 
@@ -116,7 +172,7 @@ body {
   height: 28px;
   padding: 0 6px;
   border-radius: 14px;
-  background-color: #1a3d7c;
+  background-color: var(--navy);
   color: #fff;
   font-size: 0.85em;
   font-weight: bold;
@@ -149,7 +205,7 @@ body {
 
 .fac {
   padding: 2px 8px;
-  border: 1px solid #ddd;
+  border: 1px solid var(--gray-line);
   border-radius: 6px;
   font-size: 0.8em;
 }
@@ -171,6 +227,34 @@ body {
   font-size: 0.85em;
 }
 
+/* 휴대폰: 헤더를 "로고·로그인" 줄과 "메뉴" 줄로 나누고, 메뉴는 가로로 밀어서 보기 */
+@media (max-width: 600px) {
+  #site-header {
+    flex-wrap: wrap;
+    row-gap: 10px;
+    padding: 12px 16px;
+  }
+
+  #site-header nav {
+    order: 3;
+    display: flex;
+    gap: 18px;
+    width: 100%;
+    margin-left: 0;
+    overflow-x: auto;
+    white-space: nowrap;
+    scrollbar-width: none;
+  }
+
+  #menu a {
+    margin-left: 0;
+  }
+
+  .auth-menu {
+    margin-left: auto;
+  }
+}
+
 @media (max-width: 480px) {
   .filter-row {
     flex-direction: column;
@@ -186,7 +270,7 @@ body {
 }
 
 .room-link:hover {
-  color: #1a3d7c;
+  color: var(--navy);
   text-decoration: underline;
 }
 
@@ -212,7 +296,7 @@ body {
 
 .auth-button {
   padding: 3px 10px;
-  border: 1px solid #cfd8ea;
+  border: 1px solid rgba(255, 255, 255, 0.55);
   border-radius: 14px;
   background: none;
   color: #fff;
@@ -231,7 +315,7 @@ body {
 
 .auth-friends {
   position: relative;
-  color: #cfd8ea;
+  color: #c3cad8;
   text-decoration: none;
 }
 
@@ -247,7 +331,7 @@ body {
   margin-left: 4px;
   padding: 0 5px;
   border-radius: 9px;
-  background-color: #e8336a;
+  background-color: var(--red);
   color: #fff;
   font-size: 0.75em;
   font-weight: bold;
@@ -268,9 +352,9 @@ body {
   gap: 10px;
   margin-top: 16px;
   padding: 18px;
-  border: 2px solid #1a3d7c;
+  border: 2px solid var(--navy);
   border-radius: 10px;
-  background-color: #f5f7fb;
+  background-color: var(--gray-bg);
 }
 
 .recovery-box h2 {
@@ -301,16 +385,16 @@ body {
 .recovery-copy,
 .recovery-done {
   padding: 9px;
-  border: 1px solid #1a3d7c;
+  border: 1px solid var(--navy);
   border-radius: 8px;
   background-color: #fff;
-  color: #1a3d7c;
+  color: var(--navy);
   font-size: 1em;
   cursor: pointer;
 }
 
 .recovery-done {
-  background-color: #1a3d7c;
+  background-color: var(--navy);
   color: #fff;
 }
 

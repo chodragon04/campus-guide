@@ -1,6 +1,6 @@
 /* settings.html 전용 스타일 */
 .hint {
-  color: #777;
+  color: var(--gray-text);
   font-size: 0.9em;
 }
 
@@ -43,7 +43,7 @@
 #recovery-message,
 #nickname-message {
   min-height: 1.4em;
-  color: #c0392b;
+  color: var(--red);
   font-size: 0.9em;
 }
 
@@ -58,7 +58,7 @@
   padding: 10px;
   border: none;
   border-radius: 8px;
-  background-color: #1a3d7c;
+  background-color: var(--navy);
   color: #fff;
   font-size: 1em;
   cursor: pointer;
